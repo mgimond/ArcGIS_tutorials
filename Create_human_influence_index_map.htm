@@ -1,0 +1,1742 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Creating a Human Influence Index map</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.8in;
+	text-indent:-.8in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.apple-style-span
+	{mso-style-name:apple-style-span;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center'><b><span
+style='font-size:16.0pt;color:#365F91'>Creating a Human Influence Index map</span></b></p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span>Create a folder called <b>HII</b>. On DIA 322 computers, you might
+  want to create this folder in your user Documents folder (e.g.
+  C:\Users\jdoe\Documents\HII). On the DIA 222 computers, you might want to create
+  this folder on the D: drive under D:\course number\user name\ (e.g. D:\ES212\jdoe\HII).</p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span></span><a href="Create_human_influence_index_map_files/HII.zip">Download
+  the data</a><span style='color:black'> for this exercise then </span><a
+  href="Opening_zip_files.htm">extract the files</a><span class=MsoHyperlink>  </span>from
+  the <span style='color:black'>HII.zip file to your newly created <b>HII</b>
+  directory.</span></p>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='color:red'>This
+  exercise requires the use of the <b>Spatial Analyst</b> extension. The
+  extension can be activated under <b>Customize &gt;&gt; Extensions</b>.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this exercise, you will create a Human Influence Index
+(HII) map for the <a name="_GoBack"></a>state of Maine following the
+methodology outlined by E.W. Sanderson (<a
+href="http://sedac.ciesin.columbia.edu/wildareas/methods.jsp">http://sedac.ciesin.columbia.edu/wildareas/methods.jsp</a>).
+The HII values range from 0 (no human influence) to 64 (maximum human
+influence). Different data layers have different influences on the HII score as
+shown in the following table:</p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0 width=342
+ style='width:256.5pt'>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#333333;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;line-height:115%'>Variable category</span></b></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#333333;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=center style='text-align:center'><b><span
+  style='font-size:10.0pt;line-height:115%'>Influence Score</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#CCCCCC;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Influence of Population
+  Density/km²</span></b></p>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:10.0pt;line-height:115%;color:black'>0 - 0.5<br>
+  0.6 - 1.5<br>
+  1.6 - 2.5<br>
+  2.6 - 3.5<br>
+  3.6 - 4.5<br>
+  4.6 - 5.5<br>
+  5.6 - 6.5<br>
+  6.6 - 7.5<br>
+  7.6 - 8.5<br>
+  8.6 - 9.5<br>
+  &gt; 9.5</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#CCCCCC;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:black'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>0<br>
+  1<br>
+  2<br>
+  3<br>
+  4<br>
+  5<br>
+  6<br>
+  7<br>
+  8<br>
+  9<br>
+  10</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#CCCCCC;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Influence Score of
+  Railroads</span></b></p>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Within 2 km of
+  railroads<br>
+  Beyond 2 km of railroads</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#CCCCCC;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>8<br>
+  0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#CCCCCC;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Influence Score of
+  Major Roads</span></b></p>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Within 2 km of roads<br>
+  Within 2 to 15 km of major roads<br>
+  Beyond 15 km of major roads</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#CCCCCC;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>8<br>
+  4<br>
+  0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#CCCCCC;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Influence Score of
+  Navigable Rivers</span></b></p>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Within 15 km of
+  navigable rivers<br>
+  Beyond 15 km of navigable rivers</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#CCCCCC;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>4<br>
+  0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#CCCCCC;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Influence Score of
+  Coastlines</span></b></p>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Within 15 km of
+  coastlines<br>
+  Beyond 15 km of coastlines</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#CCCCCC;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>4<br>
+  0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#CCCCCC;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Influence Score of
+  Nighttime Stable Lights Values</span></b></p>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:10.0pt;line-height:115%;color:black'>0<br>
+  1-38<br>
+  39 - 88<br>
+  &gt;=89</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#CCCCCC;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'><br>
+  0<br>
+  3<br>
+  6<br>
+  10</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#CCCCCC;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Urban Polygons</span></b></p>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Inside urban polygons<br>
+  Outside urban polygons</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#CCCCCC;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>10<br>
+  0</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=254 valign=top style='width:190.2pt;background:#CCCCCC;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=right style='text-align:right'><b><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Land Cover Categories</span></b></p>
+  <p class=MsoNormal align=right style='text-align:right'><span
+  style='font-size:10.0pt;line-height:115%;color:black'>Urban areas<br>
+  Irrigated agriculture<br>
+  Rain-fed agriculture<br>
+  Other cover types including forests, tundra, etc...</span></p>
+  </td>
+  <td width=80 valign=top style='width:59.7pt;background:#CCCCCC;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>&nbsp;</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:#943634'>10<br>
+  8<br>
+  3<br>
+  0</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>Since HII values need to be computed for all locations
+across the state of Maine, the HII layer needs to be a continuous raster data
+layer. You will use different geoprocessing tools to derive the HII raster
+layer. Stepping through each geoprocess (more than a dozen) can be time
+consuming, especially if the process needs to be repeated several times. ArcGIS
+has a modeling option that allows the user to connect many geoprocesses needed
+to complete a task. This has the benefit of allowing one to (1) rerun the model
+with different datasets or parameters more quickly and following a systematic
+process and (2) test the model using small data sets before running the model
+on larger ones that can take hours or days to complete.</p>
+
+<p class=MsoNormal>In this exercise you will learn to:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>convert vector data to raster data,</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>create  Euclidean distance raster,</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>reclassify raster values,</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>compute weighted sums,</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>create a geoprocess model. </p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoToc1><a
+href="#_Toc289434961">Step 1:<span style='font-size:11.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:windowtext;text-decoration:none'>        </span>Open
+ArcMap document</a></p>
+
+<p class=MsoToc1><a href="#_Toc289434962">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Converting vector layers to raster layers</a></p>
+
+<p class=MsoToc1><a href="#_Toc289434963">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Automate geoprocessing with ModelBuilder</a></p>
+
+<p class=MsoToc1><a href="#_Toc289434964">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Setting model parameters</a></p>
+
+<p class=MsoToc1><a href="#_Toc289434965">Step 5:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Adding a Euclidean Distance tool to the model</a></p>
+
+<p class=MsoToc1><a href="#_Toc289434966">Step 6:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Adding a reclassification tool to the model</a></p>
+
+<p class=MsoToc1><a href="#_Toc289434967">Step 7:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Adding a Weighted Sum tool to the model</a></p>
+
+<p class=MsoToc1><a href="#_Toc289434968">Step 8:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Run the HII model</a></p>
+
+<p class=MsoToc1><a href="#_Toc289434969">Step 9:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Optional exercise</a></p>
+
+<p class=MsoNormal><a name="_Toc286147277"></a></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434961">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open ArcMap document</a></p>
+
+</div>
+
+<p class=Instructions>Launch ArcGIS from&nbsp;<b>Start &gt;&gt; All Programs
+&gt;&gt; ArcGIS &gt;&gt; ArcMap</b>.</p>
+
+<p class=Instructions>Select <b>Existing Maps &gt;&gt; Browse for more</b>.</p>
+
+<p class=Instructions><img border=0 width=194 height=95 id="Picture 1"
+src="Create_human_influence_index_map_files/image001.png"></p>
+
+<p class=Instructions>Navigate to<b> </b>the<b> HII </b>and select <b>HII.mxd</b>.</p>
+
+<p class=MsoNormal><img border=0 width=319 height=147 id="Picture 2"
+src="Create_human_influence_index_map_files/image002.png"></p>
+
+<p class=MsoNormal>In the right window pane (referred to as the Data View
+window), you see a map of the state of Maine with various data layers showing
+roads, railways, urban areas, etc...</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><img border=0 width=317 height=390 id="Picture 5"
+src="Create_human_influence_index_map_files/image003.png"></p>
+
+<p class=MsoNormal>In the left-side window pane (referred to as the Table of
+Content or TOC for short), you see a list of data layers that can be turned on
+and off. Some are already turned on while others are not. Turn each layer on
+and off to familiarize yourself with the datasets you will be working with. Use
+the zoom tools <img border=0 width=40 height=21 id="Picture 8"
+src="Create_human_influence_index_map_files/image004.png">   and the pan tool <img
+border=0 width=18 height=16 id="Picture 9"
+src="Create_human_influence_index_map_files/image005.png"> to explore the data
+at different scales.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434962">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Converting vector layers to raster layers</a></p>
+
+</div>
+
+<p class=MsoNormal>There are two vector layers that need to be converted to
+rasters for the analysis:&nbsp; <b>pop_dens</b> (population density layer) and <b>urban</b>
+(polygon layer that identifies urban areas).</p>
+
+<p class=Instructions>If not already opened, open the Toolbox by clicking on
+the&nbsp;<b>Toolbox</b>&nbsp;button&nbsp;<img border=0 width=22 height=19
+id="Picture 11" src="Create_human_influence_index_map_files/image006.png">.</p>
+
+<p class=MsoNormal>You will use one of ArcGIS's extensions:&nbsp;<b>Spatial
+Analyst</b>. This extension needs to be activated.</p>
+
+<p class=Instructions>From the <b>Customize</b> pull-down menu select <b>Extensions</b>.
+</p>
+
+<p class=Instructions>Turn on the <b>Spatial Analyst</b> extension by checking
+the box next to the extension.</p>
+
+<p class=MsoNormal><img border=0 width=198 height=196 id="Picture 14"
+src="Create_human_influence_index_map_files/image007.png"></p>
+
+<p class=Instructions>Click&nbsp;<b>Close</b>&nbsp;to close the Extensions
+window.</p>
+
+<p class=MsoNormal>You will convert the population density layer to a raster
+layer. The new raster layer will be computed using Pop_density's population
+density (Pod_dens_km2) attribute.</p>
+
+<p class=Instructions>In <b>ArcToolbox</b>, expand&nbsp;<b>Conversion</b>&nbsp;tools.
+Then expand the&nbsp;<b>To Raster</b>&nbsp;toolset.</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img border=0 width=314 height=484
+id="Picture 13" src="Create_human_influence_index_map_files/image008.png"></p>
+
+<p class=Instructions>Double-click&nbsp;<b>Polygon to Raster</b><span
+class=apple-converted-space><span style='font-size:10.0pt;font-family:"Verdana",sans-serif;
+color:black'>&nbsp;</span></span><img border=0 width=122 height=23
+id="Picture 15" src="Create_human_influence_index_map_files/image009.jpg"><span
+class=apple-style-span><span style='font-size:10.0pt;font-family:"Verdana",sans-serif;
+color:black'>. </span></span></p>
+
+<p class=Instructions>Fill in the fields as shown in the following graphic<span
+class=apple-converted-space><span style='font-size:10.0pt;font-family:"Verdana",sans-serif;
+color:black'>.</span></span></p>
+
+<p class=MsoNormal><img border=0 width=330 height=282 id="Picture 16"
+src="Create_human_influence_index_map_files/image010.png"></p>
+
+<p class=Instructions><span class=apple-style-span>Click on the</span><span
+class=apple-converted-space>&nbsp;</span><span class=apple-style-span><b>Environments</b></span><span
+class=apple-converted-space>&nbsp;</span><span class=apple-style-span>button
+(located near the bottom of the Polygon to raster tool) to access additional
+settings.</span></p>
+
+<p class=Instructions>Expand <b>Processing Extent</b>.</p>
+
+<p class=Instructions>Change the <b>Extent</b> to <b>Land Cover</b>.</p>
+
+<p class=Instructions><img border=0 width=329 height=163 id="Picture 17"
+src="Create_human_influence_index_map_files/image011.png"></p>
+
+<p class=Instructions>Scroll down the Environment Settings window and expand <b>Raster
+Analysis</b>.</p>
+
+<p class=Instructions>Set the <b>Mask</b> to <b>Land Cover</b>. </p>
+
+<p class=Instructions><img border=0 width=201 height=180 id="Picture 18"
+src="Create_human_influence_index_map_files/image012.png"></p>
+
+<p class=MsoNormal>A mask clips the output raster to an existing layer (Land
+Cover in this exercise).</p>
+
+<p class=Instructions>Click <b>OK</b> to close the Environment Settings window.</p>
+
+<p class=Instructions>Click <b>OK</b> to start the polygon-to-raster conversion
+geoprocess.</p>
+
+<p class=MsoNormal>The geoprocess status bar will appear at the bottom of the
+window. <i>Note: When you first run a geoprocess, it may take several seconds
+before the status bar appears.</i></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=215 height=72 id="Picture 19"
+src="Create_human_influence_index_map_files/image013.png"></p>
+
+<p class=MsoNormal>When the process is complete, the status bar will disappear.
+You should now see a new raster layer called Dens_rast added to your map
+document.</p>
+
+<p class=MsoNormal><img border=0 width=182 height=145 id="Picture 20"
+src="Create_human_influence_index_map_files/image014.png"></p>
+
+<p class=Instructions>In the TOC, turn all layers off except Dens_rast by
+unchecking the checkboxes next to the layers that are checked. </p>
+
+<p class=MsoNormal>Your Data View should now only display the newly created
+Dens_rast layer.</p>
+
+<p class=MsoNormal><img border=0 width=247 height=347 id="Picture 21"
+src="Create_human_influence_index_map_files/image015.png"></p>
+
+<p class=MsoNormal>You will change the raster layer's symbology to improve the
+visual distinction between areas of high and low population density.</p>
+
+<p class=Instructions>In the TOC, <b>double-click</b> the Dens_rast layer to
+access its properties.</p>
+
+<p class=Instructions>Click on the <b>Symbology</b> tab <img border=0 width=74
+height=25 id="Picture 22"
+src="Create_human_influence_index_map_files/image016.png">.</p>
+
+<p class=Instructions>Change the color ramp to a <b>red-green</b> color scheme.
+</p>
+
+<p class=Instructions>Check the <b>Invert</b> box to invert the color scheme so
+that red is associated with high numbers and green is associated with low
+numbers.</p>
+
+<p class=MsoNormal><img border=0 width=458 height=366 id="Picture 23"
+src="Create_human_influence_index_map_files/image017.png"></p>
+
+<p class=MsoNormal>Your map should now effectively show areas of high
+population density.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=320 height=454 id="Picture 24"
+src="Create_human_influence_index_map_files/image018.png"></p>
+
+<p class=Instructions>In the TOC, turn on the <b>Urban</b> layer <img border=0
+width=65 height=32 id="Picture 25"
+src="Create_human_influence_index_map_files/image019.png">. </p>
+
+<p class=MsoNormal>The Urban layer is represented using non-contiguous
+polygons. You will need to zoom in on densely populated areas (e.g. Portland,
+Bangor, etc..) to see the polygons. You might need to toggle the Dens_rast
+layer on and off to identify the Urban polygons in the map.</p>
+
+<p class=MsoNormal>Next, you will perform the same Polygon-to-Raster conversion
+on the Urban polygon layer.</p>
+
+<p class=Instructions>In <b>ArcToolbox</b>, open &nbsp;<b>Conversion</b>&nbsp;<b>&gt;&gt;</b>&nbsp;<b>To
+Raster</b>&nbsp;<b>&gt;&gt; Polygon to Raster</b>.</p>
+
+<p class=Instructions>You will populate the fields as follows:</p>
+
+<p class=Instructions><img border=0 width=259 height=276 id="Picture 26"
+src="Create_human_influence_index_map_files/image020.png"></p>
+
+<p class=Instructions><span class=apple-style-span>Click on the</span><span
+class=apple-converted-space>&nbsp;</span><span class=apple-style-span><b>Environments</b></span><span
+class=apple-converted-space>&nbsp;button.</span></p>
+
+<p class=Instructions>Change the environment settings like you did for the
+Polygon-to-Raster conversion performed with the Pop_density layer (i.e. <b>Processing</b>
+<b>Extent &gt;&gt; Extent</b> set to <b>Land Cover</b> and <b>Raster Analysis</b>
+<b>&gt;&gt; Mask</b> set to <b>Land Cover</b>).</p>
+
+<p class=Instructions><span class=apple-style-span>Click <b>OK</b> to accept  the</span><span
+class=apple-converted-space>&nbsp;</span><span class=apple-style-span><b>Environment
+Settings </b>changes.</span></p>
+
+<p class=Instructions><span class=apple-style-span>Click <b>OK</b> to start the
+polygon-to-raster conversion process.</span></p>
+
+<p class=MsoNormal><span class=apple-style-span>The <b>Urb_rast</b> layer is
+displayed as a continuous raster layers, however, the non-null values
+associated with each pixel (i.e. all pixels with a numeric value) are
+meaningless in this case. That’s because we assigned the shapefile’s OBJECTID
+value to each pixel. The OBJECTID is nothing more than an identification tag—it
+does not provide any meaningful information. The <b>Urb_rast</b> layer does
+nothing more than locate the urban areas within the state of Maine (i.e.
+presence or absence of urban centers). We will therefore assign the same color
+to all pixels.</span></p>
+
+<p class=Instructions><span class=apple-style-span>In the TOC, <b>right-click</b>
+on <b>Urb_rast</b> and select <b>Properties</b>.</span></p>
+
+<p class=Instructions><span class=apple-style-span>Under the <b>Symbology</b>
+tab, select <b>Unique</b> <b>Values</b>.</span></p>
+
+<p class=MsoNormal><img border=0 width=140 height=123 id="Picture 3"
+src="Create_human_influence_index_map_files/image021.png"></p>
+
+<p class=Instructions>In the symbols window select the first symbol under
+&lt;Heading&gt;.</p>
+
+<p class=MsoNormal><img border=0 width=360 height=154 id="Picture 4"
+src="Create_human_influence_index_map_files/image022.png"></p>
+
+<p class=Instructions>Scroll down the symbols list until you see the last
+symbol.</p>
+
+<p class=Instructions>While pressing and holding the <b>Shift</b> key, select
+the last symbol (<b>symbol 30</b>) in the symbols list.</p>
+
+<p class=MsoNormal>Pressing and holding he <b>Shift</b> key allows you to
+select a large range of values.</p>
+
+<p class=Instructions><img border=0 width=433 height=195 id="Picture 41"
+src="Create_human_influence_index_map_files/image023.png"></p>
+
+<p class=Instructions>Click on the <b>Remove</b> button <img border=0 width=88
+height=18 id="Picture 6"
+src="Create_human_influence_index_map_files/image024.png">.</p>
+
+<p class=MsoNormal>You should now be left with single symbol &lt;all other
+values&gt; in the symbols list.</p>
+
+<p class=MsoNormal><img border=0 width=466 height=143 id="Picture 7"
+src="Create_human_influence_index_map_files/image025.png"></p>
+
+<p class=Instructions><b>Check</b> the box next to the symbol <img border=0
+width=145 height=20 id="Picture 10"
+src="Create_human_influence_index_map_files/image026.png">.</p>
+
+<p class=Instructions>Click <b>OK</b> to accept the changes.</p>
+
+<p class=MsoNormal>All Urb_rast pixels are now assigned the same color.</p>
+
+<p class=MsoNormal><img border=0 width=198 height=288 id="Picture 27"
+src="Create_human_influence_index_map_files/image027.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434963">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Automate geoprocessing with ModelBuilder</a></p>
+
+</div>
+
+<p class=MsoNormal>There will be many more geoprocessing steps that will need
+to be completed. This can be time consuming and also prone to input errors. We
+can create a geoprocess model that will help alleviate some of the
+aforementioned problems.</p>
+
+<p class=MsoNormal>First, we will need to create a new Toolbox. We will create
+one in ArcCatalog.</p>
+
+<p class=Instructions>From the <b>Windows</b> pull-down menu select <b>Catalog</b>.</p>
+
+<p class=Instructions><img border=0 width=181 height=199 id="Picture 42"
+src="Create_human_influence_index_map_files/image028.png"></p>
+
+<p class=MsoNormal>The Catalog window will pop-up on the right side of the
+ArcMap window. If it collapses back to the right margin, just click on the
+Catalog tab to access its contents.</p>
+
+<p class=Instructions>To prevent the Catalog window from collapsing back into
+the margin, click on the <b>Auto-hide</b> pin <img border=0 width=11 height=10
+id="Picture 29" src="Create_human_influence_index_map_files/image029.png"> in
+the upper-right corner of the Catalog window. </p>
+
+<p class=MsoNormal>Once “pinned”, the Auto-Hide icon should look like <img
+border=0 width=11 height=13 id="Picture 30"
+src="Create_human_influence_index_map_files/image030.png">.</p>
+
+<p class=MsoNormal>In the Catalog window, navigate to the HII geodatabase. </p>
+
+<p class=MsoNormal><img border=0 width=243 height=184 id="Picture 28"
+src="Create_human_influence_index_map_files/image031.png"></p>
+
+<p class=Instructions><b>Right-click</b> on HII.gdb and select <b>New &gt;&gt;
+Toolbox</b>.</p>
+
+<p class=MsoNormal>The Toolbox can contain more than one geoprocess model. For
+this exercise, you will create one model in the new toolbox.</p>
+
+<p class=Instructions><b>Right-click</b> on the newly created toolbox and
+select <b>New &gt;&gt; Toolset</b>.</p>
+
+<p class=Instructions><b>Right-click</b> on the newly created Toolset and
+select <b>Rename</b>.</p>
+
+<p class=Instructions><b>Rename</b> the Toolset <b>HII</b>.</p>
+
+<p class=Instructions><b>Right-click</b> on the HII toolset and select <b>New
+&gt;&gt; Model.</b></p>
+
+<p class=MsoNormal>A new Model window should pop-up. This is where you will
+define the different geoprocessing steps.</p>
+
+<p class=Instructions><img border=0 width=330 height=187 id="Picture 31"
+src="Create_human_influence_index_map_files/image032.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434964">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Setting model parameters</a></p>
+
+</div>
+
+<p class=MsoNormal>You will change the model parameters that will apply to all
+geoprocesses in the model.</p>
+
+<p class=Instructions>From the <b>Model</b> pull-down menu in the Model window,
+select <b>Model Properties</b>.</p>
+
+<p class=Instructions><img border=0 width=240 height=337 id="Picture 36"
+src="Create_human_influence_index_map_files/image033.png"></p>
+
+<p class=Instructions><b>Check</b> the box next to <b>Store relative path names
+(instead of absolute paths)</b>.</p>
+
+<p class=Instructions><img border=0 width=405 height=165 id="Picture 12"
+src="Create_human_influence_index_map_files/image034.png"></p>
+
+<p class=Instructions>In the Model Properties window, select the <b>Environments</b>
+tab.</p>
+
+<p class=Instructions>Expend <b>Procession Extent</b> and place a check mark
+next to <b>Extent</b>.</p>
+
+<p class=Instructions><img border=0 width=181 height=101 id="Picture 37"
+src="Create_human_influence_index_map_files/image035.png"></p>
+
+<p class=Instructions>Expend <b>Raster Analysis</b> and place a check mark next
+to <b>Cell Size</b> and <b>Mask</b>.</p>
+
+<p class=Instructions><img border=0 width=165 height=101 id="Picture 38"
+src="Create_human_influence_index_map_files/image036.png"></p>
+
+<p class=MsoNormal>Next, you will set the values for the parameters you just
+checked off.</p>
+
+<p class=Instructions>In the Model Properties window, click on the <b>Values</b>
+button <img border=0 width=66 height=16 id="Picture 39"
+src="Create_human_influence_index_map_files/image037.png">.</p>
+
+<p class=Instructions style='margin-bottom:0in;margin-bottom:.0001pt'>In the
+Environment Settings window set the parameters values as follows:</p>
+
+<p class=Instructions style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Processing Extent &gt;&gt; Extent:</i> <b>Same as layer Land
+Cover</b> (the coordinate values will be automatically populated)</p>
+
+<p class=Instructions style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Raster Analysis &gt;&gt; Cell size</i>: <b>As Specified below</b>
+&gt;&gt; <b>200</b></p>
+
+<p class=Instructions style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Raster Analysis &gt;&gt; Mask:</i> <b>Land Cover</b></p>
+
+<p class=MsoNormal><img border=0 width=371 height=348 id="Picture 40"
+src="Create_human_influence_index_map_files/image038.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the Environment Settings window.</p>
+
+<p class=Instructions>Click <b>OK</b> to close the Model Properties window.</p>
+
+<p class=MsoNormal>Make a habit of saving your model on a regular basis. </p>
+
+<p class=MsoNormal><span style='color:#C00000'>If you need to close the model
+and return to it at a later time, you can access it by <b>right-clicking</b> on
+the model in your custom Toolbox and selecting <b>Edit</b>. DO NOT <i>double-click</i>
+it as this will bring up a blank menu window.</span></p>
+
+<p class=MsoNormal><img border=0 width=347 height=174 id="Picture 49"
+src="Create_human_influence_index_map_files/image039.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434965">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Adding a Euclidean Distance tool to the model</a></p>
+
+</div>
+
+<p class=MsoNormal>You can add geoprocesses to the model by dragging and
+dropping tools from the Toolbox to the model.</p>
+
+<p class=Instructions>In <b>ArcToolbox</b>, expand the <b>Spatial Analyst Tools</b>
+toolbox.</p>
+
+<p class=MsoNormal>The HII is dependent on the proximity to different
+anthropogenic and natural features (see HII scores table in the introduction).
+We therefore need to create GIS layers that will provide us with distances from
+any location within the state of Maine to any feature of interest (i.e. roads,
+railways, waterways, etc…).  You will use ArcGIS’ Euclidean Distance tool to create
+these rasters.</p>
+
+<p class=MsoNormal><img border=0 width=237 height=269 id="Picture 32"
+src="Create_human_influence_index_map_files/image040.png"></p>
+
+<p class=Instructions>In ArcToolbox, expand the <b>Distance</b> toolset (in the
+Spatial Analyst Tools toolbox) and drag-and-drop the <b>Euclidean Distance</b>
+tool into your HII model.</p>
+
+<p class=MsoNormal>A new (empty) Euclidean Distance tool should now be displayed
+in your HII model</p>
+
+<p class=MsoNormal><img border=0 width=337 height=365 id="Picture 33"
+src="Create_human_influence_index_map_files/image041.png"></p>
+
+<p class=MsoNormal>Next, you will set the input/output parameters for the
+Euclidean Distance tool.</p>
+
+<p class=Instructions><b>Double-click</b> the <b>Euclidean Distance</b> tool
+that you just added to your HII model.</p>
+
+<p class=Instructions style='margin-bottom:0in;margin-bottom:.0001pt'>Define
+the input/output parameters as follows:</p>
+
+<p class=Instructions style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Input raster of feature source data</i>: <b>Major roads</b></p>
+
+<p class=Instructions style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Output distance raster</i>: <b>…\HII\HII.gdb\Dist_rds</b></p>
+
+<p class=Instructions style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i>Output cell size</i>: <b>200 </b>(this value should already be
+set by the environments setting)</p>
+
+<p class=Instructions><br>
+<img border=0 width=286 height=251 id="Picture 34"
+src="Create_human_influence_index_map_files/image042.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to accept the changes.</p>
+
+<p class=MsoNormal>You will probably note that the tool “bubbles” changed color.
+This indicates that tool paramaters have been set. </p>
+
+<p class=MsoNormal><img border=0 width=376 height=223 id="Picture 35"
+src="Create_human_influence_index_map_files/image043.png"></p>
+
+<p class=MsoNormal>You will create <b>three</b> more Euclidean Distance
+processes in your model for railroads, navigable rivers and coastline. </p>
+
+<p class=Instructions>Drag and drop the <b>Euclidean Distance</b> tool inside
+your HII model <b>three</b> more times. </p>
+
+<p class=Instructions>For each Euclidean tool, set the parameters as follows:</p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0>
+ <tr>
+  <td width=118 valign=top style='width:88.55pt;background:#505050;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><b><span style='font-size:11.0pt;
+  color:white'>Euclidean Distance process</span></b></p>
+  </td>
+  <td width=85 valign=top style='width:63.45pt;background:#505050;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><b><span style='font-size:11.0pt;
+  color:white'>Input layer</span></b></p>
+  </td>
+  <td width=261 valign=top style='width:195.8pt;background:#505050;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><b><span style='font-size:11.0pt;
+  color:white'>Output layer</span></b></p>
+  </td>
+  <td width=90 valign=top style='width:67.65pt;background:#505050;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><b><span style='font-size:11.0pt;
+  color:white'>Output cell size</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=118 valign=top style='width:88.55pt;background:gainsboro;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>Distance to nearest railroad</span></p>
+  </td>
+  <td width=85 valign=top style='width:63.45pt;background:gainsboro;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>Railroads</span></p>
+  </td>
+  <td width=261 valign=top style='width:195.8pt;background:gainsboro;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Dist_rail</span></p>
+  </td>
+  <td width=90 valign=top style='width:67.65pt;background:gainsboro;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>200</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=118 valign=top style='width:88.55pt;background:gainsboro;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>Distance to nearest navigable waters</span></p>
+  </td>
+  <td width=85 valign=top style='width:63.45pt;background:gainsboro;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>Navigable rivers</span></p>
+  </td>
+  <td width=261 valign=top style='width:195.8pt;background:gainsboro;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Dist_riv</span></p>
+  </td>
+  <td width=90 valign=top style='width:67.65pt;background:gainsboro;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>200</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=118 valign=top style='width:88.55pt;background:gainsboro;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>Distance to nearest coatline</span></p>
+  </td>
+  <td width=85 valign=top style='width:63.45pt;background:gainsboro;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>Coast</span></p>
+  </td>
+  <td width=261 valign=top style='width:195.8pt;background:gainsboro;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Dist_coast</span></p>
+  </td>
+  <td width=90 valign=top style='width:67.65pt;background:gainsboro;padding:
+  0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:11.0pt;
+  color:black'>200</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>You can have ArcMap automatically rearrange the tools for
+you inside the ModelBuilder by clicking on the <b>Auto Layout</b>  <img
+border=0 width=18 height=17 id="Picture 43"
+src="Create_human_influence_index_map_files/image044.png"> button. You can then
+zoom to the full extent by clicking on the <b>Full Extent</b> <img border=0
+width=19 height=17 id="Picture 44"
+src="Create_human_influence_index_map_files/image045.png"> button.</p>
+
+<p class=MsoNormal><img border=0 width=344 height=695 id="Picture 45"
+src="Create_human_influence_index_map_files/image046.png"></p>
+
+<p class=MsoNormal>At this point, it may be a good time to save your model. You
+should save your work at regular time intervals, especially if you plan to work
+on a project over many hours.</p>
+
+<p class=Instructions>Click the <b>Save</b> button in your Model’s window.</p>
+
+<p class=MsoNormal><img border=0 width=147 height=161 id="Picture 48"
+src="Create_human_influence_index_map_files/image047.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434966">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Adding a reclassification tool to the model</a></p>
+
+</div>
+
+<p class=MsoNormal>The HII map is an index map whose values are unitless (i.e.
+it does not have traditional units of length, mass or time). This allows one to
+compare different environment variables (having different units) on a similar
+scale. We therefore need to convert distance values and presence/absence values
+(as is the case with the urban layer) to a common scale (this may be a good
+time to review the introduction’s Influence Scores table). We will used ArGIS’ <b>Reclassification</b>
+tool to accomplish this task.</p>
+
+<p class=Instructions>Under Spatial Analyst Tools, <b>expand</b> the <b>Reclass</b>
+toolset.  </p>
+
+<p class=Instructions><b>Drag</b> the <b>Reclassify</b> tool from ArcCatalog  to
+the <b>HII model</b>.</p>
+
+<p class=Instructions><b>Double-click</b> the <b>Reclassify</b> tool in your
+HII model to access its parameters.</p>
+
+<p class=Instructions>For <i>Input</i> raster, select the <b>Dist_rds</b>
+layer.</p>
+
+<p class=Instructions>The <i>Reclass</i> field should be set to <b>Value</b>.</p>
+
+<p class=Instructions>You will add three reclassification values by clicking on
+the <b>Add Entry</b> button <b>three</b> times. The values are:</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=143 valign=top style='width:107.6pt;border:solid windowtext 1.0pt;
+  background:gray;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  color:white'>Old values</span></b></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border:solid windowtext 1.0pt;
+  border-left:none;background:gray;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:10.0pt;
+  color:white'>New values</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt'>0 - 2000</span></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt'>8</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt'>2000 -
+  15000</span></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt'>4</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=143 valign=top style='width:107.6pt;border:solid windowtext 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt'>15000 -
+  600000</span></p>
+  </td>
+  <td width=108 valign=top style='width:81.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='font-size:10.0pt'>0</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><i><span style='color:#C00000'>NOTE: it’s important that you
+place spaces between the ‘-‘ and the numbers.</span></i></p>
+
+<p class=MsoNormal>A NoData value will be added to the table for you
+automatically.</p>
+
+<p class=Instructions>Set the output file name to Reclass_rds.</p>
+
+<p class=MsoNormal>The Reclassify Parameters window should look like this:</p>
+
+<p class=MsoNormal><img border=0 width=321 height=354 id="Picture 46"
+src="Create_human_influence_index_map_files/image048.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to accept the changes.</p>
+
+<p class=MsoNormal>You may note that a line gets added in the model linking the
+output of a <b>Euclidean Distance</b> process to the newly created <b>Reclassify</b>
+process.</p>
+
+<p class=MsoNormal><img border=0 width=399 height=140 id="Picture 47"
+src="Create_human_influence_index_map_files/image049.png"></p>
+
+<p class=Instructions>At this point, it’s a good idea to save the model once
+again by clicking on the <b>model’s</b> <b>Save</b> button.</p>
+
+<p class=Instructions><img border=0 width=109 height=126 id="Picture 50"
+src="Create_human_influence_index_map_files/image050.png"></p>
+
+<p class=Instructions>You now need to add seven more reclassification tools.
+You will set each tool’s parameters as follows:</p>
+
+<p class=MsoNormal style='line-height:normal'><i><span style='color:#C00000'>NOTE:
+Some <b>NoData</b> are reclassified as <b>0</b> so double-check your work!</span></i></p>
+
+<table class=MsoNormalTable border=0 cellspacing=3 cellpadding=0>
+ <tr>
+  <td width=79 valign=top style='width:59.4pt;border:solid windowtext 1.0pt;
+  background:#505050;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:white'>Reclassify #</span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;background:#505050;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><b><span
+  style='font-size:10.0pt;color:white'>Input</span></b></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;background:#505050;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><b><span
+  style='font-size:10.0pt;color:white'>Reclass Field</span></b></p>
+  </td>
+  <td width=148 valign=top style='width:110.8pt;background:#505050;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><b><span
+  style='font-size:10.0pt;color:white'>Old values --&gt;&nbsp; New values</span></b></p>
+  </td>
+  <td width=265 valign=top style='width:198.7pt;background:#505050;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><b><span
+  style='font-size:10.0pt;color:white'>Output raster</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=79 valign=top style='width:59.4pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'># 2</span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><img border=0 width=74 height=16
+  id="Picture 59" src="Create_human_influence_index_map_files/image051.png"></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>Value</span></p>
+  </td>
+  <td width=148 valign=top style='width:110.8pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>0 - 0.5&nbsp; --&gt;&nbsp; 0<br>
+  0.5 - 1.5&nbsp; --&gt;&nbsp;1<br>
+  1.5 - 2.5 --&gt;&nbsp; 2<br>
+  2.5 - 3.5 --&gt;&nbsp; 3<br>
+  3.5 - 4.5 --&gt;&nbsp; 4<br>
+  4.5 - 5.5 --&gt;&nbsp; 5<br>
+  5.5 -&nbsp; 6.5 --&gt;&nbsp; 6<br>
+  6.5 - 7.5 --&gt;&nbsp; 7<br>
+  7.5 - 8.5 --&gt;&nbsp; 8<br>
+  8.5 - 9.5 --&gt;&nbsp; 9<br>
+  9.5 - 600000 --&gt;&nbsp; 10<br>
+  NoData --&gt;&nbsp; 0</span></p>
+  </td>
+  <td width=265 valign=top style='width:198.7pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Reclass_dens</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=79 valign=top style='width:59.4pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'># 3</span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><img border=0 width=68 height=17
+  id="Picture 60" src="Create_human_influence_index_map_files/image052.png"></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>Value</span></p>
+  </td>
+  <td width=148 valign=top style='width:110.8pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>0 - 2000 --&gt;&nbsp; 8<br>
+  2000 - 600000 --&gt;&nbsp;0<br>
+  NoData --&gt;&nbsp; NoData</span></p>
+  </td>
+  <td width=265 valign=top style='width:198.7pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Reclass_rail</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=79 valign=top style='width:59.4pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'># 4</span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><img border=0 width=69 height=17
+  id="Picture 61" src="Create_human_influence_index_map_files/image053.png"></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>Value</span></p>
+  </td>
+  <td width=148 valign=top style='width:110.8pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>0 - 15000 --&gt;&nbsp; 4<br>
+  15000 - 600000 --&gt;&nbsp;0<br>
+  NoData --&gt;&nbsp; NoData</span></p>
+  </td>
+  <td width=265 valign=top style='width:198.7pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Reclass_riv</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=79 valign=top style='width:59.4pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'># 5</span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><img border=0 width=75 height=16
+  id="Picture 62" src="Create_human_influence_index_map_files/image054.png"></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>value</span></p>
+  </td>
+  <td width=148 valign=top style='width:110.8pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>0 - 15000 --&gt;&nbsp; 4<br>
+  15000 - 600000 --&gt;&nbsp; 0<br>
+  NoData --&gt;&nbsp; NoData</span></p>
+  </td>
+  <td width=265 valign=top style='width:198.7pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Reclass_coast</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=79 valign=top style='width:59.4pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'># 6</span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><img border=0 width=113 height=14
+  id="Picture 64" src="Create_human_influence_index_map_files/image055.png"></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>Value</span></p>
+  </td>
+  <td width=148 valign=top style='width:110.8pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>0 --&gt;&nbsp; 0<br>
+  1 - 38 --&gt;&nbsp; 3<br>
+  38 - 88 --&gt;&nbsp; 6<br>
+  88 - 100 --&gt;&nbsp; 10<br>
+  NoData --&gt;&nbsp; NoData</span></p>
+  </td>
+  <td width=265 valign=top style='width:198.7pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Reclass_lights</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=79 valign=top style='width:59.4pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'># 7</span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><img border=0 width=76 height=15
+  id="Picture 65" src="Create_human_influence_index_map_files/image056.png"></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>Value</span></p>
+  </td>
+  <td width=148 valign=top style='width:110.8pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>1 --&gt;&nbsp; 0<br>
+  2 --&gt;&nbsp; 3<br>
+  3 --&gt;&nbsp; 8<br>
+  4 --&gt;&nbsp; 10<br>
+  NoData --&gt;&nbsp; NoData</span></p>
+  </td>
+  <td width=265 valign=top style='width:198.7pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Reclass_LC</span></p>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=79 valign=top style='width:59.4pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'># 8</span></p>
+  </td>
+  <td width=120 valign=top style='width:1.25in;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><img border=0 width=64 height=13
+  id="Picture 70" src="Create_human_influence_index_map_files/image057.png"></p>
+  </td>
+  <td width=60 valign=top style='width:45.0pt;background:#BBBBBB;padding:2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>Value</span></p>
+  </td>
+  <td width=148 valign=top style='width:110.8pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>0 – 30 --&gt;&nbsp; 10<br>
+  NoData --&gt;&nbsp; 0</span></p>
+  </td>
+  <td width=265 valign=top style='width:198.7pt;background:#BBBBBB;padding:
+  2.25pt 2.25pt 2.25pt 2.25pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  color:black'>D:\login_name\HII\HII.gdb\Reclass_Urb</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>At this point, you may notice the different symbols
+preceding the input layers. The ‘recycling’ symbol <img border=0 width=17
+height=16 id="Picture 69"
+src="Create_human_influence_index_map_files/image058.png"> indicates that the
+layer currently does not exist in the TOC but will be made available from
+another geoprocess in the model (Euclidean Distance in this exercise). The
+‘layer’ symbol <img border=0 width=14 height=9 id="Picture 68"
+src="Create_human_influence_index_map_files/image059.png"> indicates that the
+layer currently exists in the TOC and will NOT be derived from another
+geoprocess in the model.</p>
+
+<p class=MsoNormal style='line-height:normal'><img border=0 width=286
+height=490 id="Picture 71"
+src="Create_human_influence_index_map_files/image060.png"></p>
+
+<p class=Instructions><b>Save</b> the <b>HII model</b> but keep the model
+window open.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434967">Step 7:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Adding a Weighted Sum tool to the model</a></p>
+
+</div>
+
+<p class=MsoNormal>Finally, we need to combine the scores or index values into
+a comprehensive HII value for each pixel.</p>
+
+<p class=Instructions>In ArcToolbox, expand the <b>Overlay</b> toolset and
+drag-and-drop the <b>Weighted Sum</b> into the HII model.</p>
+
+<p class=Instructions><b>Double-click</b> the HII model’s <b>Weighted Sum</b>
+tool.</p>
+
+<p class=Instructions>Add all <b>seven</b> reclassified layers to the Weighted
+sum tool and assign a weighted value of <b>one</b> for each. You add layers by
+selecting them (one at a time) from the pull-down menu under <b>Input rasters</b>.</p>
+
+<p class=Instructions>Name the output <b>HII</b>.</p>
+
+<p class=Instructions><img border=0 width=412 height=380 id="Picture 72"
+src="Create_human_influence_index_map_files/image061.png"></p>
+
+<p class=MsoNormal>The weight field allows you to modify a layer’s influence in
+the overall score. In this exercise, all layers are assigned the same weight
+since the ‘weighting’ was done implicitly when you reclassified the rasters.</p>
+
+<p class=Instructions>Click <b>OK</b> to close the Weighted Sum window.</p>
+
+<p class=Instructions><img border=0 width=338 height=425 id="Picture 73"
+src="Create_human_influence_index_map_files/image062.png"></p>
+
+<p class=Instructions><b>Save</b> the model.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434968">Step 8:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Run the HII model</a></p>
+
+</div>
+
+<p class=MsoNormal>You are done creating the model. Now you will run the model
+to create the final output.</p>
+
+<p class=Instructions>In the Model window, click on the <b>Run</b> button <img
+border=0 width=15 height=16 id="Picture 74"
+src="Create_human_influence_index_map_files/image063.png">.</p>
+
+<p class=MsoNormal>A Model status window will pop-up indicating the geoprocess
+status.</p>
+
+<p class=Instructions><img border=0 width=283 height=246 id="Picture 75"
+src="Create_human_influence_index_map_files/image064.png"></p>
+
+<p class=MsoNormal>When all geoprocesses are finished, you will notice
+&quot;shadows&quot; cast by each geoprocess in the ModelBuilder window. This
+indicates that the model has finished processing the &quot;shadowed&quot;
+geoprocess.</p>
+
+<p class=Instructions>If the HII model status window is not closed, but
+indicates that the model execution is complete, close the status window.</p>
+
+<p class=MsoNormal>You will now add the final HII raster layer to the map
+document. </p>
+
+<p class=Instructions><b>Right-click</b> on the <b>HII</b> output and select <b>Add
+to Display</b>.</p>
+
+<p class=MsoNormal><img border=0 width=372 height=263 id="Picture 76"
+src="Create_human_influence_index_map_files/image065.png"></p>
+
+<p class=Instructions>In ArcMap's TOC, turn off all layers except for the HII
+layer. </p>
+
+<p class=MsoNormal><img border=0 width=317 height=431 id="Picture 77"
+src="Create_human_influence_index_map_files/image066.png"></p>
+
+<p class=Instructions>In the TOC, <b>Double-click</b> on the HII layer to
+access its Properties. </p>
+
+<p class=Instructions>In the <b>Layer Properties</b> window, click on the <b>Symbology</b>
+tab.</p>
+
+<p class=Instructions>Change the <b>color ramp</b> to one that ranges from <b>red
+to green</b>.</p>
+
+<p class=Instructions><b>Check</b> the <b>Invert</b> box to switch color order.</p>
+
+<p class=MsoNormal><img border=0 width=455 height=328 id="Picture 78"
+src="Create_human_influence_index_map_files/image067.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Layer Properties</b>
+window.</p>
+
+<p class=Instructions><img border=0 width=315 height=428 id="Picture 79"
+src="Create_human_influence_index_map_files/image068.png"></p>
+
+<p class=MsoNormal>The HII values should range from <b>0 to 64</b>. If not,
+there is a good chance that you did not properly specify at least one
+reclassification parameter. Go back to Step 6 and check that the reclassification
+values in your model match those listed in the table.</p>
+
+<p class=Instructions><img border=0 width=159 height=139 id="Picture 80"
+src="Create_human_influence_index_map_files/image069.png"></p>
+
+<p class=MsoNormal>The ability to change just one parameter and have the
+software rerun all geoprocesses for you is one advantage of creating a model.
+Without a model, had you made a mistake early on in the workflow, you would
+have had to painstakingly rerun all subsequent geoprocesses one process at a
+time. </p>
+
+<p class=MsoNormal>Another advantage to creating a geoprocess model is the
+ability to port it to different map projects and datasets. The model can be
+accessed from within any new map document. </p>
+
+<p class=MsoNormal>Note that models can always be edited by right-clicking the
+model and selecting Edit.</p>
+
+<p class=MsoNormal><img border=0 width=290 height=172 id="Picture 81"
+src="Create_human_influence_index_map_files/image070.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader><a name="_Toc289434969">Step 9:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Optional exercise</a></p>
+
+</div>
+
+<p class=MsoNormal>Feel free to change the influence scores of the various
+variables in the reclassification processes and rerun the model.</p>
+
+<p class=MsoNormal>Do you have other datasets you want to run through the HII
+model? Load the layers into your map document and substitute the layers used in
+this exercise with your layers.</p>
+
+<div class=MsoNormal align=center style='text-align:center'><span
+style='font-size:10.0pt;line-height:115%;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal><span style='color:#595959'>References:</span></p>
+
+<p class=MsoNormal><span style='color:#595959'>Sanderson, E.W., M. Jaiteh, M.A.
+Levy, K.H. Redford, A.V. Wannebo, and G. Woolmer. 2003. The Human Footprint and
+The Last of the Wild. BioScience 52, no.10 (October 2002): 891-904</span></p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+border=0 width=76 height=27 id="Picture 51"
+src="Create_human_influence_index_map_files/image071.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified 8/22/2013 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

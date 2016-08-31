@@ -1,0 +1,748 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Projections</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Projection</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span>Create a folder called <b>Projection</b>. On DIA 322 computers, you
+  might want to create this folder in your user Documents folder (e.g.
+  C:\Users\jdoe\Documents\ Projection). On the DIA 222 computers, you might
+  want to create this folder on the D: drive under D:\course number\user name\
+  (e.g. D:\ES212\jdoe\ Projection).</p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><a href="Projection_files/projection.zip">Download the data</a><span
+  style='color:black'> for this exercise then </span><a
+  href="Opening_zip_files.htm">uncompress</a><span style='color:black'> the <b>Projection.zip</b>
+  file to your newly created <b>Projection</b> directory.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this short exercise, you will learn how to read
+coordinate system information for GIS data, define a coordinate system when one
+is not present, and re-project your GIS data to a new projection.</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc312744817">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Open the map document<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc312744818">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Identify a layer’s coordinate system<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc312744819">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Identify the data frame’s coordinate system<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc312744820">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Projecting a layer to a new coordinate system<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc312744821">Step 5:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Defining a coordinate system<span style='color:windowtext;
+display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc312744822">Step 6:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Re-project the conserved lands layer<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc312744817">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open the map document</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Navigate to Projection folder and open <b>projection.mxd</b>.</p>
+
+<p class=Instructions-GIS><img width=234 height=311 id="Picture 1"
+src="Projection_files/image001.jpg"></p>
+
+<p class=MsoNormal>The map is composed of two layers: a <i>deer wintering areas</i>
+layer and a <i>Maine counties</i> layer. Both layers seem to cover the same
+spatial extent inside of ArcMap yet, as you will shortly learn, they do not
+necessarily need to share the same projection.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc312744818">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identify a layer’s coordinate system</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Right click on <b>Counties</b> layer and select <b>Properties</b>.</p>
+
+<p class=Instructions-GIS>In the <b>Properties</b> window, select the source
+tab <img width=169 height=25 id="Picture 2" src="Projection_files/image002.png">.</p>
+
+<p class=MsoNormal>The information displayed under <i>Data Source</i> indicates
+that <i>Counties’</i> coordinate system is based on a <b>UTM</b> projection
+(Zone 19 North to be precise) which is dependent on the <b>North American Datum
+of 1983</b> (NAD83).</p>
+
+<p class=Instructions-GIS><img width=393 height=269 id="Picture 4"
+src="Projection_files/image003.png"></p>
+
+<p class=MsoNormal>Layers do not need to share the same projection in a single
+map document. ArcGIS converts projections on the fly to a common map
+projection. </p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to dismiss the properties window.</p>
+
+<p class=Instructions-GIS>Right click on <b>Deer Wintering Areas</b> layer and
+select <b>Properties</b>.</p>
+
+<p class=Instructions-GIS>In the <b>Properties</b> window, select the source
+tab <img width=169 height=25 id="Picture 5" src="Projection_files/image002.png">.</p>
+
+<p class=MsoNormal>The information displayed under <i>Data Source</i> indicates
+that the <i>Deer Wintering Area’s</i>  coordinate system has <b>no</b> <u>projected</u>
+<u>coordinate system</u> (PCS), it is solely based on a <u>Geographic
+Coordinate System</u> (GCS) based off of the <b>WGS 1984</b> datum.</p>
+
+<p class=Instructions-GIS><img width=381 height=145 id="Picture 6"
+src="Projection_files/image004.png"></p>
+
+<p class=MsoNormal>So we must assume that ArcGIS is converting one of the two
+layer’s coordinate system to a common data frame coordinate system… but which
+one?</p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to dismiss the properties window.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc312744819">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identify the data frame’s coordinate system</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Right click on the <b>data frame</b> <img width=88
+height=23 id="Picture 9" src="Projection_files/image005.png"> in the TOC and
+select <b>Properties</b>.</p>
+
+<p class=Instructions-GIS>In the <b>Properties</b> window, select the
+Coordinate System tab <img width=204 height=30 id="Picture 10"
+src="Projection_files/image006.png">.</p>
+
+<p class=Instructions-GIS><img width=488 height=347 id="Picture 3"
+src="Projection_files/image007.png"></p>
+
+<p class=MsoNormal>The information indicates that the data frame displays all
+layers in <b>UTM Zone 19 North (NAD83)</b>—the same projection as the one used
+by the <i>Counties</i> layer. Note that a data frame’s coordinate system does
+not need to match that of any one of the data layers. However, it is always
+good practice to ensure that all layers in a map project share the same
+coordinate system. In this exercise, we will make UTM zone 19 N (NAD83) this
+project’s default coordinate system.</p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to dismiss the properties window.</p>
+
+<p class=MsoNormal>In the next step, you will convert the <i>Deer Wintering
+Area’s</i> coordinate system to match that of the data frame’s.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc312744820">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Projecting a layer to a new coordinate system</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In your ArcMap window, click on the <b>Search</b> tab
+(right-hand side of the ArcMap window).</p>
+
+<p class=Instructions-GIS>In the Search field type <b>Project</b> and click the
+search icon <img width=29 height=23 id="Picture 14"
+src="Projection_files/image008.png">.</p>
+
+<p class=MsoNormal><img width=345 height=120 id="Picture 13"
+src="Projection_files/image009.png"></p>
+
+<p class=MsoNormal>Using the <b>Search</b> option to find geoprocessing tools
+can be a fast alternative to navigating through the Toolbox toolsets.</p>
+
+<p class=Instructions-GIS>In the search result, click on the <b>Project (Data
+Management)</b> link.</p>
+
+<p class=MsoNormal><img width=330 height=349 id="Picture 16"
+src="Projection_files/image010.png"></p>
+
+<p class=Instructions-GIS>Select <b>Deer Wintering Areas</b> as the input
+feature class and name the output <b>dwa_UTM.shp</b>.</p>
+
+<p class=MsoNormal><img width=593 height=307 id="Picture 17"
+src="Projection_files/image011.png"></p>
+
+<p class=Instructions-GIS>Click on the <img width=25 height=24 id="Picture 18"
+src="Projection_files/image012.png"> icon next to the Output Coordinate System
+field.</p>
+
+<p class=Instructions-GIS>In the Spatial Reference Properties window select <b>Projected
+Coordinate Systems &gt;&gt; UTM &gt;&gt; NAD 1983 &gt;&gt; NAD 1983 UTM Zone
+19N.</b></p>
+
+<p class=Instructions-GIS><img width=285 height=137 id="Picture 7"
+src="Projection_files/image013.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to close the Spatial Reference
+Properties window.</p>
+
+<p class=MsoNormal>The projection will require a datum transformation (we are
+going from a WGS 1984 datum to a NAD 1983 datum).</p>
+
+<p class=Instructions-GIS>In the Geographic Transformation field, select <b>NAD_1983_To_WGS_1984_1</b>.
+</p>
+
+<p class=MsoNormal>Note that this transformation works well for the state of
+Maine, but may not work well for other parts of the country.</p>
+
+<p class=MsoNormal><img width=408 height=266 id="Picture 20"
+src="Projection_files/image014.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to start the conversion process.</p>
+
+<p class=MsoNormal>When done, you should see a new shapefile called dwa_UTM in
+the TOC.  If it does not display in th TOC, add it manually from your project
+folder.</p>
+
+<p class=MsoNormal><img width=188 height=174 id="Picture 21"
+src="Projection_files/image015.png"></p>
+
+<p class=Instructions-GIS><b>Remove</b> the original Deer Wintering Areas layer
+(<b>right-click</b>  then  <b>Remove</b>).</p>
+
+<p class=Instructions-GIS><img width=155 height=152 id="Picture 23"
+src="Projection_files/image016.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc312744821">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Defining a coordinate system</a></p>
+
+</div>
+
+<p class=MsoNormal>Up to now all layers accompanying the map document had their
+coordinate system properly defined. However, there may be times when coordinate
+system information is missing. </p>
+
+<p class=Instructions-GIS>Add the layer <b>conserved_lands.shp</b> to the map
+(this layer resides in the Projection folder).</p>
+
+<p class=MsoNormal><img width=489 height=154 id="Picture 24"
+src="Projection_files/image017.png"></p>
+
+<p class=MsoNormal>Note the display of warning message indicating that the new
+layer lacks spatial reference information.</p>
+
+<p class=MsoNormal><img width=384 height=234 id="Picture 25"
+src="Projection_files/image018.png"></p>
+
+<p class=Instructions-GIS>If this window pops up, click <b>OK</b> to dismiss
+the warning.</p>
+
+<p class=MsoNormal>So where is the conserved_lands layer?</p>
+
+<p class=Instructions-GIS>Click on the <img width=24 height=21 id="Picture 26"
+src="Projection_files/image019.png"> full extent icon</p>
+
+<p class=MsoNormal><img width=192 height=328 id="Picture 27"
+src="Projection_files/image020.png"></p>
+
+<p class=MsoNormal>The new layer is clearly way off target. So what happened?</p>
+
+<p class=MsoNormal>Spatial reference information tells ArcMap what projection
+and datum is used to define the coordinate system. If that information is
+missing, all ArcMap has to work with are the shapes’  x,y coordinate pair
+values. So the best ArcMap can do is <i>assume</i> that the new layer shares
+the data frame’s spatial reference system. This assumption clearly does not
+work in our case. So we need to define the new layer’s coordinate system. </p>
+
+<p class=MsoNormal>It turns out that the layers coordinate system is an <b><i>Albers
+equal area conic, NAD83</i></b>.</p>
+
+<p class=Instructions-GIS>Open the <b>Search</b> tab once more. The last search
+results should still be listed.</p>
+
+<p class=Instructions-GIS>Click on <b>Define Projection (Data Management).</b></p>
+
+<p class=MsoNormal><img width=334 height=312 id="Picture 28"
+src="Projection_files/image021.png"></p>
+
+<p class=Instructions-GIS>Select <b>conserved_lands</b> as the input feature
+class.</p>
+
+<p class=Instructions-GIS>Click on the <img width=25 height=24 id="Picture 29"
+src="Projection_files/image012.png"> icon next to the Output Coordinate System
+field.</p>
+
+<p class=Instructions-GIS>In the Spatial Reference Properties window select <b>Projected
+Coordinate Systems &gt;&gt; Continental &gt;&gt; North America &gt;&gt; USA
+Contiguous Albers Equal Area Conic.prj.</b></p>
+
+<p class=Instructions-GIS><img width=369 height=150 id="Picture 8"
+src="Projection_files/image022.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b>.</p>
+
+<p class=Instructions-GIS><span style='color:#C00000'>Be careful <b>not</b> to
+select the USGS version!</span></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to close the Spatial Reference
+Properties window.</p>
+
+<p class=Instructions-GIS><img width=404 height=200 id="Picture 32"
+src="Projection_files/image023.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to launch the geoprocess.</p>
+
+<p class=MsoNormal>When the process is complete, the conserved_lands layer
+should be properly positioned on top of the other existing layers.</p>
+
+<p class=Instructions-GIS><img width=280 height=377 id="Picture 34"
+src="Projection_files/image024.jpg"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc312744822">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Re-project the conserved lands layer</a> </p>
+
+</div>
+
+<p class=Instructions-GIS>On your own, re-project conserved_lands to <b>UTM NAD
+83 Zone 19 N</b> following the steps outlined in <b>Step 4</b>. Name the newly
+projected layer <b>conserved_lands_UTM.shp</b> and save it under the <i>Projection</i>
+workspace. </p>
+
+<p class=MsoNormal>Note that a datum transformation is not necessary here since
+both the Albers and UTM projections work off of the same NAD 1983 datum.</p>
+
+<p class=Instructions-GIS>When finished, <b>save</b> and <b>close</b> the map
+document.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+width=76 height=27 id="Picture 11" src="Projection_files/image025.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 8/25/2016 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

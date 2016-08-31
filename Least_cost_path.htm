@@ -1,0 +1,814 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Least Cost Path</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Finding the Least Cost
+Path between Two Locations</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span>Create a folder called <b>Least_cost_path</b>. On DIA 322 computers,
+  you might want to create this folder in your user Documents folder (e.g.
+  C:\Users\jdoe\Documents\Least_cost_path). On the DIA 222 computers, you might
+  want to create this folder on the D: drive under D:\course number\user name\
+  (e.g. D:\ES212\jdoe\Least_cost_path).</p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span><a href="Least_cost_path_files/Least_cost.zip">Download the data</a>
+  for this exercise then <a href="Opening_zip_files.htm">uncompress</a> the <b>Least_cost.zip</b>
+  file to your newly created <b>Least_cost_path</b> directory. </p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this exercise, you will identify the most cost effective
+path between two locations based on elevation slope and landuse type.</p>
+
+<p class=MsoNormal>You will need to enable <b>Spatial Analyst</b> extension to
+complete most of the steps in this exercise.</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc295220015">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Open the ArcMap document<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc295220016">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Create a slope raster<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc295220017">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Reclassify the Slope Layer<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc295220018">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Reclassify Land Use Layer<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc295220019">Step 5:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Create a Total Cost Layer<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc295220020">Step 6:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Create a Cost-Distance and Cost-Direction layer<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc295220021">Step 7:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Compute the Least Cost Path<span style='color:windowtext;
+display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc295220015">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open the ArcMap document</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Navigate to your <b>Least_cost_path</b> folder and
+open the <b>Least_cost.mxd</b> document in ArcMap.</p>
+
+<p class=MsoNormal><img width=336 height=304 id="Picture 7"
+src="Least_cost_path_files/image001.png"></p>
+
+<p class=MsoNormal>The map shows a section of Baxter State Park (Maine) that
+surrounds Mt. Katahdin. The two point features represent Kidney Pond and
+Russell Pond campsites (you might want to enable labeling for the two point
+layers).</p>
+
+<p class=MsoNormal>The two other layers in the map document represent elevation
+(in meters) and land use. Both of these layers are rasters.</p>
+
+<p class=MsoNormal>The purpose of this exercise is to find a path that links
+both campsites while minimizing the “cost” of travel (by foot). This cost (or
+impedance) is a factor of two variables: elevation slope and land cover. The
+steeper the slope or the denser the vegetation the more arduous the hike. We
+want to minimize this impedance, in other words we want to strike a balance
+between total distance walked and time spent overcoming obstacles.</p>
+
+<p class=MsoNormal>This requires the creation of a “cost” layer that assigns a
+cost (or impedance) value for each pixel based on slope and land cover type.
+This cost layer will later be used to calculate a cost distance layer.</p>
+
+<p class=MsoNormal>But first, we must create a slope raster layer.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc295220016">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Create a Slope Raster</a> Layer</p>
+
+</div>
+
+<p class=Instructions-GIS>In ArcToolbox, open <b>Spatial Analyst Tools &gt;&gt;
+Surface &gt;&gt; Slope</b> tool.</p>
+
+<p class=Instructions-GIS>In the Slope tool window, select <b>Elevation</b> as
+the input raster, <b>…\Least_cost_path\Data.gdb\Slope</b> as the output raster
+and <b>PERCENT_RISE</b> as output measurement.</p>
+
+<p class=MsoNormal><img width=377 height=261 id="Picture 8"
+src="Least_cost_path_files/image002.png"></p>
+
+<p class=MsoNormal>Note that if the elevation units were different from the
+horizontal units, a Z factor conversion would need to be applied. Since the
+Elevation layer you are using has vertical units of meters a conversion is not
+necessary (the horizontal units are also in meters).</p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=MsoNormal><img width=366 height=325 id="Picture 9"
+src="Least_cost_path_files/image003.png"></p>
+
+<p class=MsoNormal>Steep areas are symbolized with a red hue.</p>
+
+<p class=MsoNormal>Next, you will convert the percent rise values to unitless
+reclassified “cost” values.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc295220017">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reclassify the Slope Layer</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In ArcToolbox open <b>Spatial Analyst Tools &gt;&gt;
+Reclass &gt;&gt; Reclassify</b> tool.</p>
+
+<p class=Instructions-GIS>In the Reclassify tool window, set  <b>Slope</b> as
+the <i>input raster</i> and <b>Value</b> as the <i>reclass</i> <i>field</i>. </p>
+
+<p class=MsoNormal>You will use a standard classification scheme to recode the
+slope values. </p>
+
+<p class=Instructions-GIS>Click on the <b>Classify</b> button.</p>
+
+<p class=Instructions-GIS>Select <b>Equal Interval</b> as the classification
+method and choose to have the tool create <b>10 classes</b>.</p>
+
+<p class=MsoNormal><img width=315 height=182 id="Picture 1"
+src="Least_cost_path_files/image004.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to close the Classification window.</p>
+
+<p class=Instructions-GIS>Finally, set the output raster to <b>…\Least_cost_path\Data.gdb\RecSlope</b>.</p>
+
+<p class=MsoNormal><img width=418 height=403 id="Picture 10"
+src="Least_cost_path_files/image005.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the Reclassify tool.</p>
+
+<p class=Instructions-GIS><img width=359 height=326 id="Picture 11"
+src="Least_cost_path_files/image006.png"></p>
+
+<p class=MsoNormal>Next, you will reclassify the land cover layer to create
+another cost surface.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc295220018">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Reclassify Land Use Layer</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In ArcToolbox open <b>Spatial Analyst Tools &gt;&gt;
+Reclass &gt;&gt; Reclassify</b> tool.</p>
+
+<p class=Instructions-GIS>In the Reclassify tool window, set  <b>LandUse</b> as
+the <i>input raster</i> and <b>Value</b> as the <i>reclass field</i>. </p>
+
+<p class=MsoNormal>This time, you will use a predefined classification scheme
+to recode the slope values.</p>
+
+<p class=Instructions-GIS>Click on the <b>Load...</b> button in the Reclassify
+window.</p>
+
+<p class=Instructions-GIS>Navigate to your working folder and select the <b>lc_reclass</b>
+table.</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:black'><img
+width=334 height=183 id="Picture 2" src="Least_cost_path_files/image007.png"></span></p>
+
+<p class=Instructions-GIS>Click on the <b>Load</b> button to load the table
+into the reclassify tool.</p>
+
+<p class=MsoNormal>The table automatically populates the recode fields for you.</p>
+
+<p class=MsoNormal><img width=374 height=213 id="Picture 14"
+src="Least_cost_path_files/image008.png"></p>
+
+<p class=Instructions-GIS>Finally, set the output raster to <b>…\Least_cost_path\Data.gdb\RecLandUse</b>.</p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the reclassify tool.</p>
+
+<p class=MsoNormal>If you turn off all raster layers except the <b>RecLandUse</b>
+layer, you’ll note that several pixels have no data (they appear as transparent
+pixels in the map).</p>
+
+<p class=MsoNormal><img width=366 height=332 id="Picture 16"
+src="Least_cost_path_files/image009.png"></p>
+
+<p class=MsoNormal>NoData pixels will tell the cost-path tool not to include
+them in the analysis. The NoData pixels were assigned to water bodies in the
+reclassify tool.</p>
+
+<p class=MsoNormal>Now that we have created cost layers for slope and land use,
+we now must combine the two to create a total cost layer.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc295220019">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Create a Total Cost Raster Layer</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In ArcToolbox open <b>Spatial Analyst Tools &gt;&gt; Map
+Algebra &gt;&gt; Raster Calculator</b> tool.</p>
+
+<p class=Instructions-GIS>In the expression window, type the following
+expression:</p>
+
+<p class=Instructions-GIS><span style='font-family:"Courier New"'>(&quot;RecLandUse&quot;
++ &quot;RecSlope&quot;) / 2</span></p>
+
+<p class=Instructions-GIS>Set the output raster to <b>…\Least_cost_path\Data.gdb\Cost</b>.</p>
+
+<p class=MsoNormal><img width=296 height=103 id="Picture 17"
+src="Least_cost_path_files/image010.jpg"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to perform the raster calculation.</p>
+
+<p class=Instructions-GIS><img width=362 height=328 id="Picture 18"
+src="Least_cost_path_files/image011.png"></p>
+
+<p class=MsoNormal>Your new raster layer incorporates both impedance layers
+(slope and land cover). Note that all NoData pixels remain NoData in the
+output.</p>
+
+<p class=MsoNormal>Naturally, you could have added a weight to one of the two
+layers. In fact, the reclassification scheme used in this exercise is
+subjective. More objective approaches in defining the cost from the slope and
+land use layers should be investigated.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc295220020">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Create a Cost-Distance and Cost-Direction layer</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In ArcToolbox, open <b>Spatial Analyst Tools &gt;&gt;
+Distance &gt;&gt; Cost Distance</b> tool.</p>
+
+<p class=Instructions-GIS>The <i>feature source</i> data is <b>Kidney_Pond</b>
+(this is the feature we are computing the cost-distance from)</p>
+
+<p class=Instructions-GIS>The <b>input cost</b> raster is <b>Cost</b>.</p>
+
+<p class=Instructions-GIS>Set the <b>output backlink</b> raster to <b>…\Least_cost_path\Data.gdb\CostDirection</b>.</p>
+
+<p class=MsoNormal>The backlink (optional) output is the cost-direction output.
+We could have computed the cost-direction output separately using the <b>Spatial
+Analyst Tools &gt;&gt; Distance &gt;&gt; Cost Back Link</b>. In essence, we are
+saving an extra step here.</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=379 height=332 id="Picture 19"
+src="Least_cost_path_files/image012.png"></p>
+
+<p class=MsoNormal>Before we run the tool, we need to tell ArcGIS that the new (to
+be created) raster’s extent should match that of the other rasters in the map
+document.</p>
+
+<p class=Instructions-GIS>Click on the <b>Environments</b> button.</p>
+
+<p class=Instructions-GIS>In the Environments Settings window, expand <b>Processing
+Extent</b>.</p>
+
+<p class=Instructions-GIS>Set both the extent and the snap raster to <b>Cost</b>.</p>
+
+<p class=MsoNormal><img width=390 height=324 id="Picture 22"
+src="Least_cost_path_files/image013.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to close the Environment Settings
+window.</p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the Cost Distance tool.</p>
+
+<p class=MsoNormal>When the geoprocess completes, you will see two new raster
+layers in your TOC.</p>
+
+<p class=MsoNormal>The CostDistance layer shows the cumulative cost distance
+from Kidney pond to all pixels within the extent. Both the slope and land use
+impedances influence the results.</p>
+
+<p class=MsoNormal><img width=293 height=265 id="Picture 23"
+src="Least_cost_path_files/image014.png"></p>
+
+<p class=MsoNormal>The CostDirection layer shows, for each pixel in the extent,
+the direction to take to follow the least cost path back to Kidney Pond.</p>
+
+<p class=MsoNormal><img width=292 height=264 id="Picture 24"
+src="Least_cost_path_files/image015.png"></p>
+
+<p class=MsoNormal>It is the cost direction layer that is used in the final
+step to find the least cost path from Kidney Pond to Russell Pond.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc295220021">Step 7:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Compute the Least Cost Path</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In ArcToolbox, open <b>Spatial Analyst Tools &gt;&gt;
+Distance &gt;&gt; Cost Path</b> tool.</p>
+
+<p class=Instructions-GIS>In the Cost Path tool, set the feature destination to
+<b>Russel_Pond</b>.</p>
+
+<p class=Instructions-GIS>Set the Input cost distance raster to <b>CostDistance</b></p>
+
+<p class=Instructions-GIS>Set the Input cost backlink layer to <b>CostDirection</b>.</p>
+
+<p class=Instructions-GIS>Set the output raster to <b>Data.gdb\LeastCostPath </b>in
+your project folder.</p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the analysis.</p>
+
+<p class=Instructions-GIS><img width=400 height=287 id="Picture 28"
+src="Least_cost_path_files/image016.png"></p>
+
+<p class=MsoNormal>The LeastCostPath layer is a raster layer. It is close to a
+Euclidean distance except for a couple minor detours around wetlands (which
+were assigned a relatively high cost in this analysis).</p>
+
+<p class=MsoNormal><img width=232 height=208 id="Picture 26"
+src="Least_cost_path_files/image017.jpg"></p>
+
+<p class=MsoNormal>To create a more aesthetically pleasing feature, you can
+convert the raster path to a vector path.</p>
+
+<p class=Instructions-GIS>In ArcToolbox, open <b>Conversion Tools &gt;&gt; From
+Raster &gt;&gt; Raster to Polyline</b> tool.</p>
+
+<p class=Instructions-GIS>Set the field parameters as follows:</p>
+
+<p class=Instructions-GIS style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Input raster: <b>LeastCostPath</b></p>
+
+<p class=Instructions-GIS style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Field: <b>Value</b></p>
+
+<p class=Instructions-GIS style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Output polyline features: …<b>\Least_cost_path\Data.gdb\path</b></p>
+
+<p class=Instructions-GIS style='margin-top:0in;margin-right:0in;margin-bottom:
+0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Background value: <b>NODATA</b></p>
+
+<p class=MsoNormal><img width=326 height=267 id="Picture 29"
+src="Least_cost_path_files/image018.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to convert the raster.</p>
+
+<p class=MsoNormal>The new feature is a vector layer. </p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=248 height=227 id="Picture 30"
+src="Least_cost_path_files/image019.png"></p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+width=76 height=27 id="Picture 6" src="Least_cost_path_files/image020.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on  8/22/2013
+</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1394 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Exploring a GIS map</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#365F91;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#365F91;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center'><b><span
+style='font-size:16.0pt;color:#365F91'>Exploring a GIS map</span></b></p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:10.0pt;color:black'>Create a folder
+  called <b>Explore_GIS_Map</b>. On DIA 322 computers, you might want to create
+  this folder in your user Documents folder (e.g. C:\Users\jdoe\Documents\Explore_GIS_Map).
+  On the DIA 222 computers, you might want to create this folder under the D:
+  drive under D:\<i>course number</i>\<i>user name</i>\ (e.g. D:/ES212/jdoe/Explore_GIS_Map).</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><a href="Exploring_a_GIS%20map_files/Map.zip"><span
+  style='font-size:10.0pt'>Download the data</span></a><span style='font-size:
+  10.0pt;color:black'> for this exercise and </span><a
+  href="Opening_zip_files.htm"><span style='font-size:10.0pt'>extract the
+  contents</span></a><span style='font-size:10.0pt;color:black'> of the <b>Map.zip</b>
+  file to your newly created <b>Explore_GIS_Map</b> directory.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this exercise, you will explore an ArcGIS map document.
+You will be introduced to the following tools and concepts: </p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Helvetica",sans-serif'>adding data,</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-family:"Helvetica",sans-serif'>symbolizing
+features,</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>navigation tools, </p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>data view vs. layout view, </p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>layer properties, </p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>identify tool,</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>measurement tool.</p>
+
+<p class=MsoToc1><a
+href="#_Toc286670375"></a><a name="_Toc286667007"></a></p>
+
+<div class=MsoToc1 align=center style='text-align:center'><a
+href="#_Toc286670375"><span style='font-size:10.0pt;line-height:115%;
+color:black;text-decoration:none'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></a></div>
+
+<p class=MsoToc1></p>
+
+<p class=MsoTocHeading>Contents</p>
+
+<p class=MsoToc1><a href="#_Toc289327443">Step 1: Opening an ArcMap document<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289327444">Step 2: Creating a folder connection<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289327445">Step 3: Adding data<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289327446">Step 4: Changing a layer’s symbology<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289327447">Step 5: Introduction to ArcCatalog<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289327448">Step 6: More on symbolizing features<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289327449">Step 7: Getting attribute information
+from map features<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>12</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289327450">Step 8: Measuring areas and distances<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>15</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289327451">Step 9: Data View vs. Layout View<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>17</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=Stepheader><a name="_Toc286670375"></a><a name="_Toc286147277"></a></p>
+
+<div class=Stepheader align=center style='text-align:center'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327443"></a><a name="_Toc286670376">Step
+1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Opening an ArcMap document</a></p>
+
+</div>
+
+<p class=Instructions>Click on the <b>Windows</b> icon <img width=20 height=19
+id="Picture 43" src="Exploring_a_GIS_map_files/image001.png"> in the lower
+left-hand corner of your desktop, click on <b>All Programs</b>, expend the <b>ArcGIS</b>
+folder and click on <b>ArcMap</b>.</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=197 height=308 id="Picture 1"
+src="Exploring_a_GIS_map_files/image002.png"></p>
+
+<p class=Instructions>In the <b>ArcMap – Getting Started</b> window, click on <b>Browse
+for more</b>. </p>
+
+<p class=Instructions><img width=301 height=209 id="Picture 66"
+src="Exploring_a_GIS_map_files/image003.png"></p>
+
+<p class=MsoNormal>A file management window will pop-up. </p>
+
+<p class=Instructions>Navigate to your data folder (D:\es212\jdoe\Explore_GIS_map\)
+and open <b>Map.mxd</b>.</p>
+
+<p class=MsoNormal>Note: if the .mxd extension is not displayed, you can
+identify an MXD document by its icon <img width=19 height=19 id="Picture 11"
+src="Exploring_a_GIS_map_files/image004.png">. </p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=415 height=307 id="Picture 44"
+src="Exploring_a_GIS_map_files/image005.png"></p>
+
+<p class=MsoNormal>The file <i>Map.mxd</i> is a map document that contains
+information about the different data layers that are to be drawn in ArcMap and
+the symbology to be used to represent those features. These elements will be
+covered in subsequent sections.</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'>
+
+<table cellpadding=0 cellspacing=0 align=left>
+ <tr>
+  <td width=4 height=0></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=381 height=467 src="Exploring_a_GIS_map_files/image006.png"></td>
+ </tr>
+</table>
+
+<br clear=ALL>
+</p>
+
+<p class=MsoNormal>The different map elements used to build the map are listed
+in the <b>Table of contents</b> (<b>TOC</b>). The TOC, like many other ArcMap
+elements, can be undocked from the window by clicking on the gray horizontal
+bar and dragging it away from the window. It can be re-docked by dragging it
+back inside the ArcMap window; in doing so, you will notice four blue arrows <img
+width=16 height=19 id="Picture 49" src="Exploring_a_GIS_map_files/image007.jpg">.
+These arrows point at locations where the TOC element can be docked (just
+drag-and-drop the element on top of the arrow).</p>
+
+<object width="378" height="376">
+<param name="movie" value="Undock_TOC.swf">
+<embed src="Undock_TOC.swf" width="347" height="477" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</embed>
+</object>
+
+<p class=MsoNormal>Toolbars can also be docked/undocked. To undock a toolbar,
+click on the toolbar’s vertical gray bar to the left of the toolbar and drag
+the toolbar to its desired location.</p>
+
+<p class=MsoNormal><img width=86 height=67 id="Picture 26"
+src="Exploring_a_GIS_map_files/image008.png"></p>
+
+<p class=MsoNormal>One toolbar that you should become intimately familiar with
+is the <b>Tools toolbar</b>. This has most of the functions you will be using
+when exploring a map in a Map Display environment.</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=562 height=95 id="Picture 29"
+src="Exploring_a_GIS_map_files/image009.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327444"></a><a name="_Toc286670377"><span
+style='color:#BFBFBF'>Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Creating a folder connection</a></p>
+
+</div>
+
+<p class=MsoNormal>GIS data come in many different file formats and data models
+(i.e. raster or vector), however they are all added to an ArcMap document in a
+similar way.</p>
+
+<p class=Instructions>In the ArcMap document, click on the <b>Add Data</b> <img
+width=19 height=20 id="Picture 50" src="Exploring_a_GIS_map_files/image010.png"> button.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span><img
+width=335 height=241 id="Picture 52"
+src="Exploring_a_GIS_map_files/image011.png"></p>
+
+<p class=MsoNormal>The <b>Add Data</b> file navigation window is not the
+typical Windows file browser you may be familiar with. The <b>Add Data</b>
+window will <i>only</i> display data files that ArcMap recognizes as a GIS data
+file. </p>
+
+<p class=MsoNormal>If this is the first time that ArcMap is opened under your
+login account, you will also note that drive letters are not directly accessible
+from the <b>Look in</b> pull-down menu. </p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><img width=389 height=254 id="Picture 54"
+src="Exploring_a_GIS_map_files/image012.png"></p>
+
+<p class=MsoNormal>ArcMap requires that you make “connections” to folders,
+network, databases or internet map services before accessing them. </p>
+
+<p class=Instructions>Click on the <b>Connect To Folder</b> button <img
+width=20 height=17 id="Picture 56" src="Exploring_a_GIS_map_files/image013.png">.</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><img width=214 height=125 id="Picture 55"
+src="Exploring_a_GIS_map_files/image014.png"></p>
+
+<p class=Instructions>In the Connect to Folder window, navigate to your data
+folder, for example <b>Computer &gt;&gt; (D:) ES212 &gt;&gt; jdoe</b> <b>&gt;&gt;</b>
+<b>Explore_GIS_Map</b>. (If your file is saved in your Documents folder, the
+path may be <b>Computer &gt;&gt; (C:) &gt;&gt; Users &gt;&gt; jdoe &gt;&gt; Documents
+&gt;&gt; Explore_GIS_map</b> where jdoe is your login name).</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;font-family:"Helvetica",sans-serif;
+color:black'><img width=241 height=253 id="Picture 78"
+src="Exploring_a_GIS_map_files/image015.png"></span></p>
+
+<p class=Instructions>Click <b>OK</b>.</p>
+
+<p class=Instructions>In the <b>Add Data</b> window, expand the <b>Look In</b>
+pull-down menu. You should now see your project directory listed as a
+connection (you may need to expand the Folder Connections to see your project
+folder).</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><img width=352 height=277 id="Picture 81"
+src="Exploring_a_GIS_map_files/image016.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327445"></a><a name="_Toc286670378"><span
+style='color:#BFBFBF'>Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Adding data</a></p>
+
+</div>
+
+<p class=MsoNormal>Now that you have a folder connection, you can add data from
+your project directory.</p>
+
+<p class=Instructions>In the <b>Add Data</b> window, navigate to your project
+directory and select <b>Hillshade10sm.jp2</b>. </p>
+
+<p class=Instructions><img width=271 height=122 id="Picture 82"
+src="Exploring_a_GIS_map_files/image017.png"></p>
+
+<p class=Instructions>Click <b>Add</b> to add the data to ArcMap.</p>
+
+<p class=MsoNormal>This layer is a hillshade of Maine’s topographic features.
+The data is in a raster format.</p>
+
+<p class=MsoNormal><img width=255 height=362 id="Picture 62"
+src="Exploring_a_GIS_map_files/image018.png"></p>
+
+<p class=MsoNormal>You’ll note that the hillshade layer is placed at the <i>bottom</i>
+of the TOC layers list.</p>
+
+<p class=MsoNormal><img width=218 height=305 id="Picture 63"
+src="Exploring_a_GIS_map_files/image019.png"></p>
+
+<p class=MsoNormal>At this point, the Map Display window does not display
+anything new (except for a black background). ArcMap draws <i>each</i> layer
+following the <b>order</b> listed in the TOC. The bottom layer is drawn first
+(Hillshade10sm), then the second layer from the bottom of the TOC (Counties) is
+drawn, then the next layer above that is drawn, etc…</p>
+
+<p class=MsoNormal>There are many different strategies that can be adopted to
+enable simultaneous display of overlapping layers. We will explore one such method
+next.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327446"></a><a name="_Toc286670379"><span
+style='color:#BFBFBF'>Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Changing a layer’s symbology</a></p>
+
+</div>
+
+<p class=MsoNormal>You will modify the way the County features are displayed in
+the map. Instead of having the county polygons filled in grey, you will make
+them invisible with just the outline boundaries showing. This will help us see
+the underlying hillshade.</p>
+
+<p class=Instructions><b>Right-click</b> on the <b>Counties</b> layer in the
+TOC and select <b>Properties</b> (alternatively, you can <b>double-click</b> on
+the layer to access the Layer Properties window).</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=278 height=506 id="Picture 64"
+src="Exploring_a_GIS_map_files/image020.png"></p>
+
+<p class=Instructions>In the <b>Layer Properties</b> window, select the <b>Symbology</b>
+tab.</p>
+
+<p class=MsoNormal><img width=189 height=87 id="Picture 65"
+src="Exploring_a_GIS_map_files/image021.png"></p>
+
+<p class=Instructions>Click on the gray symbol. </p>
+
+<p class=MsoNormal><img width=228 height=86 id="Picture 67"
+src="Exploring_a_GIS_map_files/image022.png"></p>
+
+<p class=MsoNormal>The above action should open the <b>Symbol Selector</b>
+window.</p>
+
+<p class=Instructions>In the <b>Symbol Selector</b> window, <b>click</b> on the
+<b>Fill Color</b> symbol and select <b>No Color</b>.</p>
+
+<p class=Instructions><img width=384 height=150 id="Picture 33"
+src="Exploring_a_GIS_map_files/image023.png"></p>
+
+<p class=Instructions>Next, click the <b>Edit Symbol</b> button. </p>
+
+<p class=Instructions><img width=178 height=82 id="Picture 71"
+src="Exploring_a_GIS_map_files/image024.png"></p>
+
+<p class=MsoNormal>This will open the <b>Symbol Property Editor</b> window.</p>
+
+<p class=Instructions>In the <b>Symbol Property Editor </b>window click on the <b>Outline</b>
+button.</p>
+
+<p class=Instructions><img width=152 height=80 id="Picture 72"
+src="Exploring_a_GIS_map_files/image025.png"></p>
+
+<p class=MsoNormal>This will open the <b>Symbol Selector</b> window.</p>
+
+<p class=Instructions>In the <b>Symbol Selector </b>window<b> </b>look for and
+select the<b> Boundary County</b> symbol from the list of symbols (you may have
+to scroll down a line or two to find it).</p>
+
+<p class=Instructions><img width=291 height=403 id="Picture 74"
+src="Exploring_a_GIS_map_files/image026.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Symbol Selector</b>
+window.</p>
+
+<p class=Instructions>In the <b>Symbol Property</b> <b>Editor</b> window,
+change the <b>Outline Width</b> to <b>2</b>.</p>
+
+<p class=Instructions><img width=248 height=251 id="Picture 75"
+src="Exploring_a_GIS_map_files/image027.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Symbol Property Editor</b>
+window.</p>
+
+<p class=Instructions>Click <b>OK</b> again to close the <b>Symbol Selector</b>
+window. </p>
+
+<p class=MsoNoSpacing>This should bring you back to the <b>Layer Properties</b>
+window.</p>
+
+<p class=Instructions><img width=326 height=257 id="Picture 76"
+src="Exploring_a_GIS_map_files/image028.jpg"></p>
+
+<p class=Instructions>&nbsp;</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:#0070C0'>Click
+<b>OK</b> to close <b>the Layer Properties</b> window.</span></p>
+
+<p class=MsoNormal>At this point the symbology for the Counties layer will have
+changed. You should now see the underlying hillshade map.</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=258 height=368 id="Picture 77"
+src="Exploring_a_GIS_map_files/image029.png"></p>
+
+<p class=MsoNormal>The black background is too distracting. We will modify the
+hillshade symbology.</p>
+
+<p class=Instructions><b>Right-click</b> on the <b>Hillshade10sm.jp2</b> layer
+in the <b>TOC</b> and select <b>Properties</b>. Remember that alternatively,
+you can <b>double-click</b> on the layer to access the Layer Properties window.</p>
+
+<p class=MsoNormal>In the <b>Layer Properties</b> window, select the <b>Symbology</b>
+tab.</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=180 height=94 id="Picture 36"
+src="Exploring_a_GIS_map_files/image030.png"></p>
+
+<p class=Instructions>Check the box next to <b>Display Background</b> <b>Value</b>
+and make sure that the value is set to 0 and that the <b>as</b> symbol is set
+to <b>No Color</b> (this should be the default).</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=417 height=104 id="Picture 79"
+src="Exploring_a_GIS_map_files/image031.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Layer Properties</b>
+window.</p>
+
+<p class=MsoNormal>The above step instructs ArcMap not to draw pixels in the
+hillshade layer that have a value of 0 (these are the pixels that generated a
+black background).</p>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><img width=252 height=350 id="Picture 80"
+src="Exploring_a_GIS_map_files/image032.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327447"></a><a name="_Toc286670380"><span
+style='color:#BFBFBF'>Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Introduction to ArcCatalog</a></p>
+
+</div>
+
+<p class=MsoNormal>You can manage your project folder from within ArcMap using
+ArcCatalog. ArcCatalog is one of many applications that make up the ArcGIS
+software suite. ArcCatalog can also be accessed as a stand-alone application
+from the Windows <b>Start</b> menu.</p>
+
+<p class=Instructions><b>Click</b> on the <b>Catalog</b> tab that’s docked to
+the right of the Map Display. </p>
+
+<p class=MsoNormal>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=5 height=0></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=193 height=396 src="Exploring_a_GIS_map_files/image033.png"></td>
+ </tr>
+</table>
+
+<br clear=ALL>
+The catalog window will expand. This window can be docked/undocked just like
+the TOC. But this can only be done if it is “pinned”. You pin a window by
+clicking on the <b>pin</b> icon <img width=12 height=11 id="Picture 88"
+src="Exploring_a_GIS_map_files/image034.png"> in the upper right-hand side of
+the catalog window. If the window is pinned, the pin icon will be vertical <img
+width=12 height=13 id="Picture 89" src="Exploring_a_GIS_map_files/image035.png">.
+If the window is unpinned, it will be horizontal <img width=12 height=11
+id="Picture 90" src="Exploring_a_GIS_map_files/image034.png"> meaning that if
+you move away from the window (or press the ESC key), that window will snap
+back to a tab on the left-hand or right-hand side of the ArcMap display. </p>
+
+<p class=MsoNormal><i>Note that the TOC is, by default, pinned, however, you
+can unpin the TOC to have it snap back to a tab to maximize the map display
+window.</i></p>
+
+<p class=Instructions><img width=332 height=339 id="Picture 87"
+src="Exploring_a_GIS_map_files/image036.png"></p>
+
+<p class=Instructions>In the <b>Catalog</b> window, navigate to your map project
+folder and expand the <b>Data</b> geodatabase <img width=21 height=14
+id="Picture 92" src="Exploring_a_GIS_map_files/image037.jpg">.</p>
+
+<p class=Instructions><img width=294 height=300 id="Picture 83"
+src="Exploring_a_GIS_map_files/image038.png"></p>
+
+<p class=MsoNormal>A geodatabase is a data storage system unique to ArcGIS that
+provides another way to store GIS data.</p>
+
+<p class=Instructions>Expand the Boundaries feature data set <img width=89
+height=16 id="Picture 94" src="Exploring_a_GIS_map_files/image039.png">and
+click and drag <b>Parks</b> into the TOC.</p>
+
+<object width="378" height="376">
+<param name="movie" value="Drag_drop_layer_from_arccatalog.swf">
+<embed src="Drag_drop_layer_from_arccatalog.swf" width="347" height="477" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</embed>
+</object>
+
+<p class=MsoNormal>Dragging and dropping is yet another way to add data to your
+map document (recall that the other method of adding data is to click on the <b>Add
+Data</b> <img width=19 height=20 id="Picture 95"
+src="Exploring_a_GIS_map_files/image010.png">button).</p>
+
+<p class=Instructions>Follow the same aforementioned step to add <b>Places</b>
+and <b>Waterville </b>features.</p>
+
+<p class=MsoNormal><img width=304 height=157 id="Picture 96"
+src="Exploring_a_GIS_map_files/image040.png"></p>
+
+<p class=Instructions>Rearrange the layers in the TOC such that they match the
+following order from bottom to top: Hillshade10sm, Parks, Places, Waterville,
+Counties, Roads, Railroad, Cities.</p>
+
+<p class=MsoNormal><img width=225 height=425 id="Picture 97"
+src="Exploring_a_GIS_map_files/image041.png"> </p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327448"></a><a name="_Toc286670381"><span
+style='color:#BFBFBF'>Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>More on symbolizing features</a></p>
+
+</div>
+
+<p class=MsoNormal>Next, you will change the symbology for the Parks layer.</p>
+
+<p class=Instructions><b>Right-click</b> the <b>Parks</b> layer in the TOC and
+select <b>Properties</b>. </p>
+
+<p class=Instructions>Select the <b>Symbology</b> tab.</p>
+
+<p class=Instructions>Click on the <b>Symbol</b> color (your default color may
+be different from the one in this tutorial).</p>
+
+<p class=MsoNormal><img width=287 height=135 id="Picture 98"
+src="Exploring_a_GIS_map_files/image042.png"></p>
+
+<p class=Instructions>Select the <b>Green</b> symbol in the <b>Symbol Selector</b>
+window.</p>
+
+<p class=MsoNormal><img width=227 height=178 id="Picture 99"
+src="Exploring_a_GIS_map_files/image043.png"></p>
+
+<p class=Instructions>Click on the <b>Outline Color</b> symbol <img width=122
+height=25 id="Picture 100" src="Exploring_a_GIS_map_files/image044.png"> and
+select <b>No Color</b>.</p>
+
+<p class=Instructions><img width=224 height=359 id="Picture 101"
+src="Exploring_a_GIS_map_files/image045.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Symbol</b> Selector
+window.</p>
+
+<p class=Instructions>In the <b>Layer Properties</b> window, click on the <b>Display</b>
+tab.</p>
+
+<p class=Instructions><img width=209 height=82 id="Picture 102"
+src="Exploring_a_GIS_map_files/image046.png"></p>
+
+<p class=Instructions>In the transparent value box, type <b>50</b>. </p>
+
+<p class=Instructions><img width=247 height=78 id="Picture 103"
+src="Exploring_a_GIS_map_files/image047.png"></p>
+
+<p class=MsoNormal>This makes the Parks’ features 50% transparent. It will
+allow the background hillshade to show through the Parks polygons.</p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Layer Properties</b>
+window.</p>
+
+<p class=Instructions>Now it’s your turn to change the symbologies for the <b>Places</b>
+and <b>Waterville</b> layers using the techniques outlined in this step 3. You
+will set the <b>Waterville</b> symbol to <b>Yellow</b> and the <b>Places</b>
+symbol to <b>Rose</b> with <b>no outline color</b>.</p>
+
+<p class=Instructions><img width=216 height=418 id="Picture 104"
+src="Exploring_a_GIS_map_files/image048.png"></p>
+
+<p class=MsoNormal>So far, you have symbolized all features within a layer the
+same way (e.g. all <b>Places</b> features are symbolized using the same color).
+There may be instances when you might want certain layers to be symbolized
+differently based on an attribute value.</p>
+
+<p class=Instructions><b>Right-click</b> the <b>Cities</b> point layer and
+select <b>Open Attribute Table</b>.</p>
+
+<p class=MsoNormal><img width=312 height=193 id="Picture 105"
+src="Exploring_a_GIS_map_files/image049.png"></p>
+
+<p class=MsoNormal>The Attribute Table lists all of the layer’s attributes and
+associated values.</p>
+
+<p class=MsoNormal><img width=356 height=206 id="Picture 106"
+src="Exploring_a_GIS_map_files/image050.png"></p>
+
+<p class=Instructions>In the <b>Table</b> window, scroll to the right until you
+find the <b>POP2000</b> field. </p>
+
+<p class=Instructions><img width=113 height=192 id="Picture 107"
+src="Exploring_a_GIS_map_files/image051.png"></p>
+
+<p class=MsoNormal>This column lists the year 2000 population count for each
+point feature in the Cities layer. You will symbolize the points based on the
+city’s population size.</p>
+
+<p class=Instructions><span class=InstructionsChar><b>Close</b></span> the <b>Table</b>
+window.</p>
+
+<p class=Instructions><b>Right-click</b> the <b>Cities</b> layer and access its
+<b>Properties</b> window.</p>
+
+<p class=MsoNormal>The 2000 population count field is a numeric (quantity)
+field. We will therefore use the <b>Quantities</b> scheme in the Symbology tab.</p>
+
+<p class=Instructions>In the <b>Layer Properties</b> window, click the <b>Symbology</b>
+tab (if not already active) and select <b>Quantities</b> from the list of
+schemes in the <b>Show</b> box.</p>
+
+<p class=Instructions>Select <b>Graduated symbols</b> under the <b>Quantities</b>
+scheme.</p>
+
+<p class=Instructions><img width=341 height=282 id="Picture 108"
+src="Exploring_a_GIS_map_files/image052.png"></p>
+
+<p class=Instructions>In the <b>Value</b> field, select the <b>POP2000</b>
+attribute. </p>
+
+<p class=Instructions><img width=295 height=128 id="Picture 110"
+src="Exploring_a_GIS_map_files/image053.png"></p>
+
+<p class=Instructions>Click the <b>Template</b> symbol and select an <b>orange</b>
+color (this color will be assigned to all points).</p>
+
+<p class=Instructions><img width=136 height=98 id="Picture 111"
+src="Exploring_a_GIS_map_files/image054.png"></p>
+
+<p class=Instructions>Click the <b>Display</b> tab and set the <b>transparency</b>
+to <b>40 %</b>.</p>
+
+<p class=Instructions><img width=234 height=74 id="Picture 112"
+src="Exploring_a_GIS_map_files/image055.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Layer Properties</b>
+window.</p>
+
+<p class=MsoNormal><img width=334 height=396 id="Picture 113"
+src="Exploring_a_GIS_map_files/image056.png"></p>
+
+<p class=MsoNormal>Symbolizing features can be time consuming, it can therefore
+be desirable at times to save the symbology information to a layer file (.lyr)
+for use in another map document. Note that the symbology you define in an
+ArcMap session is only stored in the Map document (the .mxd file) and not the
+layer’s original data source.</p>
+
+<p class=MsoNormal>You will use an existing layer file to symbolize the Roads
+layer.</p>
+
+<p class=Instructions>In the TOC, <b>right-click</b> on the <b>Roads</b> layer
+and open its <b>Properties</b> window.</p>
+
+<p class=Instructions>In the Layer Properties’ <b>Symbology</b> tab, click on <b>Import</b>.</p>
+
+<p class=Instructions>In the Import Symbology window, select the <b>Open file</b>
+icon. </p>
+
+<p class=Instructions>In the file manager window, select <b>Roads.lyr</b>
+located inside your map project folder.</p>
+
+<p class=Instructions>
+
+<table cellpadding=0 cellspacing=0>
+ <tr>
+  <td width=5 height=0></td>
+ </tr>
+ <tr>
+  <td></td>
+  <td><img width=355 height=297 src="Exploring_a_GIS_map_files/image057.png"></td>
+ </tr>
+</table>
+
+<br clear=ALL>
+Click on the <b>Add</b> button.</p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Import Symbology</b>
+window.</p>
+
+<p class=MsoNormal>A window will pop up asking for the Roads’ attribute that
+will be used to identify which road classes will be symbolized with the
+pre-defined symbology scheme that is stored in the layer file (Roads.lyr).</p>
+
+<p class=Instructions>Make sure that <b>CLASS</b> is selected from the
+pull-down menu.</p>
+
+<p class=MsoNormal><img width=368 height=189 id="Picture 121"
+src="Exploring_a_GIS_map_files/image058.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the<b> Import Symbology Matching
+Dialog</b>.</p>
+
+<p class=Instructions>Click <b>OK</b> to close the <b>Layer Properties</b>
+window.</p>
+
+<p class=Instructions><img width=233 height=320 id="Picture 122"
+src="Exploring_a_GIS_map_files/image059.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327449"></a><a name="_Toc286670382"><span
+style='color:#BFBFBF'>Step 7:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Getting attribute information from map features</a></p>
+
+</div>
+
+<p class=Instructions>In the <b>Tools</b> toolbar, click on the <b>Identify</b>
+tool <img width=21 height=16 id="Picture 124"
+src="Exploring_a_GIS_map_files/image060.png">.</p>
+
+<p class=MsoNormal><img width=572 height=115 id="Picture 123"
+src="Exploring_a_GIS_map_files/image061.png"></p>
+
+<p class=MsoNormal>The cursor changes to one with a letter ‘<b>i’</b> icon. </p>
+
+<p class=Instructions><b>Click</b> on the <b>Baxter State Park</b> green
+polygon which is the northern most park feature in the map.</p>
+
+<p class=MsoNormal><img width=236 height=292 id="Picture 12"
+src="Exploring_a_GIS_map_files/image062.png"></p>
+
+<p class=MsoNormal>The above step should open an Identify window. By default,
+the Identify window will display feature information for the top most layer in
+the TOC. You can have ArcMap display feature information for <i>one</i> or <i>all</i>
+layers in the map document.</p>
+
+<p class=Instructions>In the <b>Identify</b> window, select <b>Visible layers</b>
+from the <b>Identify from</b> pull down menu.</p>
+
+<p class=MsoNormal><img width=358 height=139 id="Picture 13"
+src="Exploring_a_GIS_map_files/image063.png"></p>
+
+<p class=Instructions><b>Click</b> on the <b>Baxter State Park</b> polygon  feature
+again.</p>
+
+<p class=MsoNormal>The Identify window returns information for three visible
+layers that have features at the location just selected with the identify
+pointer. For each layer, information about the selected feature (or pixel)
+appears just below the layer name.</p>
+
+<p class=MsoNormal><img width=381 height=201 id="Picture 14"
+src="Exploring_a_GIS_map_files/image064.png"></p>
+
+<p class=Instructions><b>Click</b> on <b>Baxter State Park</b> (under the Parks
+layer) in the <b>Identify</b> window.</p>
+
+<p class=MsoNormal>All attribute information associated with the park feature
+previously selected is displayed in the Identify window’s bottom pane. The
+information displayed is pulled from the layer’s attribute table.</p>
+
+<p class=MsoNormal><img width=345 height=381 id="Picture 15"
+src="Exploring_a_GIS_map_files/image065.png"></p>
+
+<p class=MsoNormal>You can also extract information for <i>multiple</i>
+features in a data layer by using the <b>Selection</b> tool.  Selected features
+can be exported to new layers. </p>
+
+<p class=Instructions>In the <b>TOC</b>, select the <b>List By Selection</b>
+icon located near the top of the TOC’s window.</p>
+
+<p class=MsoNormal><img width=252 height=133 id="Picture 16"
+src="Exploring_a_GIS_map_files/image066.png"></p>
+
+<p class=MsoNormal>Notice how the TOC’s content changes. This is where you
+tell  ArcMap which features are to be selected in the map display. This is a
+very useful option when you have many layers overlapping one another but you
+only want to select features for a single layer.</p>
+
+<p class=Instructions>For <i>all</i> but the <b>Parks</b> layer, make the
+layers (under the Selectable section) non-selectable by clicking on the left-most
+icon next to the layer’s name. </p>
+
+<p class=MsoNormal>This will place the un-selectable layers under the Not
+Selectable section of the TOC. Make sure that the <i>Parks</i> layer is the <i>only</i>
+selectable layer.</p>
+
+<p class=MsoNormal><img width=368 height=297 id="Picture 18"
+src="Exploring_a_GIS_map_files/image067.png"> </p>
+
+<p class=Instructions>In the <b>Map display</b> window, <b>zoom in</b> (using
+the zoom tool <img width=27 height=22 id="Picture 70"
+src="Exploring_a_GIS_map_files/image068.png">) on the down-east section of
+Maine (around the cluster of islands in Hancock County inside the orange box in
+the following figure). </p>
+
+<p class=MsoNormal><img width=150 height=224 id="Picture 19"
+src="Exploring_a_GIS_map_files/image069.png"></p>
+
+<p class=MsoNormal>Note that if you want to pan around the map, you can use the
+<b>pan</b> tool or <b>click and hold</b> the <b>middle mouse button</b> then
+move around your map.</p>
+
+<p class=Instructions>Expand the <b>Select Features</b> icon in the <b>Tools</b>
+toolbar and select <b>Select by Lasso</b>.</p>
+
+<p class=MsoNormal><img width=245 height=206 id="Picture 20"
+src="Exploring_a_GIS_map_files/image070.png"></p>
+
+<p class=MsoNormal>The lasso option allows you to select areas on the map using
+a freehand.</p>
+
+<p class=Instructions>With the selection tool selected, <b>delineate</b> an
+area that encompasses the cluster of islands as shown in the following figure.</p>
+
+<p class=MsoNormal><img width=324 height=285 id="Picture 21"
+src="Exploring_a_GIS_map_files/image071.png"></p>
+
+<p class=MsoNormal>When you are done drawing the “lasso”, you’ll notice
+polygons highlighted in cyan. These are the selected park features (remember
+that you instructed ArcMap to only select features belonging to the Parks layer
+and no other layers in the map document). </p>
+
+<p class=MsoNormal><i>Note that the number of features selected on your map may
+be different from the one shown in the graphic below if your selection lasso
+encompassed a slightly different area.</i></p>
+
+<p class=MsoNormal><img width=368 height=284 id="Picture 22"
+src="Exploring_a_GIS_map_files/image072.png"></p>
+
+<p class=Instructions>In your TOC, click on the <b>List By Drawing Order</b>
+button (this brings you back to the TOC environment).</p>
+
+<p class=MsoNormal><img width=183 height=71 id="Picture 23"
+src="Exploring_a_GIS_map_files/image073.png"></p>
+
+<p class=Instructions><b>Right-click</b> on the <b>Parks</b> layer in the TOC
+and select <b>Open Attribute Table</b>.</p>
+
+<p class=MsoNormal>The records associated with the selected features should also
+be selected in the table (they are highlighted in cyan).</p>
+
+<p class=Instructions>At the bottom of the table, click on the <b>Show selected
+records</b> button.</p>
+
+<p class=MsoNormal><img width=231 height=104 id="Picture 24"
+src="Exploring_a_GIS_map_files/image074.png"></p>
+
+<p class=MsoNormal>Now, only the selected features are displayed (your number
+of selected features may differ). </p>
+
+<p class=MsoNormal><img width=310 height=218 id="Picture 25"
+src="Exploring_a_GIS_map_files/image075.jpg"></p>
+
+<p class=Instructions><b>Close</b> the attribute table.</p>
+
+<p class=Instructions>Unselect all features by clicking on <b>the Clear
+Selected Features</b> located on the <b>Tools </b>toolbar.</p>
+
+<p class=MsoNormal><img width=210 height=113 id="Picture 27"
+src="Exploring_a_GIS_map_files/image076.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327450"></a><a name="_Toc286670383"><span
+style='color:#BFBFBF'>Step 8:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Measuring areas and distances</a></p>
+
+</div>
+
+<p class=MsoNormal>You can measure <b>distances</b> between features and <b>areas</b>
+of polygons features.</p>
+
+<p class=Instructions>We want to de-clutter the map, so <b>uncheck</b> the <b>Hillshade</b>,
+<b>Places</b> and <b>Waterville</b> layers in the <span class=InstructionsChar>TOC</span>.</p>
+
+<p class=MsoNormal><img width=165 height=440 id="Picture 28"
+src="Exploring_a_GIS_map_files/image077.png"></p>
+
+<p class=Instructions><b>Zoom</b> out to the entire map extent by clicking on
+the <b>Full Extent</b> button of the <b>Tools </b>toolbar.</p>
+
+<p class=MsoNormal><img width=210 height=121 id="Picture 30"
+src="Exploring_a_GIS_map_files/image078.png"></p>
+
+<p class=Instructions>In the <b>Tools</b> toolbar, click on the <b>Measure</b>
+tool.</p>
+
+<p class=Instructions><img width=158 height=114 id="Picture 31"
+src="Exploring_a_GIS_map_files/image079.png"></p>
+
+<p class=MsoNormal>A <b>Measure</b> window will pop-up.</p>
+
+<p class=Instructions>In the <b>Measure</b> window click on the <b>Measure A Feature</b>
+button (the ‘plus’ shaped icon).</p>
+
+<p class=Instructions><img width=167 height=72 id="Picture 32"
+src="Exploring_a_GIS_map_files/image080.png"></p>
+
+<p class=Instructions>In the same <b>Measure</b> window, select the first pull
+down arrow to the right of the <i>Measure A Feature</i> button, then select <b>Area
+&gt;&gt; Acres</b>.</p>
+
+<p class=Instructions><img width=299 height=214 id="Picture 34"
+src="Exploring_a_GIS_map_files/image081.jpg"></p>
+
+<p class=MsoNormal>At this point, all areal measurements will be displayed in
+units of Acres.</p>
+
+<p class=Instructions><b>Click</b> anywhere within the top county (Aroostook)
+boundaries.</p>
+
+<p class=MsoNormal><img width=366 height=302 id="Picture 35"
+src="Exploring_a_GIS_map_files/image082.png"></p>
+
+<p class=MsoNormal>The measure tool should display the polygon’s <b>area</b>
+and <b>perimeter</b> measurements (4,366,453 acres and 757,549 meters
+respectively).</p>
+
+<p class=MsoNormal>You will now use the distance measurement tool to measure
+distances between cities.</p>
+
+<p class=Instructions>In the <b>Measure</b> window, click on the <b>Measure
+Line</b> button.</p>
+
+<p class=MsoNormal><img width=171 height=130 id="Picture 37"
+src="Exploring_a_GIS_map_files/image083.png"></p>
+
+<p class=Instructions><b>Click</b> on one of the <b>cities</b> (e.g. Bangor).
+You will know when your cursor is hovering over a Cities point feature when the
+<b>Cities: Point</b> tip pops up.</p>
+
+<p class=MsoNormal><img width=225 height=145 id="Picture 38"
+src="Exploring_a_GIS_map_files/image084.png"></p>
+
+<p class=Instructions><b>Click</b> on a second city point (e.g. Waterville).</p>
+
+<p class=MsoNormal><img width=383 height=220 id="Picture 39"
+src="Exploring_a_GIS_map_files/image085.png"></p>
+
+<p class=MsoNormal>At this point, the linear distance between both cities will
+display in the Measure window. </p>
+
+<p class=MsoNormal><img width=267 height=177 id="Picture 40"
+src="Exploring_a_GIS_map_files/image086.png"></p>
+
+<p class=MsoNormal>The software defaults to the coordinate system’s units for
+distance measurements. You can change the linear units in the Measure window
+like you previously did for the area units.</p>
+
+<p class=Instructions>Click the <b>ESC</b> key to stop measurements.</p>
+
+<p class=Instructions>Click on the <b>Select Elements</b> button in the Tools
+toolbar to exit measurement mode and revert back to general mode.</p>
+
+<p class=MsoNormal><img width=168 height=105 id="Picture 41"
+src="Exploring_a_GIS_map_files/image087.png"></p>
+
+<p class=Instructions>Zoom back to the map’s full extent by clicking on the <b>Full
+Extent</b> button of the <b>Tools </b>toolbar.</p>
+
+<p class=Instructions><img width=210 height=121 id="Picture 69"
+src="Exploring_a_GIS_map_files/image078.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289327451"></a><a name="_Toc286670384"><span
+style='color:#BFBFBF'>Step 9:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Data View vs. Layout View</a></p>
+
+</div>
+
+<p class=MsoNormal>So far, you have been working in a<b> Data View</b> mode.
+When you want to prepare you map for publishing (e.g. print or PDF export), you
+need to switch your Map display from Data View to<b> Layout View</b> mode.</p>
+
+<p class=Instructions>In the bottom left corner of the <b>Map</b> display
+window, click on the <b>Layout View</b> button.</p>
+
+<p class=MsoNormal><img width=218 height=262 id="Picture 42"
+src="Exploring_a_GIS_map_files/image088.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Your map is now enclosed in a new border. This border
+defines the page’s edge. You can modify the page size in the <b>Page and Print
+Setup</b> option under the <b>File</b> pull-down menu. For this exercise, we
+will stick with the default page dimensions of 8.5” by 11”.</p>
+
+<p class=MsoNormal><img width=523 height=587 id="Picture 46"
+src="Exploring_a_GIS_map_files/image089.png"></p>
+
+<p class=MsoNormal>You may also have noticed the addition of a new toolbar in
+your working environment. This is the <b>Layout</b> toolbar. It should not be
+confused with the <b>Tools</b> toolbar which you have been using so far since
+the tools in the Layout toolbar have completely different functions. The Layout
+toolbar tools only operate on the page layout and not the map content. For
+example, the <b>Zoom In</b> icon <img width=20 height=20 id="Picture 47"
+src="Exploring_a_GIS_map_files/image090.png"> in the Layout toolbar will zoom
+in on the page, but the features within the map still maintain their original
+scale/extent relative to the page layout.</p>
+
+<p class=MsoNormal><img width=424 height=96 id="Picture 45"
+src="Exploring_a_GIS_map_files/image091.png"></p>
+
+<p class=MsoNormal>In layout view, you can add elements such as scale bars and
+legend boxes to the map.</p>
+
+<p class=Instructions>From the <b>Main</b> <b>menu</b> toolbar, click on <b>Insert</b>
+and select <b>Legend</b>.</p>
+
+<p class=MsoNormal><img width=196 height=217 id="Picture 48"
+src="Exploring_a_GIS_map_files/image092.png"></p>
+
+<p class=MsoNormal>A <b>Legend Wizard</b> window will pop up.</p>
+
+<p class=MsoNormal><img width=273 height=240 id="Picture 51"
+src="Exploring_a_GIS_map_files/image093.png"></p>
+
+<p class=MsoNormal>You will keep the default legend settings. </p>
+
+<p class=Instructions>Click on the <b>Next</b> button <b>four</b> times until
+you reach the end of the Wizard window, then click <b>Finish</b> to exit the
+Legend Wizard and add the legend element to your map.</p>
+
+<p class=Instructions>Once the legend element is added to your map, you can
+move it somewhere to the lower right-hand side of the map. If needed, you can
+resize the window so that it doesn’t overlap the map.</p>
+
+<p class=MsoNormal><img width=240 height=316 id="Picture 53"
+src="Exploring_a_GIS_map_files/image094.png"></p>
+
+<p class=MsoNormal>Next, you will add a scale bar.</p>
+
+<p class=Instructions>From the <b>Main</b> <b>menu</b> toolbar, click on <b>Insert</b>
+and select <b>Scale Bar</b>.</p>
+
+<p class=Instructions><img width=193 height=264 id="Picture 57"
+src="Exploring_a_GIS_map_files/image095.png"></p>
+
+<p class=Instructions>In the <b>Scale Bar Selector</b> window, click <b>OK</b>
+to accept the defaults.</p>
+
+<p class=Instructions>Position the scale bar somewhere near the bottom of the
+page layout.</p>
+
+<p class=Instructions>From the same <b>Insert</b> pull-down menu, you will add
+the <b>North Arrow</b>. </p>
+
+<p class=Instructions>Choose any north arrow from the list of options and click
+<b>OK</b> to close the North Arrow Selector window.</p>
+
+<p class=Instructions>Feel free to rearrange the newly added elements in your
+map layout.</p>
+
+<p class=MsoNormal>Finally, you will add a Title to your map. </p>
+
+<p class=Instructions>From the <b>Main</b> <b>menu</b> toolbar, click on <b>Insert</b>
+and select <b>Title</b>.</p>
+
+<p class=Instructions><img width=194 height=123 id="Picture 61"
+src="Exploring_a_GIS_map_files/image096.png"></p>
+
+<p class=Instructions>In the <b>Insert Title</b> window, type <b>The State of</b>
+<b>Maine</b>.</p>
+
+<p class=Instructions><img width=397 height=185 id="Picture 68"
+src="Exploring_a_GIS_map_files/image097.png"></p>
+
+<p class=Instructions>Click <b>OK</b>.</p>
+
+<p class=Instructions>Position the title somewhere near the top of the map.</p>
+
+<p class=Instructions><img width=250 height=325 id="Picture 73"
+src="Exploring_a_GIS_map_files/image098.png"></p>
+
+<p class=Instructions>Feel free to turn different layers on and off to get the
+desired map layout.</p>
+
+<p class=MsoNormal>This ends this exercise.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+width=76 height=27 id="Picture 58" src="Exploring_a_GIS_map_files/image099.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 8/23/2016 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,944 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Tissot Circles</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheaderold, li.Stepheaderold, div.Stepheaderold
+	{mso-style-name:"Step header old";
+	mso-style-link:"Step header old Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderoldChar
+	{mso-style-name:"Step header old Char";
+	mso-style-link:"Step header old";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.apple-style-span
+	{mso-style-name:apple-style-span;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center'><b><span
+style='font-size:16.0pt;color:#365F91'>Tissot’s Indicatrix Circles</span></b></p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0 width="100%"
+ style='width:100.0%;border-collapse:collapse;border:none'>
+ <tr>
+  <td width="100%" valign=top style='width:100.0%;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span>Create a folder called <b>Tissot</b>. On DIA 322 computers, you might
+  want to create this folder in your user Documents folder (e.g.
+  C:\Users\jdoe\Documents\Tissot). On the DIA 222 computers, you might want to create
+  this folder on the D: drive under D:\course number\user name\ (e.g. D:\ES212\jdoe\Tissot).</p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span></span><a href="Tissot_circle_files/Tissot.zip">Download the data</a><span
+  style='color:black'> for this then </span><a href="Opening_zip_files.htm">extract
+  the files</a><span style='color:black'> from the <b>Tissot.zip</b> file to
+  your newly created <b>Tissot</b> directory on the D: drive.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='background:#FDE9D9;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=516 valign=top style='width:387.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=apple-style-span><span style='font-family:"Verdana",sans-serif;
+  color:gray'>In the nineteenth century, Nicolas Auguste Tissot developed a
+  method to analyze map projection distortion.</span></span><span
+  class=apple-converted-space><span style='font-family:"Verdana",sans-serif;
+  color:gray'>&nbsp;</span></span><span style='font-family:"Verdana",sans-serif;
+  color:gray'><br>
+  <br>
+  <span class=apple-style-span>Small circles on the earth's surface are
+  projected using different projection types. The resulting ellipse of
+  distortion, or indicatrix, shows the amount and type of distortion at the
+  location of the ellipse.</span><span class=apple-converted-space>&nbsp;</span><br>
+  <br>
+  <span class=apple-style-span>For example, if an indicatrix is elongated from
+  north to south, shape is correspondingly distorted at that location on the
+  map. The same goes for east-west stretching or oblique stretching. On a
+  conformal map, the indicatrices are all circles, but they vary in size. On an
+  equal area projection, the indicatrices have varying ellipticity, but the
+  same area.</span></span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span class=apple-style-span><span style='font-family:"Verdana",sans-serif;
+  color:gray'>[src: ESRI]</span></span></p>
+  </td>
+  <td width=449 valign=top style='width:336.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=262 height=375 id="Picture 1"
+  src="Tissot_circle_files/image001.png"></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>In this exercise, you will create geodesic circles on a
+spheroid representation of the earth. These circles will be used as a reference
+to evaluate the distortion in shape and area that accompany most projected
+coordinate systems. You will be introduced to the following tools and concept:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>using the buffer tool to create geodesic circles,</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>changing a data frame’s coordinate system,</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>modifying a coordinate system’s parameters,</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>measuring a feature’s surface area and dimensions using the
+measurement tool,</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>ArcGlobe.</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc290474634">Step 1:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Open ArcMap document<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc290474635">Step 2:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Create Tissot Circles<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc290474636">Step 3:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>View the Tissot circles
+in ArcGlobe<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc290474637">Step 4:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>View Tissot’s circles in
+a modified orthogonal projection<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc290474638">Step 5:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>View Tissot’s circles in
+other projections<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc290474639">Step 6:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Explore other
+projections on your own<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>20</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><span
+style='font-size:10.0pt;line-height:115%;color:black'><b>No table of contents
+entries found.</b></span></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc290474634">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open ArcMap document</a></p>
+
+</div>
+
+<p class=Instructions>Navigate to your <b>Tissot</b> project folder and double
+click <b>Tissot.mxd</b>. This should launch Arcmap.</p>
+
+<p class=MsoNormal><img width=382 height=382 id="Picture 2"
+src="Tissot_circle_files/image002.png"></p>
+
+<p class=MsoNormal>The map is composed of a political boundaries layer, a
+graticule layer and a 30° x 30° grid of points. The map is displayed using an <b>orthographic
+projection</b> (as seen from space). However, the data are all in a geographic
+coordinate system. ArcMap allows you to work with different coordinate systems
+within a project. </p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc290474635">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Create Tissot Circles</a></p>
+
+</div>
+
+<p class=MsoNormal>At each point on the map, you will create a circle using the
+buffer tool.</p>
+
+<p class=Instructions>If ArcToolbox is not open, open it by clicking on <img
+width=22 height=20 id="Picture 3" src="Tissot_circle_files/image003.png">.</p>
+
+<p class=Instructions>In <b>ArcToolbox</b>, open <b>Analysis Tools &gt;&gt; Proximity
+&gt;&gt; Buffer</b>. (Note that the Buffer tool can also be accessed from the
+Geoprocessing pull-down menu).</p>
+
+<p class=MsoNormal><img width=192 height=198 id="Picture 4"
+src="Tissot_circle_files/image004.png"></p>
+
+<p class=Instructions>In the Buffer window, select the <b>Points</b> layer as
+the Input feature, name the output<b> Tissot_circle.shp</b> and specify <b>600
+kilometers</b> for liner unit (this is the buffer’s radius value).</p>
+
+<p class=MsoNormal><img width=296 height=333 id="Picture 7"
+src="Tissot_circle_files/image005.png"></p>
+
+<p class=Instructions>In the Buffer window, click on the <b>Environments</b>
+button.</p>
+
+<p class=Instructions><img width=92 height=25 id="Picture 16"
+src="Tissot_circle_files/image006.png"></p>
+
+<p class=Instructions>In the Environment Settings window, expend <b>Output
+Coordinates</b> and select <b>As Specified Below</b> for <i>Output Coordinate
+System</i>.</p>
+
+<p class=MsoNormal><img width=208 height=182 id="Picture 26"
+src="Tissot_circle_files/image007.png"></p>
+
+<p class=MsoNormal>In the next field, click on the little icon <img width=22
+height=24 id="Picture 30" src="Tissot_circle_files/image008.png"> to the right
+of the empty field box.</p>
+
+<p class=Instructions><img width=297 height=181 id="Picture 32"
+src="Tissot_circle_files/image009.png"></p>
+
+<p class=Instructions>Select <b>Geographic Coordinate System &gt;&gt; World
+&gt;&gt; WGS1984</b>.</p>
+
+<p class=Instructions><img width=350 height=274 id="Picture 43"
+src="Tissot_circle_files/image010.png"></p>
+
+<p class=Instructions>Click <b>OK</b>.</p>
+
+<p class=MsoNormal>Buffer creation is sensitive to coordinate systems used. If
+you want to create a perfect circle that covers a relatively large region and avoid
+distortions that can accompany some projected coordinate systems, you should
+always use a geographic coordinate system as the output coordinate. This will
+result in a geodesic circle output.</p>
+
+<p class=Instructions>Click <b>OK</b> to close the Environment Settings window.</p>
+
+<p class=Instructions>Click <b>OK</b> to start the Buffering process.</p>
+
+<p class=MsoNormal>Once the buffer process is complete, a new layer called
+Tissot_circle will be added to your map.</p>
+
+<p class=MsoNormal><img width=382 height=383 id="Picture 8"
+src="Tissot_circle_files/image011.png"></p>
+
+<p class=Instructions><b>Save</b> the map document by clicking on the <b>Save</b>
+button <img width=18 height=16 id="Picture 9"
+src="Tissot_circle_files/image012.png">.</p>
+
+<p class=MsoNormal>Next, we take a closer look at the Tissot circles on a 3D
+globe</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc290474636">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>View the Tissot circles in ArcGlobe</a></p>
+
+</div>
+
+<p class=Instructions>On your Windows desktop, click on the <b>Start</b>
+button, go to <b>All Programs &gt;&gt; ArcGIS</b> and click on <b>ArcGlobe</b>.</p>
+
+<p class=MsoNormal>ArcGlobe is similar to Google Earth. It allows you to
+display all ArcGIS layers on a 3D globe.</p>
+
+<p class=Instructions>If an <b>ArcGlobe - Getting Started</b> window pops up,
+click <b>OK</b> to accept the default settings.</p>
+
+<p class=Instructions>Click the <b>Add Data</b> button <img width=21 height=17
+id="Picture 10" src="Tissot_circle_files/image013.png">.</p>
+
+<p class=MsoNormal>You first will need to create a folder connection to your
+Tissot workspace.</p>
+
+<p class=Instructions>In the Add Data window, click on the <b>Connect to Folder</b>
+button.</p>
+
+<p class=MsoNormal><img width=505 height=88 id="Picture 5"
+src="Tissot_circle_files/image014.jpg"></p>
+
+<p class=Instructions>In the Connect to Folder window, navigate to your Tissot folder
+and select it.</p>
+
+<p class=Instructions>In the Add Data window, navigate to your Tissot project
+folder and <b>select</b> <b>Tissot_circle.shp</b>.</p>
+
+<p class=Instructions><img width=201 height=189 id="Picture 11"
+src="Tissot_circle_files/image015.png"></p>
+
+<p class=Instructions>Click <b>Add</b> to close the Add Data window and load
+the Tissot_circle layer.</p>
+
+<p class=Instructions>If an <b>Add Data Wizard</b> window pops up click <b>Finish</b>
+to accept all default settings.</p>
+
+<p class=MsoNormal><img width=281 height=217 id="Picture 12"
+src="Tissot_circle_files/image016.jpg"></p>
+
+<p class=MsoNormal>At this point, you will see the earth globe but you may not
+see the circles. This is because the Tissot_circle layer is hidden behind the
+Imagery layer.</p>
+
+<p class=MsoNormal><img width=246 height=196 id="Picture 13"
+src="Tissot_circle_files/image017.png"></p>
+
+<p class=Instructions>In the TOC, <b>drag</b> the <b>Tissot_circle</b> layer <b>above</b>
+the <b>Imagery </b>layer.</p>
+
+<p class=Instructions><img width=163 height=119 id="Picture 51"
+src="Tissot_circle_files/image018.png"></p>
+
+<p class=MsoNormal>The circles should now appear. Rotate the globe with the
+cursor and note the perfectly round geodesic circles. You should not see any
+distortion in the circles.</p>
+
+<p class=MsoNormal><img width=368 height=363 id="Picture 14"
+src="Tissot_circle_files/image019.png"></p>
+
+<p class=MsoNormal>Next we will check the circle’s surface area. If true
+surface area is preserved, the area of each circle feature should approximate 2<span
+style='font-family:Symbol'>p</span>r² or 2 x 3.14 x 600² = 1,130,973 km².</p>
+
+<p class=Instructions>In <b>ArcGlobe</b>, click on the <b>Measure</b> tool <img
+width=22 height=17 id="Picture 15" src="Tissot_circle_files/image020.png">.</p>
+
+<p class=Instructions><b>Select</b> the <b>Measure a Feature</b> tool.</p>
+
+<p class=Instructions><img width=311 height=204 id="Picture 20"
+src="Tissot_circle_files/image021.png"></p>
+
+<p class=Instructions>Change the area units to square kilometers by clicking on
+the “inverted” triangle and selecting <b>Area &gt;&gt; Kilometers</b>.</p>
+
+<p class=MsoNormal><img width=318 height=150 id="Picture 27"
+src="Tissot_circle_files/image022.jpg"></p>
+
+<p class=Instructions>With the measure tool active, click on any circle except
+those at each pole (the polar circles are not perfect circles since they are
+generated across a boundary extent). </p>
+
+<p class=MsoNormal>The values returned should be approximately 1,130,950 km²,
+very close to the theoretical value of 1,130,973 km².</p>
+
+<p class=MsoNormal><img width=330 height=212 id="Picture 17"
+src="Tissot_circle_files/image023.png"></p>
+
+<p class=MsoNormal>Now that we’ve confirmed that the circles generated in Step
+1 are close-to-perfect geodesic circles, we can move on to the next step.</p>
+
+<p class=Instructions><b>Close</b> <b>ArcGlobe</b>. You do not need to save the
+ArcGlobe project.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc290474637">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>View Tissot’s circles in a modified orthogonal projection</a></p>
+
+</div>
+
+<p class=Instructions>Navigate back to your <b>ArcMap</b> Tissot.mxd project
+(if you closed the ArcMap window in a previous step, re-open it).</p>
+
+<p class=Instructions>To speed up the drawing time, <b>turn off</b> the <b>Points</b>
+and <b>Admin</b> layer for now.</p>
+
+<p class=MsoNormal><img width=175 height=214 id="Picture 21"
+src="Tissot_circle_files/image024.png"></p>
+
+<p class=MsoNormal>You will now study the circles’ shape and size in different
+projections.</p>
+
+<p class=Instructions>In the TOC, <b>right-click</b> on the <b>Layers</b> data
+frame and select <b>Properties</b>.</p>
+
+<p class=Instructions>In the Data Frame Properties window, select the <b>Coordinate
+System</b> tab.</p>
+
+<p class=MsoNormal>Note that the Data frame’s current coordinate system is
+The_World_From_Space which is an Orthographic projected coordinate system. </p>
+
+<p class=MsoNormal><img width=348 height=111 id="Picture 52"
+src="Tissot_circle_files/image025.png"></p>
+
+<p class=MsoNormal>This projection is used to visualize the earth as it would
+be seen from space. But, as you will learn in the following steps, even though
+the circles are displayed as they would be seen from space, Arcmap does not see
+the displayed circles from a 3D perspective but from a planar perspective
+instead.</p>
+
+<p class=Instructions>Close the <b>Data</b> <b>Frame</b> <b>Properties</b>
+window by clicking <b>OK</b>.</p>
+
+<p class=Instructions>If you get the following warning window, click <b>Yes</b>
+to close it.</p>
+
+<p class=MsoNormal><img width=318 height=240 id="Picture 24"
+src="Tissot_circle_files/image026.png"></p>
+
+<p class=Instructions>Click on the <b>Measure</b> tool <img width=22 height=17
+id="Picture 25" src="Tissot_circle_files/image020.png">.</p>
+
+<p class=Instructions><b>Select</b> the <b>Measure a Feature</b> tool.</p>
+
+<p class=Instructions><img width=311 height=204 id="Picture 19"
+src="Tissot_circle_files/image021.png"></p>
+
+<p class=Instructions>Change the area units to square kilometers if the area
+value is in a different unit by clicking on the “inverted” triangle and selecting
+<b>Area &gt;&gt; Kilometers</b>.</p>
+
+<p class=MsoNormal><img width=354 height=168 id="Picture 22"
+src="Tissot_circle_files/image027.jpg"></p>
+
+<p class=Instructions>With the measure tool active, click on any circle other
+than the ones at each pole.</p>
+
+<p class=MsoNormal>You’ll probably note that each circle area is different.
+ArcMap is interpreting the shape of the circles as they are displayed in the
+View window (i.e. the features are now interpreted as different sized
+ellipses). </p>
+
+<p class=MsoNormal><img width=199 height=191 id="Picture 28"
+src="Tissot_circle_files/image028.png"></p>
+
+<p class=MsoNormal>However, the closer the circle feature is to the center of
+the view extent, the closer its area value is to the theoretical area value.
+This is the nature of an orthographic (planar) projection. Features closest to
+the center of the map extent (i.e. the location where the projected plane
+touches the earth surface) suffer less distortion in area, shape and
+orientation than those further away.</p>
+
+<p class=MsoNormal><img width=146 height=273 id="Picture 29"
+src="Tissot_circle_files/image029.png"></p>
+
+<p class=MsoNormal>You can modify the location where the projected plane
+touches the earth surface in the coordinate system properties window.</p>
+
+<p class=Instructions>In the TOC, <b>right-click</b> on <b>Layers</b> data
+frame and select <b>Properties</b>.</p>
+
+<p class=Instructions>In the Data Frame Properties window, select the <b>Coordinate
+System</b> tab.</p>
+
+<p class=Instructions><b>Right-click</b> the <b>The</b> <b>World from Space</b>
+and select <b>Copy and Modify</b>.</p>
+
+<p class=Instructions><img width=431 height=231 id="Picture 53"
+src="Tissot_circle_files/image030.png"></p>
+
+<p class=Instructions>In the Projected Coordinate System Properties window,
+change the <b>Longitude_Of_Center</b> value to <b>-60.0</b> and the <b>Latitude_Of_Center</b>
+value to <b>30.0</b>.</p>
+
+<p class=MsoNormal><img width=417 height=229 id="Picture 31"
+src="Tissot_circle_files/image031.png"></p>
+
+<p class=MsoNormal>The above coordinates should place the center of the map
+extent at one of the Tissot circles.</p>
+
+<p class=Instructions>Click <b>OK</b> to close the Projected Coordinate System
+Properties window.</p>
+
+<p class=Instructions>Click <b>OK</b> to close the Data Frame Properties
+window.</p>
+
+<p class=Instructions>If you get a warning window, click <b>Yes</b> to close
+it.</p>
+
+<p class=Instructions>Click on the <b>Measure</b> tool <img width=22 height=17
+id="Picture 33" src="Tissot_circle_files/image020.png">.</p>
+
+<p class=Instructions>With the measure tool active click on the circle closest
+to the extent center.</p>
+
+<p class=MsoNormal>The areal value should be around 1,128,870 km². This is not
+quite the theoretical value of 1,130,973 km² we were expecting. The reason is
+that distortion increases as soon as you move away from the projection center
+(which is at 60°W and 30°N in our example). Since the circle features are
+polygons and not points, distortion will increase as their sizes increase.</p>
+
+<p class=Instructions><img width=173 height=220 id="Picture 34"
+src="Tissot_circle_files/image032.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc290474638">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>View Tissot’s circles in other projections</a></p>
+
+</div>
+
+<p class=MsoNormal>Now, we will explore other popular projections and observe
+the varying forms of distortions one should anticipate when using those
+projections.</p>
+
+<p class=MsoNormal>The first projection we’ll explore is the popular <b>Mercator</b>
+projection (a cylindrical projection).</p>
+
+<p class=Instructions>In the TOC, <b>right-click</b> on the <b>Layers</b> dataframe
+and select <b>Properties</b>.</p>
+
+<p class=Instructions>Select <b>Projected Coordinate Systems &gt;&gt; World
+&gt;&gt; Mercator (world)</b>.</p>
+
+<p class=MsoNormal><img width=319 height=554 id="Picture 35"
+src="Tissot_circle_files/image033.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the Data Frame Properties
+window.</p>
+
+<p class=Instructions><b>Turn on</b> the <b>Admin</b> layer in the TOC for
+background reference. You might need to zoom to the map’s full extent <img
+width=19 height=19 id="Picture 54" src="Tissot_circle_files/image034.png">.</p>
+
+<p class=MsoNormal>Note the different sized circles. Remember that these are
+the original circles of equal area and shape. This Mercator projection distorts
+area but preserves shape. Using the measure tool, you’ll find that the circles
+vary from 4,568,681 km²  at 60°N to  1,132,654 km² near the equator. The
+Mercator projection does a much better job preserving all features’ geometric
+attributes near the equator</p>
+
+<p class=Instructions><img width=392 height=377 id="Picture 36"
+src="Tissot_circle_files/image035.png"></p>
+
+<p class=MsoNormal>You may have also noticed bands similar in color to the Tissot
+circle’s at the top and bottom of the map extent. These are the polar
+indicatrices. Note their distortion!</p>
+
+<p class=MsoNormal><img width=310 height=395 id="Picture 37"
+src="Tissot_circle_files/image036.png"></p>
+
+<p class=MsoNormal>Let’s explore another projection: <b>Cylindrical Equal Area</b>.</p>
+
+<p class=Instructions>In the TOC, <b>right-click</b> on the <b>Layers</b> data
+frame and select <b>Properties</b>.</p>
+
+<p class=Instructions>Select <b>Projected Coordinate Systems &gt;&gt; World
+&gt;&gt; Cylindrical Equal Area (world)</b>.</p>
+
+<p class=Instructions><img width=267 height=220 id="Picture 38"
+src="Tissot_circle_files/image037.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to accept the changes.</p>
+
+<p class=MsoNormal>Like the Mercator projection, this is a cylindrical
+projection. However, instead of preserving shape like the Mercator projection,
+this one preserves area. Using the measure tool, you’ll find that the circles
+vary from 1,130,120 km²  at 60°N to  1,130,110 km² near the equator. The values
+are less than 0.001% off from the theoretical value. Not bad!</p>
+
+<p class=MsoNormal><img width=431 height=171 id="Picture 39"
+src="Tissot_circle_files/image038.png"></p>
+
+<p class=MsoNormal>However, along with a relatively accurate area
+representation comes some serious distortion in shape.</p>
+
+<p class=Instructions><b>Zoom-in</b> on one of the circles along the 60° line
+of latitude.</p>
+
+<p class=MsoNormal><img width=188 height=122 id="Picture 40"
+src="Tissot_circle_files/image039.png"></p>
+
+<p class=Instructions>Click on the <b>Measure</b> tool <img width=22 height=17
+id="Picture 41" src="Tissot_circle_files/image020.png">.</p>
+
+<p class=Instructions>In the Measure tool window, click on the <b>Measure Line</b>
+button <img width=21 height=19 id="Picture 42"
+src="Tissot_circle_files/image040.png">.</p>
+
+<p class=Instructions>In the View window, move the cursor near the top of the
+distorted circle until it ‘snaps’ near the top most vertex. Start the beginning
+of the line measurement by left-clicking at the snap location.</p>
+
+<p class=Instructions><img width=293 height=181 id="Picture 44"
+src="Tissot_circle_files/image041.png"></p>
+
+<p class=Instructions>Next, move the cursor near the bottom of the circle until
+you feel it “snap” near the bottom most pixel. Once snapped, double-click on
+that point to end the line measurement segment.</p>
+
+<p class=Instructions><img width=262 height=392 id="Picture 45"
+src="Tissot_circle_files/image042.png"></p>
+
+<p class=MsoNormal>The distance between the top most and bottom most vertices
+should be around <b>600 km</b>. This makes sense since the cosine of 60° is 0.5
+or half of the circle’s diameter (1200/2 = 600)</p>
+
+<p class=Instructions>Now measure the distance between the left most and right
+most vertices of the distorted circle.</p>
+
+<p class=Instructions><img width=397 height=136 id="Picture 46"
+src="Tissot_circle_files/image043.png"></p>
+
+<p class=MsoNormal>The distance between the left most and right most vertices
+should be somewhere around 2400 km. </p>
+
+<p class=MsoNormal>If area and directions are two spatial properties that you
+want to preserve, a cylindrical equal-area projection is a good coordinate
+system candidate.</p>
+
+<p class=MsoNormal>Let’s explore a continent based projected coordinate system.</p>
+
+<p class=Instructions>In the TOC, <b>right-click</b> on the <b>Layers</b> data
+frame and select <b>Properties</b>.</p>
+
+<p class=Instructions>Select <b>Projected Coordinate Systems &gt;&gt; Continental
+&gt;&gt; North America &gt;&gt; North America Lambert Conformal Conic</b></p>
+
+<p class=Instructions><img width=298 height=193 id="Picture 47"
+src="Tissot_circle_files/image044.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the Data Frame Properties
+window.</p>
+
+<p class=Instructions>If a warning message window pops up, click <span
+class=InstructionsChar><b>Yes</b></span>.</p>
+
+<p class=MsoNormal>This projected coordinate system is a conical coordinate
+system. It is also a conformal coordinate system which preserves shape.  Note
+how all of the circles remain perfect circles. But, as you probably noticed by
+now, the circle’s area is not preserved. However, the surface areas remain consistent
+along the lines of latitude. In our example, the surface area for the circles
+range from 37,038,898 km² (at 60°S) to 1,035,580 km² (at 30°N). For North
+America, the surface area measurement error can be as great as 8%.</p>
+
+<p class=MsoNormal><img width=393 height=588 id="Picture 48"
+src="Tissot_circle_files/image045.png"></p>
+
+<p class=MsoNormal>Let’s look at a more localized projected coordinate system.</p>
+
+<p class=Instructions>In the TOC, <b>right-click</b> on <b>Layers</b> and
+select <b>Properties</b>.</p>
+
+<p class=Instructions>Select <b>Projected Coordinate Systems &gt;&gt; Continental
+&gt;&gt; North America &gt;&gt; USA Contiguous Lambert Conformal Conic.</b></p>
+
+<p class=MsoNormal><img width=272 height=96 id="Picture 49"
+src="Tissot_circle_files/image046.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the Data Frame Properties
+window.</p>
+
+<p class=Instructions>If a warning message window pops up, click <span
+class=InstructionsChar><b>Yes</b></span>.</p>
+
+<p class=MsoNormal>This conical projected coordinate system does a better job
+in preserving area for the US and southern Canada. In our example, the surface
+area for the circles in our region range from 1,147,807 km² (at 30°N) to
+1,308,767 km² (at 60°N). The area measurement error for the 48 states falls
+well within 2%.</p>
+
+<p class=MsoNormal><img width=294 height=240 id="Picture 50"
+src="Tissot_circle_files/image047.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc290474639">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Explore other projections on your own</a></p>
+
+</div>
+
+<p class=MsoNormal>Feel free to explore the properties of other projected
+coordinate systems and note the type of distortions they present.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+width=76 height=27 id="Picture 6" src="Tissot_circle_files/image048.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 8/25/2016 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

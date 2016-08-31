@@ -1,0 +1,523 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Downloading Landsat data</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#365F91;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#365F91;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<h1><a name="_Toc410403792"><span style='font-size:18.0pt;line-height:115%'>Downloading
+Landsat Data</span></a><span style='font-size:12.0pt;line-height:115%;
+color:black'> </span></h1>
+
+<h1 align=center style='text-align:center'><span style='font-size:10.0pt;
+line-height:115%;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></h1>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=623 valign=top style='width:467.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraph style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;line-height:13.0pt'>If you need to
+  figure out which Landsat scene(s) will be needed for your study area,
+  download the Row/Path <a href="wrs2.zip"><b>wrs2.zip</b></a> file.
+  Instructions are presented in Step1.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span style='color:#7F7F7F'>The following instructions
+assume that you are using a <b>Firefox</b> browser. Instructions may differ on
+another browser.</span></p>
+
+<p class=MsoTocHeading>Contents</p>
+
+<p class=MsoToc1><a href="#_Toc410403792"> </a></p>
+
+<div class=MsoToc1 align=center style='text-align:center'><span
+style='font-size:10.0pt;line-height:115%;color:black'><a href="#_Toc410403792"><span
+style='color:black;text-decoration:none'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></a></span></div>
+
+<p class=MsoToc1><span style='display:none'><a href="#_Toc410403792"><span
+style='color:windowtext;text-decoration:none'>...................................................................................................................................................................................................... </span><span style='color:windowtext;text-decoration:none'>1</span></a></span></p>
+
+<p class=MsoToc1><a href="#_Toc410403793">Step 1:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Identifying Landsat
+scenes needed for your study area<span style='color:windowtext;display:none;
+text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc410403794">Step 2:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Downloading Landsat
+scenes from Glovis<span style='color:windowtext;display:none;text-decoration:
+none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<div class=Stepheader align=center style='text-align:center'><a
+name="_Toc410403640"></a><a name="_Toc286147277"><span style='font-size:10.0pt;
+color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></a></div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc410403793">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifying Landsat scenes needed for your study area</a></p>
+
+</div>
+
+<p class=MsoNormal>Before downloading Landsat imagery, you will need to
+identify which Landsat scene(s) you will need to cover your study area.  </p>
+
+<p class=Instructions>In a Map Document of your study area, add the <b>wrs2.shp</b>
+shapefile (which you extracted from the wrs2.zip file. Use this layer to identify
+the <b>Row</b> and <b>Path</b> IDs for the scenes that overlap your region
+(these are referenced as <b>ROW</b> and <b>PATH</b> attribute names).  Note
+that Landsat  scenes overlap.</p>
+
+<p class=Instructions><span style='position:absolute;z-index:251659264;
+margin-left:309px;margin-top:243px;width:108px;height:66px'><img width=108
+height=66 src="Download_landsat_files/image001.png"></span><img width=624
+height=343 id="Picture 82" src="Download_landsat_files/image002.png"></p>
+
+<p class=MsoNormal>Once you have identified the Landsat scene(s) needed for
+your study area, move on the Step 2.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc410403794">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Downloading Landsat scenes from Glovis</a></p>
+
+</div>
+
+<p class=Instructions>In a web browser, navigate to <a
+href="http://glovis.usgs.gov/">http://glovis.usgs.gov/</a>.  </p>
+
+<p class=MsoNormal>The website runs on Java so you might be prompted with a
+warning asking if you wish to continue running the java code. Depending on the
+web browser used, you might see the following message:</p>
+
+<p class=Instructions><img border=0 width=233 height=97 id="Picture 91"
+src="Download_landsat_files/image003.png"></p>
+
+<p class=Instructions>Click <b>Activate Java</b>, as needed. </p>
+
+<p class=MsoNormal>You might be presented with another warning window. Look for
+an option to allow the Java plugin.</p>
+
+<p class=Instructions><img border=0 width=411 height=201 id="Picture 1"
+src="Download_landsat_files/image004.png"></p>
+
+<p class=Instructions>The above two steps may have to be repeated a second time
+for the main web browser window pane.</p>
+
+<p class=Instructions><img border=0 width=240 height=186 id="Picture 109"
+src="Download_landsat_files/image005.png"></p>
+
+<p class=MsoNormal>After allowing the plugins to run, you might need to reload
+the entire page.</p>
+
+<p class=Instructions>Next, type the <b>Path</b> and <b>Row</b> ID in the query
+window. Then click <b>Go</b>.</p>
+
+<p class=Instructions><span style='position:absolute;z-index:251660288;
+margin-left:25px;margin-top:100px;width:176px;height:70px'><img width=176
+height=70 src="Download_landsat_files/image006.png"></span><img border=0
+width=242 height=230 id="Picture 114" src="Download_landsat_files/image007.png"></p>
+
+<p class=MsoNormal>Next, you will probably want a satellite scene having little
+cloud cover. </p>
+
+<p class=Instructions>Select a Max Cloud cover of 10%.</p>
+
+<p class=MsoNormal><img border=0 width=101 height=66 id="Picture 5"
+src="Download_landsat_files/image008.png"></p>
+
+<p class=MsoNormal>You can select a specific month/year of image acquisition or
+you can scroll from scene to scene using the <b>Prev  Scene</b> or <b>Next
+Scene</b> buttons.</p>
+
+<p class=MsoNormal><img border=0 width=251 height=63 id="Picture 6"
+src="Download_landsat_files/image009.png"></p>
+
+<p class=Instructions>When you find a scene you would like to download click
+the <b>Add</b> button</p>
+
+<p class=MsoNormal> <img border=0 width=126 height=43 id="Picture 7"
+src="Download_landsat_files/image010.png"></p>
+
+<p class=MsoNormal>Be careful not to add too many scenes at once since the
+files can be big (some may be as big as 1 GB).</p>
+
+<p class=MsoNormal>Scenes that can be downloaded immediately will show a
+download icon to the right of the scene name.</p>
+
+<p class=MsoNormal><img border=0 width=183 height=43 id="Picture 9"
+src="Download_landsat_files/image011.png"></p>
+
+<p class=MsoNormal>Scenes that <i>cannot</i> be downloaded immediately will
+show no download icons in which case you will be e-mailed a download link
+within a few hours to a few days (this is explained in subsequent steps).</p>
+
+<p class=Instructions>After selecting the scene or scenes you wish to download,
+click <b>Send to Cart</b>.</p>
+
+<p class=MsoNormal><img border=0 width=111 height=30 id="Picture 10"
+src="Download_landsat_files/image012.png">.</p>
+
+<p class=MsoNormal>The website will want to open a <b>pop-up </b>window that
+may be <b>blocked</b> by the web browser.</p>
+
+<p class=MsoNormal><img border=0 width=624 height=40 id="Picture 125"
+src="Download_landsat_files/image013.png"></p>
+
+<p class=MsoNormal>Change the options to allow the pop-up from glovis.</p>
+
+<p class=MsoNormal><img border=0 width=624 height=135 id="Picture 126"
+src="Download_landsat_files/image014.jpg"></p>
+
+<p class=MsoNormal> </p>
+
+<p class=MsoNormal>You will be prompted for a username and password. If you
+have not created one for the USGS site, click on the <b>register</b> link found
+near the upper right-hand corner.</p>
+
+<p class=MsoNormal><img border=0 width=362 height=94 id="Picture 13"
+src="Download_landsat_files/image015.png"></p>
+
+<p class=MsoNormal>When registering, make sure that you provide a valid e-mail
+address (use your Colby e-mail); this will be used by the server to e-mail
+links to files not immediately downloadable. Also, avoid using a password that
+you use for sensitive websites like Google Mail or bank accounts.</p>
+
+<p class=MsoNormal>Once logged in, you will see the list of satellite scenes
+displayed in a table. Full scenes that are ready to download will have the
+checkbox in the <i>Order</i> column ghosted out. </p>
+
+<p class=MsoNormal><img border=0 width=482 height=206 id="Picture 14"
+src="Download_landsat_files/image016.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>For the scenes that are ready for download, click on the
+download link <img border=0 width=33 height=27 id="Picture 11"
+src="Download_landsat_files/image017.png" alt="Screen Clipping">  and select <b>Level
+1 GeoTIFF Data Product</b>.</p>
+
+<p class=MsoNormal><img border=0 width=372 height=34 id="Picture 16"
+src="Download_landsat_files/image018.png"></p>
+
+<p class=MsoNormal>Note: If the Level 1 product is ghosted out, then the scene
+is no ready for immediate download and will therefor need to be ordered.</p>
+
+<p class=Instructions>For all satellite scenes whose <i>Order</i> <b>checkbox</b>
+is active, check it off then click on <b>Apply</b>.</p>
+
+<p class=MsoNormal><img border=0 width=233 height=250 id="Picture 17"
+src="Download_landsat_files/image019.png"></p>
+
+<p class=Instructions>Next click on <b>Go to Item Basket</b> <img border=0
+width=154 height=41 id="Picture 12" src="Download_landsat_files/image020.png"
+alt="Screen Clipping">.</p>
+
+<p class=Instructions>Next, click on Proceed To Checkout <img border=0
+width=173 height=33 id="Picture 19" src="Download_landsat_files/image021.png">.</p>
+
+<p class=Instructions>Next, click on <b>Submit Order</b> <img border=0
+width=106 height=30 id="Picture 20" src="Download_landsat_files/image022.png">.</p>
+
+<p class=MsoNormal>The order may take hours or several days to process. When
+complete, you will receive an e-mail providing you with a link to the download
+site.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+border=0 width=76 height=27 id="Picture 2"
+src="Download_landsat_files/image023.png"></span><span style='font-size:10.0pt;
+color:gray'> Manuel Gimond, last modified on 1/30/2015 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

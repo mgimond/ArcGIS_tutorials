@@ -1,0 +1,846 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Managing GIS data</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{mso-style-name:"Normal\,Normal_GIS";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center'><b><span
+style='font-size:16.0pt;color:#365F91'>Managing GIS Data</span></b></p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span></span><span style='color:black'>Create a folder called <b>Data_management_exercise</b>.
+  On DIA 322 computers, you might want to create this folder in your user
+  Documents folder (e.g. C:\Users\jdoe\Documents\Data_management_exercise). On
+  the DIA 222 computers, you might want to create this folder on the D: drive
+  under D:\<i>course number</i>\<i>user name</i>\ (e.g.
+  D:/ES212/jdoe/Data_management_exercise).</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><a href="Managing_GIS_data_files/Data_management.zip">Download
+  the data</a><span style='color:black'> for this exercise and </span><a
+  href="Opening_zip_files.htm">extract the files</a><span style='color:black'>
+  from the <b>Data_management.zip</b> file to your newly created <b>Data_management_exercise</b>
+  directory.</span><span style='color:black'> </span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>When working on an ArcMap document (one ending with a *.mxd
+extension) you are accessing one or more data files.  These data features are
+not stored in the *.mxd file but instead can be located in separate folders,
+geodatabases or across a network connection. Knowing where your GIS data reside
+is critical when managing and sharing a GIS project. </p>
+
+<p class=MsoNormal>For this tutorial, you’ll be working with data for the Acadia
+National Park area.  You will learn to use ArcCatalog to copy and delete
+features from a workspace. You will also learn about folder connections and how
+to fix broken map document links. </p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoNormal></p>
+
+<p class=MsoTocHeading>Contents</p>
+
+<p class=MsoToc1><a href="#_Toc289329081">Step 1:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Create a Folder
+Connection<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289329082">Step 2:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Identifying layer source
+paths<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289329083">Step 3:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Creating a File
+Geodatabase<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289329084">Step 4:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Migrating files from one
+format to another<span style='color:windowtext;display:none;text-decoration:
+none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289329085">Step 5:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Removing GIS files from
+a workspace<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>14</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc289329086">Step 6:<span style='font-family:"Calibri",sans-serif;
+color:windowtext;text-decoration:none'>         </span>Fixing broken links in
+ArcMap<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>15</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=Stepheader><a name="_Toc289329067"></a><a name="_Toc286147277"></a></p>
+
+<div class=Stepheader align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289329081">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Create a Folder Connection</a></p>
+
+</div>
+
+<p class=Instructions>Click the <b>Start</b> button on the Windows taskbar, point
+to <b>All</b> <b>Programs &gt;&gt;</b> <b>ArcGIS</b> and click on <b>ArcCatalog
+10</b>.</p>
+
+<p class=MsoNormal><img width=307 height=539 id="Picture 1"
+src="Managing_GIS_data_files/image001.png"></p>
+
+<p class=MsoNormal>ArcGIS’s file management environment differs from that of a
+conventional file management environment common to different operating systems.
+For example, when you first open ArcCatalog, you will notice that your typical
+root directory structure is gone. For instance, you will not see a <b>Desktop</b>
+folder or a <b>C:</b> (or <b>D:)</b> drive letter designation. Instead, ArcGIS
+wants you to explicitly define your workspace(s) such as folders and
+geodatabases.</p>
+
+<p class=MsoNormal><img width=345 height=283 id="Picture 11"
+src="Managing_GIS_data_files/image002.png"></p>
+
+<p class=MsoNormal>In this exercise, you will restrict your workspace to the <b><span
+style='font-size:10.0pt;line-height:115%;color:black'>Data_management_exercise </span></b><span
+style='font-size:10.0pt;line-height:115%;color:black'>folder.</span></p>
+
+<p class=Instructions><b>Right-click </b>on the <b>Folder Connections</b>
+folder in the Catalog Tree and click <b>Connect Folder</b>.</p>
+
+<p class=MsoNormal><img width=327 height=175 id="Picture 26"
+src="Managing_GIS_data_files/image003.png"></p>
+
+<p class=MsoNormal>When you select a connection, you can access the data to
+which it’s linked. </p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:6.0pt;margin-left:.5in;text-indent:-.25in;line-height:normal'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><u>Folder</u> connections</i> let you access folders, or
+directories, on local disks or shared folders on the network. </p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:6.0pt;margin-left:.5in;text-indent:-.25in;line-height:normal'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><i><u>Database connections</u></i> let you access the contents of
+a database (local or remote). </p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:6.0pt;margin-left:.5in;line-height:normal'>&nbsp;</p>
+
+<p class=Instructions>In the <b>Connect to Folder</b> window, navigate to this
+exercise’s project folder (<b>Data_management_exercise</b>) and click <b>OK</b>.</p>
+
+<p class=MsoNormal><img width=371 height=357 id="Picture 6"
+src="Managing_GIS_data_files/image004.png"></p>
+
+<p class=MsoNormal>You now should see a new connection under Folder
+Connections. This connection will persist even when you log off from your
+desktop. But this connection is not transferable (i.e. if you move your map
+document to a different PC, the folder connection will not carry over).</p>
+
+<p class=MsoNormal>In ArcCatalog, make sure that you have this exercise’s
+workspace selected. In the right window pane you should see a list of GIS files
+(three shapefiles and one raster) and a map document (Acadia_park).</p>
+
+<p class=MsoNormal><img width=661 height=197 id="Picture 7"
+src="Managing_GIS_data_files/image005.png"></p>
+
+<p class=MsoNormal>ArcCatalog views the contents of a folder (or database)
+differently from a standard file management window.  </p>
+
+<p class=Instructions>To see this for yourself, open <b>Windows Explorer</b> (<b>not</b>
+to be confused with Internet Explorer)</p>
+
+<p class=Instructions><img width=242 height=113
+src="Managing_GIS_data_files/image006.png"><br clear=ALL>
+Navigate to this exercise’s workspace folder.</p>
+
+<p class=MsoNormal>Note how different the contents of the folder look between
+ArcCatalog and Windows Explorer. ArcGIS only displays file formats that can be
+used in a GIS. In this example, we have two different file formats: a <b>shapefile</b>
+vector format and an <b>Imagine</b> raster format. A shapefile format consists
+of anywhere between three and seven files. In our example, all three vector
+layers in our project consist of seven files each. Each file of a shapefile
+layer contains different bits of information. For example, a .prj file contains
+information about the shapefile’s coordinate system and a .dbf file contains
+information about the shapefile’s attribute(s).</p>
+
+<p class=MsoNormal>At this point, it is important to note that GIS data
+management should be done exclusively inside of ArcCatalog and <i>not</i>
+inside of Windows Manager. </p>
+
+<p class=MsoNormal><img width=392 height=610 id="Picture 3"
+src="Managing_GIS_data_files/image007.jpg"></p>
+
+<p class=MsoNormal>The four different features in the ./Data_management_exercise 
+are used in the Acadia_park.mxd map document as you will discover in Step 2.</p>
+
+<p class=Instructions><b>Double-click</b> on the <b>Acadia_park </b>MXD file<b>
+</b>to open the map document.</p>
+
+<p class=MsoNormal>The MXD document should open up inside of Arcmap.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289329082">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifying layer source paths</a></p>
+
+</div>
+
+<p class=MsoNormal>When opening an existing ArcMap document, it is always good
+practice to locate the source of each layer listed in the Table of Contents
+(TOC). </p>
+
+<p class=Instructions>In the TOC <b>click</b> on the <b>List By Source</b>
+button<img width=17 height=19 id="Picture 83"
+src="Managing_GIS_data_files/image008.png">.</p>
+
+<p class=MsoNormal><img width=205 height=132 id="Picture 82"
+src="Managing_GIS_data_files/image009.png"></p>
+
+<p class=MsoNormal>The listing in the TOC will look different. For each layer,
+the source location is identified. For example, the raster layer hillshade is
+located in the folder ./Data_management_exercise. The other vectors layers
+(Roads, Water and Parks) are also located in the .\Data_management_exercise
+folder. Remember that ArcMap does not store GIS data features in the .mxd
+document. Instead, it stores <i>information</i> about the <i>source location</i>
+for each feature. So when ArcMap draws the hillshade in the Map view window, it
+accesses the raster file hillshade.img located in the
+.\Data_management_exercise folder and grabs all the information needed to draw
+the hillshade layer. So it is vital that all location of all features used in a
+map document be properly sourced in the TOC.</p>
+
+<p class=MsoNormal><img width=353 height=352 id="Picture 9"
+src="Managing_GIS_data_files/image010.png"></p>
+
+<p class=Instructions><b>Close</b> ArcMap. If asked to save changes, select <b>No</b>.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289329083">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating a File Geodatabase</a></p>
+
+</div>
+
+<p class=MsoNormal>GIS data can be stored in many different formats. So far you
+have been exposed to <b>shapefile</b> and <b>Imagine</b> file formats. ArcGIS
+can also store GIS data in more complex data storage structures also known as <b>geodatabases</b>.
+Discussing the advantages/disadvantages of a geodatabase is beyond the scope of
+this exercise.</p>
+
+<p class=MsoNormal>ArcGIS can read from many different geodatabases. Some
+common ones are ArcSDE, PosgreSQL and File Geodatabase. The latter can be
+easily implemented on personal computer. In the following steps, you will
+create a new <b>file geodatabase</b>.</p>
+
+<p class=Instructions>Go back to your <b>ArcCatalog</b> window.</p>
+
+<p class=Instructions><b>Right-click</b> this exercise’s folder connection and
+select <b>New &gt;&gt; File Geodatabase</b>.</p>
+
+<p class=Instructions><img width=496 height=251 id="Picture 10"
+src="Managing_GIS_data_files/image011.png"></p>
+
+<p class=MsoNormal>A new file geodatabase will be added to your Data_management_exercise
+folder.</p>
+
+<p class=Instructions><b>Right-click</b> on the newly created geodatabase and
+select <b>rename</b>. </p>
+
+<p class=Instructions>You will rename the geodatabase <b>Acadia_data</b>.</p>
+
+<p class=MsoNormal><img width=166 height=166 id="Picture 126"
+src="Managing_GIS_data_files/image012.png"></p>
+
+<p class=MsoNormal>A File Geodatabase is nothing more than a folder. In fact,
+if you look at your project’s folder in Windows Explorer, you will see a folder
+called Acadia_data.gdb. The content of this folder may be indecipherable. This
+should be a reminder to <b>never</b> modify the contents of this folder in
+Windows Explorer.</p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='background:#F2DBDB;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=638 valign=top style='width:6.65in;padding:0in 5.75pt .1in 5.75pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><span style='color:#C00000'>NEVER
+  modify the contents of a *.gdb folder outside of ArcCatalog<br>
+  </span><span style='font-size:22.0pt;color:#C00000'>!!!</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><img width=395 height=526 id="Picture 1024"
+src="Managing_GIS_data_files/image013.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289329084">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Migrating files from one format to another</a></p>
+
+</div>
+
+<p class=MsoNormal>Your next step will involve <b>migrating</b> the four GIS
+features to the newly created geodatabase <b>Acadia_data</b>. </p>
+
+<p class=MsoNormal>First, you will create a feature dataset (think of this as a
+folder inside of a geodatabase). Feature datasets are used to spatially or
+thematically integrate related feature classes.  See <a
+href="http://resources.arcgis.com/en/help/main/10.1/index.html#//002300000001000000">here</a>
+for more information.</p>
+
+<p class=Instructions><b>Right-click</b> on the Acadia_data geodatabase and
+select <b>New</b> &gt;&gt; <b>Feature Dataset</b>.</p>
+
+<p class=MsoNormal><img border=0 width=403 height=212 id="Picture 1025"
+src="Managing_GIS_data_files/image014.png"></p>
+
+<p class=MsoNormal>In the<b> New Feature Dataset</b> window, name the new
+feature dataset <b>Vector_data</b>.</p>
+
+<p class=MsoNormal><img border=0 width=390 height=150 id="Picture 1026"
+src="Managing_GIS_data_files/image015.png"></p>
+
+<p class=Instructions>Click <b>Next</b>.</p>
+
+<p class=Instructions>Select <b>Projected Coordinate Systems &gt;&gt; UTM
+&gt;&gt; NAD 1983 &gt;&gt; NAD 1983 UTM Zone 19N</b> for the dataset’s
+coordinate system.</p>
+
+<p class=MsoNormal><img border=0 width=285 height=522 id="Picture 1027"
+src="Managing_GIS_data_files/image016.png"></p>
+
+<p class=MsoNormal>Any features created in or copied to the feature dataset
+will inherit the UTM NAD83 Zone 19 North coordinate system. If the data need to
+be reprojected, ArcGIS will reproject on the fly.</p>
+
+<p class=Instructions>Click <b>Next</b>.</p>
+
+<p class=Instructions>Click <b>Next</b> again (we won’t define a Vertical
+Coordinate System for this feature dataset).</p>
+
+<p class=Instructions>Click <b>Finish</b>.</p>
+
+<p class=MsoNormal>If you expand you folder connection in ArcCatalog, you
+should see the newly created Vector_data dataset. </p>
+
+<p class=Instructions><img border=0 width=344 height=93 id="Picture 1028"
+src="Managing_GIS_data_files/image017.png"></p>
+
+<p class=MsoNormal>Next, you will copy all three vector files to this dataset.</p>
+
+<p class=Instructions><b>Right-click</b> the new <b>Vector_data</b> feature
+dataset and <b>select Import &gt;&gt; Feature Class (multiple).</b></p>
+
+<p class=Instructions><img border=0 width=380 height=223 id="Picture 1029"
+src="Managing_GIS_data_files/image018.png"></p>
+
+<p class=Instructions>In the<b> Feature Class to Geodabase (multiple)</b>
+window, click on the folder icon <img border=0 width=23 height=25
+id="Picture 1030" src="Managing_GIS_data_files/image019.png"> to the right of
+the <b>Input Features</b> field.</p>
+
+<p class=Instructions>Navigate to your <b>Data_management_exercise</b> (remember
+that it is accessed from the <i>Folder Connections</i> folder) and <b>select</b>
+the three vector features.</p>
+
+<p class=Instructions><img border=0 width=337 height=135 id="Picture 1031"
+src="Managing_GIS_data_files/image020.png"></p>
+
+<p class=Instructions>Click <b>Add</b>.</p>
+
+<p class=MsoNormal>The three vector features should now be listed in the
+window.</p>
+
+<p class=Instructions><img border=0 width=410 height=321 id="Picture 12"
+src="Managing_GIS_data_files/image021.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to begin the migration process.</p>
+
+<p class=MsoNormal>After a few seconds, you should see a ticker-like status bar
+at the bottom of the ArcCatalog window. This ticker will disappear when the
+process of loading the features is complete (this may take 10 to 20  seconds)</p>
+
+<p class=Instructions><img border=0 width=414 height=305 id="Picture 1033"
+src="Managing_GIS_data_files/image022.png"></p>
+
+<p class=MsoNormal>When the status bar disappears, expand the Vector_data
+feature dataset. You will see all three vector features now stored inside of the
+newly created geodatabase.</p>
+
+<p class=Instructions><img border=0 width=234 height=231 id="Picture 1034"
+src="Managing_GIS_data_files/image023.png"></p>
+
+<p class=MsoNormal>Next, you will copy the raster data feature into the
+geodatabase. Raster features cannot be stored inside of feature datasets,
+instead they are stored at the root level of the geodatabase.</p>
+
+<p class=Instructions><b>Right-click</b> on the <b>Acadia_data</b> geodatabase
+and select <b>Import &gt;&gt; Raster Datasets</b>.</p>
+
+<p class=MsoNormal><img border=0 width=377 height=257 id="Picture 1035"
+src="Managing_GIS_data_files/image024.png"></p>
+
+<p class=Instructions>In the<b> Raster to Geodatabase</b> window, click on the
+folder icon <img border=0 width=23 height=25 id="Picture 1037"
+src="Managing_GIS_data_files/image019.png"> to the right of the <b>Input
+Rasters</b> field.</p>
+
+<p class=Instructions>Navigate to your <b>Data_management_exercise</b>
+connection folder and <b>select</b> the <b>hillshade.img</b> raster file.</p>
+
+<p class=Instructions><img border=0 width=358 height=120 id="Picture 1038"
+src="Managing_GIS_data_files/image025.png"></p>
+
+<p class=Instructions>Click <b>Add</b>.</p>
+
+<p class=Instructions>Click <b>OK</b> to start the Raster-To-Geodatabase
+process.</p>
+
+<p class=MsoNormal>When the status bar disappears, expand the Acadia_data
+geodatabase. You should see the new hillshade raster feature.</p>
+
+<p class=Instructions><img border=0 width=348 height=128 id="Picture 4"
+src="Managing_GIS_data_files/image026.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289329085">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Removing GIS files from a workspace</a></p>
+
+</div>
+
+<p class=MsoNormal>Now that we have all four features (three vectors and one
+raster) inside of a geodatabase, we no longer need the shapefile and Imagine
+file versions of these features.</p>
+
+<p class=Instructions>In ArcCatalog, select the<b> Data_management_exercise</b>
+folder connection.</p>
+
+<p class=MsoNormal>In the right window pane of ArcCatalog you should see the <b>geodatabase</b>,
+the <b>shapefiles</b> and <b>Imagine</b> raster file.</p>
+
+<p class=MsoNormal><img border=0 width=451 height=327 id="Picture 13"
+src="Managing_GIS_data_files/image027.png"></p>
+
+<p class=Instructions>In the right window pane, <b>select</b> and <b>delete</b>
+the <b>hillshade</b>, <b>Parks</b>, <b>Roads</b> and <b>Water</b> features.
+(Note that if you did not close ArcMap earlier in the exercise you will need to
+do so before you attempt to delete the files).</p>
+
+<p class=Instructions><img border=0 width=295 height=206 id="Picture 5"
+src="Managing_GIS_data_files/image028.png"></p>
+
+<p class=MsoNormal>Your Data_management_exercise folder should now look like
+this:</p>
+
+<p class=Instructions><img border=0 width=453 height=328 id="Picture 14"
+src="Managing_GIS_data_files/image029.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc289329086">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Fixing broken links in ArcMap</a></p>
+
+</div>
+
+<p class=Instructions>From inside <b>ArcCatalog</b>, double-click on the <b>Acadia_park
+</b>MXD file. This will open the map document in an <b>ArcMap</b> session.</p>
+
+<p class=MsoNormal>You will notice that the Map view window is now blank!  You
+should also notice red exclamation marks next to each layer in the TOC. This
+map opened fine earlier in this exercise, so what happened? </p>
+
+<p class=MsoNormal><img border=0 width=199 height=277 id="Picture 1043"
+src="Managing_GIS_data_files/image030.png"></p>
+
+<p class=MsoNormal>Remember that ArcMap does not store data, but instead points
+to features (that are stored in separate files or databases). Since we removed
+the original features (shapefile and raster files), ArcMap cannot find these
+files. It does not know that we moved the files to a geodatabase. Therefore, we
+must change the source paths for each layer (i.e. tell ArcMap that those layers
+now reside in a new geodatabase).</p>
+
+<p class=Instructions><b>Right-click</b> on <b>Roads</b> layer and select <b>Properties</b>.</p>
+
+<p class=Instructions>In the Layer Properties window, select the <b>Source</b>
+tab.</p>
+
+<p class=MsoNormal><img border=0 width=246 height=114 id="Picture 1045"
+src="Managing_GIS_data_files/image031.png"></p>
+
+<p class=MsoNormal>The Data source window confirms that ArcMap is looking for a
+<b>shapefile</b> called <b>Roads</b> located in the Data_managament_exercise
+folder (the shapefile you deleted in an earlier step). We will provide ArcMap
+with the new location.</p>
+
+<p class=MsoNormal><img border=0 width=461 height=151 id="Picture 1046"
+src="Managing_GIS_data_files/image032.png"></p>
+
+<p class=Instructions>Click on the <b>Set</b> <b>Data Sources</b> button <img
+border=0 width=133 height=22 id="Picture 1047"
+src="Managing_GIS_data_files/image033.png">.</p>
+
+<p class=Instructions>Expand the <b>Acadia_data.gbd&gt;&gt; Vector_data</b> and
+select the <b>Roads</b> feature. </p>
+
+<p class=MsoNormal><img border=0 width=353 height=237 id="Picture 1048"
+src="Managing_GIS_data_files/image034.jpg"></p>
+
+<p class=Instructions>Click <b>Add</b>.</p>
+
+<p class=MsoNormal>The Data Source window should now point to the correct the
+location.</p>
+
+<p class=MsoNormal><img border=0 width=438 height=227 id="Picture 15"
+src="Managing_GIS_data_files/image035.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the Layer Properties window.</p>
+
+<p class=Instructions>We will <b>repeat</b> the same process to fix the source
+paths for <b>Water</b>, <b>Parks</b> and <b>hillshade</b>.</p>
+
+<p class=Instructions><img border=0 width=355 height=281 id="Picture 1054"
+src="Managing_GIS_data_files/image036.png"></p>
+
+<p class=MsoNormal>Next you will save the modified map document. But before you
+do, there is one more step that you will want to perform. ArcMap accepts full
+source path descriptions (e.g. D:\ES212\jdoe\Data_management_exercise\) or source
+paths <b>relative</b> to the MXD map document location. In most cases, you will
+want ArcMap to save the source paths using the <b>relative pathnames</b>
+option.</p>
+
+<p class=Instructions>In <b>ArcMap</b>, select <b>File &gt;&gt; Map Document
+Properties</b>.</p>
+
+<p class=Instructions><img border=0 width=246 height=409 id="Picture 1052"
+src="Managing_GIS_data_files/image037.png"></p>
+
+<p class=Instructions>Make sure that <b>Store relative pathnames to data
+sources</b> is checked in the <b>Map Document Properties</b> window.</p>
+
+<p class=Instructions><img border=0 width=275 height=79 id="Picture 1053"
+src="Managing_GIS_data_files/image038.png"></p>
+
+<p class=Instructions>Click <b>OK</b> to close the Map Document Properties
+window.</p>
+
+<p class=Instructions>Now Save your map document by clicking on <b>File
+&gt;&gt; Save</b>.</p>
+
+<p class=MsoNormal>This completes this exercise.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+border=0 width=76 height=27 id="Picture 8"
+src="Managing_GIS_data_files/image039.png"></span><span style='font-size:10.0pt;
+color:gray'> Manuel Gimond, last modified on 8/23/2016 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

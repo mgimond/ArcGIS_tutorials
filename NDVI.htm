@@ -1,0 +1,1242 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>NDVI exercise</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Verdana;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.instructions0, li.instructions0, div.instructions0
+	{mso-style-name:instructions;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Vegetation Indices</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraph style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span>Create a folder called <strong><span style='font-family:"Arial",sans-serif'>NDVI</span></strong>.
+  On DIA 322 computers, you might want to create this folder in your user
+  Documents folder (e.g. C:\Users\jdoe\Documents\ NDVI). On the DIA 222
+  computers, you might want to create this folder on the D: drive under D:\course
+  number\user name\ (e.g. D:\ES212\jdoe\ NDVI).</p>
+  <ol start=2 type=1>
+   <li class=MsoNormal style='line-height:normal'><a href="NDVI_files/NDVI.zip">Download
+       the data</a> then <a href="Opening_zip_files.htm">uncompress</a> the
+       file's contents to your NDVI folder.</li>
+  </ol>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this exercise, you will use ArcGIS’ Image Analysis tool
+to compute Normalized Difference Vegetation Index (NDVI) values for the Howland
+Forest area (located in Maine) using <a href="http://modis.gsfc.nasa.gov/">MODIS
+</a>(Moderate-Resolution Imaging Spectroradiometer) satellite data. You will
+then use Spatial Analyst to compute zonal statistics for an area of interest.<br>
+<br>
+NDVI is a vegetation index that is associated with vegetation density. It is
+often used to distinguish vegetation from non-vegetation features. It
+normalizes the difference between the green leaf scattering in the
+near-infrared to the chlorophyll absorption. The NDVI is computed as follows:</p>
+
+<p class=MsoNormal align=center style='text-align:center'><img border=0
+width=137 height=65 id="Picture 1" src="NDVI_files/image001.png"></p>
+
+<p class=MsoNormal>where <i>R</i><i><span style='font-size:7.5pt;line-height:
+115%'>NIR</span></i> is the reflectance in the near infrared part of the
+spectrum, and <i>R</i><i><span style='font-size:7.5pt;line-height:115%'>red</span></i>
+is reflectance in the red part of the spectrum. The value of the index ranges
+from -1 to 1. A common range for green vegetation is 0.2 to 0.8. </p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc318455867">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Open the map document<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc318455868">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Calculating an NDVI value for the month of January<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc318455869">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Compute NDVI values for the other 11 months<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc318455870">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Averaging NDVI values within an area defined by a polygon<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc318455871">Step 5:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Graphing the NDVI values<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc318455867">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open the map document</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Navigate to your NDVI project folder and <b>open</b>
+the <b>NDVI.mxd</b> map document.</p>
+
+<p class=Instructions-GIS><img width=286 height=281 id="Picture 2"
+src="NDVI_files/image002.png"></p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='background:#F2F2F2;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=192 style='width:2.0in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><img width=170 height=358 id="Picture 6"
+  src="NDVI_files/image003.png"></p>
+  </td>
+  <td width=446 valign=top style='width:4.65in;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>The yellow circle encompasses an area of the Maine Howland forest
+  that is part of the <a href="http://public.ornl.gov/ameriflux/">AmeriFlux</a>
+  network. An instrumented tower is located at the center of the circle</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>The tower provides continuous observations of ecosystem level
+  exchanges of CO2, water, energy and momentum spanning various time scales.
+  The Howland forest main tower site is managed by the USDA Forest Service, the
+  Woods Hole Research Station, the University of Maine, the University of
+  Georgia and the University of California.</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>The forest surrounding the tower is composed of red spruce, eastern
+  hemlock, other conifers such as balsam fir, white pine, northern white cedar,
+  and hardwoods such as red maple and paper birch. A breakdown of each species
+  follows:</p>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>41% red spruce (<i>Picea rubens Sarg</i>.),</p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>25% eastern hemlock (<i>Tsuga canadensis (L.) Carr</i>.),</p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>23% other conifers (primarily balsam fir, <i>Abies balsamea </i>(L.)
+  Mill., white pine, <i>Pinus strobus L</i>., and northern white cedar, <i>Thuja
+  occidentalis</i> L.) and,</p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>11% hardwoods</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=Instructions-GIS>Turn off the Howland_naip layer and turn on the <b>Jan
+09 2008</b> group layer.</p>
+
+<p class=Instructions-GIS><img border=0 width=343 height=179 id="Picture 4"
+src="NDVI_files/image004.png"></p>
+
+<p class=MsoNormal>All 12 MODIS group layers in your map document are in a
+raster data format, yet they don’t seem to follow an orthogonal grid of cells
+that you might be accustomed to seeing. This is because the MODIS data were
+provided to us in a <a href="http://en.wikipedia.org/wiki/Sinusoidal_projection"><i>Sinusoidal</i></a>
+projection which distorts shape in our area of interest. One could reproject
+the raster to a coordinate system better suited for the state of Maine however,
+in doing so, we risk ‘contaminating’ the original radiometric signal. This is
+because of the use of interpolation techniques that are needed to transform the
+raster from one coordinate system to another. We will therefore <u>not</u>
+reproject the MODIS rasters in this exercise.</p>
+
+<p class=MsoNormal><img border=0 width=270 height=271 id="Picture 5"
+src="NDVI_files/image005.png"></p>
+
+<p class=MsoNormal>A MODIS image is composed of different 'bands'. Each band
+has bits of information such as reflectance value for a particular bandwidth
+and solar zenith angle at the time of the image acquisition. The following
+table lists the bands and their description.</p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 style='background:white'>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:gainsboro;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><b><span style='font-size:10.0pt;
+  font-family:"Verdana",sans-serif;color:black'>Band number</span></b></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:gainsboro;
+  padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><b><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Description</span></b></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:gainsboro;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><b><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>UNITS</span></b></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:gainsboro;
+  padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><b><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>MULTIPLY
+  BY SCALE FACTOR</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>1</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  Surface Reflectance Band 1 <br>
+  (620-670 nm)</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Reflectance</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.0001</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:
+  7.5pt;margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;
+  font-family:"Verdana",sans-serif;color:black'>2</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  Surface Reflectance Band 2 <br>
+  (841-876 nm)</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Reflectance</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.0001</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>3</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  Surface Reflectance Band 3 <br>
+  (459-479 nm)</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Reflectance</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.0001</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>4</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  Surface Reflectance Band 4 <br>
+  (545-565 nm)</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Reflectance</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.0001</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>5</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  Surface Reflectance Band 5 <br>
+  (1230-1250 nm)</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Reflectance</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.0001</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>6</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  Surface Reflectance Band 6 <br>
+  (1628-1652 nm)</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Reflectance</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.0001</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>7</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  Surface Reflectance Band 7 <br>
+  (2105-2155 nm)</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Reflectance</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.0001</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>8</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  Reflectance Band Quality</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Bit
+  Field</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>na</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>9</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Solar
+  Zenith Angle</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Degree</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.01</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>10</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>View
+  Zenith Angle</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Degree</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.01</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>11</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Relative
+  Azimuth Angle</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Degree</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>0.01</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>12</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>500m
+  State Flags</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Bit
+  field</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>na</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=69 valign=top style='width:51.75pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>13</span></p>
+  </td>
+  <td width=262 valign=top style='width:196.5pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Day of
+  Year</span></p>
+  </td>
+  <td width=104 valign=top style='width:77.9pt;background:#F0F0F0;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>Julian
+  day</span></p>
+  </td>
+  <td width=137 valign=top style='width:102.85pt;background:#F0F0F0;padding:
+  1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:13.0pt'><span
+  style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black'>na</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Only <b>bands 1</b> and <b>2</b> (representing the red and
+near-infrared parts of the spectrum) are present in this map project for each
+month of the year 2008. The bands are grouped by month.</p>
+
+<p class=MsoNormal>In this exercise you will use bands 1 and 2 to compute the
+NDVI values for each pixel in the MODIS rasters.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc318455868">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Calculating an NDVI value for the month of January</a></p>
+
+</div>
+
+<p class=MsoNormal><span style='background:white'>To calculate the NDVI value,
+you will need to activate the <b>Spatial Analyst</b> extension.</span></p>
+
+<p class=Instructions-GIS>From the&nbsp;<b>Customize</b>&nbsp;pull-down menu
+select&nbsp;<b>Extensions</b>.</p>
+
+<p class=Instructions-GIS>Turn on the&nbsp;<b>Spatial Analyst</b>&nbsp;extension
+by checking the box next to the extension.</p>
+
+<p class=MsoNormal style='line-height:13.5pt'><span style='font-size:13.5pt;
+color:black'><img border=0 width=203 height=203 id="Picture 7"
+src="NDVI_files/image006.png"></span></p>
+
+<p class=Instructions-GIS>Click&nbsp;<b>Close</b>&nbsp;to close the Extensions
+window.</p>
+
+<p class=Instructions-GIS>If not already opened, open the Toolbox by clicking
+on the&nbsp;<b>Toolbox</b>&nbsp;button<img border=0 width=21 height=19
+id="Picture 12" src="NDVI_files/image007.png">.</p>
+
+<p class=Instructions-GIS><span style='background:white'>In ArcToolbox, expand <b>Spatial
+Analyst Tools &gt;&gt; Map Algebra</b>.</span></p>
+
+<p class=Instructions-GIS><img border=0 width=235 height=290 id="Picture 17"
+src="NDVI_files/image008.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Double-click on the <b>Raster
+Calculator</b> tool.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>In the <i>Raster
+Calculator</i> window, <b>click</b> on the <b>open</b> <b>parenthesis</b> symbol</span>
+<img border=0 width=26 height=26 id="Picture 24" src="NDVI_files/image009.png">.</p>
+
+<p class=MsoNormal><span style='background:white'>This action will add the
+parenthesis symbol to the expression window.</span></p>
+
+<p class=Instructions-GIS><img border=0 width=219 height=108 id="Picture 25"
+src="NDVI_files/image010.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Next, <b>double-click</b>
+on </span><img border=0 width=272 height=19 id="Picture 19"
+src="NDVI_files/image011.png"><span style='background:white'>. </span></p>
+
+<p class=MsoNormal><span style='background:white'>This will add <i>Band 2</i>
+from the Jan 09 data set to the expression window.</span></p>
+
+<p class=MsoNormal><img border=0 width=386 height=110 id="Picture 26"
+src="NDVI_files/image012.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Next<b>, Click</b>
+(single click) on the <b>minus</b> operator </span><img border=0 width=30
+height=30 id="Picture 21" src="NDVI_files/image013.png"><span style='background:
+white'> to add it to the expression window.</span></p>
+
+<p class=Instructions-GIS><img border=0 width=363 height=106 id="Picture 27"
+src="NDVI_files/image014.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Next, <b>double-click</b>
+on</span> <img border=0 width=272 height=21 id="Picture 23"
+src="NDVI_files/image015.png">.</p>
+
+<p class=Instructions-GIS><img border=0 width=647 height=106 id="Picture 28"
+src="NDVI_files/image016.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Next, <b>click</b> on
+the <b>close</b> <b>parenthesis</b> symbol</span> <img border=0 width=27
+height=28 id="Picture 31" src="NDVI_files/image017.png">.</p>
+
+<p class=Instructions-GIS><img border=0 width=604 height=104 id="Picture 32"
+src="NDVI_files/image018.png"></p>
+
+<p class=MsoNormal><span style='background:white'>At this point, you have
+defined the numerator </span><img border=0 width=125 height=29 id="Picture 33"
+src="NDVI_files/image019.png"><span style='background:white'> for the NDVI
+formula.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>On your own, complete
+the expression by adding the denominator </span><img border=0 width=118
+height=27 id="Picture 34" src="NDVI_files/image020.png"><span style='background:
+white'> component of the NDVI formula (don’t forget to add the ‘divide by’
+operator).</span></p>
+
+<p class=MsoNormal><span style='background:white'>When done, your expression
+box should look like this:</span></p>
+
+<p class=MsoNormal><img border=0 width=574 height=57 id="Picture 35"
+src="NDVI_files/image021.png"></p>
+
+<p class=MsoNormal><span style='background:white'>There is yet one more
+addition to the expression that will be needed to compute the NDVI: the <i>Float</i>
+function. All MODIS layers are of integer type. This means that the output of an
+algebraic expression will also be an integer even if a fraction is present in
+the expression. For example, the fraction 245/340 will result in an output
+value of 0 (value is rounded down). If a float output is desired, adding the
+Float function to the numerator or denominator will be required such as <b>Float(</b>245<b>)</b>/340.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>In the expression box,
+add the Float function in front of the first parenthesis by typing ‘<b>Float’</b>.</span></p>
+
+<p class=MsoNormal><img border=0 width=614 height=69 id="Picture 37"
+src="NDVI_files/image022.png"></p>
+
+<p class=MsoNormal><span style='background:white'>The expression now looks like
+this:</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;font-family:
+"Courier New";color:#943634;background:white'>Float(&quot;Jan 09
+2008\MYD_SS.MYD09A1.A2008009 - Band_2&quot; - &quot;Jan 09
+2008\MYD_SS.MYD09A1.A2008009 - Band_1&quot;) / <br>
+     (&quot;Jan 09 2008\MYD_SS.MYD09A1.A2008009 - Band_2&quot; + &quot;Jan 09
+2008\MYD_SS.MYD09A1.A2008009 - Band_1&quot;)</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>Finally, set the
+output path and raster name to <b><i>…\NDVI\Jan_NDVI.img</i></b> (you might
+want to click on the folder icon to set the directory path and define the
+filename—don’t forget to add the <i>.img</i> extension).</span></p>
+
+<p class=MsoNormal><img border=0 width=275 height=80 id="Picture 38"
+src="NDVI_files/image023.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Click <b>OK</b> to run
+the geoprocess.</span></p>
+
+<p class=MsoNormal><span style='background:white'>When the geoprocess is
+complete, a new raster layer will be added to the TOC.</span></p>
+
+<p class=MsoNormal><img border=0 width=192 height=244 id="Picture 39"
+src="NDVI_files/image024.png"></p>
+
+<p class=MsoNormal><span style='background:white'>The output image represents
+NDVI values for each pixel. The greater the value (i.e. the closer the value is
+to 1), the ‘greener’ the biomass within the pixel.</span></p>
+
+<p class=MsoNormal><img border=0 width=276 height=237 id="Picture 41"
+src="NDVI_files/image025.png"></p>
+
+<p class=MsoNormal><span style='background:white'>So far, you have only
+computed an NDVI raster for the month of January.</span></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc318455869">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Compute NDVI values for the other 11 months</a></p>
+
+</div>
+
+<p class=Instructions-GIS><span style='background:white'>On your own, repeat the
+procedure outlined in step 2 to create NDVI rasters for the remaining 11
+months. Name the output rasters <i>Feb.NDVI.img</i>, <i>Mar_NDVI.img</i>, etc…</span></p>
+
+<p class=MsoNormal><span style='background:white'>When complete, you should see
+12 NDVI rasters in your TOC.</span></p>
+
+<p class=Instructions-GIS><img border=0 width=166 height=319 id="Picture 48"
+src="NDVI_files/image026.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc318455870">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Averaging NDVI values within an area defined by a polygon</a> </p>
+
+</div>
+
+<p class=MsoNormal><span style='background:white'>You are interested in finding
+the average NDVI value surrounding an instrumented tower in the Howland forest.
+The area encompassing the tower is represented by the data layer AOI . </span></p>
+
+<p class=MsoNormal><span style='background:white'>One way to average the NDVI
+values within an area of interest is to use the</span><span
+class=apple-converted-space><span style='font-size:10.0pt;line-height:115%;
+font-family:"Verdana",sans-serif;color:black;background:white'>&nbsp;</span></span><b><span
+style='background:white'>Identify</span></b><span class=apple-converted-space><span
+style='font-size:10.0pt;line-height:115%;font-family:"Verdana",sans-serif;
+color:black;background:white'>&nbsp;</span></span><span style='background:white'>tool
+to read each pixel's NDVI value then compute the average. This may be a time
+consuming process, especially if you need to perform this task for all 12 NDVI
+data layers.</span><span class=apple-converted-space><span style='font-size:
+10.0pt;line-height:115%;font-family:"Verdana",sans-serif;color:black;
+background:white'>&nbsp;</span></span><span style='background:white'>Fortunately,
+ArcGIS provides us with a tool that computes an average value for all pixels
+falling within an area of interest.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>In the ArcToolbox menu
+tree, navigate to</span><span class=apple-converted-space><span
+style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black;
+background:white'>&nbsp;</span></span><b><span style='background:white'>Spatial
+Analyst Tools &gt;&gt; Zonal</span></b><span class=apple-converted-space><span
+style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black;
+background:white'>&nbsp;</span></span><span style='background:white'>and select</span><span
+class=apple-converted-space><span style='font-size:10.0pt;font-family:"Verdana",sans-serif;
+color:black;background:white'>&nbsp;</span></span><b><span style='background:
+white'>Zonal Statistics as Table</span></b><span style='background:white'>.</span></p>
+
+<p class=Instructions-GIS><img border=0 width=272 height=540 id="Picture 43"
+src="NDVI_files/image027.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>In the Zonal
+Statistics as Table window select</span><span class=apple-converted-space><span
+style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black;
+background:white'>&nbsp;</span></span><b><span style='background:white'>AOI</span></b><span
+class=apple-converted-space><b><span style='font-size:10.0pt;font-family:"Verdana",sans-serif;
+color:black;background:white'>&nbsp;</span></b></span><span style='background:
+white'>as the 'Input raster or feature zone data' value,</span><span
+class=apple-converted-space><span style='font-size:10.0pt;font-family:"Verdana",sans-serif;
+color:black;background:white'>&nbsp;</span></span><b><span style='background:
+white'>Id</span></b><span class=apple-converted-space><b><span
+style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black;
+background:white'>&nbsp;</span></b></span><span style='background:white'>as the
+zone field</span>,&nbsp;<b>Jan_NDVI</b><span class=apple-converted-space><span
+style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black;
+background:white'>&nbsp;</span></span><span style='background:white'>as the
+input value raster and <b>…\NDVI\Jan.dbf</b></span><span
+class=apple-converted-space><span style='font-size:10.0pt;font-family:"Verdana",sans-serif;
+color:black;background:white'>&nbsp;</span></span><span style='background:white'>as
+the output table (don’t forget to add the .dbf extension).</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>Set the <i>Statistics
+type</i> to <b>MEAN</b>.</span></p>
+
+<p class=Instructions-GIS><img border=0 width=326 height=289 id="Picture 44"
+src="NDVI_files/image028.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Click <b>OK</b> to run
+the geoprocess.</span></p>
+
+<p class=MsoNormal><span style='background:white'>The newly created <b>Jan</b>
+table will be added to your TOC.</span></p>
+
+<p class=MsoNormal><img border=0 width=175 height=130 id="Picture 45"
+src="NDVI_files/image029.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Right-click on Jan and
+select <b>Open</b>.</span></p>
+
+<p class=MsoNormal><img border=0 width=199 height=109 id="Picture 46"
+src="NDVI_files/image030.png"></p>
+
+<p class=MsoNormal><span style='background:white'>This brings up the attribute
+table.</span></p>
+
+<p class=Instructions-GIS><img border=0 width=327 height=258 id="Picture 47"
+src="NDVI_files/image031.png"></p>
+
+<p class=MsoNormal><span style='background:white'>The mean NDVI value for the
+month of January within the AOI extent is <b>0.53</b>.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>Compute the Zonal
+Statistics for the remaining 11 months. Name the outputs <i>Feb.dbf</i>, <i>Mar.dbf</i>,
+etc…</span></p>
+
+<p class=MsoNormal><span style='background:white'>When complete, you should see
+12 NDVI  tables in your TOC.</span></p>
+
+<p class=MsoNormal><img border=0 width=177 height=272 id="Picture 50"
+src="NDVI_files/image032.png"></p>
+
+<p class=MsoNormal><span style='background:white'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='background:white'>Next, you will combine the
+tables into a single table.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>From the Geoprocessing
+pull-down menu, select <b>Merge</b>.</span></p>
+
+<p class=MsoNormal><img border=0 width=135 height=162 id="Picture 51"
+src="NDVI_files/image033.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>In the <b>Merge</b>
+window, add all twelve tables. Make sure that the tables appear in
+chronological order!</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>Save the output table in
+the NDVI folder and name it <b>all_NDVI.dbf</b> (don’t forget to specify the
+.dbf extension)</span></p>
+
+<p class=MsoNormal><img border=0 width=295 height=393 id="Picture 52"
+src="NDVI_files/image034.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Click <b>OK</b> to run
+the geoprocess.</span></p>
+
+<p class=MsoNormal><span style='background:white'>The new <i>all_NDVI</i> table
+will be added to the TOC.</span></p>
+
+<p class=MsoNormal><span style='background:white'>In the last and final step,
+you will graph the results.</span></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc318455871">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Graphing the NDVI values</a></p>
+
+</div>
+
+<p class=Instructions-GIS><span style='background:white'>From the <b>View</b>
+pull-down menu, go to <b>Graphs</b> and select <b>Create Graph</b>.</span></p>
+
+<p class=MsoNormal><img border=0 width=346 height=122 id="Picture 8"
+src="NDVI_files/image035.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>In the Create Graph
+Wizard window, select <b>Vertical Line</b> as graph type.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>Select <b>all_NDVI</b>
+as the table.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>Select <b>MEAN</b> for
+the Y field.</span></p>
+
+<p class=Instructions-GIS><img border=0 width=306 height=295 id="Picture 54"
+src="NDVI_files/image036.png"></p>
+
+<p class=Instructions-GIS><span style='background:white'>Click <b>Next</b>.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>Click <b>Finish</b>.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'>The output order
+follows the month order in the all_NDVI table (which explains why their order
+in the Merge function was critical).</span></p>
+
+<p class=Instructions-GIS><span style='background:white'><img border=0
+width=531 height=378 id="Picture 55" src="NDVI_files/image037.png"></span></p>
+
+<p class=MsoNormal><span style='background:white'>Note the peak NDVI values in
+Summer--as expected. You will also note that the NDVI values for the winter
+months are not low. This is because most trees in the AOI are evergreens
+(hence, they remain green year round).</span></p>
+
+<p class=Instructions-GIS><b><span style='background:white'>Save</span></b><span
+style='background:white'> your Map document.</span></p>
+
+<p class=Instructions-GIS><b><span style='background:white'>Close</span></b><span
+style='background:white'> your map document</span></p>
+
+<p class=MsoNormal><span style='background:white'>This concludes this session.</span></p>
+
+<div class=Instructions-GIS align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+border=0 width=76 height=27 id="Picture 3" src="NDVI_files/image038.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 3/2/2012 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

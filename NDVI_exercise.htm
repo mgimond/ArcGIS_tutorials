@@ -1,0 +1,752 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>NDVI and Mosaic tutorial</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.instructions-gis0, li.instructions-gis0, div.instructions-gis0
+	{mso-style-name:instructions-gis;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<div style='border:none;border-bottom:solid #595959 1.0pt;padding:0in 0in 1.0pt 0in'>
+
+<p class=MsoTitle style='border:none;padding:0in'><span style='font-family:
+"Calibri",sans-serif'>Creating and mosaicking NDVI rasters for Colby wooded
+areas</span></p>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span>Create a folder called <b>NDVI_colby</b>. On DIA 322 computers, you
+  might want to create this folder in your user Documents folder (e.g.
+  C:\Users\jdoe\Documents\NDVI_colby). On the DIA 222 computers, you might want
+  to create this folder on the D: drive under D:\course number\user name\ (e.g.
+  D:\ES212\jdoe\NDVI_colby).</p>
+  <p class=MsoListParagraphCxSpMiddle style='margin-top:7.5pt;margin-right:
+  0in;margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span></span><span style='color:black'>Under your <i>login_name</i> folder,
+  create another folder called <b>NDVI_colby</b>.</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><a href="NDVI_exercise_files/NDVI.zip">Download the data</a><span
+  style='color:black'> for this exercise and </span><a
+  href="Opening_zip_files.htm">extract the contents</a><span style='color:black'>
+  of the <b>NDVI.zip</b> file to your newly created <b>NDVI</b> directory on
+  the D: drive.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc382988356">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Viewing a multi-band image<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc382988357">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating an NDVI Raster<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc382988358">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Mosaicing Raster Layers<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc382988359">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Managing Raster File Size<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc382988356">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Viewing a Multi-Band Image</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Load one of the CIR images into a blank ArcMap
+document.</p>
+
+<p class=MsoNormal><img width=546 height=341 id="Picture 1"
+src="NDVI_exercise_files/image001.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><i>Note: The data were downloaded from </i><a
+href="http://mapserver.maine.gov/basemap/"><i>MEGIS’ Orthoimagery viewer</i></a>.</p>
+
+<p class=MsoNormal>By default, ArcMap will load the first three bands of the
+image file and assign these bands to the screen’s red, green and blue colors.
+These CIR images have the following band configurations. Note: the band order
+does not match the wavelength order (i.e. the blue wavelength is swapped with
+the red wavelength):</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=205 valign=top style='width:153.9pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'>Band number <br>
+  (as stored in the .jp2 image file)</p>
+  </td>
+  <td width=215 style='width:161.1pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'> Associated wavelength</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=205 valign=top style='width:153.9pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'>1</p>
+  </td>
+  <td width=215 valign=top style='width:161.1pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'> Red (600 – 700 nm)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=205 valign=top style='width:153.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'>2</p>
+  </td>
+  <td width=215 valign=top style='width:161.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'> Green (500 – 600 nm)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=205 valign=top style='width:153.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'>3</p>
+  </td>
+  <td width=215 valign=top style='width:161.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'> Blue (400 – 500 nm)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=205 valign=top style='width:153.9pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'>4</p>
+  </td>
+  <td width=215 valign=top style='width:161.1pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'> Near Infrared ( &gt;700 nm)</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><br>
+The addition of a near-infrared (NIR) band provides us with a unique
+perspective of land surface features. We can add this band to our display by
+assigning it to the digital screen’s Red gun and bumping the red band and green
+band down the color gun ladder. This implies that the blue band will no longer
+be displayed.</p>
+
+<p class=Instructions-GIS>Open the image layer’s properties window and select <b>Symbology</b>.</p>
+
+<p class=MsoNormal><img border=0 width=236 height=92 id="Picture 12"
+src="NDVI_exercise_files/image002.png"></p>
+
+<p class=MsoNormal> </p>
+
+<p class=Instructions-GIS>Next, assign <i>band_4</i>, <i>band_1</i> and <i>band_2</i>
+to the Red, Green and Blue display color guns.</p>
+
+<p class=MsoNormal><img border=0 width=392 height=105 id="Picture 21"
+src="NDVI_exercise_files/image003.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to close the Properties window.</p>
+
+<p class=MsoNormal>The above band combination generates a view called a <i>false
+color composite</i>.</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=337 valign=top style='width:252.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=305 height=309 id="Picture 22"
+  src="NDVI_exercise_files/image004.png"></p>
+  </td>
+  <td width=397 valign=top style='width:297.9pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:#76923C'>Note the prominence of the evergreens in
+  this scene. They appear as red features. Why is this? How does the spectral
+  shape of plant reflectance explain this?</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNoSpacing>&nbsp;</p>
+
+<p class=MsoNoSpacing>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc382988357">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating an NDVI Raster</a></p>
+
+</div>
+
+<p class=MsoNormal>Next you will load the NIR and Red bands as <b>individual</b>
+layers. </p>
+
+<p class=Instructions-GIS>This is done by double-clicking on the *<i>.jp2</i>
+raster layer then loading the <i>band_1</i> and <i>band_4 layers </i>separately<i>.</i>
+</p>
+
+<p class=MsoNormal><img border=0 width=188 height=128 id="Picture 5"
+src="NDVI_exercise_files/image005.png"></p>
+
+<p class=MsoNormal>Next, you will compute the NDVI values for each pixel in the
+scene using the two bands. </p>
+
+<p class=Instructions-GIS>Open the raster calculator (under <b>Spatial Analyst
+&gt;&gt; Map Algebra</b>).</p>
+
+<p class=MsoNormal>The NDVI is computed as (NIR - Red) / (Red + NIR).  However,
+because the rasters in this exercise are stored as integers, ArcMap will assume
+that the output must be stored as integers as well. It therefore follows that
+any value in the output raster will be rounded to the nearest integer—this is not
+what we want since NDVI values can take on any values between -1 and 1. We will
+therefore need to wrap the numerator with the <span style='font-family:"Courier New"'>Float()</span>
+function. This function will force ArcMap to treat the pixel values as floats
+and not integers. </p>
+
+<p class=Instructions-GIS>Create the following expression in the expression
+box. It might be easier to double-click on the layer names to carry them over
+into the expression box instead of typing them in directly.</p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";color:blue'>Float(&quot;2013_44739337_075.jp2
+- Band_4&quot; - &quot;2013_44739337_075.jp2 - Band_1&quot;) /
+(&quot;2013_44739337_075.jp2 - Band_4&quot; + &quot;2013_44739337_075.jp2 -
+Band_1&quot;)</span></p>
+
+<p class=MsoNormal><img border=0 width=677 height=96 id="Picture 6"
+src="NDVI_exercise_files/image006.png"></p>
+
+<p class=Instructions-GIS>You will name the output <b>NDVI_1.img</b>. </p>
+
+<p class=MsoNormal>The output is a single band raster that maps NDVI values for
+each pixel.</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=367 valign=top style='width:275.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img border=0 width=533 height=337 id="Picture 9"
+  src="NDVI_exercise_files/image007.png"></p>
+  </td>
+  <td width=367 valign=top style='width:275.4pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><span style='color:#76923C'>Can you interpret the map? What does a
+  high NDVI value indicate? How about a low NDVI value?</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=Instructions-GIS>Next, generate NDVI rasters from the other eight <i>.jp2</i>
+raster files.</p>
+
+<p class=MsoNormal>The nine rasters produce a tiled layout of a section of the
+Colby campus.</p>
+
+<p class=MsoNormal><img border=0 width=556 height=550 id="Picture 10"
+src="NDVI_exercise_files/image008.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc382988358">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Mosaicing Raster Layers</a></p>
+
+</div>
+
+<p class=MsoNormal>Next, you will mosaic the nine NDVI rasters into a single
+raster.  To “mosaic” (merge) vector layers, we  can use the <i>Merge</i>
+geoprocess tool.  For raster layers, another mosaic tool must be used: the <b>Mosaic
+to New Raster </b>tool (under <b>Data Management Tools &gt;&gt; Raster &gt;&gt;
+Raster Dataset</b>).  </p>
+
+<p class=Instructions-GIS>Using the <b>Mosaic to New Raster</b> tool, mosaic
+all nine raster layers to create a new raster: <b>NDVI.img.</b> Make sure to
+select the <b>32_bit_float</b> option (since the data are stored as floats and
+not integers) and set the output number of bands to <b>1</b> (the NDVI layers
+are made up of a single band only).</p>
+
+<p class=MsoNormal><img border=0 width=680 height=516 id="Picture 11"
+src="NDVI_exercise_files/image009.png"></p>
+
+<p class=MsoNormal>The output raster is a single mosaic of all nine rasters. </p>
+
+<p class=MsoNormal><img border=0 width=289 height=292 id="Picture 23"
+src="NDVI_exercise_files/image010.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc382988359">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Managing Raster File Size</a></p>
+
+</div>
+
+<p class=MsoNormal>A downside to storing a raster data as a Float is the large
+disk space it can consume.  The mosaicked NDVI raster file takes up more than
+850 MB of disk space. This is unnecessary. A common workaround is to <i>scale</i>
+the pixel values before storing the file as an integer. </p>
+
+<p class=Instructions-GIS>Using the raster calculator, multiply all pixel
+values by 1000 and force the output value as an integer using the following
+expression:</p>
+
+<p class=Instructions-GIS><span style='font-family:"Courier New";color:#0F02BE'>Int(“NDVI.img”
+* 1000)</span></p>
+
+<p class=MsoNormal><img border=0 width=677 height=237 id="Picture 14"
+src="NDVI_exercise_files/image011.png"></p>
+
+<p class=Instructions-GIS>Name the output <b>NDVI_1000.img</b>.</p>
+
+<p class=MsoNormal>ArcGIS may output a 32-bit integer raster. This reduces the
+file size a little bit, but we can do better (we don’t need 32-bit of storage for
+a small range of values). We will therefore copy the raster to a new <b>16-bit
+signed</b> raster (which can handle values that range from -32,768 to 32,767).</p>
+
+<p class=Instructions-GIS>Open the <b>Copy Raster</b> tool (<b>Data Management
+&gt;&gt; Raster &gt;&gt; Raster Dataset</b>) and fill out the parameters as
+specified below (your output raster file location may differ).</p>
+
+<p class=MsoNormal><img border=0 width=331 height=404 id="Picture 15"
+src="NDVI_exercise_files/image012.png"></p>
+
+<p class=Instructions-GIS>Click OK to run the geoprocess.</p>
+
+<p class=MsoNormal>Your output file size should now be around 400 MB (about
+half of its original size).</p>
+
+<p class=MsoNormal><span style='color:#00B050'>Thought exercise: Could you have
+saved the raster as a signed 8 bit raster instead of a 16 bit raster? If so,
+how would you have scaled (transformed)  the NDVI values (i.e. what range of
+NDVI values would the signed 8 bit raster take on)?</span></p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+border=0 width=76 height=27 id="Picture 2"
+src="NDVI_exercise_files/image013.png"></span><span style='font-size:10.0pt;
+color:gray'> Manuel Gimond, last modified on 1/30/2015 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

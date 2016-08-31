@@ -1,0 +1,1372 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Topology exercise</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Defining and fixing
+topological errors</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span>Create a folder called <b><span style='font-size:11.0pt;color:black'>Topology</span></b>.
+  On DIA 322 computers, you might want to create this folder in your user
+  Documents folder (e.g. C:\Users\jdoe\Documents\ Topology). On the DIA 222
+  computers, you might want to create this folder on the D: drive under D:\course
+  number\user name\ (e.g. D:\ES212\jdoe\Topology).</p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:11.0pt;color:black'>Download the data
+  for this exercise by clicking </span><b><span style='font-size:11.0pt'><a
+  href="Topology_files/Topology.zip">here</a></span></b><span style='font-size:
+  11.0pt;color:black'> and uncompress the contents of <b>Topology.zip</b> into
+  your newly created <b>Topology</b> directory.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this exercise, you will learn how to define and identify
+topological errors. Examples of topological rules covered in this tutorial
+include “must not overlap” and “must not have gaps” rules.</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc306607253">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Open an existing ArcMap document<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc306607254">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating and defining a new geodatabase topology<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc306607255">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Checking the topology results<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc306607256">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Removing gaps in a polygon feature class<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>16</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc306607257">Step 5:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Fixing polygon overlap errors<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>20</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc306607258">Step 6:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Fixing boat launch topological errors<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>24</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc306607259">Step 7:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Identifying and editing  polylines that fall outside of a
+boundary<span style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>28</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc306607260">Step 8:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Fixing non-overlapping polygons errors between two
+different feature class sources<span style='color:windowtext;display:none;
+text-decoration:none'>  </span><span
+style='color:windowtext;display:none;text-decoration:none'>31</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc306607253">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open an existing ArcMap document</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Navigate to the <b>Topology</b> folder and open <b>Topology.mxd</b>
+with ArcMap.</p>
+
+<p class=Instructions-GIS><img width=374 height=421 id="Picture 1"
+src="Topology_files/image001.png"></p>
+
+<p class=MsoNormal>The map project depicts two levels of hydrologic drainage
+basins: the top-level is defined by the orange and dashed outline, and the
+sub-basins are symbolized with light yellow polygons. River polylines,
+lakes/ponds and boat launch sites top off the map.</p>
+
+<p class=MsoNormal>The purpose of this exercise is to identify topological
+errors that may have resulted from digitizing or post-processing errors. We
+want to preserve the following topological relationships:</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>There must be <b>no gaps</b> between the sub-basin (Hydro unit
+level 2) polygons.<br>
+<img width=340 height=175 id="Picture 8" src="Topology_files/image002.png"></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>There must be <b>no overlap</b> between the sub-basin (Hydro unit
+level 2) polygons.<br>
+<img width=298 height=171 id="Picture 9" src="Topology_files/image003.png"></p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The top level basin (Hydro unit level 1)  <b>boundary must coincide
+with</b> the sub-basins (Hydro unit level 2)  border boundaries.</p>
+
+<p class=MsoListParagraphCxSpMiddle><img width=336 height=176 id="Picture 11"
+src="Topology_files/image004.png"><br>
+<br>
+</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>The boat launch point features <b>must fall on</b> the ponds and
+lakes polygon <b>boundaries</b>.<br>
+<img width=348 height=182 id="Picture 13" src="Topology_files/image005.png"></p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Rivers and streams must <b>not extend beyond</b> the top-level
+basin (Hydro unit level 1).<br>
+<img width=303 height=205 id="Picture 14" src="Topology_files/image006.png"></p>
+
+<p class=MsoNormal>In some cases, the aforementioned requirements can be met
+with a careful visual analysis of the map. However, in most cases, many of the
+aforementioned rules can be easily overlooked. A systematic/automated approach
+to identifying topological anomalies is often preferred.  You will use ArcGIS’
+Topology tool to define and identify topological errors.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc306607254">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating and defining a new geodatabase topology</a></p>
+
+</div>
+
+<p class=Instructions-GIS> On the right-hand side of the ArcMap interface,
+expand the <b>Catalog</b> tab.</p>
+
+<p class=MsoNormal><img width=280 height=324 id="Picture 15"
+src="Topology_files/image007.png"></p>
+
+<p class=Instructions-GIS><b>Right-click</b> on the Working_Data feature
+dataset under the Topology geodatabase and select <b>New &gt;&gt; Topology</b>.</p>
+
+<p class=MsoNormal><img width=427 height=200 id="Picture 16"
+src="Topology_files/image008.png"></p>
+
+<p class=Instructions-GIS>In the New Topolgy window, click <b>Next</b>.</p>
+
+<p class=Instructions-GIS>Keep the default topology name and change the cluster
+distance to <b>5 meters</b>.</p>
+
+<p class=MsoNormal><img width=385 height=177 id="Picture 17"
+src="Topology_files/image009.png"></p>
+
+<p class=MsoNormal>The <a
+href="http://help.arcgis.com/en/arcgisdesktop/10.0/help/index.html#//006200000003000000.htm">cluster
+tolerance</a> defines the minimum spacing between vertices within a feature
+class and across feature classes taking part in a topology. The tolerance
+distance should be chosen carefully.</p>
+
+<p class=Instructions-GIS>Click <b>Next</b>.</p>
+
+<p class=Instructions-GIS>Select <b>all</b> layers. They will all take part in
+this topology.</p>
+
+<p class=MsoNormal><img border=0 width=207 height=154 id="Picture 18"
+src="Topology_files/image010.png"></p>
+
+<p class=Instructions-GIS>Click <b>Next</b>.</p>
+
+<p class=MsoNormal>When a topology is validated, vertex position can be
+modified during the cracking/snapping process. When more than one layer takes
+part in a topological rule, you need to define which layer will have its
+vertices position adjusted.</p>
+
+<p class=MsoNormal>In this exercise, we will assume that the top level drainage
+basin and the pond/lake boundaries are positionally more accurate—meaning that
+all other features taking part in a topology will have their vertices position
+adjusted if deemed necessary.</p>
+
+<p class=Instructions-GIS>Set the ranks as shown below:</p>
+
+<p class=MsoNormal><img border=0 width=325 height=183 id="Picture 19"
+src="Topology_files/image011.png"></p>
+
+<p class=Instructions-GIS>Click <b>Next</b>.</p>
+
+<p class=MsoNormal>In this step you will define all rules that will take part
+in this topology.</p>
+
+<p class=Instructions-GIS>Click the <b>Add Rule</b> button <img border=0
+width=105 height=25 id="Picture 20" src="Topology_files/image012.png">.</p>
+
+<p class=Instructions-GIS>Set <b>hydro_unit_2</b> as the feature class.</p>
+
+<p class=Instructions-GIS>Select the <b>Must Not Have Gaps</b> rule.</p>
+
+<p class=Instructions-GIS><img border=0 width=402 height=268 id="Picture 21"
+src="Topology_files/image013.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b>.</p>
+
+<p class=MsoNormal>Next, you will add the second rule.</p>
+
+<p class=Instructions-GIS>Click the <b>Add Rule</b> button again.</p>
+
+<p class=Instructions-GIS>Set <b>hydro_unit_2</b> as the feature class.</p>
+
+<p class=Instructions-GIS>Select the <b>Must Not Overlap</b> rule.</p>
+
+<p class=Instructions-GIS><img border=0 width=402 height=264 id="Picture 22"
+src="Topology_files/image014.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b>.</p>
+
+<p class=Instructions-GIS>Following the same steps, you will add three more
+rules (note that the next set of rules involve two features classes instead of
+one).</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:gray;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;border:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS align=right style='text-align:right'><span
+  style='color:white'>Boat_launch</span></p>
+  </td>
+  <td width=216 valign=top style='width:2.25in;border:solid white 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS align=center style='text-align:center'><span
+  style='color:white'>Must be covered by boundary of</span></p>
+  </td>
+  <td width=186 valign=top style='width:139.5pt;border:solid white 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS><span style='color:white'>Ponds_lakes_dissolve</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;border:solid white 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS align=right style='text-align:right'><span
+  style='color:white'>Rivers_streams</span></p>
+  </td>
+  <td width=216 valign=top style='width:2.25in;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS align=center style='text-align:center'><span
+  style='color:white'>Must be inside</span></p>
+  </td>
+  <td width=186 valign=top style='width:139.5pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS><span style='color:white'>Hydro_unit_1</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=144 valign=top style='width:1.5in;border:solid white 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS align=right style='text-align:right'><span
+  style='color:white'>Hydro_unit_1</span></p>
+  </td>
+  <td width=216 valign=top style='width:2.25in;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS align=center style='text-align:center'><span
+  style='color:white'>Area boundary must be covered by boundary of</span></p>
+  </td>
+  <td width=186 valign=top style='width:139.5pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=Instructions-GIS><span style='color:white'>Hydro_unit_2</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The list of rules should look like this:</p>
+
+<p class=Instructions-GIS><img border=0 width=394 height=308 id="Picture 24"
+src="Topology_files/image015.png"></p>
+
+<p class=Instructions-GIS>When you are done adding the other three rules, click
+<b>Next</b>.</p>
+
+<p class=Instructions-GIS>The next window displays a summary for the new
+topology.</p>
+
+<p class=Instructions-GIS><img border=0 width=412 height=362 id="Picture 4"
+src="Topology_files/image016.png"></p>
+
+<p class=Instructions-GIS>Click <b>Finish</b>.</p>
+
+<p class=Instructions-GIS>When asked if you want to validate the topology now,
+click <b>Yes</b>.</p>
+
+<p class=Instructions-GIS><img border=0 width=489 height=205 id="Picture 25"
+src="Topology_files/image017.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc306607255">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Checking the topology results</a></p>
+
+</div>
+
+<p class=MsoNormal>The new topology can be added to your map document as a layer.
+The topology layer symbolizes the features that break the topological rules.</p>
+
+<p class=Instructions-GIS>Drag and drop <b>Working_Data_Topology</b> into your
+map document.</p>
+
+<p class=Instructions-GIS><img border=0 width=286 height=223 id="Picture 26"
+src="Topology_files/image018.png"></p>
+
+<p class=Instructions-GIS>Click <b>No</b> when asked if you want to add all
+feature classes that participate in the topology (the feature classes are
+already in the map document).</p>
+
+<p class=Instructions-GIS><img border=0 width=430 height=211 id="Picture 27"
+src="Topology_files/image019.png"></p>
+
+<p class=MsoNormal>Note that the topology layer has three symbols, one for each
+geometric primitive (polygon, polyline and point/vertex).</p>
+
+<p class=MsoNormal><img border=0 width=223 height=179 id="Picture 29"
+src="Topology_files/image020.png"></p>
+
+<p class=MsoNormal>You can scan for topological errors on the map, or you can
+list the errors in a table. To bring up the table, you must first start an edit
+session.</p>
+
+<p class=Instructions-GIS>Open the Editor toolbar by clicking the <b>Editor
+Toolbar</b> button.</p>
+
+<p class=MsoNormal><img border=0 width=144 height=65
+src="Topology_files/image021.png"></p>
+
+<p class=Instructions-GIS>In the Editor toolbar, select <b>Start Editing</b>
+from the Editor pull-down menu.</p>
+
+<p class=MsoNormal><img border=0 width=197 height=131 id="Picture 30"
+src="Topology_files/image022.png"></p>
+
+<p class=Instructions-GIS>From the <b>Customize</b> pull-down menu, select <b>Toolbars
+&gt;&gt; Topology</b>.</p>
+
+<p class=MsoNormal><img border=0 width=425 height=241 id="Picture 31"
+src="Topology_files/image023.png"></p>
+
+<p class=MsoNormal>You should now see a floating Topology toolbar.</p>
+
+<p class=MsoNormal><img border=0 width=522 height=45 id="Picture 32"
+src="Topology_files/image024.png"></p>
+
+<p class=Instructions-GIS>In the Topology toolbar, click on the <b>Error</b> <b>Inspector</b>
+button.</p>
+
+<p class=Instructions-GIS><img border=0 width=206 height=82 id="Picture 33"
+src="Topology_files/image025.png"></p>
+
+<p class=MsoNormal>This opens the Error Inspector table. This table lists all
+topological errors in your map document. You can list the errors by topological
+rules defined in your topology. </p>
+
+<p class=MsoNormal>One rule that you did not explicitly define but takes part
+in topology nonetheless is the “Must be larger than cluster tolerance” rule
+(remember that you specified a cluster tolerance of 5 meters when you defined
+the topology). These errors flag all features who’s vertices were within each
+other’s cluster tolerance.</p>
+
+<p class=Instructions-GIS>In the Error Inspector window, select “<b>Must be
+larger than cluster tolerance</b>” from the <b>Show</b> pull-down menu.</p>
+
+<p class=MsoNormal><img border=0 width=371 height=177 id="Picture 34"
+src="Topology_files/image026.png"></p>
+
+<p class=Instructions-GIS>Next, <b>unselect</b> <b>Visible Extent only</b> and
+click <b>Search Now</b>.</p>
+
+<p class=MsoNormal><img border=0 width=591 height=141 id="Picture 35"
+src="Topology_files/image027.png"></p>
+
+<p class=MsoNormal>You should have 33 errors. Most of these errors are
+associated with the River &amp; Streams polyline layer.</p>
+
+<p class=Instructions-GIS>Right-click on the first error and select <b>Zoom to</b>.</p>
+
+<p class=MsoNormal><img border=0 width=513 height=143 id="Picture 36"
+src="Topology_files/image028.png"></p>
+
+<p class=MsoNormal>You might see something like the following graphic:</p>
+
+<p class=Instructions-GIS><img border=0 width=354 height=409 id="Picture 37"
+src="Topology_files/image029.png"></p>
+
+<p class=MsoNormal>The light blue line represents the Rivers &amp; Streams
+layer after the topology validation. The black line shows the segment of
+original River &amp; Streams layer that did not satisfy a topology rule
+(cluster tolerance). The visual representation may not make much sense unless
+you bring up the original layer. A copy of the Rivers &amp; Streams layer was
+saved in the geodatabase. You will add this layer for comparison in the following
+step.</p>
+
+<p class=Instructions-GIS>Using the <b>Add Data</b> tool <img border=0
+width=21 height=20 id="Picture 38" src="Topology_files/image030.png">, you will
+add <b>Rivers_streams_original</b> layer which is located under the
+Original_data feature dataset in the Topology geodabase.</p>
+
+<p class=MsoNormal><img border=0 width=215 height=80 id="Picture 39"
+src="Topology_files/image031.png"></p>
+
+<p class=MsoNormal>Having the original layer displayed in the map document
+helps understand what happened. Because the original vertices were within the
+cluster tolerance, the software “collapsed” the vertices into a single vertex.
+In the process, the polyline feature changed in length and orientation! It is
+important to remember that once a topology is validated, all vertices/points
+falling within the cluster tolerance are altered. This process is not
+reversible! It is therefore good practice to make a copy of the feature whose
+topology will be validated before the validation is performed.<img border=0
+width=531 height=301 id="Picture 40" src="Topology_files/image032.png"></p>
+
+<p class=MsoNormal>If you want to minimize the chance of having vertices
+snapped to new locations, you can set the cluster tolerance to the lowest value
+(usually 0.001 map units). However, there are advantages to defining larger
+cluster tolerances. In our example, the original polyline precision far exceeds
+its intended accuracy. This introduces redundant vertices and sometimes
+misleading representation of real world features.</p>
+
+<p class=MsoNormal><img border=0 width=393 height=289 id="Picture 42"
+src="Topology_files/image033.png"></p>
+
+<p class=Instructions-GIS>In the TOC, uncheck the <b>Rivers_streams_original </b>layer<b>.</b></p>
+
+<p class=MsoNormal>Let’s move on to another topology rule: <i>The Hydro unit
+level 2 layer must not have gaps</i>.</p>
+
+<p class=Instructions-GIS>In the <b>Error Inspector</b> window, select <b>hydro_unit_2
+– Must Not Have Gaps</b>.</p>
+
+<p class=Instructions-GIS>Make sure that <b>Visible Extent only</b> is <b>unchecked</b>
+and click <b>Search Now</b>.</p>
+
+<p class=MsoNormal>You should see three errors.</p>
+
+<p class=MsoNormal><img border=0 width=583 height=196 id="Picture 44"
+src="Topology_files/image034.png"></p>
+
+<p class=Instructions-GIS>Right-click the <b>third</b> error in the list and
+select <b>Zoom To</b>.</p>
+
+<p class=MsoNormal><img border=0 width=292 height=302 id="Picture 45"
+src="Topology_files/image035.png"></p>
+
+<p class=MsoNormal>Gaps between polygons can be difficult to spot visually.
+This can be important if the intent is to represent/model a continuous field.</p>
+
+<p class=MsoNormal>Unlike the “Must be larger than cluster tolerance” errors,
+the “must not have gap” errors require user feedback. We therefore need to remove
+all gaps identified in the topology. You will learn how to fix topology errors
+in the next step.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc306607256">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Removing gaps in a polygon feature class</a></p>
+
+</div>
+
+<p class=MsoNormal>The Error Inspector window will sometimes offer “fixes” for
+the problem. These proposed fixes can be accessed by right-clicking on the
+error record. You will use the proposed fix to remove this gap.</p>
+
+<p class=Instructions-GIS><b>Right-click</b> on the third (last) record in the
+table. You will note that one solution is offered to resolve the error: Create
+Feature. </p>
+
+<p class=Instructions-GIS>Select <b>Create Feature</b>.</p>
+
+<p class=MsoNormal><img border=0 width=366 height=274 id="Picture 46"
+src="Topology_files/image036.png"></p>
+
+<p class=MsoNormal>A new polygon now replaces the gap. However, this raises a
+new issue. Was the original intent to have a standalone watershed unit in the
+space occupied by the gap, or was that space meant to be occupied by one of the
+two adjoining polygons? In our example, we will assume that the gap was to be
+occupied by the polygon to the right. We will therefore merge the newly created
+polygon with the existing one.</p>
+
+<p class=Instructions-GIS>Using the selection tool <img border=0 width=20
+height=20 id="Picture 47" src="Topology_files/image037.png">, press and hold
+the <b>shift key</b> and <b>select</b> both the newly created polygon and the
+larger polygon to its right.</p>
+
+<p class=MsoNormal><img border=0 width=340 height=311 id="Picture 48"
+src="Topology_files/image038.png"></p>
+
+<p class=Instructions-GIS>In the Editor toolbar, select <b>Editor &gt;&gt;
+Merge</b>.</p>
+
+<p class=MsoNormal><img border=0 width=163 height=277 id="Picture 49"
+src="Topology_files/image039.png"></p>
+
+<p class=Instructions-GIS>Select <b>hydro_unit_2 – ME</b> as the feature to
+merge with.</p>
+
+<p class=Instructions-GIS><img border=0 width=374 height=220 id="Picture 50"
+src="Topology_files/image040.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b>.</p>
+
+<p class=MsoNormal>You may have noticed that the gap you just fixed is no
+longer listed in the Error Inspector window (if it’s still present, click the <b>Search
+Now</b> button to refresh).</p>
+
+<p class=MsoNormal>Let’s move on to the next error.</p>
+
+<p class=MsoNormal><img border=0 width=441 height=124 id="Picture 51"
+src="Topology_files/image041.png"></p>
+
+<p class=Instructions-GIS>Right-click the second (or last) error in the list
+and select <b>Zoom to</b>.</p>
+
+<p class=Instructions-GIS>Follow the same steps used to fix the last gap. You
+will merge the newly created polygon with the polygon to its right
+(hydro_unit_2-ME).</p>
+
+<p class=Instructions-GIS><img border=0 width=443 height=480 id="Picture 52"
+src="Topology_files/image042.png"></p>
+
+<p class=MsoNormal>You are now left with just one “must not have gaps” error.</p>
+
+<p class=Instructions-GIS>In the Error Inspector window, right-click on the
+remaining error and select <b>Zoom-to</b>.</p>
+
+<p class=MsoNormal><img border=0 width=199 height=234 id="Picture 53"
+src="Topology_files/image043.png"></p>
+
+<p class=MsoNormal>The entire feature is highlighted. This is normal. Since the
+outer edges of the <i>Hydro unit level 2</i> layer do not share boundaries with
+neighboring features, the software flags this as an error. This is an error
+that can be ignored, we will therefore flag it as such.</p>
+
+<p class=Instructions-GIS>In the Error Inspector window, right-click on the
+remaining error and select <b>Mark as Exception</b>.</p>
+
+<p class=MsoNormal>This will remove the error from the list.</p>
+
+<p class=MsoNormal>Next, you will fixed polygon overlap errors.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc306607257">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Fixing polygon overlap errors</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In the Error Inspector window, select <b>hydro_unit_2-Must
+Not Overlap</b> then click the <b>Search Now</b> button.</p>
+
+<p class=MsoNormal>You should see three errors listed.</p>
+
+<p class=Instructions-GIS><img border=0 width=515 height=201 id="Picture 54"
+src="Topology_files/image044.png"></p>
+
+<p class=Instructions-GIS>Right-click on the <b>first</b> error and select <b>Zoom
+to</b>.</p>
+
+<p class=Instructions-GIS><img border=0 width=244 height=170 id="Picture 55"
+src="Topology_files/image045.png"></p>
+
+<p class=MsoNormal>Remember that the rose colored polygon is a representation
+of the topological error. </p>
+
+<p class=Instructions-GIS>Int the TOC, turn <b>off</b> the
+Working_Data_Topology layer.</p>
+
+<p class=Instructions-GIS><img border=0 width=237 height=169 id="Picture 56"
+src="Topology_files/image046.png">.</p>
+
+<p class=MsoNormal>At first glance, nothing seems wrong with the feature—there
+is no indication of overlap. Any overlap will be masked by filled polygon. To ‘unmask’
+the overlap, we will need to temporarily set the fill color to ‘no color’.</p>
+
+<p class=Instructions-GIS>In the TOC, double-click the <b>Hydro unit level 2</b>
+symbol and set the <b>Fill Color</b> to <b>No Color</b> then close the Symbol
+Selector window.</p>
+
+<p class=Instructions-GIS><img border=0 width=397 height=327 id="Picture 58"
+src="Topology_files/image047.png"></p>
+
+<p class=MsoNormal>This last step only displays the features’  outlines thus
+revealing the area of concern.</p>
+
+<p class=MsoNormal><img border=0 width=256 height=176 id="Picture 59"
+src="Topology_files/image048.png"></p>
+
+<p class=MsoNormal>To convince yourself that two the area-of-interest is the
+result of overlapping polygons, use the identify tool.</p>
+
+<p class=Instructions-GIS>Click on the <b>Identify</b> tool <img border=0
+width=22 height=21 id="Picture 60" src="Topology_files/image049.png">.</p>
+
+<p class=Instructions-GIS>Select the overlapping region.</p>
+
+<p class=Instructions-GIS>In the <b>Identify</b> window, make sure that <b>Hydro
+unit level 2</b> layer is selected.</p>
+
+<p class=MsoNormal>Note that two features are identified. </p>
+
+<p class=Instructions-GIS><img border=0 width=303 height=181 id="Picture 62"
+src="Topology_files/image050.png"></p>
+
+<p class=Instructions-GIS><b>Right-click</b> on the <b>first</b> record in the <b>Error
+Inspector window</b>.</p>
+
+<p class=MsoNormal>To fix the problem, the error inspector window provides
+three solutions: subtract, merge and create feature.</p>
+
+<p class=MsoNormal><img border=0 width=359 height=356 id="Picture 63"
+src="Topology_files/image051.png"></p>
+
+<p class=MsoNormal>We will choose to merge the overlapping area with the
+polygon to the south.</p>
+
+<p class=Instructions-GIS>Select <b>Merge</b>.</p>
+
+<p class=Instructions-GIS>Choose polygon ID <b>605</b>.</p>
+
+<p class=MsoNormal><img border=0 width=352 height=202 id="Picture 64"
+src="Topology_files/image052.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b>.</p>
+
+<p class=Instructions-GIS>You will follow the same procedure to resolve polygon
+overlap conflicts for the other two errors. The following graphic presents the
+merge options to choose.</p>
+
+<p class=MsoNormal><img border=0 width=478 height=165 id="Picture 65"
+src="Topology_files/image053.png"></p>
+
+<p class=MsoNormal>Next, we will tackle the <i>boat launch must be on the edge
+of ponds and lakes</i> topological errors.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc306607258">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Fixing boat launch topological errors</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In the Error Inspector window, select <b>Boat_launch
+– Must Be Covered By Boundary Of – Ponds_lakes_dissolve</b>.</p>
+
+<p class=Instructions-GIS>Click <b>Search Now</b> (make sure that <i>Visible
+Extend only</i> option is unchecked).</p>
+
+<p class=MsoNormal>Seven errors should be listed.</p>
+
+<p class=Instructions-GIS>In the Error Inspector window, right-click the first
+record and select <b>Zoom to</b>.</p>
+
+<p class=Instructions-GIS>If needed, use the <b>zoom</b> tool to zoom in
+further on the point of interest.</p>
+
+<p class=Instructions-GIS><img border=0 width=204 height=204 id="Picture 67"
+src="Topology_files/image054.png"></p>
+
+<p class=MsoNormal>The point is clearly not on the <i>Ponds &amp; Lakes</i>
+boundary. If you right-click on the error record, you’ll note that the Error
+Inspector tool does not offer an automated solution to the problem. This
+entails a manual edit of the point.</p>
+
+<p class=MsoNormal>First, you will need to ensure that the snap tool is
+properly set up to snap points to edges of polygons.</p>
+
+<p class=Instructions-GIS>From the <b>Customize</b> pull-down menu, activate
+the <b>snapping toolbar</b>.</p>
+
+<p class=Instructions-GIS><img border=0 width=468 height=279 id="Picture 68"
+src="Topology_files/image055.png"></p>
+
+<p class=Instructions-GIS>In the snapping toolbar, make sure that the <b>Edge
+Snapping</b> option is set.</p>
+
+<p class=Instructions-GIS><img border=0 width=195 height=87 id="Picture 69"
+src="Topology_files/image056.png"></p>
+
+<p class=Instructions-GIS>From the <b>Editor toolbar</b>, click on the <b>Edit</b>
+tool.</p>
+
+<p class=Instructions-GIS><img border=0 width=179 height=102 id="Picture 71"
+src="Topology_files/image057.png"></p>
+
+<p class=MsoNormal>Before we select the point, it might be a good idea to make
+the point layer the <b>only</b> selectable layer since many layers in our map
+document overlap one another.</p>
+
+<p class=Instructions-GIS>In the <b>Table of Content</b> window, select <b>List
+By Selection</b>.</p>
+
+<p class=MsoNormal><img border=0 width=189 height=78 id="Picture 74"
+src="Topology_files/image058.png"></p>
+
+<p class=Instructions-GIS>Holding down the <b>Alt</b> key, click on the <b>toggle
+selectable icon</b> next to the Boat launch layer.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><img border=0 width=444 height=249 id="Picture 75"
+src="Topology_files/image059.png"></p>
+
+<p class=MsoNormal>This will ensure that only the boat launch layer is
+selectable.</p>
+
+<p class=MsoNormal><img border=0 width=331 height=212 id="Picture 76"
+src="Topology_files/image060.png"></p>
+
+<p class=Instructions-GIS>In the Editor toolbar, click on the <b>Edit</b> tool.</p>
+
+<p class=MsoNormal><img border=0 width=175 height=95
+src="Topology_files/image061.png"></p>
+
+<p class=Instructions-GIS>Select the boat launch point feature and move it to
+the lake and pond boundary until it snaps to the Ponds &amp; lakes edge then
+release the mouse button.</p>
+
+<p class=Instructions-GIS><img border=0 width=274 height=164 id="Picture 70"
+src="Topology_files/image062.png"></p>
+
+<p class=Instructions-GIS>To verify that the point coincides with the Ponds
+&amp; lakes boundary, run the <b>Validate topology in current extent</b> tool
+from the Topology toolbar.</p>
+
+<p class=Instructions-GIS><img border=0 width=260 height=85 id="Picture 72"
+src="Topology_files/image063.png"></p>
+
+<p class=Instructions-GIS>After running the tool, you may need to refresh the
+Error Inspector window by clicking <b>Search Now</b>.</p>
+
+<p class=Instructions-GIS><img border=0 width=152 height=74 id="Picture 2"
+src="Topology_files/image064.png"></p>
+
+<p class=MsoNormal>You should now have only 6 remaining records.</p>
+
+<p class=Instructions-GIS><img border=0 width=545 height=249 id="Picture 3"
+src="Topology_files/image065.png"></p>
+
+<p class=Instructions-GIS>Repeat this procedure for the remaining six errors.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc306607259">Step 7:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifying and editing  polylines that fall outside of a boundary</a></p>
+
+</div>
+
+<p class=MsoNormal>Next, we will search for river and stream polylines that do
+not meet the “Rivers_streams must be inside Hydro_uni_1” topology rule.</p>
+
+<p class=Instructions-GIS>In the Inspector window select <b>Rivers_streams -
+must be inside - Hydro_uni_1</b> then click <b>Search Now</b>.</p>
+
+<p class=MsoNormal>You should see a single record.</p>
+
+<p class=Instructions-GIS><img border=0 width=547 height=150
+src="Topology_files/image066.png"></p>
+
+<p class=Instructions-GIS>In the <b>Error Inspector</b> window, <b>right-click</b>
+on the record and select <b>Zoom to</b>.</p>
+
+<p class=MsoNormal>You should spot the culprit polyline along the hydraulic
+unit northern boundary.</p>
+
+<p class=Instructions-GIS><img border=0 width=415 height=453 id="Picture 6"
+src="Topology_files/image067.png"></p>
+
+<p class=MsoNormal>When a topology is validated, ArcMap will not only merge
+vertices that are within a defined tolerance, but it will also create new
+vertices where features taking part in a topology intersect. This means that
+the line segment extending beyond the hydrologic unit boundaries is terminated
+on one end by that boundary. The solution is simply to select and delete that
+line segment. But first, you will need to make the rivers and streams layer
+selectable.</p>
+
+<p class=Instructions-GIS>In the <b>Table of Content</b> window, select <b>List
+By Selection</b>.</p>
+
+<p class=MsoNormal><img border=0 width=242 height=129 id="Picture 7"
+src="Topology_files/image068.png"></p>
+
+<p class=Instructions-GIS>Holding down the <b>Alt</b> key, click on the <b>toggle
+selectable icon</b> next to the <b>Rivers &amp; streams</b>.</p>
+
+<p class=MsoNormal><img border=0 width=285 height=262 id="Picture 10"
+src="Topology_files/image069.png"></p>
+
+<p class=Instructions-GIS>In the Editor toolbar, click on the <b>Edit</b> tool.</p>
+
+<p class=Instructions-GIS><img border=0 width=175 height=95
+src="Topology_files/image061.png"></p>
+
+<p class=Instructions-GIS>In the TOC, if the <b>Rivers_streams_orginal</b> layer
+is till marked as visible, make it invisible.</p>
+
+<p class=Instructions-GIS>Using the edit tool pointer, <b>double-click</b> on
+the polyline. This will expose its nodes. </p>
+
+<p class=Instructions-GIS><img border=0 width=142 height=278 id="Picture 5"
+src="Topology_files/image070.png"></p>
+
+<p class=Instructions-GIS>In the <b>Edit Vertices</b> toolbar (this toolbar
+should have appeared after displaying the nodes), select <b>Delete vertex</b>.</p>
+
+<p class=Instructions-GIS><img border=0 width=182 height=90 id="Picture 23"
+src="Topology_files/image071.png"></p>
+
+<p class=Instructions-GIS>Using the delete vertex cursor, select the top node.</p>
+
+<p class=Instructions-GIS><img border=0 width=116 height=243 id="Picture 41"
+src="Topology_files/image072.png"></p>
+
+<p class=Instructions-GIS>Press the <b>F2</b> key to accept the changes. The
+problematic line segment should be gone.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc306607260">Step 8:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Fixing non-overlapping polygons errors between two different feature
+class sources</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In the <b>Error Inspector</b> window, select the last
+topology rule (<b>Hydro_uni1_1 – Area Boundary Must Be Covered By Boundary of --
+hydro_unit_2</b>). Then click on <b>Search Now</b>.</p>
+
+<p class=Instructions-GIS>At this point you might want to revert the Hydro unit
+level 2 layer back to its original symbology (i.e. convert the fill color back
+to Yucca Yellow.</p>
+
+<p class=Instructions-GIS><img border=0 width=303 height=165 id="Picture 43"
+src="Topology_files/image073.png"></p>
+
+<p class=Instructions-GIS>In the <b>Error Inspector</b> window, <b>right-click</b>
+on the top record then select <b>Zoom to</b>.</p>
+
+<p class=Instructions-GIS><img border=0 width=239 height=234 id="Picture 57"
+src="Topology_files/image074.png"></p>
+
+<p class=MsoNormal>The Error Inspection window does not offer an automated
+solution therefore it will have to be fixed manually.</p>
+
+<p class=Instructions-GIS>In the <b>Table of Content</b> window, select <b>List
+By Selection</b>.</p>
+
+<p class=MsoNormal><img border=0 width=242 height=129 id="Picture 61"
+src="Topology_files/image068.png"></p>
+
+<p class=Instructions-GIS>If needed, clear all selections <img border=0
+width=23 height=18 id="Picture 73" src="Topology_files/image075.png"> from your
+map.</p>
+
+<p class=Instructions-GIS>Holding down the <b>Alt</b> key, click on the <b>toggle
+selectable icon</b> next to the <b>Hydro unit level 2</b>.</p>
+
+<p class=MsoNormal><img border=0 width=289 height=212 id="Picture 78"
+src="Topology_files/image076.png"></p>
+
+<p class=Instructions-GIS>In the Editor toolbar, click on the <b>Edit</b> tool.</p>
+
+<p class=Instructions-GIS><img border=0 width=175 height=95 id="Picture 28"
+src="Topology_files/image061.png"></p>
+
+<p class=Instructions-GIS>Select the <b>Hydro unit level 2</b> boundary.</p>
+
+<p class=MsoNormal>To properly overlap the two boundaries, both layers must
+share the same nodes. Unfortunately, in an edit session, you can only display nodes
+one layer at a time. One workaround to this is to use the trace tool.</p>
+
+<object width="382" height="400">
+<param name="movie" value="Topology_1.swf">
+<embed src="Topology_1.swf" width="305" height="452" pluginspage="http://www.macromedia.com/go/getflashplayer">
+</embed>
+</object>
+
+<p class=Instructions-GIS>In the <b>Editor toolbar</b>, select <b>Reshape
+Feature</b> Tool.</p>
+
+<p class=MsoNormal><img border=0 width=423 height=99 id="Picture 79"
+src="Topology_files/image077.png"></p>
+
+<p class=Instructions-GIS>With the cursor, create the first sketch point near
+the area depicted in the following graphic.</p>
+
+<p class=MsoNormal><img border=0 width=214 height=364 id="Picture 80"
+src="Topology_files/image078.png"></p>
+
+<p class=Instructions-GIS>Next, create the second point on the line segment
+shared by both features.</p>
+
+<p class=MsoNormal><img border=0 width=361 height=191 id="Picture 81"
+src="Topology_files/image079.png"></p>
+
+<p class=Instructions-GIS>On the floating Feature Construction toolbar, select
+Trace (this puts you into trace mode).</p>
+
+<p class=MsoNormal><img border=0 width=396 height=225 id="Picture 82"
+src="Topology_files/image080.png"></p>
+
+<p class=Instructions-GIS>Next, with the cursor tool active, select the line
+just north of vertex where the boundaries diverge.</p>
+
+<p class=Instructions-GIS><img border=0 width=286 height=172 id="Picture 83"
+src="Topology_files/image081.png"></p>
+
+<p class=Instructions-GIS>Now you have activated a trace, without pressing the
+mouse button have the cursor follow the orange line segment as closely as
+possible until you are on a line segment just above the vertex where the
+boundaries converge again then left click on any part of that last segment.</p>
+
+<p class=Instructions-GIS><img border=0 width=318 height=289 id="Picture 84"
+src="Topology_files/image082.png"></p>
+
+<p class=Instructions-GIS>If you are satisfied with your edit, have ArcMap
+accept the changes by pressing the F2 key. I you are not happy with the edit
+and want to start over right-click and select delete sketch.</p>
+
+<p class=Instructions-GIS>To confirm that the edit resolved the topology error,
+re-validate this region and click Search Now to refresh the Error Inspector
+tool.</p>
+
+<p class=Instructions-GIS><img border=0 width=260 height=85 id="Picture 85"
+src="Topology_files/image063.png"></p>
+
+<p class=Instructions-GIS>Apply the same technique to resolve the conflict with
+the other record listed in the Error Inspector window.</p>
+
+<p class=Instructions-GIS>Save your edits and stop your edit session.</p>
+
+<p class=MsoNormal>Congratulations, you checked and corrected all topological
+errors.</p>
+
+<p class=Instructions-GIS>Save and exit your map document.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+border=0 width=76 height=27 id="Picture 66" src="Topology_files/image083.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 10/17/2011
+</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

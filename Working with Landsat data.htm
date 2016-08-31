@@ -1,0 +1,1737 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Landsat</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.instructions-gis0, li.instructions-gis0, div.instructions-gis0
+	{mso-style-name:instructions-gis;
+	margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<div style='border:none;border-bottom:solid #4F81BD 1.0pt;padding:0in 0in 4.0pt 0in'>
+
+<p class=MsoTitle><span style='font-family:"Calibri",sans-serif'>Working with
+Landsat Data</span></p>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1023 valign=top style='width:767.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:11.0pt'>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
+  style='font-size:11.0pt'>Create a folder called <b>Landsat</b>. On DIA 322
+  computers, you might want to create this folder in your user Documents folder
+  (e.g. C:\Users\jdoe\Documents\Landsat). On the DIA 222 computers, you might
+  want to create this folder on the D: drive under D:\course number\user name\
+  (e.g. D:\ES212\jdoe\Landsat).</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><a
+  href="http://personal.colby.edu/personal/m/mgimond/Spatial/Data/LT50110291993284AAA02.tar.gz"><span
+  style='font-size:11.0pt'>Download the data</span></a><span style='font-size:
+  11.0pt;color:black'> for this exercise. Step 1 of this tutorial will walk you
+  through the extraction process.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>The data used in this exercise are from Landsat 7. The
+following procedures also apply to Landsat 5 and 8 (except where indicated). Note
+that one important difference between Landsat 5/7 and Landsat 8 is in the band
+configuration (see tables in Step 1).</p>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc410411539">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Extracting Imagery from a Downloaded Landsat File<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc410411540">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Converting Raw Data to Radiance<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc410411541">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Converting Radiance Data to Reflectance<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc410411542">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating a Landsat Composite<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc410411539">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extracting Imagery from a Downloaded Landsat File</a></p>
+
+</div>
+
+<p class=MsoNormal>Landsat imagery is compressed in a tar/gz format (an
+archiving/compression format popular in UNIX operating system environments in
+the late twentieth century). A freeware tool called <a
+href="http://www.7-zip.org/">7-zip</a> will be used to extract the files.</p>
+
+<p class=Instructions-GIS>Right-click the file and select <b>7-zip &gt;&gt;
+Open Archive</b>.</p>
+
+<p class=Instructions-GIS>In the archive window, double-click the .tar file.</p>
+
+<p class=Instructions-GIS>This will open the contents of the .tar file (much
+like double-clicking a .zip file will show its contents).</p>
+
+<p class=Instructions-GIS><img border=0 width=323 height=271 id="Picture 5"
+src="Working%20with%20Landsat%20data_files/image001.png"></p>
+
+<p class=Instructions-GIS>Extract all files to your project folder.</p>
+
+<p class=MsoNormal>The Landsat bands are stored as separate files in a <i>.tif</i>
+file format. The number of available bands will be dependent on the Landsat
+source (i.e. Landsat 5, Landsat 7 or Landsat 8). </p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="37%"
+ style='width:37.9%'>
+ <tr>
+  <td width="45%" style='width:45.36%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Landsat 4 and 5</span></b></p>
+  </td>
+  <td width="31%" style='width:31.16%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Wavelength<br>
+  (nanometer)</span></b></p>
+  </td>
+  <td width="22%" style='width:22.04%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Resolution<br>
+  (meters)</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="45%" style='width:45.36%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 1 - Blue</span></p>
+  </td>
+  <td width="31%" style='width:31.16%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>450-520</span></p>
+  </td>
+  <td width="22%" style='width:22.04%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="45%" style='width:45.36%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 2 - Green</span></p>
+  </td>
+  <td width="31%" style='width:31.16%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>520-600</span></p>
+  </td>
+  <td width="22%" style='width:22.04%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="45%" style='width:45.36%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 3 - Red</span></p>
+  </td>
+  <td width="31%" style='width:31.16%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>630-690</span></p>
+  </td>
+  <td width="22%" style='width:22.04%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="45%" style='width:45.36%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 4 - Near Infrared (NIR)</span></p>
+  </td>
+  <td width="31%" style='width:31.16%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>760-900</span></p>
+  </td>
+  <td width="22%" style='width:22.04%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="45%" style='width:45.36%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 5 – SWIR 1</span></p>
+  </td>
+  <td width="31%" style='width:31.16%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>1550-1750</span></p>
+  </td>
+  <td width="22%" style='width:22.04%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="45%" style='width:45.36%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 6 (Thermal)</span></p>
+  </td>
+  <td width="31%" style='width:31.16%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>10400-12500</span></p>
+  </td>
+  <td width="22%" style='width:22.04%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>120* (30)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="45%" style='width:45.36%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 7 – SWIR 2</span></p>
+  </td>
+  <td width="31%" style='width:31.16%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>2080-2350</span></p>
+  </td>
+  <td width="22%" style='width:22.04%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="37%"
+ style='width:37.9%'>
+ <tr>
+  <td width="44%" style='width:44.32%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Landsat 7</span></b></p>
+  </td>
+  <td width="31%" style='width:31.1%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Wavelength<br>
+  (micrometers)</span></b></p>
+  </td>
+  <td width="23%" style='width:23.14%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Resolution<br>
+  (meters)</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 1- Blue</span></p>
+  </td>
+  <td width="31%" style='width:31.1%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>450-520</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 2- Green</span></p>
+  </td>
+  <td width="31%" style='width:31.1%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>520-600</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 3 - Red</span></p>
+  </td>
+  <td width="31%" style='width:31.1%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>630-690</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 4 - Near Infrared (NIR)</span></p>
+  </td>
+  <td width="31%" style='width:31.1%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>760-900</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 5 - SWIR</span></p>
+  </td>
+  <td width="31%" style='width:31.1%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>1550-1750</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 6 (Thermal)</span></p>
+  </td>
+  <td width="31%" style='width:31.1%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>10400-12500</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>60 * (30)</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 7</span></p>
+  </td>
+  <td width="31%" style='width:31.1%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>2090-2350</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 8</span></p>
+  </td>
+  <td width="31%" style='width:31.1%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>520-900</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>15</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width="37%"
+ style='width:37.9%'>
+ <tr>
+  <td width="44%" style='width:44.32%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Landsat 8</span></b></p>
+  </td>
+  <td width="31%" style='width:31.12%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Wavelength<br>
+  (micrometers)</span></b></p>
+  </td>
+  <td width="23%" style='width:23.14%;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'><b><span style='font-size:14.0pt;
+  font-family:"Calibri",sans-serif'>Resolution<br>
+  (meters)</span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 1 - Coastal aerosol</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>430 – 450</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 2 - Blue</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>450 – 510</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 3 - Green</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>530 - 590</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 4 - Red</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>640 – 670</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 5 - Near Infrared (NIR)</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>850 - 880</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 6 - SWIR 1</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>1570 – 1650</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 7 - SWIR 2</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>2110 - 2290</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 8 - Panchromatic</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>500 – 680</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>15</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 9 - Cirrus</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>1360 - 1380</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>30</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 10 - Thermal Infrared (TIRS)
+  1</span></p>
+  </td>
+  <td width="31%" style='width:31.12%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>10600 – 11190</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>100</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width="44%" style='width:44.32%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>Band 11 - Thermal Infrared (TIRS)
+  2 </span></p>
+  </td>
+  <td width="31%" style='width:31.12%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>11500 - 12510</span></p>
+  </td>
+  <td width="23%" style='width:23.14%;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:3.75pt 3.75pt 3.75pt 3.75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'><span
+  style='font-family:"Times New Roman",serif'>100</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>In this working example, we are working with a<b> Landsat 5</b>
+file.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc410411540">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Converting Raw Data to Radiance</a></p>
+
+</div>
+
+<p class=MsoNormal>The pixel values are stored as integers and represent a minimally
+processed image. From <a
+href="https://landsat.usgs.gov/Landsat_Processing_Details.php">Landsat’s
+website</a> (March, 2014):</p>
+
+<p class=MsoNormal><img border=0 width=627 height=335 id="Picture 9"
+src="Working%20with%20Landsat%20data_files/image002.png"></p>
+
+<p class=MsoNormal>Computing Radiance values for each band is described in <a
+href="http://landsathandbook.gsfc.nasa.gov/data_prod/prog_sect11_3.html">this
+Landsat document</a>:</p>
+
+<p class=MsoNormal><img border=0 width=755 height=694 id="Picture 10"
+src="Working%20with%20Landsat%20data_files/image003.png"></p>
+
+<p class=MsoNormal>You want to use the <b>second</b> L<sub><span
+style='font-family:Symbol'>l</span></sub> formula listed above. The parameters
+LMAX, LMIN, QCALMAX and QCALMIN can be found in the <b>*_MTL.txt</b> file which
+was extracted with the other files in the <i>.tar.gz</i> file.</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=228 valign=top style='width:171.0pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>Equation Parameters</p>
+  </td>
+  <td width=410 valign=top style='width:307.8pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>MTL file parameters</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=228 valign=top style='width:171.0pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>LMIN</p>
+  </td>
+  <td width=410 valign=top style='width:307.8pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>RADIANCE_MINIMUM_BAND</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=228 valign=top style='width:171.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>LMAX</p>
+  </td>
+  <td width=410 valign=top style='width:307.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>RADIANCE_MAXIMUM_BAND</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=228 valign=top style='width:171.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>QCALMIN</p>
+  </td>
+  <td width=410 valign=top style='width:307.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>QUANTIZE_CAL_MIN_BAND</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=228 valign=top style='width:171.0pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>QCALMAX</p>
+  </td>
+  <td width=410 valign=top style='width:307.8pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>QUANTIZE_CAL_MAX_BAND</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=228 valign=top style='width:171.0pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>QCAL</p>
+  </td>
+  <td width=410 valign=top style='width:307.8pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>The actual pixel value</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Note that each parameter has a unique value for each band.</p>
+
+<p class=Instructions-GIS>Find the values for each parameter <i>and</i> each
+band in the <b>*_MTL.txt</b> file and populate the following table (which you
+will reproduce in a spreadsheet). An example is presented for the first band.</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=128 valign=top style='width:95.75pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>Band number</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>LMIN</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>LMAX</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>QCALMIN</p>
+  </td>
+  <td width=128 valign=top style='width:95.8pt;border-top:solid windowtext 1.0pt;
+  border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>QCALMAX</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>1</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>-1.520</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>193.000</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>1</p>
+  </td>
+  <td width=128 valign=top style='width:95.8pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>255</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>2</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.8pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>3</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.8pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>4</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.8pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>5</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.8pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>6</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.8pt;border:none;border-bottom:solid #D9D9D9 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center;line-height:normal'>7</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.75pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=128 valign=top style='width:95.8pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+ </tr>
+</table>
+
+<p class=Instructions-GIS>Next, using the Raster Calculator, you will create a
+Radiance raster for each band using the values tabulated above and name them
+Radiance1.img, Radiance2.img, …, Radiance7.img.</p>
+
+<p class=MsoNormal>The following example is for band 1. </p>
+
+<p class=MsoNormal><img border=0 width=470 height=114 id="Picture 1"
+src="Working%20with%20Landsat%20data_files/image004.png"></p>
+
+<p class=MsoNormal>Next, we will want to normalize the upwelling radiance to
+the downwelling sunlight impinging on the earth’s surface. This will eliminate
+the influence of the sun’s spectral shape from that of the ground features
+being investigated.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc410411541">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Converting Radiance Data to Reflectance</a></p>
+
+</div>
+
+<p class=MsoNormal>The same <a
+href="http://landsathandbook.gsfc.nasa.gov/data_prod/prog_sect11_3.html">Landsat
+document</a> used in the last step provides instructions on converting radiance
+data to reflectance data. Note that band 6 is a thermal infrared band and is
+therefore computed differently.</p>
+
+<p class=MsoNormal>Landsat 5 and 7:</p>
+
+<p class=MsoNormal><img border=0 width=625 height=405 id="Picture 2"
+src="Working%20with%20Landsat%20data_files/image005.png"></p>
+
+<p class=MsoNormal>Note, when working with <b>Landsat 8</b> data, use the <a
+href="http://landsat.usgs.gov/Landsat8_Using_Product.php">following formula</a>:</p>
+
+<p class=MsoNormal><img border=0 width=777 height=674 id="Picture 14"
+src="Working%20with%20Landsat%20data_files/image006.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The solar irradiance values for each band, ESUN<sub><span
+style='font-family:Symbol'>l</span></sub>, at the top of the earth’s atmosphere
+(exoatmospheric irradiance) are listed below. Note that the tabulated values
+are optimized for Landsat 7 data (hence the addition of band 8 not present in
+Landsat 5) but can be used with Landsat 5 data. </p>
+
+<p class=MsoNormal>NOTE: If working with Landsat 8 data, you <b>do not </b>need
+to optimize for exoatmospheric spectral irradiances.</p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width=314 style='width:235.35pt'>
+ <tr>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>Band</p>
+  </td>
+  <td width=239 style='width:179.55pt;border-top:solid black 1.0pt;border-left:
+  none;border-bottom:solid black 1.0pt;border-right:none;background:white;
+  padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>watts/(meter
+  squared * &#956;m)</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>1</p>
+  </td>
+  <td width=239 style='width:179.55pt;background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>1970</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>2</p>
+  </td>
+  <td width=239 style='width:179.55pt;background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>1842</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>3</p>
+  </td>
+  <td width=239 style='width:179.55pt;background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>1547</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>4</p>
+  </td>
+  <td width=239 style='width:179.55pt;background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>1044</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>5</p>
+  </td>
+  <td width=239 style='width:179.55pt;background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>225.7</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>7</p>
+  </td>
+  <td width=239 style='width:179.55pt;background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>82.06</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid black 1.0pt;background:white;
+  padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>8</p>
+  </td>
+  <td width=239 style='width:179.55pt;border:none;border-bottom:solid black 1.0pt;
+  background:white;padding:.75pt .75pt .75pt .75pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt'>1369</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>The earth-sun distance, <i>d</i>, varies throughout the
+year. A range of values is shown below. Note that Landsat offers an <a
+href="http://landsathandbook.gsfc.nasa.gov/excel_docs/d.xls">Excel spreadsheet</a>
+with additional distance values.</p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellpadding=0 width=520 style='width:390.0pt'>
+ <tr style='height:10.5pt'>
+  <td colspan=10 style='padding:1.5pt 1.5pt 1.5pt 1.5pt;height:10.5pt'>
+  <p class=MsoNormal align=center style='margin:0in;margin-bottom:.0001pt;
+  text-align:center'><b><span style='font-family:"Times New Roman",serif'>Earth-Sun
+  Distance in Astronomical Units</span></b><span style='font-family:"Times New Roman",serif'>
+  </span></p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCCCFF;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Day
+  of Year</p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCFFCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Distance</p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCCCFF;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Day
+  of Year </p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCFFCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Distance</p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCCCFF;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Day
+  of Year</p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCFFCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Distance</p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCCCFF;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Day
+  of Year</p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCFFCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Distance</p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCCCFF;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Day
+  of Year</p>
+  </td>
+  <td style='border-top:solid black 1.0pt;border-left:none;border-bottom:solid black 1.0pt;
+  border-right:none;background:#CCFFCC;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>Distance</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.98331</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>74</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.99446</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>152</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.01403</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>227</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.01281</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>305</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.99253</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>15</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.98365</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>91</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.99926</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>166</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.01577</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>242</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.00969</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>319</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.98916</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>32</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.98536</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>106</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.00353</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>182</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.01667</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>258</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.00566</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>335</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.98608</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>46</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.98774</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>121</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.00756</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>196</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.01646</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>274</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.00119</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>349</p>
+  </td>
+  <td style='padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.98426</p>
+  </td>
+ </tr>
+ <tr>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>60</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.99084</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>135</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.01087</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>213</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>1.01497</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>288</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.99718</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>365</p>
+  </td>
+  <td style='border:none;border-bottom:solid black 1.0pt;padding:1.5pt 1.5pt 1.5pt 1.5pt'>
+  <p class=MsoNormal style='margin:0in;margin-bottom:.0001pt;line-height:normal'>.98333</p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal>The sun solar zenith angle, <span style='font-family:Symbol'>q</span><sub>s</sub>,
+is found in the *_MTL.txt file and is listed as the parameter SUN_ELEVATION.</p>
+
+<p class=MsoNormal><img border=0 width=369 height=127 id="Picture 3"
+src="Working%20with%20Landsat%20data_files/image007.png"></p>
+
+<p class=MsoNormal><span style='color:#C00000'>Caution: </span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='color:#C00000'>The
+formula calls for a trigonometric function, <i>cos()</i>. Some applications
+require that the angle be defined in units of radians while others require that
+the angle be defined in units of degrees. According to ArcGIS documentation,
+the angle value must be in <u>radians</u> when using Raster Calculator.</span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><span style='color:#C00000'>The
+formula explicitly asks for a <i>zenith angle</i> which is measured from nadir
+(solar noon) to the sun location whereas <i>solar elevation</i> (as presented
+in the MTL file) is measured from the horizon up.</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=Instructions-GIS>Next, using <b>Raster Calculator</b>, compute the
+reflectance rasters for bands 1, 2, 3, 4, 5, and 7 (band 6 will be treated
+differently in a later step). Name the outputs Reflectance1, Reflectance2, …,
+Reflectance7.  This scene was acquired on October 11, 1993 (day <b>284</b> of
+the year 1993). Use an earth-sun distance of <b>0.998</b>. Also, you will need
+to adjust the solar angle (see cautionary note above) as follows: angle = <span
+style='font-size:14.0pt;font-family:Symbol'>p</span>/180 * (90 - 33.56) = <b>0.985</b>.</p>
+
+<p class=MsoNormal>The following example is for band 1. Note the use of the <i>Power()</i>
+function to raise the distance to the power of 2 and note the upper case C in
+the <i>Cos()</i> function</p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";color:blue'>3.1416 * &quot;Radiance1.img&quot;
+* Power(0.998,2) / (1970 * Cos(0.985) )</span></p>
+
+<p class=MsoNormal><img border=0 width=405 height=110 id="Picture 4"
+src="Working%20with%20Landsat%20data_files/image008.png"></p>
+
+<p class=MsoNormal>Band 6 is a thermal infrared band and is computed
+differently as outlined in the Landsat document:</p>
+
+<p class=MsoNormal><img border=0 width=640 height=532 id="Picture 7"
+src="Working%20with%20Landsat%20data_files/image009.png"></p>
+
+<p class=Instructions-GIS>For band 6, compute the thermal infrared temperature
+values as follows:</p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";color:blue'>1260.56 /
+Ln(607.76/&quot;Radiance6.img&quot; + 1)</span></p>
+
+<p class=Instructions-GIS>Name the output file Thermal6.img.</p>
+
+<p class=MsoNormal><img border=0 width=338 height=111 id="Picture 8"
+src="Working%20with%20Landsat%20data_files/image010.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc410411542">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating a Landsat Composite</a></p>
+
+</div>
+
+<p class=MsoNormal>Next. we’ll combine these bands to generate a composite
+Landsat raster file.</p>
+
+<p class=Instructions-GIS>In a new ArcMap session, open <b>Data Management
+Tools &gt;&gt; Raster &gt;&gt; Raster Processing &gt;&gt; Composite Bands</b>
+and fill out the parameters as shown below.</p>
+
+<p class=MsoNormal><img border=0 width=511 height=182 id="Picture 11"
+src="Working%20with%20Landsat%20data_files/image011.png"></p>
+
+<p class=Instructions-GIS>Name the output Landsat.img.</p>
+
+<p class=MsoNormal>You now have a complete, post-processed, Landsat scene.
+Note, however, that the file is stored as a float which can take up a lot of
+disk space.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+border=0 width=76 height=27 id="Picture 6"
+src="Working%20with%20Landsat%20data_files/image012.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on, 1/30/2015
+</span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

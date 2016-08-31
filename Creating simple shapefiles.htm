@@ -1,0 +1,713 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Creating shapefiles</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Creating simple
+shapefiles</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+  0in;margin-left:.25in;margin-bottom:.0001pt;line-height:normal'>Create a
+  folder called <b><span style='font-size:11.0pt;color:black'>Shape1</span></b>.
+  On DIA 322 computers, you might want to create this folder in your user
+  Documents folder (e.g. C:\Users\jdoe\Documents\Shape1). On the DIA 222
+  computers, you might want to create this folder on the D: drive under D:\course
+  number\user name\ (e.g. D:\ES212\jdoe\Shape1).</p>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0in;margin-bottom:
+  0in;margin-left:.25in;margin-bottom:.0001pt;line-height:normal'><i>Note that
+  there are no data files to download for this exercise</i></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this exercise, you will learn how to create new
+shapefiles from scratch. You may, for example, find yourself needing to create
+a shapefile to define a study area for the purpose of clipping out other layers
+(raster or vector) in a project.</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc429487014">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Setup your map extent<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc429487015">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Create a new polygon shapefile<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc429487016">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Edit the new polygon shapefile<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc429487017">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating and editing point and polyline features<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc429487014">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Setup your map extent</a></p>
+
+</div>
+
+<p class=MsoNormal>Note that it’s usually best to create the shapefile in
+ArcCatalog from <i>within</i> an ArcMap session. The following steps assume
+that you have an <b>existing ArcMap session</b> open with a new (empty) map
+document.</p>
+
+<p class=MsoNormal>You will use a backdrop image of Colby campus for this
+exercise.</p>
+
+<p class=Instructions-GIS>Click on <b>File&gt;&gt;Add Data&gt;&gt;Add Basemap…</b></p>
+
+<p class=Instructions-GIS><span style='position:absolute;z-index:251652096;
+margin-left:207px;margin-top:196px;width:162px;height:58px'><img width=162
+height=58 src="Creating%20simple%20shapefiles_files/image001.png"></span><img
+width=372 height=272 id="Picture 2"
+src="Creating%20simple%20shapefiles_files/image002.png"></p>
+
+<p class=Instructions-GIS>&nbsp;</p>
+
+<p class=Instructions-GIS>Next, select <b>Imagery</b>.</p>
+
+<p class=Instructions-GIS>&nbsp;</p>
+
+<p class=Instructions-GIS><span style='position:absolute;z-index:251646976;
+margin-left:55px;margin-top:49px;width:180px;height:138px'><img width=180
+height=138 src="Creating%20simple%20shapefiles_files/image003.png"></span><img
+width=258 height=199 id="Picture 12"
+src="Creating%20simple%20shapefiles_files/image004.png"></p>
+
+<p class=MsoNormal>This adds a background image of the globe.</p>
+
+<p class=Instructions-GIS>Next, zoom in on the Colby campus area.</p>
+
+<p class=Instructions-GIS><img width=198 height=185 id="Picture 13"
+src="Creating%20simple%20shapefiles_files/image005.png"></p>
+
+<p class=MsoNormal>This will define your work extent.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc429487015">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Create a new polygon shapefile</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Click on the <b>ArcCatalog tab</b> (if the ArcCatalog
+window is already not visible).</p>
+
+<p class=Instructions-GIS><span style='position:absolute;z-index:251654144;
+margin-left:107px;margin-top:18px;width:61px;height:116px'><img width=61
+height=116 src="Creating%20simple%20shapefiles_files/image006.png"></span><img
+width=168 height=196 id="Picture 14"
+src="Creating%20simple%20shapefiles_files/image007.png"></p>
+
+<p class=Instructions-GIS>&nbsp;</p>
+
+<p class=Instructions-GIS>In ArcCatalog, <b>right-click</b> on your project
+folder (i.e. the folder where you want to create your new shapfile), then
+select <b>New &gt;&gt; Shapefile</b>.</p>
+
+<p class=Instructions-GIS><span style='position:absolute;z-index:251656192;
+margin-left:237px;margin-top:470px;width:138px;height:53px'><img width=138
+height=53 src="Creating%20simple%20shapefiles_files/image008.png"></span><img
+width=443 height=584 id="Picture 1"
+src="Creating%20simple%20shapefiles_files/image009.png"></p>
+
+<p class=Instructions-GIS>Name the new polygon <b>Poly1</b> and define the
+feature type as a <b>polygon</b>.</p>
+
+<p class=MsoNormal><img width=357 height=138 id="Picture 17"
+src="Creating%20simple%20shapefiles_files/image010.png"></p>
+
+<p class=MsoNormal>It’s also a good idea to assign the coordinate system to
+your new shapefile. In this example, we will assign a UTM NAD83 Zone 19N
+coordinate system to Poly1.</p>
+
+<p class=Instructions-GIS>Click on the <b>Edit…</b> button then select <b>Projected
+Coordinate Systems &gt;&gt; UTM &gt;&gt; NAD 1983 &gt;&gt; NAD 1983 UTM Zone
+19N</b>.</p>
+
+<p class=MsoNormal><span style='position:absolute;z-index:251660288;margin-left:
+429px;margin-top:310px;width:200px;height:62px'><img width=200 height=62
+src="Creating%20simple%20shapefiles_files/image011.png"></span><span
+style='position:absolute;z-index:251658240;margin-left:230px;margin-top:269px;
+width:102px;height:57px'><img width=102 height=57
+src="Creating%20simple%20shapefiles_files/image012.png"></span><img width=624
+height=359 id="Picture 19"
+src="Creating%20simple%20shapefiles_files/image013.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to close the coordinate system
+selection window and <b>OK</b> again to close the Create New Shapefile window.</p>
+
+<p class=MsoNormal>Note that you might encounter a warning message window
+indicating that the shapefile’s coordinate system does not match that of the
+data frame; this is OK for this tutorial but ideally, you will want your new
+shapefile to inherent your existing project’s coordinate system.</p>
+
+<p class=MsoNormal><img width=439 height=128 id="Picture 22"
+src="Creating%20simple%20shapefiles_files/image014.png"></p>
+
+<p class=MsoNormal>At this point, you should see the new shapefile in the
+project folder. </p>
+
+<p class=MsoNormal><span style='position:absolute;z-index:251662336;margin-left:
+67px;margin-top:50px;width:106px;height:37px'><img width=106 height=37
+src="Creating%20simple%20shapefiles_files/image015.png"></span><img width=170
+height=87 id="Picture 23"
+src="Creating%20simple%20shapefiles_files/image016.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Next, you will create a new feature in the Poly1.shp object.</p>
+
+<p class=Instructions-GIS>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc429487016">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Edit the new polygon shapefile</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Right-click on the Poly1 layer in the TOC and select <b>Edit
+features &gt;&gt; Start Editing</b>.</p>
+
+<p class=MsoNormal><span style='position:absolute;z-index:251664384;margin-left:
+349px;margin-top:254px;width:121px;height:51px'><img width=121 height=51
+src="Creating%20simple%20shapefiles_files/image017.png"></span><img width=458
+height=309 id="Picture 25"
+src="Creating%20simple%20shapefiles_files/image018.png"></p>
+
+<p class=MsoNormal>You might see the following Warning message indicating that
+the layer to be edited may not match the data frame’s CS; click <b>Continue</b>
+to ignore the message.</p>
+
+<p class=MsoNormal><img width=470 height=125 id="Picture 27"
+src="Creating%20simple%20shapefiles_files/image019.png"></p>
+
+<p class=MsoNormal>You’ll note the presence of a new window (the <b>Create
+Features</b> window). This window allows you to select the construction tool of
+your choice to create your new polygon feature.</p>
+
+<p class=Instructions-GIS>Select <b>Poly1</b> from inside the <b>Create
+Features</b> window. This action will display the construction tools available
+to your new shapefile.</p>
+
+<p class=MsoNormal><span style='position:absolute;z-index:251668480;margin-left:
+83px;margin-top:72px;width:107px;height:120px'><img width=107 height=120
+src="Creating%20simple%20shapefiles_files/image020.png"></span><span
+style='position:absolute;z-index:251666432;margin-left:-7px;margin-top:54px;
+width:100px;height:52px'><img width=100 height=52
+src="Creating%20simple%20shapefiles_files/image021.png"></span><img width=279
+height=376 id="Picture 29"
+src="Creating%20simple%20shapefiles_files/image022.png"></p>
+
+<p class=Instructions-GIS>Choose any construction tool; in this example, we’ll
+choose the <b>Polygon</b> construction tool.</p>
+
+<p class=Instructions-GIS>Next, digitize the new polygon in the main window by <b>left-clicking</b>
+the mouse. Each click of the mouse creates a new vertex which defines the
+end-points of each line segment. Here are a few pointers that you might find
+helpful when digitizing a new feature:</p>
+
+<p class=Instructions-GIS style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol;color:#E36C0A'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:#E36C0A'>If you want to remove the last vertex
+created, click <b>Ctrl+Z</b></span></p>
+
+<p class=Instructions-GIS style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol;color:#E36C0A'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:#E36C0A'>If you started editing a new feature
+but want to start over, <b>right-click</b> in the window and select <b>Delete
+Sketch</b></span></p>
+
+<p class=Instructions-GIS style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol;color:#E36C0A'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:#E36C0A'>You can <b>zoom</b> in and out as you
+are digitizing by rolling the <b>middle mouse button</b>.</span></p>
+
+<p class=Instructions-GIS style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol;color:#E36C0A'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:#E36C0A'>You can <b>pan</b> (move) around the
+map extent by <b>pressing and holding the middle mouse button</b></span></p>
+
+<p class=Instructions-GIS style='margin-left:.5in;text-indent:-.25in'><span
+style='font-family:Symbol;color:#E36C0A'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='color:#E36C0A'>To delete a polygon, simply select it
+with the selection tool then press the <b>Delete</b> key.</span></p>
+
+<p class=Instructions-GIS>&nbsp;</p>
+
+<p class=Instructions-GIS><img width=351 height=349 id="Picture 33"
+src="Creating%20simple%20shapefiles_files/image023.png"></p>
+
+<p class=Instructions-GIS>To <b>complete</b> the outline of the polygon, press
+the <b>F2</b> key.</p>
+
+<p class=MsoNormal>When you are done editing your new shapefile you must save,
+then close the edit session as follows:</p>
+
+<p class=Instructions-GIS>Look for the <b>Editor</b> toolbar then click on <b>Editor
+&gt;&gt; Save Edits</b>,</p>
+
+<p class=MsoNormal><img width=148 height=116 id="Picture 34"
+src="Creating%20simple%20shapefiles_files/image024.png"></p>
+
+<p class=Instructions-GIS>then click <b>Editor &gt;&gt; Stop Editing</b>.</p>
+
+<p class=MsoNormal><img width=159 height=112 id="Picture 35"
+src="Creating%20simple%20shapefiles_files/image025.png"></p>
+
+<p class=MsoNormal>Note that it’s important that you save then close your edit
+session <i>before</i> using the newly created shapefile in any subsequent
+geoprocesses (such as a clipping operation)!</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc429487017">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating and editing point and polyline features</a></p>
+
+</div>
+
+<p class=MsoNormal>The workflow for creating a new <b>point</b> or <b>polyline</b>
+shapefile is nearly identical. The two differences are in the choice of <b>Feature
+Type</b> (i.e. Point or Polyline),</p>
+
+<p class=MsoNormal><img width=213 height=91 id="Picture 37"
+src="Creating%20simple%20shapefiles_files/image026.png">         <img
+width=277 height=94 id="Picture 38"
+src="Creating%20simple%20shapefiles_files/image027.png"></p>
+
+<p class=MsoNormal>and in the choice of <b>Construction tools</b>.</p>
+
+<p class=MsoNormal><span style='position:absolute;z-index:251675648;margin-left:
+0px;margin-top:243px;width:169px;height:70px'><img width=169 height=70
+src="Creating%20simple%20shapefiles_files/image028.png"></span><span
+style='position:absolute;z-index:251674624;margin-left:284px;margin-top:234px;
+width:130px;height:130px'><img width=130 height=130
+src="Creating%20simple%20shapefiles_files/image029.png"></span><img width=270
+height=354 id="Picture 39"
+src="Creating%20simple%20shapefiles_files/image030.png">   <img width=247
+height=355 id="Picture 40"
+src="Creating%20simple%20shapefiles_files/image031.png"></p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+width=76 height=27 id="Picture 6"
+src="Creating%20simple%20shapefiles_files/image032.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 9/8/2015 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
