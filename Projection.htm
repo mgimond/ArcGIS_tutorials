@@ -1,9 +1,9 @@
 <html>
 
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Projections</title>
+<title>Defining and projecting data</title>
 <style>
 <!--
  /* Font Definitions */
@@ -14,8 +14,8 @@
 	{font-family:Wingdings;
 	panose-1:5 0 0 0 0 0 0 0 0 0;}
 @font-face
-	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
 @font-face
 	{font-family:Calibri;
 	panose-1:2 15 5 2 2 2 4 3 2 4;}
@@ -406,37 +406,37 @@ is not present, and re-project your GIS data to a new projection.</p>
 
 <p class=MsoToc1><a href="#_Toc312744817">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Open the map document<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Open the map document<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc312744818">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Identify a layer’s coordinate system<span
+none'>Â Â Â Â Â Â Â  </span>Identify a layerâ€™s coordinate system<span
 style='color:windowtext;display:none;text-decoration:none'>.. </span><span
 style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc312744819">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Identify the data frame’s coordinate system<span
+none'>Â Â Â Â Â Â Â  </span>Identify the data frameâ€™s coordinate system<span
 style='color:windowtext;display:none;text-decoration:none'>.. </span><span
 style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc312744820">Step 4:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Projecting a layer to a new coordinate system<span
+none'>Â Â Â Â Â Â Â  </span>Projecting a layer to a new coordinate system<span
 style='color:windowtext;display:none;text-decoration:none'>.. </span><span
 style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc312744821">Step 5:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Defining a coordinate system<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Defining a coordinate system<span style='color:windowtext;
 display:none;text-decoration:none'>.. </span><span
 style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc312744822">Step 6:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Re-project the conserved lands layer<span
+none'>Â Â Â Â Â Â Â  </span>Re-project the conserved lands layer<span
 style='color:windowtext;display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
 
@@ -470,7 +470,7 @@ necessarily need to share the same projection.</p>
 background:#8DB3E2'>
 
 <p class=Stepheader-GIS><a name="_Toc312744818">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Identify a layer’s coordinate system</a></p>
+</span>Identify a layerâ€™s coordinate system</a></p>
 
 </div>
 
@@ -480,7 +480,7 @@ background:#8DB3E2'>
 tab <img width=169 height=25 id="Picture 2" src="Projection_files/image002.png">.</p>
 
 <p class=MsoNormal>The information displayed under <i>Data Source</i> indicates
-that <i>Counties’</i> coordinate system is based on a <b>UTM</b> projection
+that <i>Countiesâ€™</i> coordinate system is based on a <b>UTM</b> projection
 (Zone 19 North to be precise) which is dependent on the <b>North American Datum
 of 1983</b> (NAD83).</p>
 
@@ -500,7 +500,7 @@ select <b>Properties</b>.</p>
 tab <img width=169 height=25 id="Picture 5" src="Projection_files/image002.png">.</p>
 
 <p class=MsoNormal>The information displayed under <i>Data Source</i> indicates
-that the <i>Deer Wintering Area’s</i>  coordinate system has <b>no</b> <u>projected</u>
+that the <i>Deer Wintering Areaâ€™s</i>Â  coordinate system has <b>no</b> <u>projected</u>
 <u>coordinate system</u> (PCS), it is solely based on a <u>Geographic
 Coordinate System</u> (GCS) based off of the <b>WGS 1984</b> datum.</p>
 
@@ -508,7 +508,7 @@ Coordinate System</u> (GCS) based off of the <b>WGS 1984</b> datum.</p>
 src="Projection_files/image004.png"></p>
 
 <p class=MsoNormal>So we must assume that ArcGIS is converting one of the two
-layer’s coordinate system to a common data frame coordinate system… but which
+layerâ€™s coordinate system to a common data frame coordinate systemâ€¦ but which
 one?</p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to dismiss the properties window.</p>
@@ -517,12 +517,12 @@ one?</p>
 background:#8DB3E2'>
 
 <p class=Stepheader-GIS><a name="_Toc312744819">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Identify the data frame’s coordinate system</a></p>
+</span>Identify the data frameâ€™s coordinate system</a></p>
 
 </div>
 
 <p class=Instructions-GIS>Right click on the <b>data frame</b> <img width=88
-height=23 id="Picture 9" src="Projection_files/image005.png"> in the TOC and
+height=23 id="Picture 9" src="Projection_files/image005.png">Â in the TOC and
 select <b>Properties</b>.</p>
 
 <p class=Instructions-GIS>In the <b>Properties</b> window, select the
@@ -533,17 +533,17 @@ src="Projection_files/image006.png">.</p>
 src="Projection_files/image007.png"></p>
 
 <p class=MsoNormal>The information indicates that the data frame displays all
-layers in <b>UTM Zone 19 North (NAD83)</b>—the same projection as the one used
-by the <i>Counties</i> layer. Note that a data frame’s coordinate system does
+layers in <b>UTM Zone 19 North (NAD83)</b>â€”the same projection as the one used
+by the <i>Counties</i> layer. Note that a data frameâ€™s coordinate system does
 not need to match that of any one of the data layers. However, it is always
-good practice to ensure that all layers in a map project share the same
-coordinate system. In this exercise, we will make UTM zone 19 N (NAD83) this
-project’s default coordinate system.</p>
+good practice to ensure that all layers in a map project share the same coordinate
+system. In this exercise, we will make UTM zone 19 N (NAD83) this projectâ€™s
+default coordinate system.</p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to dismiss the properties window.</p>
 
 <p class=MsoNormal>In the next step, you will convert the <i>Deer Wintering
-Area’s</i> coordinate system to match that of the data frame’s.</p>
+Areaâ€™s</i> coordinate system to match that of the data frameâ€™s.</p>
 
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
@@ -579,7 +579,7 @@ feature class and name the output <b>dwa_UTM.shp</b>.</p>
 src="Projection_files/image011.png"></p>
 
 <p class=Instructions-GIS>Click on the <img width=25 height=24 id="Picture 18"
-src="Projection_files/image012.png"> icon next to the Output Coordinate System
+src="Projection_files/image012.png">Â icon next to the Output Coordinate System
 field.</p>
 
 <p class=Instructions-GIS>In the Spatial Reference Properties window select <b>Projected
@@ -607,14 +607,14 @@ src="Projection_files/image014.png"></p>
 <p class=Instructions-GIS>Click <b>OK</b> to start the conversion process.</p>
 
 <p class=MsoNormal>When done, you should see a new shapefile called dwa_UTM in
-the TOC.  If it does not display in th TOC, add it manually from your project
+the TOC. Â If it does not display in th TOC, add it manually from your project
 folder.</p>
 
 <p class=MsoNormal><img width=188 height=174 id="Picture 21"
 src="Projection_files/image015.png"></p>
 
 <p class=Instructions-GIS><b>Remove</b> the original Deer Wintering Areas layer
-(<b>right-click</b>  then  <b>Remove</b>).</p>
+(<b>right-click</b>Â  then Â <b>Remove</b>).</p>
 
 <p class=Instructions-GIS><img width=155 height=152 id="Picture 23"
 src="Projection_files/image016.png"></p>
@@ -649,7 +649,7 @@ the warning.</p>
 <p class=MsoNormal>So where is the conserved_lands layer?</p>
 
 <p class=Instructions-GIS>Click on the <img width=24 height=21 id="Picture 26"
-src="Projection_files/image019.png"> full extent icon</p>
+src="Projection_files/image019.png">Â full extent icon</p>
 
 <p class=MsoNormal><img width=192 height=328 id="Picture 27"
 src="Projection_files/image020.png"></p>
@@ -658,10 +658,10 @@ src="Projection_files/image020.png"></p>
 
 <p class=MsoNormal>Spatial reference information tells ArcMap what projection
 and datum is used to define the coordinate system. If that information is
-missing, all ArcMap has to work with are the shapes’  x,y coordinate pair
-values. So the best ArcMap can do is <i>assume</i> that the new layer shares
-the data frame’s spatial reference system. This assumption clearly does not
-work in our case. So we need to define the new layer’s coordinate system. </p>
+missing, all ArcMap has to work with are the shapesâ€™ Â x,y coordinate pair values.
+So the best ArcMap can do is <i>assume</i> that the new layer shares the data
+frameâ€™s spatial reference system. This assumption clearly does not work in our
+case. So we need to define the new layerâ€™s coordinate system. </p>
 
 <p class=MsoNormal>It turns out that the layers coordinate system is an <b><i>Albers
 equal area conic, NAD83</i></b>.</p>
@@ -678,7 +678,7 @@ src="Projection_files/image021.png"></p>
 class.</p>
 
 <p class=Instructions-GIS>Click on the <img width=25 height=24 id="Picture 29"
-src="Projection_files/image012.png"> icon next to the Output Coordinate System
+src="Projection_files/image012.png">Â icon next to the Output Coordinate System
 field.</p>
 
 <p class=Instructions-GIS>In the Spatial Reference Properties window select <b>Projected
@@ -737,7 +737,7 @@ style='font-size:10.0pt;color:black'>
 <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
 width=76 height=27 id="Picture 11" src="Projection_files/image025.png"></span><span
-style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 8/25/2016 </span></p>
+style='font-size:10.0pt;color:gray'>Â Manuel Gimond, last modified on 8/25/2016 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 

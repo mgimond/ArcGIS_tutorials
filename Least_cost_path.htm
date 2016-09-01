@@ -1,9 +1,9 @@
 <html>
 
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Least Cost Path</title>
+<title>Least Cost Path Exercise</title>
 <style>
 <!--
  /* Font Definitions */
@@ -407,43 +407,43 @@ complete most of the steps in this exercise.</p>
 
 <p class=MsoToc1><a href="#_Toc295220015">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Open the ArcMap document<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Open the ArcMap document<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc295220016">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Create a slope raster<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Create a slope raster<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc295220017">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Reclassify the Slope Layer<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Reclassify the Slope Layer<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc295220018">Step 4:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Reclassify Land Use Layer<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Reclassify Land Use Layer<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc295220019">Step 5:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Create a Total Cost Layer<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Create a Total Cost Layer<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc295220020">Step 6:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Create a Cost-Distance and Cost-Direction layer<span
+none'>Â Â Â Â Â Â Â  </span>Create a Cost-Distance and Cost-Direction layer<span
 style='color:windowtext;display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc295220021">Step 7:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Compute the Least Cost Path<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Compute the Least Cost Path<span style='color:windowtext;
 display:none;text-decoration:none'>.. </span><span
 style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
 
@@ -478,13 +478,13 @@ layers).</p>
 (in meters) and land use. Both of these layers are rasters.</p>
 
 <p class=MsoNormal>The purpose of this exercise is to find a path that links
-both campsites while minimizing the “cost” of travel (by foot). This cost (or
+both campsites while minimizing the â€œcostâ€ of travel (by foot). This cost (or
 impedance) is a factor of two variables: elevation slope and land cover. The
 steeper the slope or the denser the vegetation the more arduous the hike. We
 want to minimize this impedance, in other words we want to strike a balance
 between total distance walked and time spent overcoming obstacles.</p>
 
-<p class=MsoNormal>This requires the creation of a “cost” layer that assigns a
+<p class=MsoNormal>This requires the creation of a â€œcostâ€ layer that assigns a
 cost (or impedance) value for each pixel based on slope and land cover type.
 This cost layer will later be used to calculate a cost distance layer.</p>
 
@@ -502,7 +502,7 @@ background:#8DB3E2'>
 Surface &gt;&gt; Slope</b> tool.</p>
 
 <p class=Instructions-GIS>In the Slope tool window, select <b>Elevation</b> as
-the input raster, <b>…\Least_cost_path\Data.gdb\Slope</b> as the output raster
+the input raster, <b>â€¦\Least_cost_path\Data.gdb\Slope</b> as the output raster
 and <b>PERCENT_RISE</b> as output measurement.</p>
 
 <p class=MsoNormal><img width=377 height=261 id="Picture 8"
@@ -521,7 +521,7 @@ src="Least_cost_path_files/image003.png"></p>
 <p class=MsoNormal>Steep areas are symbolized with a red hue.</p>
 
 <p class=MsoNormal>Next, you will convert the percent rise values to unitless
-reclassified “cost” values.</p>
+reclassified â€œcostâ€ values.</p>
 
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
@@ -534,7 +534,7 @@ background:#8DB3E2'>
 <p class=Instructions-GIS>In ArcToolbox open <b>Spatial Analyst Tools &gt;&gt;
 Reclass &gt;&gt; Reclassify</b> tool.</p>
 
-<p class=Instructions-GIS>In the Reclassify tool window, set  <b>Slope</b> as
+<p class=Instructions-GIS>In the Reclassify tool window, set Â <b>Slope</b> as
 the <i>input raster</i> and <b>Value</b> as the <i>reclass</i> <i>field</i>. </p>
 
 <p class=MsoNormal>You will use a standard classification scheme to recode the
@@ -550,7 +550,7 @@ src="Least_cost_path_files/image004.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to close the Classification window.</p>
 
-<p class=Instructions-GIS>Finally, set the output raster to <b>…\Least_cost_path\Data.gdb\RecSlope</b>.</p>
+<p class=Instructions-GIS>Finally, set the output raster to <b>â€¦\Least_cost_path\Data.gdb\RecSlope</b>.</p>
 
 <p class=MsoNormal><img width=418 height=403 id="Picture 10"
 src="Least_cost_path_files/image005.png"></p>
@@ -574,7 +574,7 @@ background:#8DB3E2'>
 <p class=Instructions-GIS>In ArcToolbox open <b>Spatial Analyst Tools &gt;&gt;
 Reclass &gt;&gt; Reclassify</b> tool.</p>
 
-<p class=Instructions-GIS>In the Reclassify tool window, set  <b>LandUse</b> as
+<p class=Instructions-GIS>In the Reclassify tool window, set Â <b>LandUse</b> as
 the <i>input raster</i> and <b>Value</b> as the <i>reclass field</i>. </p>
 
 <p class=MsoNormal>This time, you will use a predefined classification scheme
@@ -597,12 +597,12 @@ into the reclassify tool.</p>
 <p class=MsoNormal><img width=374 height=213 id="Picture 14"
 src="Least_cost_path_files/image008.png"></p>
 
-<p class=Instructions-GIS>Finally, set the output raster to <b>…\Least_cost_path\Data.gdb\RecLandUse</b>.</p>
+<p class=Instructions-GIS>Finally, set the output raster to <b>â€¦\Least_cost_path\Data.gdb\RecLandUse</b>.</p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the reclassify tool.</p>
 
 <p class=MsoNormal>If you turn off all raster layers except the <b>RecLandUse</b>
-layer, you’ll note that several pixels have no data (they appear as transparent
+layer, youâ€™ll note that several pixels have no data (they appear as transparent
 pixels in the map).</p>
 
 <p class=MsoNormal><img width=366 height=332 id="Picture 16"
@@ -632,7 +632,7 @@ expression:</p>
 <p class=Instructions-GIS><span style='font-family:"Courier New"'>(&quot;RecLandUse&quot;
 + &quot;RecSlope&quot;) / 2</span></p>
 
-<p class=Instructions-GIS>Set the output raster to <b>…\Least_cost_path\Data.gdb\Cost</b>.</p>
+<p class=Instructions-GIS>Set the output raster to <b>â€¦\Least_cost_path\Data.gdb\Cost</b>.</p>
 
 <p class=MsoNormal><img width=296 height=103 id="Picture 17"
 src="Least_cost_path_files/image010.jpg"></p>
@@ -667,7 +667,7 @@ Distance &gt;&gt; Cost Distance</b> tool.</p>
 
 <p class=Instructions-GIS>The <b>input cost</b> raster is <b>Cost</b>.</p>
 
-<p class=Instructions-GIS>Set the <b>output backlink</b> raster to <b>…\Least_cost_path\Data.gdb\CostDirection</b>.</p>
+<p class=Instructions-GIS>Set the <b>output backlink</b> raster to <b>â€¦\Least_cost_path\Data.gdb\CostDirection</b>.</p>
 
 <p class=MsoNormal>The backlink (optional) output is the cost-direction output.
 We could have computed the cost-direction output separately using the <b>Spatial
@@ -679,7 +679,7 @@ margin-left:0in;line-height:13.0pt'><img width=379 height=332 id="Picture 19"
 src="Least_cost_path_files/image012.png"></p>
 
 <p class=MsoNormal>Before we run the tool, we need to tell ArcGIS that the new (to
-be created) raster’s extent should match that of the other rasters in the map
+be created) rasterâ€™s extent should match that of the other rasters in the map
 document.</p>
 
 <p class=Instructions-GIS>Click on the <b>Environments</b> button.</p>
@@ -759,22 +759,22 @@ Raster &gt;&gt; Raster to Polyline</b> tool.</p>
 
 <p class=Instructions-GIS style='margin-top:0in;margin-right:0in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
-style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='font-family:Symbol'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span>Input raster: <b>LeastCostPath</b></p>
 
 <p class=Instructions-GIS style='margin-top:0in;margin-right:0in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
-style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='font-family:Symbol'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span>Field: <b>Value</b></p>
 
 <p class=Instructions-GIS style='margin-top:0in;margin-right:0in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
-style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span></span>Output polyline features: …<b>\Least_cost_path\Data.gdb\path</b></p>
+style='font-family:Symbol'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Output polyline features: â€¦<b>\Least_cost_path\Data.gdb\path</b></p>
 
 <p class=Instructions-GIS style='margin-top:0in;margin-right:0in;margin-bottom:
 0in;margin-left:.5in;margin-bottom:.0001pt;text-indent:-.25in'><span
-style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+style='font-family:Symbol'>Â·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span></span>Background value: <b>NODATA</b></p>
 
 <p class=MsoNormal><img width=326 height=267 id="Picture 29"
@@ -802,7 +802,7 @@ style='font-size:10.0pt;color:black'>
 <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
 width=76 height=27 id="Picture 6" src="Least_cost_path_files/image020.png"></span><span
-style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on  8/22/2013
+style='font-size:10.0pt;color:gray'>Â Manuel Gimond, last modified on Â 8/22/2013
 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>

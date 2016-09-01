@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
 <title>NDVI and Mosaic tutorial</title>
 <style>
@@ -411,25 +411,25 @@ areas</span></p>
 
 <p class=MsoToc1><a href="#_Toc382988356">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Viewing a multi-band image<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Viewing a multi-band image<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc382988357">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Creating an NDVI Raster<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Creating an NDVI Raster<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc382988358">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Mosaicing Raster Layers<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Mosaicing Raster Layers<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc382988359">Step 4:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Managing Raster File Size<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Managing Raster File Size<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>7</span></a></p>
 
@@ -458,10 +458,10 @@ src="NDVI_exercise_files/image001.png"></p>
 <p class=MsoNormal>&nbsp;</p>
 
 <p class=MsoNormal><i>Note: The data were downloaded from </i><a
-href="http://mapserver.maine.gov/basemap/"><i>MEGIS’ Orthoimagery viewer</i></a>.</p>
+href="http://mapserver.maine.gov/basemap/"><i>MEGISâ€™ Orthoimagery viewer</i></a>.</p>
 
 <p class=MsoNormal>By default, ArcMap will load the first three bands of the
-image file and assign these bands to the screen’s red, green and blue colors.
+image file and assign these bands to the screenâ€™s red, green and blue colors.
 These CIR images have the following band configurations. Note: the band order
 does not match the wavelength order (i.e. the blue wavelength is swapped with
 the red wavelength):</p>
@@ -480,7 +480,7 @@ the red wavelength):</p>
   border-left:none;border-bottom:solid windowtext 1.0pt;border-right:none;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'> Associated wavelength</p>
+  normal'>Â Associated wavelength</p>
   </td>
  </tr>
  <tr>
@@ -490,7 +490,7 @@ the red wavelength):</p>
   </td>
   <td width=215 valign=top style='width:161.1pt;border:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'> Red (600 – 700 nm)</p>
+  normal'>Â Red (600 â€“ 700 nm)</p>
   </td>
  </tr>
  <tr>
@@ -500,7 +500,7 @@ the red wavelength):</p>
   </td>
   <td width=215 valign=top style='width:161.1pt;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'> Green (500 – 600 nm)</p>
+  normal'>Â Green (500 â€“ 600 nm)</p>
   </td>
  </tr>
  <tr>
@@ -510,7 +510,7 @@ the red wavelength):</p>
   </td>
   <td width=215 valign=top style='width:161.1pt;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'> Blue (400 – 500 nm)</p>
+  normal'>Â Blue (400 â€“ 500 nm)</p>
   </td>
  </tr>
  <tr>
@@ -522,7 +522,7 @@ the red wavelength):</p>
   <td width=215 valign=top style='width:161.1pt;border:none;border-bottom:solid windowtext 1.0pt;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'> Near Infrared ( &gt;700 nm)</p>
+  normal'>Â Near Infrared ( &gt;700 nm)</p>
   </td>
  </tr>
 </table>
@@ -530,16 +530,16 @@ the red wavelength):</p>
 <p class=MsoNormal><br>
 The addition of a near-infrared (NIR) band provides us with a unique
 perspective of land surface features. We can add this band to our display by
-assigning it to the digital screen’s Red gun and bumping the red band and green
+assigning it to the digital screenâ€™s Red gun and bumping the red band and green
 band down the color gun ladder. This implies that the blue band will no longer
 be displayed.</p>
 
-<p class=Instructions-GIS>Open the image layer’s properties window and select <b>Symbology</b>.</p>
+<p class=Instructions-GIS>Open the image layerâ€™s properties window and select <b>Symbology</b>.</p>
 
 <p class=MsoNormal><img border=0 width=236 height=92 id="Picture 12"
 src="NDVI_exercise_files/image002.png"></p>
 
-<p class=MsoNormal> </p>
+<p class=MsoNormal>Â </p>
 
 <p class=Instructions-GIS>Next, assign <i>band_4</i>, <i>band_1</i> and <i>band_2</i>
 to the Red, Green and Blue display color guns.</p>
@@ -601,10 +601,10 @@ scene using the two bands. </p>
 <p class=Instructions-GIS>Open the raster calculator (under <b>Spatial Analyst
 &gt;&gt; Map Algebra</b>).</p>
 
-<p class=MsoNormal>The NDVI is computed as (NIR - Red) / (Red + NIR).  However,
+<p class=MsoNormal>The NDVI is computed as (NIR - Red) / (Red + NIR).Â  However,
 because the rasters in this exercise are stored as integers, ArcMap will assume
 that the output must be stored as integers as well. It therefore follows that
-any value in the output raster will be rounded to the nearest integer—this is not
+any value in the output raster will be rounded to the nearest integerâ€”this is not
 what we want since NDVI values can take on any values between -1 and 1. We will
 therefore need to wrap the numerator with the <span style='font-family:"Courier New"'>Float()</span>
 function. This function will force ArcMap to treat the pixel values as floats
@@ -663,10 +663,10 @@ background:#8DB3E2'>
 </div>
 
 <p class=MsoNormal>Next, you will mosaic the nine NDVI rasters into a single
-raster.  To “mosaic” (merge) vector layers, we  can use the <i>Merge</i>
-geoprocess tool.  For raster layers, another mosaic tool must be used: the <b>Mosaic
+raster.Â  To â€œmosaicâ€ (merge) vector layers, weÂ  can use the <i>Merge</i>
+geoprocess tool.Â  For raster layers, another mosaic tool must be used: the <b>Mosaic
 to New Raster </b>tool (under <b>Data Management Tools &gt;&gt; Raster &gt;&gt;
-Raster Dataset</b>).  </p>
+Raster Dataset</b>).Â  </p>
 
 <p class=Instructions-GIS>Using the <b>Mosaic to New Raster</b> tool, mosaic
 all nine raster layers to create a new raster: <b>NDVI.img.</b> Make sure to
@@ -691,7 +691,7 @@ background:#8DB3E2'>
 </div>
 
 <p class=MsoNormal>A downside to storing a raster data as a Float is the large
-disk space it can consume.  The mosaicked NDVI raster file takes up more than
+disk space it can consume.Â  The mosaicked NDVI raster file takes up more than
 850 MB of disk space. This is unnecessary. A common workaround is to <i>scale</i>
 the pixel values before storing the file as an integer. </p>
 
@@ -699,7 +699,7 @@ the pixel values before storing the file as an integer. </p>
 values by 1000 and force the output value as an integer using the following
 expression:</p>
 
-<p class=Instructions-GIS><span style='font-family:"Courier New";color:#0F02BE'>Int(“NDVI.img”
+<p class=Instructions-GIS><span style='font-family:"Courier New";color:#0F02BE'>Int(â€œNDVI.imgâ€
 * 1000)</span></p>
 
 <p class=MsoNormal><img border=0 width=677 height=237 id="Picture 14"
@@ -708,7 +708,7 @@ src="NDVI_exercise_files/image011.png"></p>
 <p class=Instructions-GIS>Name the output <b>NDVI_1000.img</b>.</p>
 
 <p class=MsoNormal>ArcGIS may output a 32-bit integer raster. This reduces the
-file size a little bit, but we can do better (we don’t need 32-bit of storage for
+file size a little bit, but we can do better (we donâ€™t need 32-bit of storage for
 a small range of values). We will therefore copy the raster to a new <b>16-bit
 signed</b> raster (which can handle values that range from -32,768 to 32,767).</p>
 
@@ -726,7 +726,7 @@ half of its original size).</p>
 
 <p class=MsoNormal><span style='color:#00B050'>Thought exercise: Could you have
 saved the raster as a signed 8 bit raster instead of a 16 bit raster? If so,
-how would you have scaled (transformed)  the NDVI values (i.e. what range of
+how would you have scaled (transformed)Â  the NDVI values (i.e. what range of
 NDVI values would the signed 8 bit raster take on)?</span></p>
 
 <div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
@@ -741,7 +741,7 @@ style='font-size:10.0pt;color:black'>
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
 border=0 width=76 height=27 id="Picture 2"
 src="NDVI_exercise_files/image013.png"></span><span style='font-size:10.0pt;
-color:gray'> Manuel Gimond, last modified on 1/30/2015 </span></p>
+color:gray'>Â Manuel Gimond, last modified on 1/30/2015 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 

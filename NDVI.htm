@@ -1,9 +1,9 @@
 <html>
 
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>NDVI exercise</title>
+<title>NDVI from MODIS data</title>
 <style>
 <!--
  /* Font Definitions */
@@ -399,11 +399,11 @@ style='font-size:20.0pt;line-height:115%;color:#365F91'>Vegetation Indices</span
 <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
 12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal>In this exercise, you will use ArcGIS’ Image Analysis tool
+<p class=MsoNormal>In this exercise, you will use ArcGISâ€™ Image Analysis tool
 to compute Normalized Difference Vegetation Index (NDVI) values for the Howland
 Forest area (located in Maine) using <a href="http://modis.gsfc.nasa.gov/">MODIS
-</a>(Moderate-Resolution Imaging Spectroradiometer) satellite data. You will
-then use Spatial Analyst to compute zonal statistics for an area of interest.<br>
+</a>(Moderate-Resolution Imaging Spectroradiometer) satellite data. You will then
+use Spatial Analyst to compute zonal statistics for an area of interest.<br>
 <br>
 NDVI is a vegetation index that is associated with vegetation density. It is
 often used to distinguish vegetation from non-vegetation features. It
@@ -429,31 +429,31 @@ from -1 to 1. A common range for green vegetation is 0.2 to 0.8. </p>
 
 <p class=MsoToc1><a href="#_Toc318455867">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Open the map document<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Open the map document<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc318455868">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Calculating an NDVI value for the month of January<span
+none'>Â Â Â Â Â Â Â  </span>Calculating an NDVI value for the month of January<span
 style='color:windowtext;display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc318455869">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Compute NDVI values for the other 11 months<span
+none'>Â Â Â Â Â Â Â  </span>Compute NDVI values for the other 11 months<span
 style='color:windowtext;display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>8</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc318455870">Step 4:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Averaging NDVI values within an area defined by a polygon<span
+none'>Â Â Â Â Â Â Â  </span>Averaging NDVI values within an area defined by a polygon<span
 style='color:windowtext;display:none;text-decoration:none'>.. </span><span
 style='color:windowtext;display:none;text-decoration:none'>9</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc318455871">Step 5:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Graphing the NDVI values<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Graphing the NDVI values<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>13</span></a></p>
 
@@ -504,21 +504,21 @@ src="NDVI_files/image002.png"></p>
   and hardwoods such as red maple and paper birch. A breakdown of each species
   follows:</p>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
-  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>Â·<span
   style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>41% red spruce (<i>Picea rubens Sarg</i>.),</p>
   <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
-  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>Â·<span
   style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>25% eastern hemlock (<i>Tsuga canadensis (L.) Carr</i>.),</p>
   <p class=MsoListParagraphCxSpMiddle style='margin-bottom:0in;margin-bottom:
-  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>Â·<span
   style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>23% other conifers (primarily balsam fir, <i>Abies balsamea </i>(L.)
   Mill., white pine, <i>Pinus strobus L</i>., and northern white cedar, <i>Thuja
   occidentalis</i> L.) and,</p>
   <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
-  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>Â·<span
   style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>11% hardwoods</p>
   </td>
@@ -534,12 +534,12 @@ src="NDVI_files/image002.png"></p>
 src="NDVI_files/image004.png"></p>
 
 <p class=MsoNormal>All 12 MODIS group layers in your map document are in a
-raster data format, yet they don’t seem to follow an orthogonal grid of cells
+raster data format, yet they donâ€™t seem to follow an orthogonal grid of cells
 that you might be accustomed to seeing. This is because the MODIS data were
 provided to us in a <a href="http://en.wikipedia.org/wiki/Sinusoidal_projection"><i>Sinusoidal</i></a>
 projection which distorts shape in our area of interest. One could reproject
 the raster to a coordinate system better suited for the state of Maine however,
-in doing so, we risk ‘contaminating’ the original radiometric signal. This is
+in doing so, we risk â€˜contaminatingâ€™ the original radiometric signal. This is
 because of the use of interpolation techniques that are needed to transform the
 raster from one coordinate system to another. We will therefore <u>not</u>
 reproject the MODIS rasters in this exercise.</p>
@@ -935,7 +935,7 @@ src="NDVI_files/image012.png"></p>
 <p class=Instructions-GIS><span style='background:white'>Next<b>, Click</b>
 (single click) on the <b>minus</b> operator </span><img border=0 width=30
 height=30 id="Picture 21" src="NDVI_files/image013.png"><span style='background:
-white'> to add it to the expression window.</span></p>
+white'>Â to add it to the expression window.</span></p>
 
 <p class=Instructions-GIS><img border=0 width=363 height=106 id="Picture 27"
 src="NDVI_files/image014.png"></p>
@@ -956,13 +956,13 @@ src="NDVI_files/image018.png"></p>
 
 <p class=MsoNormal><span style='background:white'>At this point, you have
 defined the numerator </span><img border=0 width=125 height=29 id="Picture 33"
-src="NDVI_files/image019.png"><span style='background:white'> for the NDVI
+src="NDVI_files/image019.png"><span style='background:white'>Â for the NDVI
 formula.</span></p>
 
 <p class=Instructions-GIS><span style='background:white'>On your own, complete
 the expression by adding the denominator </span><img border=0 width=118
 height=27 id="Picture 34" src="NDVI_files/image020.png"><span style='background:
-white'> component of the NDVI formula (don’t forget to add the ‘divide by’
+white'>Â component of the NDVI formula (donâ€™t forget to add the â€˜divide byâ€™
 operator).</span></p>
 
 <p class=MsoNormal><span style='background:white'>When done, your expression
@@ -980,7 +980,7 @@ value of 0 (value is rounded down). If a float output is desired, adding the
 Float function to the numerator or denominator will be required such as <b>Float(</b>245<b>)</b>/340.</span></p>
 
 <p class=Instructions-GIS><span style='background:white'>In the expression box,
-add the Float function in front of the first parenthesis by typing ‘<b>Float’</b>.</span></p>
+add the Float function in front of the first parenthesis by typing â€˜<b>Floatâ€™</b>.</span></p>
 
 <p class=MsoNormal><img border=0 width=614 height=69 id="Picture 37"
 src="NDVI_files/image022.png"></p>
@@ -992,13 +992,13 @@ this:</span></p>
 "Courier New";color:#943634;background:white'>Float(&quot;Jan 09
 2008\MYD_SS.MYD09A1.A2008009 - Band_2&quot; - &quot;Jan 09
 2008\MYD_SS.MYD09A1.A2008009 - Band_1&quot;) / <br>
-     (&quot;Jan 09 2008\MYD_SS.MYD09A1.A2008009 - Band_2&quot; + &quot;Jan 09
+Â Â Â Â  (&quot;Jan 09 2008\MYD_SS.MYD09A1.A2008009 - Band_2&quot; + &quot;Jan 09
 2008\MYD_SS.MYD09A1.A2008009 - Band_1&quot;)</span></p>
 
 <p class=Instructions-GIS><span style='background:white'>Finally, set the
-output path and raster name to <b><i>…\NDVI\Jan_NDVI.img</i></b> (you might
+output path and raster name to <b><i>â€¦\NDVI\Jan_NDVI.img</i></b> (you might
 want to click on the folder icon to set the directory path and define the
-filename—don’t forget to add the <i>.img</i> extension).</span></p>
+filenameâ€”donâ€™t forget to add the <i>.img</i> extension).</span></p>
 
 <p class=MsoNormal><img border=0 width=275 height=80 id="Picture 38"
 src="NDVI_files/image023.png"></p>
@@ -1014,7 +1014,7 @@ src="NDVI_files/image024.png"></p>
 
 <p class=MsoNormal><span style='background:white'>The output image represents
 NDVI values for each pixel. The greater the value (i.e. the closer the value is
-to 1), the ‘greener’ the biomass within the pixel.</span></p>
+to 1), the â€˜greenerâ€™ the biomass within the pixel.</span></p>
 
 <p class=MsoNormal><img border=0 width=276 height=237 id="Picture 41"
 src="NDVI_files/image025.png"></p>
@@ -1032,7 +1032,7 @@ background:#8DB3E2'>
 
 <p class=Instructions-GIS><span style='background:white'>On your own, repeat the
 procedure outlined in step 2 to create NDVI rasters for the remaining 11
-months. Name the output rasters <i>Feb.NDVI.img</i>, <i>Mar_NDVI.img</i>, etc…</span></p>
+months. Name the output rasters <i>Feb.NDVI.img</i>, <i>Mar_NDVI.img</i>, etcâ€¦</span></p>
 
 <p class=MsoNormal><span style='background:white'>When complete, you should see
 12 NDVI rasters in your TOC.</span></p>
@@ -1096,10 +1096,10 @@ background:white'>&nbsp;</span></b></span><span style='background:white'>as the
 zone field</span>,&nbsp;<b>Jan_NDVI</b><span class=apple-converted-space><span
 style='font-size:10.0pt;font-family:"Verdana",sans-serif;color:black;
 background:white'>&nbsp;</span></span><span style='background:white'>as the
-input value raster and <b>…\NDVI\Jan.dbf</b></span><span
+input value raster and <b>â€¦\NDVI\Jan.dbf</b></span><span
 class=apple-converted-space><span style='font-size:10.0pt;font-family:"Verdana",sans-serif;
 color:black;background:white'>&nbsp;</span></span><span style='background:white'>as
-the output table (don’t forget to add the .dbf extension).</span></p>
+the output table (donâ€™t forget to add the .dbf extension).</span></p>
 
 <p class=Instructions-GIS><span style='background:white'>Set the <i>Statistics
 type</i> to <b>MEAN</b>.</span></p>
@@ -1133,10 +1133,10 @@ month of January within the AOI extent is <b>0.53</b>.</span></p>
 
 <p class=Instructions-GIS><span style='background:white'>Compute the Zonal
 Statistics for the remaining 11 months. Name the outputs <i>Feb.dbf</i>, <i>Mar.dbf</i>,
-etc…</span></p>
+etcâ€¦</span></p>
 
 <p class=MsoNormal><span style='background:white'>When complete, you should see
-12 NDVI  tables in your TOC.</span></p>
+12 NDVI Â tables in your TOC.</span></p>
 
 <p class=MsoNormal><img border=0 width=177 height=272 id="Picture 50"
 src="NDVI_files/image032.png"></p>
@@ -1157,7 +1157,7 @@ window, add all twelve tables. Make sure that the tables appear in
 chronological order!</span></p>
 
 <p class=Instructions-GIS><span style='background:white'>Save the output table in
-the NDVI folder and name it <b>all_NDVI.dbf</b> (don’t forget to specify the
+the NDVI folder and name it <b>all_NDVI.dbf</b> (donâ€™t forget to specify the
 .dbf extension)</span></p>
 
 <p class=MsoNormal><img border=0 width=295 height=393 id="Picture 52"
@@ -1231,7 +1231,7 @@ style='background:white'> your map document</span></p>
 <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
 border=0 width=76 height=27 id="Picture 3" src="NDVI_files/image038.png"></span><span
-style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 3/2/2012 </span></p>
+style='font-size:10.0pt;color:gray'>Â Manuel Gimond, last modified on 3/2/2012 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
