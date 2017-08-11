@@ -1,0 +1,730 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Local Operations</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Map Algebra: Local
+Operations</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=707 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:10.0pt;color:black'>Create a folder
+  called <b>MapAlgebraLocal</b>. On DIA 322 computers, you might want to create
+  this folder in your user Documents folder (e.g. C:\Users\jdoe\Documents\
+  MapAlgebraLocal). On the DIA 222 computers, you might want to create this
+  folder on the D: drive under D:\course number\user name\ (e.g. D:\ES212\jdoe\
+  MapAlgebraLocal).</span></p>
+  <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
+  margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
+  style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><span style='font-size:10.0pt;color:black'>Download the <a
+  href="MapAlgebraLocal_files/MapAlgebraLocal.zip">MapAlgebraLocal.zip</a> data
+  for this exercise and extract the files to your newly created MapAlgebraLocal
+  directory.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>Note that this tutorial will make use of the <b>Spatial
+Analyst </b>extension, so make sure to enable this extension from the pull-down
+menu under <b>Customize &gt;&gt; Extensions</b>. Also, all output files should
+be saved in the current project folder (i.e. ./MapAlgebraLocal).</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc490212404">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Open the map document<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc490212405">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Create a composite raster of elevation and depth<span
+style='color:windowtext;display:none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc490212406">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating a land/water  (binary) raster<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc490212407">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Extracting the attribute table from integer raster<span
+style='color:windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc490212408">Step 5:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Projecting the raster layer<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc490212404">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Open the map document</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In your MapAlgebraLocal folder, open the <b>Elevation.mxd</b>
+file.</p>
+
+<p class=MsoNormal><img width=181 height=82 id="Picture 1"
+src="MapAlgebraLocal_files/image001.png"></p>
+
+<p class=MsoNormal>You should see two layers: a bathymetry layer and an elevation
+layer. </p>
+
+<p class=MsoNormal><img width=559 height=221 id="Picture 2"
+src="MapAlgebraLocal_files/image002.png"></p>
+
+<p class=MsoNormal>These layers are intended to complement one another (i.e. one
+shows land based elevation and the other shows ocean based depth).</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc490212405">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Create a composite raster of elevation and depth</a></p>
+
+</div>
+
+<p class=MsoNormal>In this step, you will combine both layers into a single
+one. But first, note that both layers use a pixel value of 0 to denote pixels
+not covered by the layer. For example, the bathymetry layer has pixel values of
+0 for all land based pixels. (Note that you can use the <b>Identify</b> tool to
+probe pixel values).</p>
+
+<p class=MsoNormal><img width=443 height=229 id="Picture 3"
+src="MapAlgebraLocal_files/image003.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal>Since these rasters complement one another, we can combine
+them algebraically as we would matrices. However, the bathymetric values are
+positive downward which is a problem since elevation values are also positive but
+in the upward direction. So we need to multiply the bathymetry layer by -1
+before adding it to the elevation layer. The expression will therefore look
+something like:</p>
+
+<p class=MsoNormal><span style='font-family:"Courier New";color:blue'>&quot;elevation.img&quot;
+- &quot;bathymetry.img&quot;</span></p>
+
+<p class=Instructions-GIS>Open the <b>Raster Calculator</b> geoprocess tool (under
+<b>Spatial Analyst Tools &gt;&gt; Map Algebra</b>) then type the following
+expression in the expression box.</p>
+
+<p class=Instructions-GIS><img width=249 height=58 id="Picture 4"
+src="MapAlgebraLocal_files/image004.png"><br>
+Save the output raster as <b>Elev.img</b> in your current project folder.</p>
+
+<p class=MsoNormal>Your new raster should look like this.</p>
+
+<p class=MsoNormal><img width=365 height=186 id="Picture 5"
+src="MapAlgebraLocal_files/image005.png"></p>
+
+<p class=MsoNormal>The above step is a <b>local operation</b> whereby each
+output pixel value is solely influenced by input pixels sharing the same
+location.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc490212406">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating a land/water (binary) raster</a></p>
+
+</div>
+
+<p class=MsoNormal>In this step, you will perform another local operation where
+the output raster will be binary (a value of 0 will represent water pixels and
+a value of 1 will represent land pixels). The input elevation values will be
+used to determine the cutoff (i.e. all elevation pixels greater or equal to
+zero will be 1 in the output and all values less than zero will be 0).</p>
+
+<p class=MsoNormal>We will implement two different approaches: one will use the
+<b><span style='font-family:"Courier New"'>Con()</span></b> function and the
+other will use a simple algebraic expression.</p>
+
+<p class=MsoNormal><b><i>Method 1</i></b></p>
+
+<p class=MsoNormal>This method makes use of the <span style='font-family:"Courier New"'>Con()</span>
+function.</p>
+
+<p class=Instructions-GIS>Open the <b>Raster Calculator</b> geoprocess tool (under
+<b>Spatial Analyst Tools &gt;&gt; Map Algebra</b>) then type the expression <span
+style='font-family:"Courier New"'>Con( &quot;Elev.img&quot; &gt;= 0, 1, 0)</span>.
+Note the uppercase “C” in <span style='font-family:"Courier New"'>Con</span>
+(the function is case sensitive).</p>
+
+<p class=Instructions-GIS><img width=215 height=62 id="Picture 7"
+src="MapAlgebraLocal_files/image006.png"></p>
+
+<p class=Instructions-GIS>Save the output raster as <b>land_water.img</b>.</p>
+
+<p class=MsoNormal>The above conditional statement reads “<i>if a pixel from
+the Elev.img layer has a value greater than or equal to 0 set the output pixel
+value to 1 if not, set it to 0</i>”.</p>
+
+<p class=MsoNormal><b><i>Method 2</i></b></p>
+
+<p class=MsoListParagraph style='margin-left:0in'>A more succinct approach to
+creating the land/water raster is to apply a simple algebraic operation, i.e. <span
+style='font-family:"Courier New";color:#0033CC'>“Elev” &gt;= 0.</span></p>
+
+<p class=Instructions-GIS>Open the <b>Raster Calculator</b> geoprocess tool (under
+<b>Spatial Analyst Tools &gt;&gt; Map Algebra</b>) then type the expression <span
+style='font-family:"Courier New"'>&quot;Elev.img&quot; &gt;= 0</span>. </p>
+
+<p class=Instructions-GIS><img width=151 height=59 id="Picture 8"
+src="MapAlgebraLocal_files/image007.png"></p>
+
+<p class=Instructions-GIS>Feel free to overwrite <b>land_water.img</b> from <i>Method
+1</i>, or name the output <b>land_water2.img</b>.</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-left:0in'>The above condition
+is evaluated for each pixel, if it’s true (i.e. if the pixel value is greater
+than or equal to 0), the output pixel of the new raster will be assigned a
+value of 1 (for TRUE), if not, it will be assigned a value of 0 (for FALSE).</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in'>&nbsp;</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in'>Both methods should
+produce the same output rasters.</p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-left:0in'><img width=630
+height=220 src="MapAlgebraLocal_files/image008.png"></p>
+
+<p class=MsoListParagraphCxSpLast>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc490212407">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Extracting the attribute table from an integer raster</a></p>
+
+</div>
+
+<p class=MsoListParagraph style='margin-top:0in;margin-right:0in;margin-bottom:
+10.0pt;margin-left:0in'>If the raster data has values stored as integers, and “<i><span
+style='color:black;background:white'>if the range of values in the raster is
+less than 100,000 or if the number of unique values in the raster is fewer than
+500</span></i><span style='color:black;background:white'>” (see </span><a
+href="http://resources.arcgis.com/en/help/main/10.1/index.html#//009t00000009000000"><i><span
+style='background:white'>ArcGIS reference</span></i><span style='background:
+white'>)</span></a><span style='color:black;background:white'> a raster
+attribute table is usually present.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'><br>
+Access the <b>land_water.img</b> attribute table by right-clicking on the layer
+in the TOC.</span></p>
+
+<p class=Instructions-GIS><span style='background:white'><img border=0
+width=467 height=251 id="Picture 9" src="MapAlgebraLocal_files/image009.jpg"></span></p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:0in'><span style='color:black;background:white'>You
+should see two rows, each indicating the number of times (<i>Count</i> field) a
+value (<i>Value</i> field) is present in the raster. The value 0 (representing
+water) is found 391,205 times while the value 1 is found 191,995 times. </span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:0in'><span style='color:black;background:white'><img
+border=0 width=208 height=110 id="Picture 11"
+src="MapAlgebraLocal_files/image010.png"></span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:0in'><span style='color:black;background:white'><br>
+Since the pixels (or grid cells) have the same dimensions across the entire
+raster extent, the fraction of the earth’s surface covered by water can be
+estimated from these pixel counts alone. However, we first need to project the <i>land_water</i>
+raster to a coordinate system that <i>preserves</i> <i>area</i> to ensure that
+the distribution of land and water pixels are properly represented along the
+north-south direction.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in'>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc490212408">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Projecting the raster layer</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Using <b>the Data Management Tools &gt;&gt;
+Projections and Transformations &gt;&gt; Raster &gt;&gt; Project Raster</b>
+tool, project the land_water layer using a world <b>sinusoidal projection</b> 
+(<i>Projected Coordinate Systems &gt;&gt; World &gt;&gt; Sinusoidal (world) </i>).
+Name the output <b>land_water_sin.img </b>and make sure to save it in your
+project folder.</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:.25in'>&nbsp;</p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:.25in'><img border=0 width=314 height=224
+id="Picture 6" src="MapAlgebraLocal_files/image011.png"></p>
+
+<p class=MsoNormal><br>
+At first glance, the sinusoidal raster does not look different from that of the
+unprojected (GCS) raster. However, when zooming in near the polar regions, you’ll
+note that the sinusoidal pixels are distorted (i.e. they are not square
+shaped).</p>
+
+<p class=MsoNormal><img border=0 width=177 height=90 id="Picture 12"
+src="MapAlgebraLocal_files/image012.png"></p>
+
+<p class=Instructions-GIS>To view the new raster layer in its native coordinate
+system, change the data frame’s coordinate system to <b>World Sinusoidal</b> by
+right-clicking on the data frame’s name and selecting <b>Properties</b> then
+the <b>Coordinate system</b> tab. You can select the coordinate system from the
+<i>Layer’s</i> folder instead of navigating through the different PCS options.</p>
+
+<p class=MsoNormal><img border=0 width=350 height=246 id="Picture 13"
+src="MapAlgebraLocal_files/image013.png"></p>
+
+<p class=MsoNormal>Note the diminishing number of pixels along the east-west
+axis when approaching the poles.</p>
+
+<p class=MsoNormal><img border=0 width=399 height=200 id="Picture 14"
+src="MapAlgebraLocal_files/image014.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:.25in'><span style='color:#C00000'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:.25in'><span style='color:#C00000'>&nbsp;</span></p>
+
+<p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:0in'><u><span style='color:#C00000'>Note</span></u><span
+style='color:#C00000'>: As of version 10.4, ArcGIS may not properly update the
+count field in the projected raster attribute table. This results in erroneous
+pixel counts!  A workaround is to close the attribute table and run <b>Data
+Management &gt;&gt; Raster &gt;&gt; Raster Properties &gt;&gt; Build Raster
+Attribute Table</b> on this table to update the count values.</span></p>
+
+<p class=MsoListParagraphCxSpLast style='margin-top:0in;margin-right:0in;
+margin-bottom:10.0pt;margin-left:.25in'><img border=0 width=274 height=118
+id="Picture 15" src="MapAlgebraLocal_files/image015.png"></p>
+
+<p class=MsoNormal>The new <i>Value</i> counts for 0’s and 1’s should now read
+264,984 and 106,082 respectively.  </p>
+
+<p class=MsoNormal><img border=0 width=624 height=161 id="Picture 16"
+src="MapAlgebraLocal_files/image016.png"></p>
+
+<p class=MsoNormal>Recall that 0’s represent water, hence the fraction of water
+covering the earth’s surface can be estimated from this raster as 264,984 / (264,984
++ 106,082) = 0.71 (or 71%). <br>
+<br>
+</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
+style='font-size:10.0pt;color:gray'>© Manny Gimond, 8/11/2017 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
