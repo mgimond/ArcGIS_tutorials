@@ -383,10 +383,11 @@ Global Operations</span></b></p>
   <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
   style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><span style='font-size:10.0pt;color:black'>Download the <a
-  href="MapAlgebraZonalGlobal_files/MapAlgebraZonal.zip">MapAlgebraZonal.zip</a>
-  data for this exercise and extract the files to your newly created MapAlgebraZonal
-  directory.</span></p>
+  </span></span><span style='font-size:10.0pt;color:black'>Download the </span><a
+  href="MapAlgebraZonalGlobal_files/MapAlgebraZonal.zip"><span
+  style='font-size:10.0pt'>MapAlgebraZonal.zip</span></a><span
+  style='font-size:10.0pt;color:black'> data for this exercise and extract the
+  files to your newly created MapAlgebraZonal directory.</span></p>
   </td>
  </tr>
 </table>
@@ -494,6 +495,13 @@ src="MapAlgebraZonalGlobal_files/image004.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to close the Environment window and <b>OK</b>
 again to run the geoprocess.</p>
+
+<p class=Instructions-GIS><span style='color:#C00000'>Note that the mask option
+will restrict the input points to the extent defined by the mask, this is not a
+problem here since the mask encompasses all the points. However, if input
+points are outside of the mask, it’s best to leave the mask field blank and
+clip the Euclidean distance raster output using the <b>Extract by Mask</b> tool
+under <b>Spatial analyst &gt;&gt; Extraction</b>.</span></p>
 
 <p class=MsoNormal>Note that to view the raster, make sure to turn off any
 overlaying polygon layers in the TOC.</p>
