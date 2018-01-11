@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Joining tables in ArcGIS</title>
+<title>Joining Tables</title>
 <style>
 <!--
  /* Font Definitions */
@@ -268,7 +268,7 @@ style='font-size:10.0pt;color:black'>
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='margin-left:.4pt;border-collapse:collapse;border:none'>
  <tr>
-  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  <td width=707 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
   .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
@@ -406,11 +406,9 @@ href="http://www.maine.gov/maineosa/survey/home.php">here</a>.</p>
 <p class=MsoNormal><img border=0 width=263 height=326 id="Picture 19"
 src="Joining_tables_files/image006.png"></p>
 
-<p class=MsoNormal>As of version 10.1, CSV tables are unstable in ArcGIS. The
-workaround solution is to convert the CSV file to an Excel file. In performing
-the conversion, we will also take the opportunity to make changes to the header
-names. ArcGIS has strict requirements when it comes to table headers as outlined
-in the following text box.</p>
+<p class=MsoNormal>Both CSV files and Excel files can be read into an ArcMap
+document.  If you are using an older version of ArcGIS (10.3 or older) you will
+need to clean up the column header names (see the following warning box).</p>
 
 <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
  style='background:#F2DBDB;border-collapse:collapse;border:none'>
@@ -419,13 +417,15 @@ in the following text box.</p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'><b><span style='font-size:36.0pt;color:red'>!!</span></b></p>
   </td>
-  <td width=869 valign=top style='width:651.55pt;padding:.1in 5.75pt .1in 5.75pt'>
+  <td width=661 valign=top style='width:651.55pt;padding:.1in 5.75pt .1in 5.75pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>ArcMap has strict guidelines when it comes to importing tables into
-  ArcMap.  Table field names cannot contain non-alphanumeric characters such
-  percent signs. It also cannot contain spaces, even at the beginning or end of
-  the field name. ArcMap will accept underscores ‘_’ as a space substitute. A
-  summary of field name requirements follow:</p>
+  normal'>If you are using ArcMap <b>10.3</b> or older, the software has <a
+  href="https://support.esri.com/en/technical-article/000005588">strict
+  guidelines</a> when it comes to importing tables into ArcMap.  Table field
+  names <u>cannot</u> contain non-alphanumeric characters such percent signs.
+  It also cannot contain spaces, even at the beginning or end of the field
+  name. ArcMap will accept underscores ‘_’ as a space substitute. A summary of
+  field name requirements follow:</p>
   <p class=MsoListParagraphCxSpFirst style='margin-top:0in;margin-right:0in;
   margin-bottom:0in;margin-left:1.0in;margin-bottom:.0001pt;text-indent:-.25in;
   line-height:normal'><span style='font-family:Symbol;color:red'>·<span
@@ -440,7 +440,8 @@ in the following text box.</p>
   <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
   margin-bottom:0in;margin-left:1.5in;margin-bottom:.0001pt;text-indent:-.25in;
   line-height:normal'><span style='color:red'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><span style='color:red'>None of these: `~@#$%^&amp;*()-+=|\\,&lt;&gt;?/{}.!'[]:;</span></p>
+  </span></span><span style='color:red'>None of these:
+  `~@#$%^&amp;*()-+=|\\,&lt;&gt;?/{}.!'[]:;</span></p>
   <p class=MsoListParagraphCxSpMiddle style='margin-top:0in;margin-right:0in;
   margin-bottom:0in;margin-left:1.5in;margin-bottom:.0001pt;text-indent:-.25in;
   line-height:normal'><span style='color:red'>-<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -468,8 +469,8 @@ in the following text box.</p>
 Programs &gt;&gt; Microsoft Office &gt;&gt; Microsoft Excel</b>).</p>
 
 <p class=MsoNormal>The following steps assume that you are working with Excel
-2010. If you are using a different version, the interface may look somewhat
-different.</p>
+2010 or newer. If you are using a different version, the interface may look
+somewhat different.</p>
 
 <p class=Instructions>In <b>Excel</b>, click the <b>File</b> tab.</p>
 
@@ -487,7 +488,8 @@ pull-down menu in the lower right-hand corner of the window.</p>
 src="Joining_tables_files/image008.png"></p>
 
 <p class=MsoNormal>Next, you will clean up the column headers to meet the
-aforementioned requirements which include no percent characters and no spaces. </p>
+aforementioned requirements which include no percent characters and no spaces
+(note that this change is not needed for ArcMap version 10.4.1 and later). </p>
 
 <p class=Instructions>Change the headers “County name”, “% no use” and “% use”
 to “County_name”, “Percent_no_use” and “Percent_use”.</p>
@@ -829,8 +831,7 @@ the Excel table.</p>
 <p class=MsoNormal><img border=0 width=363 height=141 id="Picture 36"
 src="Joining_tables_files/image034.png"></p>
 
-<p class=Instructions>Click <b>OK</b> to close the <b>Field Properties</b>
-window.</p>
+<p class=Instructions>Click <b>OK</b> to close the <b>Field Properties</b> window.</p>
 
 <p class=MsoNormal>Because ArcMap places a lock on the table, it cannot be
 opened for editing in Excel. We will need to close ArcMap before opening the
@@ -908,8 +909,7 @@ src="Joining_tables_files/image039.png"></p>
 
 <p class=MsoNormal>The median income data is now joined to the Counties layer.
 Remember that this join is temporary. If you want it to be permanent, you must
-export it to a new data file. But first let’s make sure that the join was
-successful.</p>
+export it to a new data file. But first let’s make sure that the join was successful.</p>
 
 <p class=Instructions>In the TOC, <b>right-click</b> on the <b>Counties</b>
 layer and select <b>Open Attribute table</b>. </p>
@@ -932,8 +932,8 @@ and select <b>Properties</b>. </p>
 src="Joining_tables_files/image041.png"></p>
 
 <p class=MsoNormal>This option lets you control which attributes will be
-useable within your map session. It also defines which attributes will be
-exported in an export process.</p>
+useable within your map session. It also defines which attributes will be exported
+in an export process.</p>
 
 <p class=MsoNormal><img border=0 width=243 height=196 id="Picture 45"
 src="Joining_tables_files/image042.png"></p>
@@ -992,7 +992,7 @@ style='font-size:10.0pt;color:black'>
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
 border=0 width=76 height=27 id="Picture 6"
 src="Joining_tables_files/image047.png"></span><span style='font-size:10.0pt;
-color:gray'> Manuel Gimond, last modified on 8/21/2013 </span></p>
+color:gray'> Manuel Gimond, last modified on 1/11/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
