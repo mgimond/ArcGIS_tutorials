@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Zonal and Global Operations</title>
+<title>Zonal and global operations</title>
 <style>
 <!--
  /* Font Definitions */
@@ -14,8 +14,8 @@
 	{font-family:Wingdings;
 	panose-1:5 0 0 0 0 0 0 0 0 0;}
 @font-face
-	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
 @font-face
 	{font-family:Calibri;
 	panose-1:2 15 5 2 2 2 4 3 2 4;}
@@ -408,29 +408,29 @@ be saved in the current project folder (i.e. ./MapAlgebraZonal).</p>
 
 <p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
 
-<p class=MsoToc1><a href="#_Toc490204579">Step 1:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc503868363">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Open the map document<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
-<p class=MsoToc1><a href="#_Toc490204580">Step 2:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc503868364">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Distance to the closest Walmat<span style='color:windowtext;
+none'>        </span>Distance to the closest Walmart<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
 
-<p class=MsoToc1><a href="#_Toc490204581">Step 3:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc503868365">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Reclassifying raster cells<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 
-<p class=MsoToc1><a href="#_Toc490204582">Step 4:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc503868366">Step 4:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Computing zonal statistics by state<span style='color:
 windowtext;display:none;text-decoration:none'>. </span><span
-style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
+style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -443,7 +443,7 @@ style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490204579">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc503868363">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Open the map document</a></p>
 
 </div>
@@ -456,7 +456,7 @@ src="MapAlgebraZonalGlobal_files/image001.png"></p>
 <p class=MsoNormal>The map consists of Walmart store point locations across the
 US. This tutorial will explore the use of global and zonal raster operations.
 The goal will be to explore the average distances to the closest Walmart stores
-nation wide and within each state. The first step will therefore involve
+nationwide and within each state. The first step will therefore involve
 creating a Euclidean distance raster layer from the point layer—a <b>global
 operation</b>.</p>
 
@@ -465,12 +465,12 @@ operation</b>.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490204580">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Distance to the closest Walmat</a></p>
+<p class=Stepheader-GIS><a name="_Toc503868364">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Distance to the closest Walmart</a></p>
 
 </div>
 
-<p class=Instructions-GIS>Create a Euclidean distance raster from the WalMart
+<p class=Instructions-GIS>Create a Euclidean distance raster from the Walmart
 point locations. Use the <b>Euclidean Distance</b> tool found under <b>Spatial
 Analyst Tools &gt;&gt;Distance </b>Spatial. </p>
 
@@ -520,7 +520,7 @@ Next, you will identify all pixels that are within 20 km of a Walmart.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490204581">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc503868365">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Reclassifying raster cells</a></p>
 
 </div>
@@ -594,7 +594,7 @@ to summarize pixel values <i>by state</i> using a <b>zonal operation</b>.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490204582">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc503868366">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Computing zonal statistics by state</a></p>
 
 </div>
@@ -650,7 +650,7 @@ style='font-size:10.0pt;color:black'>
 
 <p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
 margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
-style='font-size:10.0pt;color:gray'>© Manny Gimond, 8/11/2017 </span></p>
+style='font-size:10.0pt;color:gray'>© Manny Gimond, 1/16/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
