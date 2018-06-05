@@ -1,379 +1,1878 @@
-<html>
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:m="http://schemas.microsoft.com/office/2004/12/omml"
+xmlns="http://www.w3.org/TR/REC-html40">
 
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
-<meta name=Generator content="Microsoft Word 15 (filtered)">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=ProgId content=Word.Document>
+<meta name=Generator content="Microsoft Word 15">
+<meta name=Originator content="Microsoft Word 15">
+<link rel=File-List href="Hydro_files/filelist.xml">
+<link rel=Edit-Time-Data href="Hydro_files/editdata.mso">
+<!--[if !mso]>
+<style>
+v\:* {behavior:url(#default#VML);}
+o\:* {behavior:url(#default#VML);}
+w\:* {behavior:url(#default#VML);}
+.shape {behavior:url(#default#VML);}
+</style>
+<![endif]-->
 <title>Modeling surface flows and basins</title>
+<!--[if gte mso 9]><xml>
+ <o:DocumentProperties>
+  <o:Author>Manuel Gimond</o:Author>
+  <o:LastAuthor>Manuel Gimond</o:LastAuthor>
+  <o:Revision>2</o:Revision>
+  <o:TotalTime>220</o:TotalTime>
+  <o:LastPrinted>2011-02-22T19:37:00Z</o:LastPrinted>
+  <o:Created>2018-06-05T18:49:00Z</o:Created>
+  <o:LastSaved>2018-06-05T18:49:00Z</o:LastSaved>
+  <o:Pages>1</o:Pages>
+  <o:Words>1003</o:Words>
+  <o:Characters>5720</o:Characters>
+  <o:Lines>47</o:Lines>
+  <o:Paragraphs>13</o:Paragraphs>
+  <o:CharactersWithSpaces>6710</o:CharactersWithSpaces>
+  <o:Version>16.00</o:Version>
+ </o:DocumentProperties>
+ <o:OfficeDocumentSettings>
+  <o:AllowPNG/>
+ </o:OfficeDocumentSettings>
+</xml><![endif]-->
+<link rel=dataStoreItem href="Hydro_files/item0001.xml"
+target="Hydro_files/props002.xml">
+<link rel=dataStoreItem href="Hydro_files/item0003.xml"
+target="Hydro_files/props004.xml">
+<link rel=themeData href="Hydro_files/themedata.thmx">
+<link rel=colorSchemeMapping href="Hydro_files/colorschememapping.xml">
+<!--[if gte mso 9]><xml>
+ <w:WordDocument>
+  <w:SpellingState>Clean</w:SpellingState>
+  <w:GrammarState>Clean</w:GrammarState>
+  <w:TrackMoves>false</w:TrackMoves>
+  <w:TrackFormatting/>
+  <w:PunctuationKerning/>
+  <w:ValidateAgainstSchemas/>
+  <w:SaveIfXMLInvalid>false</w:SaveIfXMLInvalid>
+  <w:IgnoreMixedContent>false</w:IgnoreMixedContent>
+  <w:AlwaysShowPlaceholderText>false</w:AlwaysShowPlaceholderText>
+  <w:DoNotPromoteQF/>
+  <w:LidThemeOther>EN-US</w:LidThemeOther>
+  <w:LidThemeAsian>X-NONE</w:LidThemeAsian>
+  <w:LidThemeComplexScript>X-NONE</w:LidThemeComplexScript>
+  <w:Compatibility>
+   <w:BreakWrappedTables/>
+   <w:SnapToGridInCell/>
+   <w:WrapTextWithPunct/>
+   <w:UseAsianBreakRules/>
+   <w:DontGrowAutofit/>
+   <w:SplitPgBreakAndParaMark/>
+   <w:EnableOpenTypeKerning/>
+   <w:DontFlipMirrorIndents/>
+   <w:OverrideTableStyleHps/>
+  </w:Compatibility>
+  <m:mathPr>
+   <m:mathFont m:val="Cambria Math"/>
+   <m:brkBin m:val="before"/>
+   <m:brkBinSub m:val="&#45;-"/>
+   <m:smallFrac m:val="off"/>
+   <m:dispDef/>
+   <m:lMargin m:val="0"/>
+   <m:rMargin m:val="0"/>
+   <m:defJc m:val="centerGroup"/>
+   <m:wrapIndent m:val="1440"/>
+   <m:intLim m:val="subSup"/>
+   <m:naryLim m:val="undOvr"/>
+  </m:mathPr></w:WordDocument>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <w:LatentStyles DefLockedState="false" DefUnhideWhenUsed="false"
+  DefSemiHidden="false" DefQFormat="false" DefPriority="99"
+  LatentStyleCount="371">
+  <w:LsdException Locked="false" Priority="0" QFormat="true" Name="Normal"/>
+  <w:LsdException Locked="false" Priority="9" QFormat="true" Name="heading 1"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 2"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 3"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 4"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 5"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 6"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 7"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 8"/>
+  <w:LsdException Locked="false" Priority="9" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="heading 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index 9"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 1"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 2"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 3"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 4"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 5"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 6"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 7"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 8"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" Name="toc 9"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="header"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footer"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="index heading"/>
+  <w:LsdException Locked="false" Priority="35" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="caption"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of figures"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="envelope return"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="footnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="line number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="page number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote reference"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="endnote text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="table of authorities"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="macro"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="toa heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Bullet 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Number 5"/>
+  <w:LsdException Locked="false" Priority="10" QFormat="true" Name="Title"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Closing"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Signature"/>
+  <w:LsdException Locked="false" Priority="1" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Default Paragraph Font"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="List Continue 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Message Header"/>
+  <w:LsdException Locked="false" Priority="11" QFormat="true" Name="Subtitle"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Salutation"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Date"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text First Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Note Heading"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Body Text Indent 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Block Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Hyperlink"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="FollowedHyperlink"/>
+  <w:LsdException Locked="false" Priority="22" QFormat="true" Name="Strong"/>
+  <w:LsdException Locked="false" Priority="20" QFormat="true" Name="Emphasis"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Document Map"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Plain Text"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="E-mail Signature"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Top of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Bottom of Form"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal (Web)"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Acronym"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Address"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Cite"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Code"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Definition"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Keyboard"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Preformatted"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Sample"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Typewriter"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="HTML Variable"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Normal Table"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="annotation subject"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="No List"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Outline List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Simple 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Classic 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Colorful 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Columns 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Grid 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 4"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 5"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 6"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 7"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table List 8"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table 3D effects 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Contemporary"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Elegant"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Professional"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Subtle 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 2"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Web 3"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Balloon Text"/>
+  <w:LsdException Locked="false" Priority="59" Name="Table Grid"/>
+  <w:LsdException Locked="false" SemiHidden="true" UnhideWhenUsed="true"
+   Name="Table Theme"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Placeholder Text"/>
+  <w:LsdException Locked="false" Priority="1" QFormat="true" Name="No Spacing"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 1"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 1"/>
+  <w:LsdException Locked="false" SemiHidden="true" Name="Revision"/>
+  <w:LsdException Locked="false" Priority="34" QFormat="true"
+   Name="List Paragraph"/>
+  <w:LsdException Locked="false" Priority="29" QFormat="true" Name="Quote"/>
+  <w:LsdException Locked="false" Priority="30" QFormat="true"
+   Name="Intense Quote"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 1"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 1"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 1"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 1"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 1"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 2"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 2"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 2"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 2"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 2"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 2"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 3"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 3"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 3"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 3"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 3"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 3"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 4"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 4"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 4"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 4"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 4"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 4"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 5"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 5"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 5"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 5"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 5"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 5"/>
+  <w:LsdException Locked="false" Priority="60" Name="Light Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="61" Name="Light List Accent 6"/>
+  <w:LsdException Locked="false" Priority="62" Name="Light Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="63" Name="Medium Shading 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="64" Name="Medium Shading 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="65" Name="Medium List 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="66" Name="Medium List 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="67" Name="Medium Grid 1 Accent 6"/>
+  <w:LsdException Locked="false" Priority="68" Name="Medium Grid 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="69" Name="Medium Grid 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="70" Name="Dark List Accent 6"/>
+  <w:LsdException Locked="false" Priority="71" Name="Colorful Shading Accent 6"/>
+  <w:LsdException Locked="false" Priority="72" Name="Colorful List Accent 6"/>
+  <w:LsdException Locked="false" Priority="73" Name="Colorful Grid Accent 6"/>
+  <w:LsdException Locked="false" Priority="19" QFormat="true"
+   Name="Subtle Emphasis"/>
+  <w:LsdException Locked="false" Priority="21" QFormat="true"
+   Name="Intense Emphasis"/>
+  <w:LsdException Locked="false" Priority="31" QFormat="true"
+   Name="Subtle Reference"/>
+  <w:LsdException Locked="false" Priority="32" QFormat="true"
+   Name="Intense Reference"/>
+  <w:LsdException Locked="false" Priority="33" QFormat="true" Name="Book Title"/>
+  <w:LsdException Locked="false" Priority="37" SemiHidden="true"
+   UnhideWhenUsed="true" Name="Bibliography"/>
+  <w:LsdException Locked="false" Priority="39" SemiHidden="true"
+   UnhideWhenUsed="true" QFormat="true" Name="TOC Heading"/>
+  <w:LsdException Locked="false" Priority="41" Name="Plain Table 1"/>
+  <w:LsdException Locked="false" Priority="42" Name="Plain Table 2"/>
+  <w:LsdException Locked="false" Priority="43" Name="Plain Table 3"/>
+  <w:LsdException Locked="false" Priority="44" Name="Plain Table 4"/>
+  <w:LsdException Locked="false" Priority="45" Name="Plain Table 5"/>
+  <w:LsdException Locked="false" Priority="40" Name="Grid Table Light"/>
+  <w:LsdException Locked="false" Priority="46" Name="Grid Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="Grid Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="Grid Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="Grid Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="Grid Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="Grid Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="Grid Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="Grid Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="Grid Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="Grid Table 7 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="46" Name="List Table 1 Light"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark"/>
+  <w:LsdException Locked="false" Priority="51" Name="List Table 6 Colorful"/>
+  <w:LsdException Locked="false" Priority="52" Name="List Table 7 Colorful"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 1"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 1"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 1"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 1"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 1"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 1"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 2"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 2"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 2"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 2"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 2"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 2"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 3"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 3"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 3"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 3"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 3"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 3"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 4"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 4"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 4"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 4"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 4"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 4"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 5"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 5"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 5"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 5"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 5"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 5"/>
+  <w:LsdException Locked="false" Priority="46"
+   Name="List Table 1 Light Accent 6"/>
+  <w:LsdException Locked="false" Priority="47" Name="List Table 2 Accent 6"/>
+  <w:LsdException Locked="false" Priority="48" Name="List Table 3 Accent 6"/>
+  <w:LsdException Locked="false" Priority="49" Name="List Table 4 Accent 6"/>
+  <w:LsdException Locked="false" Priority="50" Name="List Table 5 Dark Accent 6"/>
+  <w:LsdException Locked="false" Priority="51"
+   Name="List Table 6 Colorful Accent 6"/>
+  <w:LsdException Locked="false" Priority="52"
+   Name="List Table 7 Colorful Accent 6"/>
+ </w:LatentStyles>
+</xml><![endif]-->
 <style>
 <!--
  /* Font Definitions */
  @font-face
 	{font-family:Helvetica;
-	panose-1:2 11 6 4 2 2 2 2 2 4;}
+	panose-1:2 11 6 4 2 2 2 2 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536858881 -1073711013 9 0 511 0;}
 @font-face
 	{font-family:Wingdings;
-	panose-1:5 0 0 0 0 0 0 0 0 0;}
+	panose-1:5 0 0 0 0 0 0 0 0 0;
+	mso-font-charset:2;
+	mso-generic-font-family:auto;
+	mso-font-pitch:variable;
+	mso-font-signature:0 268435456 0 0 -2147483648 0;}
 @font-face
 	{font-family:"Cambria Math";
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:1;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:0 0 0 0 0 0;}
 @font-face
 	{font-family:Calibri;
-	panose-1:2 15 5 2 2 2 4 3 2 4;}
+	panose-1:2 15 5 2 2 2 4 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-536859905 -1073732485 9 0 511 0;}
 @font-face
 	{font-family:Cambria;
-	panose-1:2 4 5 3 5 4 6 3 2 4;}
+	panose-1:2 4 5 3 5 4 6 3 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:roman;
+	mso-font-pitch:variable;
+	mso-font-signature:-536869121 1107305727 33554432 0 415 0;}
 @font-face
 	{font-family:Tahoma;
-	panose-1:2 11 6 4 3 5 4 4 2 4;}
+	panose-1:2 11 6 4 3 5 4 4 2 4;
+	mso-font-charset:0;
+	mso-generic-font-family:swiss;
+	mso-font-pitch:variable;
+	mso-font-signature:-520081665 -1073717157 41 0 66047 0;}
  /* Style Definitions */
  p.MsoNormal, li.MsoNormal, div.MsoNormal
-	{margin-top:6.0pt;
+	{mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:10.0pt;
 	margin-left:0in;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 h1
-	{mso-style-link:"Heading 1 Char";
+	{mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 1 Char";
+	mso-style-next:Normal;
 	margin-top:24.0pt;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:0in;
 	margin-bottom:.0001pt;
 	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
 	page-break-after:avoid;
+	mso-outline-level:1;
 	font-size:14.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-font-kerning:0pt;
 	font-weight:bold;}
 h2
-	{mso-style-link:"Heading 2 Char";
+	{mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 2 Char";
+	mso-style-next:Normal;
 	margin-top:10.0pt;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:0in;
 	margin-bottom:.0001pt;
 	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
 	page-break-after:avoid;
+	mso-outline-level:2;
 	font-size:13.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#4F81BD;
+	mso-themecolor:accent1;
 	font-weight:bold;}
 h3
-	{mso-style-link:"Heading 3 Char";
+	{mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-qformat:yes;
+	mso-style-link:"Heading 3 Char";
+	mso-style-next:Normal;
 	margin-top:10.0pt;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:0in;
 	margin-bottom:.0001pt;
 	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
 	page-break-after:avoid;
+	mso-outline-level:3;
 	font-size:12.0pt;
+	mso-bidi-font-size:11.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#4F81BD;
+	mso-themecolor:accent1;
 	font-weight:bold;}
 p.MsoToc1, li.MsoToc1, div.MsoToc1
-	{margin-top:6.0pt;
+	{mso-style-update:auto;
+	mso-style-priority:39;
+	mso-style-next:Normal;
+	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:5.0pt;
 	margin-left:0in;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoCaption, li.MsoCaption, div.MsoCaption
-	{margin-top:0in;
+	{mso-style-priority:35;
+	mso-style-qformat:yes;
+	mso-style-next:Normal;
+	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:10.0pt;
 	margin-left:0in;
+	mso-pagination:widow-orphan;
 	font-size:9.0pt;
 	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;
 	color:#1F497D;
+	mso-themecolor:text2;
 	font-style:italic;}
 p.MsoList, li.MsoList, div.MsoList
-	{margin-top:6.0pt;
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:10.0pt;
 	margin-left:.25in;
+	mso-add-space:auto;
 	text-indent:-.25in;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
-	{margin-top:6.0pt;
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-type:export-only;
+	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:.25in;
 	margin-bottom:.0001pt;
+	mso-add-space:auto;
 	text-indent:-.25in;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
-	{margin-top:0in;
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-type:export-only;
+	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:.25in;
 	margin-bottom:.0001pt;
+	mso-add-space:auto;
 	text-indent:-.25in;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
-	{margin-top:0in;
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-type:export-only;
+	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:10.0pt;
 	margin-left:.25in;
+	mso-add-space:auto;
 	text-indent:-.25in;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoTitle, li.MsoTitle, div.MsoTitle
-	{mso-style-link:"Title Char";
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
 	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:15.0pt;
 	margin-left:0in;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
 	border:none;
+	mso-border-bottom-alt:solid #4F81BD 1.0pt;
+	mso-border-bottom-themecolor:accent1;
 	padding:0in;
+	mso-padding-alt:0in 0in 4.0pt 0in;
 	font-size:26.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#17365D;
-	letter-spacing:.25pt;}
+	mso-themecolor:text2;
+	mso-themeshade:191;
+	letter-spacing:.25pt;
+	mso-font-kerning:14.0pt;}
 p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
-	{mso-style-link:"Title Char";
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
 	margin:0in;
 	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
 	border:none;
+	mso-border-bottom-alt:solid #4F81BD 1.0pt;
+	mso-border-bottom-themecolor:accent1;
 	padding:0in;
+	mso-padding-alt:0in 0in 4.0pt 0in;
 	font-size:26.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#17365D;
-	letter-spacing:.25pt;}
+	mso-themecolor:text2;
+	mso-themeshade:191;
+	letter-spacing:.25pt;
+	mso-font-kerning:14.0pt;}
 p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
-	{mso-style-link:"Title Char";
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
 	margin:0in;
 	margin-bottom:.0001pt;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
 	border:none;
+	mso-border-bottom-alt:solid #4F81BD 1.0pt;
+	mso-border-bottom-themecolor:accent1;
 	padding:0in;
+	mso-padding-alt:0in 0in 4.0pt 0in;
 	font-size:26.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#17365D;
-	letter-spacing:.25pt;}
+	mso-themecolor:text2;
+	mso-themeshade:191;
+	letter-spacing:.25pt;
+	mso-font-kerning:14.0pt;}
 p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
-	{mso-style-link:"Title Char";
+	{mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-link:"Title Char";
+	mso-style-next:Normal;
+	mso-style-type:export-only;
 	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:15.0pt;
 	margin-left:0in;
+	mso-add-space:auto;
+	mso-pagination:widow-orphan;
 	border:none;
+	mso-border-bottom-alt:solid #4F81BD 1.0pt;
+	mso-border-bottom-themecolor:accent1;
 	padding:0in;
+	mso-padding-alt:0in 0in 4.0pt 0in;
 	font-size:26.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#17365D;
-	letter-spacing:.25pt;}
+	mso-themecolor:text2;
+	mso-themeshade:191;
+	letter-spacing:.25pt;
+	mso-font-kerning:14.0pt;}
 a:link, span.MsoHyperlink
-	{color:blue;
-	text-decoration:underline;}
+	{mso-style-priority:99;
+	color:blue;
+	text-decoration:underline;
+	text-underline:single;}
 a:visited, span.MsoHyperlinkFollowed
-	{color:purple;
-	text-decoration:underline;}
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	color:purple;
+	mso-themecolor:followedhyperlink;
+	text-decoration:underline;
+	text-underline:single;}
 p
-	{margin-right:0in;
+	{mso-style-priority:99;
+	mso-margin-top-alt:auto;
+	margin-right:0in;
+	mso-margin-bottom-alt:auto;
 	margin-left:0in;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Times New Roman",serif;}
+	font-family:"Times New Roman",serif;
+	mso-fareast-font-family:"Times New Roman";}
 p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
-	{mso-style-link:"Balloon Text Char";
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-link:"Balloon Text Char";
 	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:0in;
 	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
 	font-size:8.0pt;
-	font-family:"Tahoma",sans-serif;}
+	font-family:"Tahoma",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;}
 span.MsoPlaceholderText
-	{color:gray;}
+	{mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	color:gray;}
 p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
-	{margin:0in;
+	{mso-style-priority:1;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"";
+	margin:0in;
 	margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
-	{margin-top:6.0pt;
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:10.0pt;
 	margin-left:.5in;
+	mso-add-space:auto;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
-	{margin-top:6.0pt;
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:.5in;
 	margin-bottom:.0001pt;
+	mso-add-space:auto;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
-	{margin-top:0in;
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:.5in;
 	margin-bottom:.0001pt;
+	mso-add-space:auto;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
-	{margin-top:0in;
+	{mso-style-priority:34;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-type:export-only;
+	margin-top:0in;
 	margin-right:0in;
 	margin-bottom:10.0pt;
 	margin-left:.5in;
+	mso-add-space:auto;
 	line-height:115%;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
-	font-family:"Arial",sans-serif;}
+	mso-bidi-font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
-	{margin-top:24.0pt;
+	{mso-style-noshow:yes;
+	mso-style-priority:39;
+	mso-style-qformat:yes;
+	mso-style-parent:"Heading 1";
+	mso-style-next:Normal;
+	margin-top:24.0pt;
 	margin-right:0in;
 	margin-bottom:0in;
 	margin-left:0in;
 	margin-bottom:.0001pt;
 	line-height:115%;
+	mso-pagination:widow-orphan lines-together;
 	page-break-after:avoid;
 	font-size:14.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
+	mso-fareast-language:JA;
 	font-weight:bold;}
 span.apple-converted-space
-	{mso-style-name:apple-converted-space;}
+	{mso-style-name:apple-converted-space;
+	mso-style-unhide:no;}
 span.BalloonTextChar
 	{mso-style-name:"Balloon Text Char";
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:"Balloon Text";
-	font-family:"Tahoma",sans-serif;}
+	mso-ansi-font-size:8.0pt;
+	mso-bidi-font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;
+	mso-ascii-font-family:Tahoma;
+	mso-hansi-font-family:Tahoma;
+	mso-bidi-font-family:Tahoma;}
 p.Stepheader, li.Stepheader, div.Stepheader
 	{mso-style-name:"Step header";
+	mso-style-unhide:no;
 	mso-style-link:"Step header Char";
 	margin-top:7.5pt;
 	margin-right:0in;
 	margin-bottom:7.5pt;
 	margin-left:0in;
+	mso-line-height-alt:13.0pt;
+	mso-pagination:widow-orphan;
 	font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
 	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:"Times New Roman";
 	color:#4F81BD;
+	mso-themecolor:accent1;
 	font-weight:bold;}
 span.Heading1Char
 	{mso-style-name:"Heading 1 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:"Heading 1";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:14.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#365F91;
+	mso-themecolor:accent1;
+	mso-themeshade:191;
 	font-weight:bold;}
 span.StepheaderChar
 	{mso-style-name:"Step header Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:"Step header";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
 	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
 	color:#4F81BD;
+	mso-themecolor:accent1;
 	font-weight:bold;}
 span.Heading2Char
 	{mso-style-name:"Heading 2 Char";
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:"Heading 2";
+	mso-ansi-font-size:13.0pt;
+	mso-bidi-font-size:13.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#4F81BD;
+	mso-themecolor:accent1;
 	font-weight:bold;}
 span.Heading3Char
 	{mso-style-name:"Heading 3 Char";
+	mso-style-noshow:yes;
+	mso-style-priority:9;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:"Heading 3";
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#4F81BD;
+	mso-themecolor:accent1;
 	font-weight:bold;}
 p.Instructions, li.Instructions, div.Instructions
 	{mso-style-name:Instructions;
+	mso-style-unhide:no;
 	mso-style-link:"Instructions Char";
 	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:12.0pt;
 	margin-left:0in;
 	line-height:13.0pt;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
 	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:"Times New Roman";
 	color:#0070C0;}
 span.InstructionsChar
 	{mso-style-name:"Instructions Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:Instructions;
+	mso-bidi-font-size:10.0pt;
 	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
 	color:#0070C0;}
 p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
 	{mso-style-name:Instructions-GIS;
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
 	mso-style-link:"Instructions-GIS Char";
 	margin-top:6.0pt;
 	margin-right:0in;
 	margin-bottom:12.0pt;
 	margin-left:0in;
 	line-height:13.0pt;
+	mso-pagination:widow-orphan;
 	font-size:12.0pt;
+	mso-bidi-font-size:10.0pt;
 	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:"Times New Roman";
 	color:#0070C0;}
 span.Instructions-GISChar
 	{mso-style-name:"Instructions-GIS Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:Instructions-GIS;
+	mso-bidi-font-size:10.0pt;
 	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
 	color:#0070C0;}
 p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
 	{mso-style-name:"Step header-GIS";
+	mso-style-unhide:no;
+	mso-style-qformat:yes;
+	mso-style-parent:"Heading 1";
 	mso-style-link:"Step header-GIS Char";
 	margin-top:7.5pt;
 	margin-right:0in;
 	margin-bottom:7.5pt;
 	margin-left:.25in;
 	text-indent:-.25in;
+	mso-line-height-alt:13.0pt;
+	mso-pagination:widow-orphan lines-together;
 	page-break-after:avoid;
+	mso-outline-level:1;
+	mso-list:l4 level1 lfo9;
 	background:#8DB3E2;
+	mso-background-themecolor:text2;
+	mso-background-themetint:102;
 	border:none;
+	mso-border-alt:solid #548DD4 .5pt;
+	mso-border-themecolor:text2;
+	mso-border-themetint:153;
 	padding:0in;
+	mso-padding-alt:1.0pt 4.0pt 1.0pt 4.0pt;
 	font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
 	font-family:"Arial",sans-serif;
+	mso-fareast-font-family:"Times New Roman";
 	color:white;
-	font-weight:bold;}
+	mso-themecolor:background1;
+	mso-style-textoutline-type:none;
+	mso-style-textoutline-outlinestyle-dpiwidth:.75pt;
+	mso-style-textoutline-outlinestyle-linecap:round;
+	mso-style-textoutline-outlinestyle-join:bevel;
+	mso-style-textoutline-outlinestyle-pctmiterlimit:0%;
+	mso-style-textoutline-outlinestyle-dash:solid;
+	mso-style-textoutline-outlinestyle-align:center;
+	mso-style-textoutline-outlinestyle-compound:simple;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
 span.Stepheader-GISChar
 	{mso-style-name:"Step header-GIS Char";
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:"Step header-GIS";
+	mso-ansi-font-size:14.0pt;
+	mso-bidi-font-size:12.0pt;
 	font-family:"Arial",sans-serif;
+	mso-ascii-font-family:Arial;
+	mso-fareast-font-family:"Times New Roman";
+	mso-hansi-font-family:Arial;
+	mso-bidi-font-family:Arial;
 	color:white;
+	mso-themecolor:background1;
 	background:#8DB3E2;
-	font-weight:bold;}
+	mso-shading-themecolor:text2;
+	mso-shading-themetint:102;
+	mso-style-textoutline-type:none;
+	mso-style-textoutline-outlinestyle-dpiwidth:.75pt;
+	mso-style-textoutline-outlinestyle-linecap:round;
+	mso-style-textoutline-outlinestyle-join:bevel;
+	mso-style-textoutline-outlinestyle-pctmiterlimit:0%;
+	mso-style-textoutline-outlinestyle-dash:solid;
+	mso-style-textoutline-outlinestyle-align:center;
+	mso-style-textoutline-outlinestyle-compound:simple;
+	font-weight:bold;
+	mso-bidi-font-weight:normal;}
 span.TitleChar
 	{mso-style-name:"Title Char";
+	mso-style-priority:10;
+	mso-style-unhide:no;
+	mso-style-locked:yes;
 	mso-style-link:Title;
+	mso-ansi-font-size:26.0pt;
+	mso-bidi-font-size:26.0pt;
 	font-family:"Cambria",serif;
+	mso-ascii-font-family:Cambria;
+	mso-ascii-theme-font:major-latin;
+	mso-fareast-font-family:"Times New Roman";
+	mso-fareast-theme-font:major-fareast;
+	mso-hansi-font-family:Cambria;
+	mso-hansi-theme-font:major-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:major-bidi;
 	color:#17365D;
-	letter-spacing:.25pt;}
+	mso-themecolor:text2;
+	mso-themeshade:191;
+	letter-spacing:.25pt;
+	mso-font-kerning:14.0pt;}
+span.SpellE
+	{mso-style-name:"";
+	mso-spl-e:yes;}
+span.GramE
+	{mso-style-name:"";
+	mso-gram-e:yes;}
 .MsoChpDefault
-	{font-family:"Calibri",sans-serif;}
+	{mso-style-type:export-only;
+	mso-default-props:yes;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-fareast-font-family:Calibri;
+	mso-fareast-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
 .MsoPapDefault
-	{margin-bottom:10.0pt;
+	{mso-style-type:export-only;
+	margin-bottom:10.0pt;
 	line-height:115%;}
 @page WordSection1
 	{size:8.5in 11.0in;
-	margin:1.0in 1.0in 1.0in 1.0in;}
+	margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-paper-source:0;}
 div.WordSection1
 	{page:WordSection1;}
  /* List Definitions */
- ol
+ @list l0
+	{mso-list-id:208764388;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1345156436 -1009210068 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l0:level1
+	{mso-level-text:"Step %1\.";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l0:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l0:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1
+	{mso-list-id:468480467;
+	mso-list-type:hybrid;
+	mso-list-template-ids:120893282 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l1:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l1:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l1:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l2
+	{mso-list-id:818040569;
+	mso-list-template-ids:-420946906;}
+@list l3
+	{mso-list-id:1153639092;
+	mso-list-type:hybrid;
+	mso-list-template-ids:2063366644 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l3:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l3:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l3:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l3:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4
+	{mso-list-id:1414282991;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-192375364 1257566086 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l4:level1
+	{mso-level-style-link:"Step header-GIS";
+	mso-level-text:"Step %1\:";
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Arial",sans-serif;
+	mso-bidi-font-family:"Times New Roman";
+	color:white;
+	mso-themecolor:background1;
+	mso-ansi-font-weight:bold;
+	mso-ansi-font-style:normal;}
+@list l4:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l4:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l4:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l5
+	{mso-list-id:1463114011;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1950688054 67698703 67698713 67698715 67698703 67698713 67698715 67698703 67698713 67698715;}
+@list l5:level1
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level2
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level3
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l5:level4
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level5
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level6
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l5:level7
+	{mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level8
+	{mso-level-number-format:alpha-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;}
+@list l5:level9
+	{mso-level-number-format:roman-lower;
+	mso-level-tab-stop:none;
+	mso-level-number-position:right;
+	text-indent:-9.0pt;}
+@list l6
+	{mso-list-id:1779373929;
+	mso-list-type:hybrid;
+	mso-list-template-ids:-1235685338 67698689 67698691 67698693 67698689 67698691 67698693 67698689 67698691 67698693;}
+@list l6:level1
+	{mso-level-number-format:bullet;
+	mso-level-text:ï‚·;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6:level2
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l6:level3
+	{mso-level-number-format:bullet;
+	mso-level-text:ï‚§;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l6:level4
+	{mso-level-number-format:bullet;
+	mso-level-text:ï‚·;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6:level5
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l6:level6
+	{mso-level-number-format:bullet;
+	mso-level-text:ï‚§;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l6:level7
+	{mso-level-number-format:bullet;
+	mso-level-text:ï‚·;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Symbol;}
+@list l6:level8
+	{mso-level-number-format:bullet;
+	mso-level-text:o;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:"Courier New";}
+@list l6:level9
+	{mso-level-number-format:bullet;
+	mso-level-text:ï‚§;
+	mso-level-tab-stop:none;
+	mso-level-number-position:left;
+	text-indent:-.25in;
+	font-family:Wingdings;}
+@list l2:level1 lfo2
+	{mso-level-start-at:2;}
+@list l2:level1 lfo3
+	{mso-level-start-at:3;}
+ol
 	{margin-bottom:0in;}
 ul
 	{margin-bottom:0in;}
 -->
 </style>
-
+<!--[if gte mso 10]>
+<style>
+ /* Style Definitions */
+ table.MsoNormalTable
+	{mso-style-name:"Table Normal";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-noshow:yes;
+	mso-style-priority:99;
+	mso-style-parent:"";
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-para-margin-top:0in;
+	mso-para-margin-right:0in;
+	mso-para-margin-bottom:10.0pt;
+	mso-para-margin-left:0in;
+	line-height:115%;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+table.MsoTableGrid
+	{mso-style-name:"Table Grid";
+	mso-tstyle-rowband-size:0;
+	mso-tstyle-colband-size:0;
+	mso-style-priority:59;
+	mso-style-unhide:no;
+	border:solid windowtext 1.0pt;
+	mso-border-alt:solid windowtext .5pt;
+	mso-padding-alt:0in 5.4pt 0in 5.4pt;
+	mso-border-insideh:.5pt solid windowtext;
+	mso-border-insidev:.5pt solid windowtext;
+	mso-para-margin:0in;
+	mso-para-margin-bottom:.0001pt;
+	mso-pagination:widow-orphan;
+	font-size:11.0pt;
+	font-family:"Calibri",sans-serif;
+	mso-ascii-font-family:Calibri;
+	mso-ascii-theme-font:minor-latin;
+	mso-hansi-font-family:Calibri;
+	mso-hansi-theme-font:minor-latin;
+	mso-bidi-font-family:"Times New Roman";
+	mso-bidi-theme-font:minor-bidi;}
+</style>
+<![endif]--><!--[if gte mso 9]><xml>
+ <o:shapedefaults v:ext="edit" spidmax="1026"/>
+</xml><![endif]--><!--[if gte mso 9]><xml>
+ <o:shapelayout v:ext="edit">
+  <o:idmap v:ext="edit" data="1"/>
+ </o:shapelayout></xml><![endif]-->
 </head>
 
-<body lang=EN-US link=blue vlink=purple>
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
 
 <div class=WordSection1>
 
-<p class=MsoNormal align=center style='text-align:center'><b><span
-style='font-size:20.0pt;line-height:115%;color:#365F91'>Modeling hydrologic
-basins and flow paths</span></b></p>
+<p class=MsoNormal align=center style='text-align:center'><b style='mso-bidi-font-weight:
+normal'><span style='font-size:20.0pt;line-height:115%;color:#365F91;
+mso-themecolor:accent1;mso-themeshade:191'>Modeling hydrologic basins and flow
+paths</span></b><o:p></o:p></p>
 
 <div class=MsoNormal align=center style='text-align:center'>
 
@@ -382,36 +1881,44 @@ basins and flow paths</span></b></p>
 </div>
 
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
- style='margin-left:.4pt;border-collapse:collapse;border:none'>
- <tr>
-  <td width=899 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+ style='margin-left:.4pt;border-collapse:collapse;border:none;mso-border-alt:
+ solid windowtext .5pt;mso-yfti-tbllook:1184;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
+  <td width=707 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  mso-background-themecolor:background1;mso-background-themeshade:242;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
-  .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-  </span>Create a folder called&nbsp;<b><span style='font-size:11.0pt'>Hydro </span></b><span
-  style='font-size:11.0pt'>somewhere under your personal directory</span> (e.g.
-  C:\Users\jdoe\Documents\Tutorials\Hydro\). </p>
+  .0001pt;mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:
+  l5 level1 lfo10'><![if !supportLists]><span style='mso-fareast-font-family:
+  Arial;mso-bidi-font-family:Arial'><span style='mso-list:Ignore'>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]>Create
+  a folder called&nbsp;<b><span style='font-size:11.0pt'>Hydro </span></b><span
+  style='font-size:11.0pt;mso-bidi-font-weight:bold'>somewhere under your
+  personal directory</span> (e.g. C:\Users\jdoe\Documents\Tutorials\Hydro\). </p>
   <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
-  .0001pt;text-indent:-.25in;line-height:normal'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-  </span><a
-  href="./Hydro_files/Hydro.zip"><span
-  style='font-size:11.0pt;color:purple'>Download the data</span></a><span
-  style='font-size:11.0pt'>&nbsp;for this exercise then&nbsp;</span><a
+  .0001pt;mso-add-space:auto;text-indent:-.25in;line-height:normal;mso-list:
+  l5 level1 lfo10'><![if !supportLists]><span style='mso-fareast-font-family:
+  Arial;mso-bidi-font-family:Arial'><span style='mso-list:Ignore'>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span></span><![endif]><a
+  href="Hydro_files/Hydro.zip"><span style='font-size:11.0pt;mso-bidi-font-family:
+  Arial;color:purple'>Download the data</span></a><span style='font-size:11.0pt'>&nbsp;for
+  this exercise then&nbsp;</span><a
   href="https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm"><span
-  style='font-size:11.0pt;color:purple'>extract the contents</span></a><span
-  style='font-size:11.0pt'>&nbsp;of&nbsp;<b>Hydro.zip</b>&nbsp;into your newly
-  created&nbsp;<b>Hydro</b>&nbsp;directory.</span></p>
+  style='font-size:11.0pt;mso-bidi-font-family:Arial;color:purple'>extract the
+  contents</span></a><span style='font-size:11.0pt'>&nbsp;of&nbsp;<b>Hydro.zip</b>&nbsp;into
+  your newly created&nbsp;<b>Hydro</b>&nbsp;directory.</span></p>
   </td>
  </tr>
 </table>
 
 <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+12.75pt'><span style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";
+mso-bidi-font-family:Arial;color:black'><o:p>&nbsp;</o:p></span></p>
 
 <p class=MsoNormal>In this exercise, you will learn to generate flow paths and
 hydrologic basins from an elevation raster. This tutorial requires that you
-enable the <b>Spatial Analyst</b> extension under Customize &gt;&gt;
-extensions. </p>
+enable the <b style='mso-bidi-font-weight:normal'>Spatial Analyst</b> extension
+under Customize &gt;&gt; extensions. </p>
 
 <div class=MsoNormal align=center style='text-align:center'>
 
@@ -419,320 +1926,788 @@ extensions. </p>
 
 </div>
 
-<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+<span style='font-size:12.0pt;mso-bidi-font-size:11.0pt;line-height:115%;
+font-family:"Arial",sans-serif;mso-fareast-font-family:Calibri;mso-fareast-theme-font:
+minor-latin;mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+mso-ansi-language:EN-US;mso-fareast-language:EN-US;mso-bidi-language:AR-SA'><w:Sdt
+ SdtDocPart="t" DocPartType="Table of Contents" DocPartUnique="t"
+ ID="-1994636323"></span>
+ <p class=MsoTocHeading><a name="_Toc286147277">Contents</a><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:12.0pt;mso-bidi-font-size:
+ 11.0pt;line-height:115%;mso-ascii-font-family:Arial;mso-fareast-font-family:
+ Calibri;mso-fareast-theme-font:minor-latin;mso-hansi-font-family:Arial;
+ mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+ color:windowtext;mso-fareast-language:EN-US;font-weight:normal'><w:sdtPr></w:sdtPr></span></span></p>
+ <p class=MsoToc1 style='tab-stops:55.0pt right dotted 467.5pt'><span
+ style='mso-bookmark:_Toc286147277'></span><!--[if supportFields]><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-element:field-begin'></span><span
+ style='mso-bookmark:_Toc286147277'><span style='mso-spacerun:yes'>Â </span>TOC
+ \o &quot;1-3&quot; \h \z \u <span style='mso-element:field-separator'></span></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'></span><a href="#_Toc515969677"><span
+ style='mso-bookmark:_Toc286147277'><span style='mso-bidi-font-family:Helvetica;
+ mso-no-proof:yes'>Step 1:</span></span><span style='mso-bookmark:_Toc286147277'><span
+ style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+ mso-ascii-theme-font:minor-latin;mso-fareast-font-family:"Times New Roman";
+ mso-fareast-theme-font:minor-fareast;mso-hansi-theme-font:minor-latin;
+ mso-bidi-font-family:"Times New Roman";mso-bidi-theme-font:minor-bidi;
+ color:windowtext;mso-no-proof:yes;text-decoration:none;text-underline:none'><span
+ style='mso-tab-count:1'>Â Â Â Â Â Â Â  </span></span><span style='mso-no-proof:yes'>Smoothing
+ the elevation surface</span></span><span style='mso-bookmark:_Toc286147277'><span
+ style='color:windowtext;display:none;mso-hide:screen;mso-no-proof:yes;
+ text-decoration:none;text-underline:none'><span style='mso-tab-count:1 dotted'>. </span></span></span><!--[if supportFields]><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-element:field-begin'></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>
+ PAGEREF _Toc515969677 \h <span style='mso-element:field-separator'></span></span></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>1<!--[if gte mso 9]><xml>
+  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003500310035003900360039003600370037000000</w:data>
+ </xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+ _Toc286147277'></span><span style='mso-element:field-end'></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-bookmark:_Toc286147277'></span></a><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;mso-no-proof:yes'><o:p></o:p></span></span></p>
+ <p class=MsoToc1 style='tab-stops:55.0pt right dotted 467.5pt'><span
+ style='mso-bookmark:_Toc286147277'></span><a href="#_Toc515969678"><span
+ style='mso-bookmark:_Toc286147277'><span style='mso-no-proof:yes'>Step 2:</span></span><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;color:windowtext;mso-no-proof:yes;text-decoration:
+ none;text-underline:none'><span style='mso-tab-count:1'>Â Â Â Â Â Â Â  </span></span><span
+ style='mso-no-proof:yes'>Creating a flow direction raster</span></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'><span
+ style='mso-tab-count:1 dotted'> </span></span></span><!--[if supportFields]><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-element:field-begin'></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>
+ PAGEREF _Toc515969678 \h <span style='mso-element:field-separator'></span></span></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>1<!--[if gte mso 9]><xml>
+  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003500310035003900360039003600370038000000</w:data>
+ </xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+ _Toc286147277'></span><span style='mso-element:field-end'></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-bookmark:_Toc286147277'></span></a><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;mso-no-proof:yes'><o:p></o:p></span></span></p>
+ <p class=MsoToc1 style='tab-stops:55.0pt right dotted 467.5pt'><span
+ style='mso-bookmark:_Toc286147277'></span><a href="#_Toc515969679"><span
+ style='mso-bookmark:_Toc286147277'><span style='mso-no-proof:yes'>Step 3:</span></span><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;color:windowtext;mso-no-proof:yes;text-decoration:
+ none;text-underline:none'><span style='mso-tab-count:1'>Â Â Â Â Â Â Â  </span></span><span
+ style='mso-no-proof:yes'>Creating a flow accumulation raster</span></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'><span
+ style='mso-tab-count:1 dotted'> </span></span></span><!--[if supportFields]><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-element:field-begin'></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>
+ PAGEREF _Toc515969679 \h <span style='mso-element:field-separator'></span></span></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>1<!--[if gte mso 9]><xml>
+  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003500310035003900360039003600370039000000</w:data>
+ </xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+ _Toc286147277'></span><span style='mso-element:field-end'></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-bookmark:_Toc286147277'></span></a><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;mso-no-proof:yes'><o:p></o:p></span></span></p>
+ <p class=MsoToc1 style='tab-stops:55.0pt right dotted 467.5pt'><span
+ style='mso-bookmark:_Toc286147277'></span><a href="#_Toc515969680"><span
+ style='mso-bookmark:_Toc286147277'><span style='mso-no-proof:yes'>Step 4:</span></span><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;color:windowtext;mso-no-proof:yes;text-decoration:
+ none;text-underline:none'><span style='mso-tab-count:1'>Â Â Â Â Â Â Â  </span></span><span
+ style='mso-no-proof:yes'>Identifying potential streams</span></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'><span
+ style='mso-tab-count:1 dotted'>. </span></span></span><!--[if supportFields]><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-element:field-begin'></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>
+ PAGEREF _Toc515969680 \h <span style='mso-element:field-separator'></span></span></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>1<!--[if gte mso 9]><xml>
+  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003500310035003900360039003600380030000000</w:data>
+ </xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+ _Toc286147277'></span><span style='mso-element:field-end'></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-bookmark:_Toc286147277'></span></a><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;mso-no-proof:yes'><o:p></o:p></span></span></p>
+ <p class=MsoToc1 style='tab-stops:55.0pt right dotted 467.5pt'><span
+ style='mso-bookmark:_Toc286147277'></span><a href="#_Toc515969681"><span
+ style='mso-bookmark:_Toc286147277'><span style='mso-no-proof:yes'>Step 5:</span></span><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;color:windowtext;mso-no-proof:yes;text-decoration:
+ none;text-underline:none'><span style='mso-tab-count:1'>Â Â Â Â Â Â Â  </span></span><span
+ style='mso-no-proof:yes'>Delineating hydrologic basins</span></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'><span
+ style='mso-tab-count:1 dotted'>. </span></span></span><!--[if supportFields]><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-element:field-begin'></span><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>
+ PAGEREF _Toc515969681 \h <span style='mso-element:field-separator'></span></span></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'><span style='color:windowtext;display:none;
+ mso-hide:screen;mso-no-proof:yes;text-decoration:none;text-underline:none'>1<!--[if gte mso 9]><xml>
+  <w:data>08D0C9EA79F9BACE118C8200AA004BA90B02000000080000000E0000005F0054006F0063003500310035003900360039003600380031000000</w:data>
+ </xml><![endif]--></span></span><!--[if supportFields]><span style='mso-bookmark:
+ _Toc286147277'></span><span style='mso-element:field-end'></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-bookmark:_Toc286147277'></span></a><span
+ style='mso-bookmark:_Toc286147277'><span style='font-size:11.0pt;line-height:
+ 115%;font-family:"Calibri",sans-serif;mso-ascii-theme-font:minor-latin;
+ mso-fareast-font-family:"Times New Roman";mso-fareast-theme-font:minor-fareast;
+ mso-hansi-theme-font:minor-latin;mso-bidi-font-family:"Times New Roman";
+ mso-bidi-theme-font:minor-bidi;mso-no-proof:yes'><o:p></o:p></span></span></p>
+ <p class=MsoNormal><span style='mso-bookmark:_Toc286147277'></span><!--[if supportFields]><span
+ style='mso-bookmark:_Toc286147277'></span><span style='mso-element:field-end'></span><![endif]--><span
+ style='mso-bookmark:_Toc286147277'><o:p>&nbsp;</o:p></span></p>
+</w:Sdt>
 
-<p class=MsoToc1><a href="#_Toc515969677">Step 1:<span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Smoothing the elevation surface<span style='color:windowtext;
-display:none;text-decoration:none'>. </span><span
-style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
-
-<p class=MsoToc1><a href="#_Toc515969678">Step 2:<span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Creating a flow direction raster<span style='color:windowtext;
-display:none;text-decoration:none'> </span><span
-style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
-
-<p class=MsoToc1><a href="#_Toc515969679">Step 3:<span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Creating a flow accumulation raster<span style='color:
-windowtext;display:none;text-decoration:none'> </span><span
-style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
-
-<p class=MsoToc1><a href="#_Toc515969680">Step 4:<span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Identifying potential streams<span style='color:windowtext;
-display:none;text-decoration:none'>. </span><span
-style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
-
-<p class=MsoToc1><a href="#_Toc515969681">Step 5:<span style='font-size:11.0pt;
-line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Delineating hydrologic basins<span style='color:windowtext;
-display:none;text-decoration:none'>. </span><span
-style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
-
-<p class=MsoNormal>&nbsp;</p>
-
-<div class=MsoNormal align=center style='text-align:center'>
+<div class=MsoNormal align=center style='text-align:center'><span
+style='mso-bookmark:_Toc286147277'>
 
 <hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
 
+</span></div>
+
+<span style='mso-bookmark:_Toc286147277'></span>
+
+<div style='mso-element:para-border-div;border:solid #548DD4 1.0pt;mso-border-themecolor:
+text2;mso-border-themetint:153;mso-border-alt:solid #548DD4 .5pt;mso-border-themecolor:
+text2;mso-border-themetint:153;padding:1.0pt 4.0pt 1.0pt 4.0pt;background:#8DB3E2;
+mso-background-themecolor:text2;mso-background-themetint:102'>
+
+<p class=Stepheader-GIS><a name="_Toc515969677"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>Step 1:<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Smoothing the elevation surface</a><span
+style='mso-bookmark:_Toc515969677'></span><span style='font-family:"Helvetica",sans-serif'><o:p></o:p></span></p>
+
 </div>
 
-<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
-background:#8DB3E2'>
-
-<p class=Stepheader-GIS><a name="_Toc515969677">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Smoothing the elevation surface</a></p>
-
-</div>
-
-<p class=Instructions-GIS>Open the <b>Hydro.mxd</b> document. </p>
+<p class=Instructions-GIS>Open the <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>Hydro.mxd</b></span> document. </p>
 
 <p class=MsoNormal>The map document consists of a Lidar derived raster
 elevation model of the Colby campus.</p>
 
-<p class=Instructions-GIS><img width=196 height=176 id="Picture 1"
-src="Hydro_files/image001.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shapetype
+ id="_x0000_t75" coordsize="21600,21600" o:spt="75" o:preferrelative="t"
+ path="m@4@5l@4@11@9@11@9@5xe" filled="f" stroked="f">
+ <v:stroke joinstyle="miter"/>
+ <v:formulas>
+  <v:f eqn="if lineDrawn pixelLineWidth 0"/>
+  <v:f eqn="sum @0 1 0"/>
+  <v:f eqn="sum 0 0 @1"/>
+  <v:f eqn="prod @2 1 2"/>
+  <v:f eqn="prod @3 21600 pixelWidth"/>
+  <v:f eqn="prod @3 21600 pixelHeight"/>
+  <v:f eqn="sum @0 0 1"/>
+  <v:f eqn="prod @6 1 2"/>
+  <v:f eqn="prod @7 21600 pixelWidth"/>
+  <v:f eqn="sum @8 21600 0"/>
+  <v:f eqn="prod @7 21600 pixelHeight"/>
+  <v:f eqn="sum @10 21600 0"/>
+ </v:formulas>
+ <v:path o:extrusionok="f" gradientshapeok="t" o:connecttype="rect"/>
+ <o:lock v:ext="edit" aspectratio="t"/>
+</v:shapetype><v:shape id="Picture_x0020_1" o:spid="_x0000_i1055" type="#_x0000_t75"
+ style='width:147pt;height:132pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image001.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=196 height=176
+src="Hydro_files/image001.png" v:shapes="Picture_x0020_1"><![endif]></span></p>
 
 <p class=MsoNormal>The first step is to remove isolated depressions from the
 elevation raster. This is needed to ensure that flow models reflect general
 topography and localized topography. For example, the following profile shows a
-localized depression (Figure 1)  and its filled counterpart (Figure 2).</p>
+localized depression (Figure 1<span class=GramE>) <span
+style='mso-spacerun:yes'>Â </span>and</span> its filled counterpart (Figure 2).</p>
 
 <table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
- style='border-collapse:collapse;border:none'>
- <tr>
+ style='border-collapse:collapse;border:none;mso-yfti-tbllook:1184;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt;mso-border-insideh:none;mso-border-insidev:none'>
+ <tr style='mso-yfti-irow:0;mso-yfti-firstrow:yes;mso-yfti-lastrow:yes'>
   <td width=347 valign=top style='width:233.75pt;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'><img width=333 height=140 id="Picture 4"
-  src="Hydro_files/image002.png"></p>
+  normal'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_4"
+   o:spid="_x0000_i1054" type="#_x0000_t75" style='width:249.75pt;height:105pt;
+   visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="Hydro_files/image002.png" o:title="" croptop="1375f"/>
+  </v:shape><![endif]--><![if !vml]><img width=333 height=140
+  src="Hydro_files/image003.png" v:shapes="Picture_x0020_4"><![endif]></span></p>
   <p class=MsoCaption align=center style='margin-bottom:0in;margin-bottom:.0001pt;
-  text-align:center'><span style='color:#595959'>Figure </span><span style='color:#595959'>1</span><span style='color:#595959'> Original profile</span></p>
+  text-align:center'><span style='color:#595959;mso-themecolor:text1;
+  mso-themetint:166'>Figure </span><!--[if supportFields]><span
+  style='color:#595959;mso-themecolor:text1;mso-themetint:166'><span
+  style='mso-element:field-begin'></span><span
+  style='mso-spacerun:yes'>Â </span>SEQ Figure \* ARABIC <span style='mso-element:
+  field-separator'></span></span><![endif]--><span style='color:#595959;
+  mso-themecolor:text1;mso-themetint:166'><span style='mso-no-proof:yes'>1</span></span><!--[if supportFields]><span
+  style='color:#595959;mso-themecolor:text1;mso-themetint:166'><span
+  style='mso-element:field-end'></span></span><![endif]--><span
+  style='color:#595959;mso-themecolor:text1;mso-themetint:166'> Original
+  profile<o:p></o:p></span></p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>&nbsp;</p>
+  normal'><o:p>&nbsp;</o:p></p>
   </td>
   <td width=349 valign=top style='width:233.75pt;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal;page-break-after:avoid'><img width=335 height=142 id="Picture 5"
-  src="Hydro_files/image003.png"></p>
+  normal;page-break-after:avoid'><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+   id="Picture_x0020_5" o:spid="_x0000_i1053" type="#_x0000_t75" style='width:251.25pt;
+   height:106.5pt;visibility:visible;mso-wrap-style:square'>
+   <v:imagedata src="Hydro_files/image004.png" o:title="" croptop="1356f"/>
+  </v:shape><![endif]--><![if !vml]><img width=335 height=142
+  src="Hydro_files/image005.png" v:shapes="Picture_x0020_5"><![endif]></span></p>
   <p class=MsoCaption align=center style='margin-top:0in;margin-right:0in;
   margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;text-align:center'><span
-  style='color:#595959'>Figure </span><span
-  style='color:#595959'>2</span><span style='color:#595959'>  Filled depression</span></p>
+  style='color:#595959;mso-themecolor:text1;mso-themetint:166'>Figure </span><!--[if supportFields]><span
+  style='color:#595959;mso-themecolor:text1;mso-themetint:166'><span
+  style='mso-element:field-begin'></span><span
+  style='mso-spacerun:yes'>Â </span>SEQ Figure \* ARABIC <span style='mso-element:
+  field-separator'></span></span><![endif]--><span style='color:#595959;
+  mso-themecolor:text1;mso-themetint:166'><span style='mso-no-proof:yes'>2</span></span><!--[if supportFields]><span
+  style='color:#595959;mso-themecolor:text1;mso-themetint:166'><span
+  style='mso-element:field-end'></span></span><![endif]--><span
+  style='color:#595959;mso-themecolor:text1;mso-themetint:166'><span
+  style='mso-spacerun:yes'>Â  </span>Filled depression</span></p>
   </td>
  </tr>
 </table>
 
-<p class=MsoNormal>We’ll make use of the <b>Fill</b> tool which will identify and
-fill isolated depressions in the elevation layer. </p>
+<p class=MsoNormal>Weâ€™ll make use of the <b style='mso-bidi-font-weight:normal'>Fill</b>
+tool which will identify and fill isolated depressions in the elevation layer. </p>
 
-<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
-top:3.0pt'><img width=22 height=23 id="Picture 2" src="Hydro_files/image004.png"></span>,
-open <b>Spatial Analyst Tools &gt;&gt; Hydrology &gt;&gt; Fill</b>.</p>
+<p class=Instructions-GIS>In your <span class=GramE><b style='mso-bidi-font-weight:
+normal'>Toolbox</b> </span><span style='position:relative;top:3.0pt;mso-text-raise:
+-3.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_2"
+ o:spid="_x0000_i1052" type="#_x0000_t75" style='width:16.5pt;height:17.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=22 height=23
+src="Hydro_files/image006.png" v:shapes="Picture_x0020_2"><![endif]></span>,
+open <b style='mso-bidi-font-weight:normal'>Spatial Analyst Tools &gt;&gt;
+Hydrology &gt;&gt; Fill</b>.</p>
 
-<p class=Instructions-GIS>Select <b>Elev.tif</b> as the input surface raster.
-Name the output <b>Elev_fill.tif</b>.</p>
+<p class=Instructions-GIS>Select <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>Elev.tif</b></span> as the input surface raster. Name the output <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>Elev_fill.tif</b></span>.</p>
 
-<p class=MsoNormal><img width=377 height=173 id="Picture 9"
-src="Hydro_files/image005.png"></p>
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_9" o:spid="_x0000_i1051" type="#_x0000_t75" style='width:282.75pt;
+ height:129.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image007.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=377 height=173
+src="Hydro_files/image007.png" v:shapes="Picture_x0020_9"><![endif]></span></p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+<p class=Instructions-GIS>Click <b style='mso-bidi-font-weight:normal'>OK</b>
+to run the geoprocess.</p>
 
-<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
-background:#8DB3E2'>
+<div style='mso-element:para-border-div;border:solid #548DD4 1.0pt;mso-border-themecolor:
+text2;mso-border-themetint:153;mso-border-alt:solid #548DD4 .5pt;mso-border-themecolor:
+text2;mso-border-themetint:153;padding:1.0pt 4.0pt 1.0pt 4.0pt;background:#8DB3E2;
+mso-background-themecolor:text2;mso-background-themetint:102'>
 
-<p class=Stepheader-GIS><a name="_Toc515969678">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Creating a flow direction raster</a></p>
+<p class=Stepheader-GIS><a name="_Toc515969678"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>Step 2:<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Creating a flow direction raster</a></p>
 
 </div>
 
-<p class=MsoNormal>Next, we’ll create a flow direction raster. This layer will
-assign, for each pixel, a flow direction <span lang=EN>to its steepest
-downslope neighboring pixel.</span></p>
+<p class=MsoNormal>Next, weâ€™ll create a flow direction raster. This layer will
+assign, for each pixel, a flow direction <span lang=EN style='mso-ansi-language:
+EN'>to its steepest downslope neighboring pixel.</span></p>
 
-<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
-top:3.0pt'><img width=22 height=23 id="Picture 7" src="Hydro_files/image004.png"></span>,
-open <b>Spatial Analyst Tools &gt;&gt; Hydrology &gt;&gt; Flow Direction</b>.</p>
+<p class=Instructions-GIS>In your <span class=GramE><b style='mso-bidi-font-weight:
+normal'>Toolbox</b> </span><span style='position:relative;top:3.0pt;mso-text-raise:
+-3.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_7"
+ o:spid="_x0000_i1050" type="#_x0000_t75" style='width:16.5pt;height:17.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=22 height=23
+src="Hydro_files/image006.png" v:shapes="Picture_x0020_7"><![endif]></span>,
+open <b style='mso-bidi-font-weight:normal'>Spatial Analyst Tools &gt;&gt;
+Hydrology &gt;&gt; Flow Direction</b>.</p>
 
-<p class=Instructions-GIS>Use <b>Elev_fill.tif</b> as the input raster, name
-the output <b>Direction.tif</b> and adopt the <b>D8</b> flow direction type.</p>
+<p class=Instructions-GIS>Use <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>Elev_fill.tif</b></span> as the input raster, name the output <span
+class=SpellE><b style='mso-bidi-font-weight:normal'>Direction.tif</b></span>
+and adopt the <b style='mso-bidi-font-weight:normal'>D8</b> flow direction
+type.</p>
 
-<p class=MsoNormal><img width=388 height=242 id="Picture 21"
-src="Hydro_files/image006.png"></p>
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_21" o:spid="_x0000_i1049" type="#_x0000_t75" style='width:291pt;
+ height:181.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image008.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=388 height=242
+src="Hydro_files/image008.png" v:shapes="Picture_x0020_21"><![endif]></span></p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+<p class=Instructions-GIS>Click <b style='mso-bidi-font-weight:normal'>OK</b>
+to run the geoprocess.</p>
 
 <p class=MsoNormal>Each pixel is assigned an integer value that defines the flow
 direction. The following diagram matches the integer value to its flow
 direction.</p>
 
-<p class=Instructions-GIS><img width=77 height=76 id="Picture 8"
-src="Hydro_files/image007.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_8" o:spid="_x0000_i1048" type="#_x0000_t75" style='width:57.75pt;
+ height:57pt;visibility:visible' o:gfxdata="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
+fAEAAGILAAAAAA==
+">
+ <v:imagedata src="Hydro_files/image009.png" o:title="" cropright="-170f"/>
+</v:shape><![endif]--><![if !vml]><img width=77 height=76
+src="Hydro_files/image010.png" v:shapes="Picture_x0020_8"><![endif]></span></p>
 
-<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
-background:#8DB3E2'>
+<div style='mso-element:para-border-div;border:solid #548DD4 1.0pt;mso-border-themecolor:
+text2;mso-border-themetint:153;mso-border-alt:solid #548DD4 .5pt;mso-border-themecolor:
+text2;mso-border-themetint:153;padding:1.0pt 4.0pt 1.0pt 4.0pt;background:#8DB3E2;
+mso-background-themecolor:text2;mso-background-themetint:102'>
 
-<p class=Stepheader-GIS><a name="_Toc515969679">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Creating a flow accumulation raster</a></p>
+<p class=Stepheader-GIS><a name="_Toc515969679"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>Step 3:<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Creating a flow accumulation raster</a></p>
 
 </div>
 
-<p class=MsoNormal>Next, we’ll create a raster from the flow direction layer
+<p class=MsoNormal>Next, weâ€™ll create a raster from the flow direction layer
 that computes the total number of pixels that feed into each pixel. </p>
 
-<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
-top:3.0pt'><img width=22 height=23 id="Picture 10"
-src="Hydro_files/image004.png"></span>, open <b>Spatial Analyst Tools &gt;&gt;
+<p class=Instructions-GIS>In your <span class=GramE><b style='mso-bidi-font-weight:
+normal'>Toolbox</b> </span><span style='position:relative;top:3.0pt;mso-text-raise:
+-3.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_10"
+ o:spid="_x0000_i1047" type="#_x0000_t75" style='width:16.5pt;height:17.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=22 height=23
+src="Hydro_files/image006.png" v:shapes="Picture_x0020_10"><![endif]></span>,
+open <b style='mso-bidi-font-weight:normal'>Spatial Analyst Tools &gt;&gt;
 Hydrology &gt;&gt; Flow Accumulation</b>.</p>
 
-<p class=Instructions-GIS>Use <b>Direction.tif </b>as the input raster, name
-the output <b>Accumulation.tif </b>and set the output data type to <b>Integer</b>.</p>
+<p class=Instructions-GIS>Use <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>Direction.tif</b></span><b style='mso-bidi-font-weight:normal'> </b>as
+the input raster, name the output <span class=SpellE><b style='mso-bidi-font-weight:
+normal'>Accumulation.tif</b></span><b style='mso-bidi-font-weight:normal'> </b>and
+set the output data type to <b style='mso-bidi-font-weight:normal'>Integer</b>.</p>
 
-<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
-<p class=MsoNormal><img width=388 height=214 id="Picture 22"
-src="Hydro_files/image008.png"></p>
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_22" o:spid="_x0000_i1046" type="#_x0000_t75" style='width:291pt;
+ height:160.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image011.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=388 height=214
+src="Hydro_files/image011.png" v:shapes="Picture_x0020_22"><![endif]></span></p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+<p class=Instructions-GIS>Click <b style='mso-bidi-font-weight:normal'>OK</b>
+to run the geoprocess.</p>
 
-<p class=MsoNormal>When possible, it’s good practice to seek the smallest data
+<p class=MsoNormal>When possible, itâ€™s good practice to seek the smallest data
 type needed for a file. Here, we are tallying the number of cells that feed
-into another which results in <i>count</i> values that are whole numbers (not
-fractions). This explains the choice of an integer raster for our output.</p>
+into another which results in <i style='mso-bidi-font-style:normal'>count</i>
+values that are whole numbers (not fractions). This explains the choice of an
+integer raster for our output.</p>
 
 <p class=MsoNormal>At first glance, the raster may look homogeneous. This is
-because the raster’s data values are skewed towards higher values.</p>
+because the rasterâ€™s data values are skewed towards higher values.</p>
 
-<p class=MsoNormal><img width=149 height=133 id="Picture 12"
-src="Hydro_files/image009.png"></p>
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_12" o:spid="_x0000_i1045" type="#_x0000_t75" style='width:111.75pt;
+ height:99.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image012.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=149 height=133
+src="Hydro_files/image012.png" v:shapes="Picture_x0020_12"><![endif]></span></p>
 
-<p class=Instructions-GIS>You can change the symbology to reveal the
-distribution of values using the following template as an example (note the use
-of <b>From Current Display Extent</b> option under the <b>Statistics </b>block;
+<p class=Instructions-GIS>You can change the <span class=SpellE>symbology</span>
+to reveal the distribution of values using the following template as an example
+(note the use of <b style='mso-bidi-font-weight:normal'>From Current Display
+Extent</b> option under the <b style='mso-bidi-font-weight:normal'>Statistics </b>block;
 this rescales the range of colors to the viewing extent).</p>
 
-<p class=MsoNormal><img width=547 height=226 id="Picture 13"
-src="Hydro_files/image010.png"></p>
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_13" o:spid="_x0000_i1044" type="#_x0000_t75" style='width:410.25pt;
+ height:169.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image013.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=547 height=226
+src="Hydro_files/image013.png" v:shapes="Picture_x0020_13"><![endif]></span></p>
 
 <p class=Instructions-GIS>Now zoom in on the raster to reveal flow paths.</p>
 
-<p class=Instructions-GIS><img width=203 height=168 id="Picture 14"
-src="Hydro_files/image011.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_14" o:spid="_x0000_i1043" type="#_x0000_t75" style='width:152.25pt;
+ height:126pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image014.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=203 height=168
+src="Hydro_files/image015.png" v:shapes="Picture_x0020_14"><![endif]></span></p>
 
 <p class=MsoNormal>A pixel value of 0 indicates that no other pixel in the
 raster flows into it. A value of 1 indicates that 1 pixel flows into it. A
-value of 2 indicates that 2 pixels flow into it, etc… These values can be
+value of 2 indicates that 2 pixels flow into it, etcâ€¦ These values can be
 translated to watershed areas feeding into each pixel. Simply multiply the
-pixel value by the pixel’s surface area. In this example, the pixel size is 1
-m² so a pixel whose accumulation value is 125,113 services an area of 125,113 x
-1 m² = 125,113 m².</p>
+pixel value by the pixelâ€™s surface area. In this example, the pixel size is 1
+mÂ² so a pixel whose accumulation value is 125,113 services an area of 125,113 x
+1 mÂ² = 125,113 mÂ².</p>
 
-<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
-background:#8DB3E2'>
+<div style='mso-element:para-border-div;border:solid #548DD4 1.0pt;mso-border-themecolor:
+text2;mso-border-themetint:153;mso-border-alt:solid #548DD4 .5pt;mso-border-themecolor:
+text2;mso-border-themetint:153;padding:1.0pt 4.0pt 1.0pt 4.0pt;background:#8DB3E2;
+mso-background-themecolor:text2;mso-background-themetint:102'>
 
-<p class=Stepheader-GIS><a name="_Toc515969680">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Identifying potential streams</a></p>
+<p class=Stepheader-GIS><a name="_Toc515969680"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>Step 4:<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Identifying potential streams</a></p>
 
 </div>
 
-<p class=MsoNormal>In this step, we’ll create a vector layer that identifies
+<p class=MsoNormal>In this step, weâ€™ll create a vector layer that identifies
 potential streams/rivers based on a defined accumulation value cutoff. Note
 that accumulation value alone is not enough to assess presence/absence of a flowing
 water body; other factors such as soil type and surface characteristics would
 be needed to make such a prediction.</p>
 
-<p class=MsoNormal>In this example, we’ll create a stream/river vector layer
+<p class=MsoNormal>In this example, weâ€™ll create a stream/river vector layer
 from all accumulation pixels whose value is greater than 200,000 (i.e. the pixel
-services an area of 200,000 m² or greater).</p>
+services an area of 200,000 mÂ² or greater).</p>
 
-<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
-top:3.0pt'><img width=22 height=23 id="Picture 15"
-src="Hydro_files/image004.png"></span>, open <b>Spatial Analyst Tools &gt;&gt; Map
+<p class=Instructions-GIS>In your <span class=GramE><b style='mso-bidi-font-weight:
+normal'>Toolbox</b> </span><span style='position:relative;top:3.0pt;mso-text-raise:
+-3.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_15"
+ o:spid="_x0000_i1042" type="#_x0000_t75" style='width:16.5pt;height:17.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=22 height=23
+src="Hydro_files/image006.png" v:shapes="Picture_x0020_15"><![endif]></span>,
+open <b style='mso-bidi-font-weight:normal'>Spatial Analyst Tools &gt;&gt; Map
 Algebra &gt;&gt; Raster Calculator</b>.</p>
 
 <p class=Instructions-GIS>Type the following expression in the expression box
-and name the output <b>acc_200k.tif</b>.</p>
+and name the output <b style='mso-bidi-font-weight:normal'>acc_200k.tif</b>.</p>
 
-<p class=Instructions-GIS><img width=378 height=108 id="Picture 23"
-src="Hydro_files/image012.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_23" o:spid="_x0000_i1041" type="#_x0000_t75" style='width:283.5pt;
+ height:81pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image016.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=378 height=108
+src="Hydro_files/image016.png" v:shapes="Picture_x0020_23"><![endif]></span></p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+<p class=Instructions-GIS>Click <b style='mso-bidi-font-weight:normal'>OK</b>
+to run the geoprocess.</p>
 
 <p class=MsoNormal>The output is a binary raster where the value of 1 indicates
 that the pixel has an accumulation value greater than 200,000 and a value of 0
-indicates that  the pixel has an accumulation value less than or equal to
-200,000.</p>
+indicates that<span style='mso-spacerun:yes'>Â  </span>the pixel has an
+accumulation value less than or equal to 200,000.</p>
 
-<p class=Instructions-GIS><img width=111 height=89 id="Picture 17"
-src="Hydro_files/image013.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_17" o:spid="_x0000_i1040" type="#_x0000_t75" style='width:83.25pt;
+ height:66.75pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image017.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=111 height=89
+src="Hydro_files/image018.png" v:shapes="Picture_x0020_17"><![endif]></span></p>
 
 <p class=MsoNoSpacing>The raster representation of the drainage areas can be
-difficult to visualize because of the small pixel size. We’ll therefore convert
+difficult to visualize because of the small pixel size. Weâ€™ll therefore convert
 the raster to a polyline whereby the pixels with values of 1 will be converted
 to line segments.</p>
 
-<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
-top:3.0pt'><img width=22 height=23 id="Picture 18"
-src="Hydro_files/image004.png"></span>, open <b>Conversion Tools &gt;&gt; From
-Raster &gt;&gt; Raster to Polyline</b>. Set <i>acc_200k.tif</i> as the input
-raster and name the output shapefile <i>Drainage.shp</i>.</p>
+<p class=Instructions-GIS>In your <span class=GramE><b style='mso-bidi-font-weight:
+normal'>Toolbox</b> </span><span style='position:relative;top:3.0pt;mso-text-raise:
+-3.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_18"
+ o:spid="_x0000_i1039" type="#_x0000_t75" style='width:16.5pt;height:17.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=22 height=23
+src="Hydro_files/image006.png" v:shapes="Picture_x0020_18"><![endif]></span>,
+open <b style='mso-bidi-font-weight:normal'>Conversion Tools &gt;&gt; From
+Raster &gt;&gt; Raster to Polyline</b>. Set <i style='mso-bidi-font-style:normal'>acc_200k.tif</i>
+as the input raster and name the output shapefile <span class=SpellE><i
+style='mso-bidi-font-style:normal'>Drainage.shp</i></span>.</p>
 
-<p class=Instructions-GIS><img width=386 height=258 id="Picture 24"
-src="Hydro_files/image014.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_24" o:spid="_x0000_i1038" type="#_x0000_t75" style='width:289.5pt;
+ height:193.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image019.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=386 height=258
+src="Hydro_files/image019.png" v:shapes="Picture_x0020_24"><![endif]></span></p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+<p class=Instructions-GIS>Click <b style='mso-bidi-font-weight:normal'>OK</b>
+to run the geoprocess.</p>
 
 <p class=MsoNormal>You now have a vector representation of the streams.</p>
 
-<p class=Instructions-GIS><img width=213 height=238 id="Picture 20"
-src="Hydro_files/image015.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_20" o:spid="_x0000_i1037" type="#_x0000_t75" style='width:157.5pt;
+ height:177.75pt;visibility:visible' o:gfxdata="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
+">
+ <v:imagedata src="Hydro_files/image020.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=210 height=237
+src="Hydro_files/image021.png" v:shapes="Picture_x0020_20"><![endif]></span></p>
 
-<p class=Instructions-GIS>&nbsp;</p>
+<p class=Instructions-GIS><o:p>&nbsp;</o:p></p>
 
-<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
-background:#8DB3E2'>
+<div style='mso-element:para-border-div;border:solid #548DD4 1.0pt;mso-border-themecolor:
+text2;mso-border-themetint:153;mso-border-alt:solid #548DD4 .5pt;mso-border-themecolor:
+text2;mso-border-themetint:153;padding:1.0pt 4.0pt 1.0pt 4.0pt;background:#8DB3E2;
+mso-background-themecolor:text2;mso-background-themetint:102'>
 
-<p class=Stepheader-GIS><a name="_Toc515969681">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Delineating hydrologic basins</a> </p>
+<p class=Stepheader-GIS><a name="_Toc515969681"><![if !supportLists]><span
+style='mso-fareast-font-family:Arial'><span style='mso-list:Ignore'>Step 5:<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span></span><![endif]>Delineating hydrologic basins</a> </p>
 
 </div>
 
 <p class=MsoNormal>Finally, you will identify all drainage basins using the
 directions raster layer.</p>
 
-<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
-top:3.0pt'><img width=22 height=23 id="Picture 28"
-src="Hydro_files/image004.png"></span>, open <b>Spatial Analyst Tools &gt;&gt;
-Hydrology &gt;&gt; Basins</b>. Set <i>Direction.tif</i> as the input raster and
-<i>Basins.tif</i> as the output raster.</p>
+<p class=Instructions-GIS>In your <span class=GramE><b style='mso-bidi-font-weight:
+normal'>Toolbox</b> </span><span style='position:relative;top:3.0pt;mso-text-raise:
+-3.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_28"
+ o:spid="_x0000_i1036" type="#_x0000_t75" style='width:16.5pt;height:17.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=22 height=23
+src="Hydro_files/image006.png" v:shapes="Picture_x0020_28"><![endif]></span>,
+open <b style='mso-bidi-font-weight:normal'>Spatial Analyst Tools &gt;&gt;
+Hydrology &gt;&gt; Basins</b>. Set <span class=SpellE><i style='mso-bidi-font-style:
+normal'>Direction.tif</i></span> as the input raster and <span class=SpellE><i
+style='mso-bidi-font-style:normal'>Basins.tif</i></span> as the output raster.</p>
 
-<p class=MsoNormal><img width=385 height=132 id="Picture 25"
-src="Hydro_files/image016.png"></p>
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_25" o:spid="_x0000_i1035" type="#_x0000_t75" style='width:288.75pt;
+ height:99pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image022.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=385 height=132
+src="Hydro_files/image022.png" v:shapes="Picture_x0020_25"><![endif]></span></p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+<p class=Instructions-GIS>Click <b style='mso-bidi-font-weight:normal'>OK</b>
+to run the geoprocess.</p>
 
-<p class=Instructions-GIS><img width=164 height=151 id="Picture 30"
-src="Hydro_files/image017.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_30" o:spid="_x0000_i1034" type="#_x0000_t75" style='width:123pt;
+ height:113.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image023.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=164 height=151
+src="Hydro_files/image023.png" v:shapes="Picture_x0020_30"><![endif]></span></p>
 
-<p class=MsoNormal>You can create a polygon version of the layer using the <b>Raster
-to Polygon</b> tool.</p>
+<p class=MsoNormal>You can create a polygon version of the layer using the <b
+style='mso-bidi-font-weight:normal'>Raster to Polygon</b> tool.</p>
 
-<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
-top:3.0pt'><img width=22 height=23 id="Picture 31"
-src="Hydro_files/image004.png"></span>, open <b>Conversion Tools &gt;&gt; From
-Raster &gt;&gt; Raster to Polygon</b>. Set <i>acc_200k.tif</i> as the input
-raster and name the output shapefile <i>Drainage.shp</i>.</p>
+<p class=Instructions-GIS>In your <span class=GramE><b style='mso-bidi-font-weight:
+normal'>Toolbox</b> </span><span style='position:relative;top:3.0pt;mso-text-raise:
+-3.0pt;mso-no-proof:yes'><!--[if gte vml 1]><v:shape id="Picture_x0020_31"
+ o:spid="_x0000_i1033" type="#_x0000_t75" style='width:16.5pt;height:17.25pt;
+ visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image006.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=22 height=23
+src="Hydro_files/image006.png" v:shapes="Picture_x0020_31"><![endif]></span>,
+open <b style='mso-bidi-font-weight:normal'>Conversion Tools &gt;&gt; From
+Raster &gt;&gt; Raster to Polygon</b>. Set <i style='mso-bidi-font-style:normal'>acc_200k.tif</i>
+as the input raster and name the output shapefile <span class=SpellE><i
+style='mso-bidi-font-style:normal'>Drainage.shp</i></span>.</p>
 
-<p class=Instructions-GIS><img width=385 height=264 id="Picture 26"
-src="Hydro_files/image018.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_26" o:spid="_x0000_i1032" type="#_x0000_t75" style='width:288.75pt;
+ height:198pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image024.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=385 height=264
+src="Hydro_files/image024.png" v:shapes="Picture_x0020_26"><![endif]></span></p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+<p class=Instructions-GIS>Click <b style='mso-bidi-font-weight:normal'>OK</b>
+to run the geoprocess.</p>
 
-<p class=Instructions-GIS><img width=164 height=150 id="Picture 33"
-src="Hydro_files/image019.png"></p>
+<p class=Instructions-GIS><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_33" o:spid="_x0000_i1031" type="#_x0000_t75" style='width:123pt;
+ height:112.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image025.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=164 height=150
+src="Hydro_files/image025.png" v:shapes="Picture_x0020_33"><![endif]></span></p>
 
-<p class=MsoNormal>You’ll note the many small polygons near the edge of the
+<p class=MsoNormal>Youâ€™ll note the many small polygons near the edge of the
 study extent. Many of these polygons probably belong to the same basin but
 because the direction raster is restricted to the edge of this study extent, only
 those (exposed) flow direction pixels at the edge are used to define individual
 basins. For example, the following direction raster grid suggests a single
 basin (all pixels end up flowing to the upper left-hand corner). </p>
 
-<p class=MsoNormal><img width=456 height=279 id="Picture 34"
-src="Hydro_files/image020.png"></p>
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_34" o:spid="_x0000_i1030" type="#_x0000_t75" style='width:342pt;
+ height:209.25pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image026.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=456 height=279
+src="Hydro_files/image026.png" v:shapes="Picture_x0020_34"><![endif]></span></p>
 
 <p class=MsoNormal>If the study extent was limited to the four right most set
 of pixel columns, then two separate basins would be identified.</p>
 
-<p class=MsoNormal><img width=473 height=310 id="Picture 35"
-src="Hydro_files/image021.png"></p>
+<p class=MsoNormal><span style='mso-no-proof:yes'><!--[if gte vml 1]><v:shape
+ id="Picture_x0020_35" o:spid="_x0000_i1029" type="#_x0000_t75" style='width:354.75pt;
+ height:232.5pt;visibility:visible;mso-wrap-style:square'>
+ <v:imagedata src="Hydro_files/image027.png" o:title=""/>
+</v:shape><![endif]--><![if !vml]><img width=473 height=310
+src="Hydro_files/image027.png" v:shapes="Picture_x0020_35"><![endif]></span></p>
 
-<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
 <div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
 margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
-style='font-size:10.0pt;color:black'>
+style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
+Arial;color:black'>
 
 <hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
 
@@ -740,9 +2715,18 @@ style='font-size:10.0pt;color:black'>
 
 <p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
 margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
-style='font-size:10.0pt;color:gray'>© Manny Gimond, 6/5/2018 </span></p>
+style='font-size:10.0pt;mso-fareast-font-family:"Times New Roman";mso-bidi-font-family:
+Arial;color:gray;mso-themecolor:background1;mso-themeshade:128'>Â© Manny Gimond,
+<w:Sdt
+ PrefixMappings="xmlns:ns0='http://schemas.microsoft.com/office/2006/coverPageProps' "
+ Xpath="/ns0:CoverPageProperties[1]/ns0:PublishDate[1]" Calendar="t"
+ MapToDateTime="t" CalendarType="Gregorian" Date="2018-06-05T00:00:00Z"
+ StoreItemID="X_55AF091B-3C7A-41E3-B477-F2FDAA23CFDA" Title="Publish Date"
+ DateFormat="M/d/yyyy" Lang="EN-US" ID="96376926">6/5/2018</w:Sdt> </span><span
+style='font-size:10.0pt;font-family:"Helvetica",sans-serif;mso-fareast-font-family:
+"Times New Roman";color:gray;mso-themecolor:background1;mso-themeshade:128'><o:p></o:p></span></p>
 
-<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal><o:p>&nbsp;</o:p></p>
 
 </div>
 
