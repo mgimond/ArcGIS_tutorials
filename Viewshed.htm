@@ -1,7 +1,7 @@
 <html>
 
 <head>
-<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
 <title>Creating viewsheds</title>
 <style>
@@ -386,13 +386,13 @@ style='font-size:20.0pt;line-height:115%;color:#365F91'>Viewshed analysis</span>
   <td width=707 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
-  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>Â·<span
   style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span>Create a folder called&nbsp;<b><span style='font-size:11.0pt'>Viewshed
   </span></b><span style='font-size:11.0pt'>somewhere under your personal
   directory</span> (e.g. C:\Users\jdoe\Documents\Tutorials\Viewshed\). </p>
   <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
-  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>Â·<span
   style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   </span></span><a href="Viewshed_files/Viewshed.zip"><span style='color:purple'>Download
   the data</span></a>&nbsp;for this exercise then&nbsp;<a
@@ -421,19 +421,19 @@ you enable the <b>Spatial Analyst</b> extension under <b>Customize &gt;&gt; Exte
 
 <p class=MsoToc1><a href="#_Toc515968630">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Data description<span style='color:windowtext;display:
+none'>Â Â Â Â Â Â Â  </span>Data description<span style='color:windowtext;display:
 none;text-decoration:none'>.. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc515968631">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Defining the observer offset from the ground<span
+none'>Â Â Â Â Â Â Â  </span>Defining the observer offset from the ground<span
 style='color:windowtext;display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc515968632">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Creating the viewshed raster<span style='color:windowtext;
+none'>Â Â Â Â Â Â Â  </span>Creating the viewshed raster<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
@@ -462,7 +462,7 @@ viewshed is to be computed.</p>
 <p class=Instructions-GIS><img width=196 height=198 id="Picture 9"
 src="Viewshed_files/image001.png"></p>
 
-<p class=MsoNormal>The surface raster does not represent  ground elevation but
+<p class=MsoNormal>The surface raster does not representÂ  ground elevation but
 includes both exposed ground and none ground surfaces such as trees and
 buildings. A profile view of the original Lidar data may look something like
 this:</p>
@@ -470,7 +470,7 @@ this:</p>
 <p class=MsoNormal><img width=1075 height=129 id="Picture 21"
 src="Viewshed_files/image002.png"></p>
 
-<p class=MsoNormal>The raster’s profile of this sample Lidar cross section
+<p class=MsoNormal>The rasterâ€™s profile of this sample Lidar cross section
 looks like,</p>
 
 <p class=MsoNormal><img width=1064 height=125 id="Picture 22"
@@ -482,7 +482,7 @@ src="Viewshed_files/image003.png"></p>
 raster includes obstructions such as trees and buildings which is a more
 realistic representation of the viewshed. The original Lidar point data file
 was downloaded from <a
-href="https://viewer.nationalmap.gov/basic/?basemap=b1&amp;category=ned,nedsrc&amp;title=3DEP%20View">USGS’
+href="https://viewer.nationalmap.gov/basic/?basemap=b1&amp;category=ned,nedsrc&amp;title=3DEP%20View">USGSâ€™
 National Map website</a>.</p>
 
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
@@ -493,14 +493,14 @@ background:#8DB3E2'>
 
 </div>
 
-<p class=MsoNormal>By default, ArcMap’s Viewshed tool will compute the viewshed
-relative to the observer’s raster surface elevation value. This may not be
-realistic since the observer’s eye level may be several feet above the ground
+<p class=MsoNormal>By default, ArcMapâ€™s Viewshed tool will compute the viewshed
+relative to the observerâ€™s raster surface elevation value. This may not be
+realistic since the observerâ€™s eye level may be several feet above the ground
 surface. You may also want to apply an offset if the observer point location
 happens to coincide with a non-ground elevation associated with a tree for
 example (in which case you would apply a negative offset). You can define the
-observer’s height above (or below) the raster elevation value by adding a new
-attribute, <b>OFFSETA</b>, to the point layer’s attribute table.</p>
+observerâ€™s height above (or below) the raster elevation value by adding a new
+attribute, <b>OFFSETA</b>, to the point layerâ€™s attribute table.</p>
 
 <p class=Instructions-GIS><b>Right-click</b> on the <i>Observers</i> layer in
 the TOC then select <b>Open Attribute Table</b>.</p>
@@ -510,7 +510,7 @@ src="Viewshed_files/image004.png"></p>
 
 <p class=Instructions-GIS>Click on the <b>Table Options</b> icon <span
 style='position:relative;top:3.0pt'><img border=0 width=17 height=18
-id="Picture 4" src="Viewshed_files/image005.png"></span> in the upper left-hand
+id="Picture 4" src="Viewshed_files/image005.png"></span>Â in the upper left-hand
 corner of the Attribute table and select <b>Add Field</b>.</p>
 
 <p class=MsoNormal><img border=0 width=204 height=228 id="Picture 3"
@@ -525,17 +525,17 @@ src="Viewshed_files/image007.png"></p>
 <p class=Instructions-GIS>Click <b>OK</b> to close the <i>Add Field </i>window
 and accept the change.</p>
 
-<p class=MsoNormal>Next, we’ll enter an edit session to modify the OFFSETA
+<p class=MsoNormal>Next, weâ€™ll enter an edit session to modify the OFFSETA
 values.</p>
 
 <p class=Instructions-GIS><b>Right-click</b> on the <i>Observers</i> layer and
 select <b>Edit Features &gt;&gt; Start Editing</b>.</p>
 
-<p class=MsoNormal>Now that we are in an edit session, we can enter the height
-offset values in the Observer’s attribute table. The entered height units are
-in the same elevation units defined by the surface raster (meters in our
-example). We will therefore enter offset units of <b>1.75</b> <b>meters</b>
-(the average human height).</p>
+<p class=MsoNormal>Now that we are in an edit session, we can enter the height offset
+values in the Observerâ€™s attribute table. The entered height units are in the
+same elevation units defined by the surface raster (meters in our example). We
+will therefore enter offset units of <b>1.75</b> <b>meters</b> (the average
+human height).</p>
 
 <p class=MsoNormal>Enter <b>1.75</b> in both OFFSETA rows.</p>
 
@@ -568,8 +568,8 @@ description of their use.</p>
   <td width=426 valign=top style='width:319.4pt;border:solid white 1.0pt;
   border-left:none;padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
-  normal'>The observer’s elevation (following the same vertical datum defining
-  the surface raster). This differs from OFFSETA in that the observer’s height
+  normal'>The observerâ€™s elevation (following the same vertical datum defining
+  the surface raster). This differs from OFFSETA in that the observerâ€™s height
   is explicitly defined above some reference height (usually set to mean sea
   level).</p>
   </td>
@@ -586,7 +586,7 @@ description of their use.</p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>If the viewing direction is to be limited to a certain direction, you
   can use these attributes to define the starting and ending azimuthal angles.
-  The angular units are in degrees and are measured clockwise with 0° pointing
+  The angular units are in degrees and are measured clockwise with 0Â° pointing
   north.</p>
   </td>
  </tr>
@@ -602,8 +602,8 @@ description of their use.</p>
   <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
   normal'>If the viewing direction is to be limited to an elevation, you can
   use these attributes to define the starting an ending vertical angles. The
-  angular measurement is in degrees and ranges from -90° (pointing straight
-  down) to 90° (pointing straight north).</p>
+  angular measurement is in degrees and ranges from -90Â° (pointing straight
+  down) to 90Â° (pointing straight north).</p>
   </td>
  </tr>
  <tr>
@@ -639,7 +639,7 @@ top:4.0pt'><img border=0 width=23 height=23 id="Picture 36"
 src="Viewshed_files/image011.png"></span>, open <b>Spatial Analyst Tools
 &gt;&gt; Surface &gt;&gt; Viewshed</b>.</p>
 
-<p class=MsoNormal> <img border=0 width=382 height=252 id="Picture 42"
+<p class=MsoNormal>Â <img border=0 width=382 height=252 id="Picture 42"
 src="Viewshed_files/image012.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
@@ -652,7 +652,7 @@ curvature</i> checkbox.</p>
 in green) highlights locations that can be seen from the observation points.</p>
 
 <p class=MsoNormal><img border=0 width=176 height=101 id="Picture 39"
-src="Viewshed_files/image013.png">  <img border=0 width=213 height=102
+src="Viewshed_files/image013.png">Â  <img border=0 width=213 height=102
 id="Picture 40" src="Viewshed_files/image014.png"></p>
 
 <p class=MsoNormal>The output can also be viewed in 3D Scene.</p>
@@ -675,7 +675,7 @@ style='font-size:10.0pt;color:black'>
 
 <p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
 margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
-style='font-size:10.0pt;color:gray'>© Manny Gimond, 6/5/2018 </span></p>
+style='font-size:10.0pt;color:gray'>Â© Manny Gimond, 6/5/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
