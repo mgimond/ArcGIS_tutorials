@@ -1,0 +1,686 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Creating viewsheds</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:9.0pt;
+	font-family:"Arial",sans-serif;
+	color:#1F497D;
+	font-style:italic;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Viewshed analysis</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=707 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>Create a folder called&nbsp;<b><span style='font-size:11.0pt'>Viewshed
+  </span></b><span style='font-size:11.0pt'>somewhere under your personal
+  directory</span> (e.g. C:\Users\jdoe\Documents\Tutorials\Viewshed\). </p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><a href="Viewshed_files/Viewshed.zip"><span style='color:purple'>Download
+  the data</span></a>&nbsp;for this exercise then&nbsp;<a
+  href="https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm"><span
+  style='color:purple'>extract the contents</span></a>&nbsp;of&nbsp;<b>Viewshed.zip</b>&nbsp;into
+  your newly created&nbsp;<b>Viewshed</b>&nbsp;directory.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this exercise, you will learn to generate viewsheds for
+given point locations using an elevation raster. This tutorial requires that
+you enable the <b>Spatial Analyst</b> extension under <b>Customize &gt;&gt; Extensions</b>.
+</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc515968630">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Data description<span style='color:windowtext;display:
+none;text-decoration:none'>.. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc515968631">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Defining the observer offset from the ground<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc515968632">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating the viewshed raster<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc515968630">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Data description</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Open the <b>Viewshed.mxd</b> document. </p>
+
+<p class=MsoNormal>The map document consists of two layers: a Lidar derived
+raster surface model of the Colby campus and two point locations for which a
+viewshed is to be computed.</p>
+
+<p class=Instructions-GIS><img width=196 height=198 id="Picture 9"
+src="Viewshed_files/image001.png"></p>
+
+<p class=MsoNormal>The surface raster does not represent  ground elevation but
+includes both exposed ground and none ground surfaces such as trees and
+buildings. A profile view of the original Lidar data may look something like
+this:</p>
+
+<p class=MsoNormal><img width=1075 height=129 id="Picture 21"
+src="Viewshed_files/image002.png"></p>
+
+<p class=MsoNormal>The raster’s profile of this sample Lidar cross section
+looks like,</p>
+
+<p class=MsoNormal><img width=1064 height=125 id="Picture 22"
+src="Viewshed_files/image003.png"></p>
+
+<p class=MsoNormal>where the x and y unites are in meters.</p>
+
+<p class=MsoNormal>Unlike the ground elevation raster, the surface elevation
+raster includes obstructions such as trees and buildings which is a more
+realistic representation of the viewshed. The original Lidar point data file
+was downloaded from <a
+href="https://viewer.nationalmap.gov/basic/?basemap=b1&amp;category=ned,nedsrc&amp;title=3DEP%20View">USGS’
+National Map website</a>.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc515968631">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Defining the observer offset from the ground</a></p>
+
+</div>
+
+<p class=MsoNormal>By default, ArcMap’s Viewshed tool will compute the viewshed
+relative to the observer’s raster surface elevation value. This may not be
+realistic since the observer’s eye level may be several feet above the ground
+surface. You may also want to apply an offset if the observer point location
+happens to coincide with a non-ground elevation associated with a tree for
+example (in which case you would apply a negative offset). You can define the
+observer’s height above (or below) the raster elevation value by adding a new
+attribute, <b>OFFSETA</b>, to the point layer’s attribute table.</p>
+
+<p class=Instructions-GIS><b>Right-click</b> on the <i>Observers</i> layer in
+the TOC then select <b>Open Attribute Table</b>.</p>
+
+<p class=MsoNormal><img border=0 width=366 height=199 id="Picture 1"
+src="Viewshed_files/image004.png"></p>
+
+<p class=Instructions-GIS>Click on the <b>Table Options</b> icon <span
+style='position:relative;top:3.0pt'><img border=0 width=17 height=18
+id="Picture 4" src="Viewshed_files/image005.png"></span> in the upper left-hand
+corner of the Attribute table and select <b>Add Field</b>.</p>
+
+<p class=MsoNormal><img border=0 width=204 height=228 id="Picture 3"
+src="Viewshed_files/image006.png"></p>
+
+<p class=Instructions-GIS>Create a new field called <b>OFFSETA</b>. Make it a <b>float</b>
+data type.</p>
+
+<p class=MsoNormal><img border=0 width=283 height=176 id="Picture 5"
+src="Viewshed_files/image007.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to close the <i>Add Field </i>window
+and accept the change.</p>
+
+<p class=MsoNormal>Next, we’ll enter an edit session to modify the OFFSETA
+values.</p>
+
+<p class=Instructions-GIS><b>Right-click</b> on the <i>Observers</i> layer and
+select <b>Edit Features &gt;&gt; Start Editing</b>.</p>
+
+<p class=MsoNormal>Now that we are in an edit session, we can enter the height
+offset values in the Observer’s attribute table. The entered height units are
+in the same elevation units defined by the surface raster (meters in our
+example). We will therefore enter offset units of <b>1.75</b> <b>meters</b>
+(the average human height).</p>
+
+<p class=MsoNormal>Enter <b>1.75</b> in both OFFSETA rows.</p>
+
+<p class=MsoNormal><img border=0 width=252 height=90 id="Picture 24"
+src="Viewshed_files/image008.png"></p>
+
+<p class=Instructions-GIS>In the <b>Editor Tool</b> bar, select <b>Save Edits</b>.</p>
+
+<p class=MsoNormal><img border=0 width=173 height=111 id="Picture 25"
+src="Viewshed_files/image009.png"></p>
+
+<p class=Instructions-GIS>In the same <b>Editor Tool</b> bar, select <b>Stop
+Editing</b>.</p>
+
+<p class=MsoNormal><img border=0 width=142 height=93 id="Picture 27"
+src="Viewshed_files/image010.png"></p>
+
+<p class=MsoNormal>Note that other observer parameters can be defined in the
+attribute table. The following lists the attribute values and a brief
+description of their use.</p>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='background:#F2F2F2;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=197 valign=top style='width:148.1pt;border:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'>SPOT</p>
+  </td>
+  <td width=426 valign=top style='width:319.4pt;border:solid white 1.0pt;
+  border-left:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>The observer’s elevation (following the same vertical datum defining
+  the surface raster). This differs from OFFSETA in that the observer’s height
+  is explicitly defined above some reference height (usually set to mean sea
+  level).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=197 valign=top style='width:148.1pt;border:solid white 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span lang=EN>AZIMUTH1, AZIMUTH2</span></p>
+  </td>
+  <td width=426 valign=top style='width:319.4pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>If the viewing direction is to be limited to a certain direction, you
+  can use these attributes to define the starting and ending azimuthal angles.
+  The angular units are in degrees and are measured clockwise with 0° pointing
+  north.</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=197 valign=top style='width:148.1pt;border:solid white 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span lang=EN>VERT1, VERT2</span></p>
+  </td>
+  <td width=426 valign=top style='width:319.4pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>If the viewing direction is to be limited to an elevation, you can
+  use these attributes to define the starting an ending vertical angles. The
+  angular measurement is in degrees and ranges from -90° (pointing straight
+  down) to 90° (pointing straight north).</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=197 valign=top style='width:148.1pt;border:solid white 1.0pt;
+  border-top:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=right style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:right;line-height:normal'><span lang=EN>RADIUS1, RADIUS2</span></p>
+  </td>
+  <td width=426 valign=top style='width:319.4pt;border-top:none;border-left:
+  none;border-bottom:solid white 1.0pt;border-right:solid white 1.0pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>You can limit the starting and ending depth of your view extent. For
+  example, if you want to restrict the viewshed to a distance no shorter than
+  100 meters and no longer than 400 meters, set RADIUS1 equal to 100 and
+  RADIUS2 to 400 (this assumes that the map units are also in meters).</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc515968632">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating the viewshed raster</a></p>
+
+</div>
+
+<p class=Instructions-GIS>In the <b>ArcToolbox</b> <span style='position:relative;
+top:4.0pt'><img border=0 width=23 height=23 id="Picture 36"
+src="Viewshed_files/image011.png"></span>, open <b>Spatial Analyst Tools
+&gt;&gt; Surface &gt;&gt; Viewshed</b>.</p>
+
+<p class=MsoNormal> <img border=0 width=382 height=252 id="Picture 42"
+src="Viewshed_files/image012.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=MsoNormal>Note that if your viewshed radius covers a large enough
+distance where earth curvature is a factor, check off the <i>Use earth
+curvature</i> checkbox.</p>
+
+<p class=MsoNormal>The output is a binary raster where a pixel value of 1 (symbolized
+in green) highlights locations that can be seen from the observation points.</p>
+
+<p class=MsoNormal><img border=0 width=176 height=101 id="Picture 39"
+src="Viewshed_files/image013.png">  <img border=0 width=213 height=102
+id="Picture 40" src="Viewshed_files/image014.png"></p>
+
+<p class=MsoNormal>The output can also be viewed in 3D Scene.</p>
+
+<p class=MsoNormal><img border=0 width=616 height=303 id="Picture 41"
+src="Viewshed_files/image015.png"></p>
+
+<p class=MsoNormal>Note that the viewshed output does not distinguish between
+observation points. If distinct viewsheds are to be identified for each
+observation, then the Viewshed tool needs to be run separately for each point
+feature.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
+style='font-size:10.0pt;color:gray'>© Manny Gimond, 6/5/2018 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>

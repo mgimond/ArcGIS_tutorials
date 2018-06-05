@@ -1,0 +1,751 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Modeling surface flows and basins</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoCaption, li.MsoCaption, div.MsoCaption
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	font-size:9.0pt;
+	font-family:"Arial",sans-serif;
+	color:#1F497D;
+	font-style:italic;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoNoSpacing, li.MsoNoSpacing, div.MsoNoSpacing
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Modeling hydrologic
+basins and flow paths</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=899 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span>Create a folder called&nbsp;<b><span style='font-size:11.0pt'>Hydro </span></b><span
+  style='font-size:11.0pt'>somewhere under your personal directory</span> (e.g.
+  C:\Users\jdoe\Documents\Tutorials\Hydro\). </p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span><a
+  href="./Hydro_files/Hydro.zip"><span
+  style='font-size:11.0pt;color:purple'>Download the data</span></a><span
+  style='font-size:11.0pt'>&nbsp;for this exercise then&nbsp;</span><a
+  href="https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm"><span
+  style='font-size:11.0pt;color:purple'>extract the contents</span></a><span
+  style='font-size:11.0pt'>&nbsp;of&nbsp;<b>Hydro.zip</b>&nbsp;into your newly
+  created&nbsp;<b>Hydro</b>&nbsp;directory.</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>In this exercise, you will learn to generate flow paths and
+hydrologic basins from an elevation raster. This tutorial requires that you
+enable the <b>Spatial Analyst</b> extension under Customize &gt;&gt;
+extensions. </p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc515969677">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Smoothing the elevation surface<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc515969678">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating a flow direction raster<span style='color:windowtext;
+display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc515969679">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating a flow accumulation raster<span style='color:
+windowtext;display:none;text-decoration:none'> </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc515969680">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Identifying potential streams<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc515969681">Step 5:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Delineating hydrologic basins<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc515969677">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Smoothing the elevation surface</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Open the <b>Hydro.mxd</b> document. </p>
+
+<p class=MsoNormal>The map document consists of a Lidar derived raster
+elevation model of the Colby campus.</p>
+
+<p class=Instructions-GIS><img width=196 height=176 id="Picture 1"
+src="Hydro_files/image001.png"></p>
+
+<p class=MsoNormal>The first step is to remove isolated depressions from the
+elevation raster. This is needed to ensure that flow models reflect general
+topography and localized topography. For example, the following profile shows a
+localized depression (Figure 1)  and its filled counterpart (Figure 2).</p>
+
+<table class=MsoTableGrid border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=347 valign=top style='width:233.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'><img width=333 height=140 id="Picture 4"
+  src="Hydro_files/image002.png"></p>
+  <p class=MsoCaption align=center style='margin-bottom:0in;margin-bottom:.0001pt;
+  text-align:center'><span style='color:#595959'>Figure </span><span style='color:#595959'>1</span><span style='color:#595959'> Original profile</span></p>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal'>&nbsp;</p>
+  </td>
+  <td width=349 valign=top style='width:233.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+  normal;page-break-after:avoid'><img width=335 height=142 id="Picture 5"
+  src="Hydro_files/image003.png"></p>
+  <p class=MsoCaption align=center style='margin-top:0in;margin-right:0in;
+  margin-bottom:0in;margin-left:.5in;margin-bottom:.0001pt;text-align:center'><span
+  style='color:#595959'>Figure </span><span
+  style='color:#595959'>2</span><span style='color:#595959'>  Filled depression</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal>We’ll make use of the <b>Fill</b> tool which will identify and
+fill isolated depressions in the elevation layer. </p>
+
+<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
+top:3.0pt'><img width=22 height=23 id="Picture 2" src="Hydro_files/image004.png"></span>,
+open <b>Spatial Analyst Tools &gt;&gt; Hydrology &gt;&gt; Fill</b>.</p>
+
+<p class=Instructions-GIS>Select <b>Elev.tif</b> as the input surface raster.
+Name the output <b>Elev_fill.tif</b>.</p>
+
+<p class=MsoNormal><img width=377 height=173 id="Picture 9"
+src="Hydro_files/image005.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc515969678">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating a flow direction raster</a></p>
+
+</div>
+
+<p class=MsoNormal>Next, we’ll create a flow direction raster. This layer will
+assign, for each pixel, a flow direction <span lang=EN>to its steepest
+downslope neighboring pixel.</span></p>
+
+<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
+top:3.0pt'><img width=22 height=23 id="Picture 7" src="Hydro_files/image004.png"></span>,
+open <b>Spatial Analyst Tools &gt;&gt; Hydrology &gt;&gt; Flow Direction</b>.</p>
+
+<p class=Instructions-GIS>Use <b>Elev_fill.tif</b> as the input raster, name
+the output <b>Direction.tif</b> and adopt the <b>D8</b> flow direction type.</p>
+
+<p class=MsoNormal><img width=388 height=242 id="Picture 21"
+src="Hydro_files/image006.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=MsoNormal>Each pixel is assigned an integer value that defines the flow
+direction. The following diagram matches the integer value to its flow
+direction.</p>
+
+<p class=Instructions-GIS><img width=77 height=76 id="Picture 8"
+src="Hydro_files/image007.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc515969679">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating a flow accumulation raster</a></p>
+
+</div>
+
+<p class=MsoNormal>Next, we’ll create a raster from the flow direction layer
+that computes the total number of pixels that feed into each pixel. </p>
+
+<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
+top:3.0pt'><img width=22 height=23 id="Picture 10"
+src="Hydro_files/image004.png"></span>, open <b>Spatial Analyst Tools &gt;&gt;
+Hydrology &gt;&gt; Flow Accumulation</b>.</p>
+
+<p class=Instructions-GIS>Use <b>Direction.tif </b>as the input raster, name
+the output <b>Accumulation.tif </b>and set the output data type to <b>Integer</b>.</p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<p class=MsoNormal><img width=388 height=214 id="Picture 22"
+src="Hydro_files/image008.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=MsoNormal>When possible, it’s good practice to seek the smallest data
+type needed for a file. Here, we are tallying the number of cells that feed
+into another which results in <i>count</i> values that are whole numbers (not
+fractions). This explains the choice of an integer raster for our output.</p>
+
+<p class=MsoNormal>At first glance, the raster may look homogeneous. This is
+because the raster’s data values are skewed towards higher values.</p>
+
+<p class=MsoNormal><img width=149 height=133 id="Picture 12"
+src="Hydro_files/image009.png"></p>
+
+<p class=Instructions-GIS>You can change the symbology to reveal the
+distribution of values using the following template as an example (note the use
+of <b>From Current Display Extent</b> option under the <b>Statistics </b>block;
+this rescales the range of colors to the viewing extent).</p>
+
+<p class=MsoNormal><img width=547 height=226 id="Picture 13"
+src="Hydro_files/image010.png"></p>
+
+<p class=Instructions-GIS>Now zoom in on the raster to reveal flow paths.</p>
+
+<p class=Instructions-GIS><img width=203 height=168 id="Picture 14"
+src="Hydro_files/image011.png"></p>
+
+<p class=MsoNormal>A pixel value of 0 indicates that no other pixel in the
+raster flows into it. A value of 1 indicates that 1 pixel flows into it. A
+value of 2 indicates that 2 pixels flow into it, etc… These values can be
+translated to watershed areas feeding into each pixel. Simply multiply the
+pixel value by the pixel’s surface area. In this example, the pixel size is 1
+m² so a pixel whose accumulation value is 125,113 services an area of 125,113 x
+1 m² = 125,113 m².</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc515969680">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Identifying potential streams</a></p>
+
+</div>
+
+<p class=MsoNormal>In this step, we’ll create a vector layer that identifies
+potential streams/rivers based on a defined accumulation value cutoff. Note
+that accumulation value alone is not enough to assess presence/absence of a flowing
+water body; other factors such as soil type and surface characteristics would
+be needed to make such a prediction.</p>
+
+<p class=MsoNormal>In this example, we’ll create a stream/river vector layer
+from all accumulation pixels whose value is greater than 200,000 (i.e. the pixel
+services an area of 200,000 m² or greater).</p>
+
+<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
+top:3.0pt'><img width=22 height=23 id="Picture 15"
+src="Hydro_files/image004.png"></span>, open <b>Spatial Analyst Tools &gt;&gt; Map
+Algebra &gt;&gt; Raster Calculator</b>.</p>
+
+<p class=Instructions-GIS>Type the following expression in the expression box
+and name the output <b>acc_200k.tif</b>.</p>
+
+<p class=Instructions-GIS><img width=378 height=108 id="Picture 23"
+src="Hydro_files/image012.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=MsoNormal>The output is a binary raster where the value of 1 indicates
+that the pixel has an accumulation value greater than 200,000 and a value of 0
+indicates that  the pixel has an accumulation value less than or equal to
+200,000.</p>
+
+<p class=Instructions-GIS><img width=111 height=89 id="Picture 17"
+src="Hydro_files/image013.png"></p>
+
+<p class=MsoNoSpacing>The raster representation of the drainage areas can be
+difficult to visualize because of the small pixel size. We’ll therefore convert
+the raster to a polyline whereby the pixels with values of 1 will be converted
+to line segments.</p>
+
+<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
+top:3.0pt'><img width=22 height=23 id="Picture 18"
+src="Hydro_files/image004.png"></span>, open <b>Conversion Tools &gt;&gt; From
+Raster &gt;&gt; Raster to Polyline</b>. Set <i>acc_200k.tif</i> as the input
+raster and name the output shapefile <i>Drainage.shp</i>.</p>
+
+<p class=Instructions-GIS><img width=386 height=258 id="Picture 24"
+src="Hydro_files/image014.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=MsoNormal>You now have a vector representation of the streams.</p>
+
+<p class=Instructions-GIS><img width=213 height=238 id="Picture 20"
+src="Hydro_files/image015.png"></p>
+
+<p class=Instructions-GIS>&nbsp;</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc515969681">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Delineating hydrologic basins</a> </p>
+
+</div>
+
+<p class=MsoNormal>Finally, you will identify all drainage basins using the
+directions raster layer.</p>
+
+<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
+top:3.0pt'><img width=22 height=23 id="Picture 28"
+src="Hydro_files/image004.png"></span>, open <b>Spatial Analyst Tools &gt;&gt;
+Hydrology &gt;&gt; Basins</b>. Set <i>Direction.tif</i> as the input raster and
+<i>Basins.tif</i> as the output raster.</p>
+
+<p class=MsoNormal><img width=385 height=132 id="Picture 25"
+src="Hydro_files/image016.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=Instructions-GIS><img width=164 height=151 id="Picture 30"
+src="Hydro_files/image017.png"></p>
+
+<p class=MsoNormal>You can create a polygon version of the layer using the <b>Raster
+to Polygon</b> tool.</p>
+
+<p class=Instructions-GIS>In your <b>Toolbox</b> <span style='position:relative;
+top:3.0pt'><img width=22 height=23 id="Picture 31"
+src="Hydro_files/image004.png"></span>, open <b>Conversion Tools &gt;&gt; From
+Raster &gt;&gt; Raster to Polygon</b>. Set <i>acc_200k.tif</i> as the input
+raster and name the output shapefile <i>Drainage.shp</i>.</p>
+
+<p class=Instructions-GIS><img width=385 height=264 id="Picture 26"
+src="Hydro_files/image018.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=Instructions-GIS><img width=164 height=150 id="Picture 33"
+src="Hydro_files/image019.png"></p>
+
+<p class=MsoNormal>You’ll note the many small polygons near the edge of the
+study extent. Many of these polygons probably belong to the same basin but
+because the direction raster is restricted to the edge of this study extent, only
+those (exposed) flow direction pixels at the edge are used to define individual
+basins. For example, the following direction raster grid suggests a single
+basin (all pixels end up flowing to the upper left-hand corner). </p>
+
+<p class=MsoNormal><img width=456 height=279 id="Picture 34"
+src="Hydro_files/image020.png"></p>
+
+<p class=MsoNormal>If the study extent was limited to the four right most set
+of pixel columns, then two separate basins would be identified.</p>
+
+<p class=MsoNormal><img width=473 height=310 id="Picture 35"
+src="Hydro_files/image021.png"></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
+style='font-size:10.0pt;color:gray'>© Manny Gimond, 6/5/2018 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
