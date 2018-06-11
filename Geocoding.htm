@@ -1,0 +1,658 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>Geocoding</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Helvetica;
+	panose-1:2 11 6 4 2 2 2 2 2 4;}
+@font-face
+	{font-family:Wingdings;
+	panose-1:5 0 0 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Tahoma;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{mso-style-link:"Heading 1 Char";
+	margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+h2
+	{mso-style-link:"Heading 2 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+h3
+	{mso-style-link:"Heading 3 Char";
+	margin-top:10.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:5.0pt;
+	margin-left:0in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoList, li.MsoList, div.MsoList
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpFirst, li.MsoListCxSpFirst, div.MsoListCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpMiddle, li.MsoListCxSpMiddle, div.MsoListCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListCxSpLast, li.MsoListCxSpLast, div.MsoListCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpFirst, li.MsoTitleCxSpFirst, div.MsoTitleCxSpFirst
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpMiddle, li.MsoTitleCxSpMiddle, div.MsoTitleCxSpMiddle
+	{mso-style-link:"Title Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+p.MsoTitleCxSpLast, li.MsoTitleCxSpLast, div.MsoTitleCxSpLast
+	{mso-style-link:"Title Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:15.0pt;
+	margin-left:0in;
+	border:none;
+	padding:0in;
+	font-size:26.0pt;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+a:link, span.MsoHyperlink
+	{color:blue;
+	text-decoration:underline;}
+a:visited, span.MsoHyperlinkFollowed
+	{color:purple;
+	text-decoration:underline;}
+p
+	{margin-right:0in;
+	margin-left:0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoAcetate, li.MsoAcetate, div.MsoAcetate
+	{mso-style-link:"Balloon Text Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	font-size:8.0pt;
+	font-family:"Tahoma",sans-serif;}
+span.MsoPlaceholderText
+	{color:gray;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpFirst, li.MsoListParagraphCxSpFirst, div.MsoListParagraphCxSpFirst
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpMiddle, li.MsoListParagraphCxSpMiddle, div.MsoListParagraphCxSpMiddle
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.5in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoListParagraphCxSpLast, li.MsoListParagraphCxSpLast, div.MsoListParagraphCxSpLast
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:10.0pt;
+	margin-left:.5in;
+	line-height:115%;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;}
+p.MsoTocHeading, li.MsoTocHeading, div.MsoTocHeading
+	{margin-top:24.0pt;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:0in;
+	margin-bottom:.0001pt;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.apple-converted-space
+	{mso-style-name:apple-converted-space;}
+span.BalloonTextChar
+	{mso-style-name:"Balloon Text Char";
+	mso-style-link:"Balloon Text";
+	font-family:"Tahoma",sans-serif;}
+p.Stepheader, li.Stepheader, div.Stepheader
+	{mso-style-name:"Step header";
+	mso-style-link:"Step header Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading1Char
+	{mso-style-name:"Heading 1 Char";
+	mso-style-link:"Heading 1";
+	font-family:"Cambria",serif;
+	color:#365F91;
+	font-weight:bold;}
+span.StepheaderChar
+	{mso-style-name:"Step header Char";
+	mso-style-link:"Step header";
+	font-family:"Arial",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading2Char
+	{mso-style-name:"Heading 2 Char";
+	mso-style-link:"Heading 2";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+span.Heading3Char
+	{mso-style-name:"Heading 3 Char";
+	mso-style-link:"Heading 3";
+	font-family:"Cambria",serif;
+	color:#4F81BD;
+	font-weight:bold;}
+p.Instructions, li.Instructions, div.Instructions
+	{mso-style-name:Instructions;
+	mso-style-link:"Instructions Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.InstructionsChar
+	{mso-style-name:"Instructions Char";
+	mso-style-link:Instructions;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Instructions-GIS, li.Instructions-GIS, div.Instructions-GIS
+	{mso-style-name:Instructions-GIS;
+	mso-style-link:"Instructions-GIS Char";
+	margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:12.0pt;
+	margin-left:0in;
+	line-height:13.0pt;
+	font-size:12.0pt;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+span.Instructions-GISChar
+	{mso-style-name:"Instructions-GIS Char";
+	mso-style-link:Instructions-GIS;
+	font-family:"Arial",sans-serif;
+	color:#0070C0;}
+p.Stepheader-GIS, li.Stepheader-GIS, div.Stepheader-GIS
+	{mso-style-name:"Step header-GIS";
+	mso-style-link:"Step header-GIS Char";
+	margin-top:7.5pt;
+	margin-right:0in;
+	margin-bottom:7.5pt;
+	margin-left:.25in;
+	text-indent:-.25in;
+	page-break-after:avoid;
+	background:#8DB3E2;
+	border:none;
+	padding:0in;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:white;
+	font-weight:bold;}
+span.Stepheader-GISChar
+	{mso-style-name:"Step header-GIS Char";
+	mso-style-link:"Step header-GIS";
+	font-family:"Arial",sans-serif;
+	color:white;
+	background:#8DB3E2;
+	font-weight:bold;}
+span.TitleChar
+	{mso-style-name:"Title Char";
+	mso-style-link:Title;
+	font-family:"Cambria",serif;
+	color:#17365D;
+	letter-spacing:.25pt;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+@page WordSection1
+	{size:8.5in 11.0in;
+	margin:1.0in 1.0in 1.0in 1.0in;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0in;}
+ul
+	{margin-bottom:0in;}
+-->
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:20.0pt;line-height:115%;color:#365F91'>Geocoding Addresses</span></b></p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='margin-left:.4pt;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=707 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span>Create a folder called&nbsp;<b>Geocoding </b>somewhere under
+  your personal directory (e.g. C:\Users\jdoe\Documents\Tutorials\Geocoding\). </p>
+  <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
+  .0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:10.0pt;
+  font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><a href="Geocoding_files/Addresses.csv"><span style='color:
+  purple'>Download the CSV data</span></a><span class=MsoHyperlink><span
+  style='color:purple'> file</span></span>&nbsp;for this exercise and save it
+  in the&nbsp;<b>Geocoding</b>&nbsp;directory.</p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
+12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal>There are several ways to geocode address tables with
+ArcGIS, one of which makes use of address locator files (files ending with
+*.loc). However these files must be created from scratch unless available to
+you via your organization. ArcGIS also provides a geocoding service through its
+portal but this consumes credits. A free alternative is to make use of the
+Census Bureau’s free geocoding service. It limits the address records to 10,000
+but you can split your data into several separate files need be. The geocoding
+is done outside of ArcMap and requires post-processing in a spreadsheet environment
+before importing the locations into a map session.</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
+
+<p class=MsoToc1><a href="#_Toc516490534">Step 1:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Creating a CSV file<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc516490535">Step 2:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Geocoding the addresses<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc516490536">Step 3:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Post-processing the data<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoToc1><a href="#_Toc516490537">Step 4:<span style='font-size:11.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
+none'>        </span>Importing geocoded table into ArcMap<span
+style='color:windowtext;display:none;text-decoration:none'>. </span><span
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+<div class=MsoNormal align=center style='text-align:center'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</div>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc516490534">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Creating a CSV file</a></p>
+
+</div>
+
+<p class=MsoNormal>The first step is to create an address data table saved in a
+CSV (comma separated value) file. The data table should <b>not</b> have a
+header row and must consist of the following columns (in the listed order):</p>
+
+<p class=MsoListParagraphCxSpFirst style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Address ID (this can be numeric or text);</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Street address;</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Town/municipality;</p>
+
+<p class=MsoListParagraphCxSpMiddle style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>State (two letter abbreviation);</p>
+
+<p class=MsoListParagraphCxSpLast style='text-indent:-.25in'><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span>Zip code.</p>
+
+<p class=MsoNormal>This tutorial’s sample <b>Addresses.csv</b> file lists five
+college addresses.</p>
+
+<p class=MsoNormal><img width=452 height=132 id="Picture 1"
+src="Geocoding_files/image001.png"></p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc516490535">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Geocoding the addresses</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Next, open a browser and navigate to <a
+href="https://geocoding.geo.census.gov/geocoder/locations/addressbatch?form">https://geocoding.geo.census.gov/geocoder/locations/addressbatch?form</a>.</p>
+
+<p class=MsoNormal><img border=0 width=568 height=253 id="Picture 2"
+src="Geocoding_files/image002.png"></p>
+
+<p class=Instructions-GIS>Click on the <b>Choose File</b> link and select the <b>Addresses.csv</b>
+file.</p>
+
+<p class=Instructions-GIS>Click on <b>Get Results</b>.</p>
+
+<p class=MsoNormal>The server will return a file called <b>GeocodeResults.csv</b>.
+Depending on the web browser used, you may be prompted to download the file or
+it may be automatically downloaded for you (you might need to check you
+Downloads folder).</p>
+
+<p class=Instructions-GIS>Copy or move the <b>GeocodeResults.csv</b> file to
+the <i>Geocoding</i> tutorial folder.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc516490536">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Post-processing the data</a></p>
+
+</div>
+
+<p class=MsoNormal>Before loading the data file into ArcMap, you will need to
+perform some data manipulation on the <b>GeocodResults.csv</b> data file. The
+address coordinate pairs are stored in a single column and need to be split
+into two separate columns.</p>
+
+<p class=MsoNormal><img border=0 width=880 height=142 id="Picture 3"
+src="Geocoding_files/image003.png"></p>
+
+<p class=MsoNormal>This can be done in a spreadsheet environment such as Excel
+or LibreOffice/Calc, or in a data analysis environment like R. In this tutorial,
+Excel will be used.</p>
+
+<p class=Instructions-GIS>Open the <b>GeocodeResults.csv</b> file in Excel.</p>
+
+<p class=Instructions-GIS>Insert a header row above the top most record. You
+are free to name the columns as you see fit. In this example, the following
+column names are used.</p>
+
+<p class=Instructions-GIS><img border=0 width=684 height=150 id="Picture 4"
+src="Geocoding_files/image004.png"></p>
+
+<p class=Instructions-GIS>Create two new columns that you will name <b>Long</b>
+and <b>Lat</b>.</p>
+
+<p class=Instructions-GIS><i><img border=0 width=747 height=77 id="Picture 5"
+src="Geocoding_files/image005.png"></i></p>
+
+<p class=MsoNormal>Next, you will take advantage of Excel’s built-in functions
+to extract the coordinate values from the <i>Coord</i> column.</p>
+
+<p class=Instructions-GIS>Select the first cell under <i>Long</i> and type the
+following formula in the formula bar: <span style='font-family:"Courier New";
+background:#FDE9D9'>= <span style='text-transform:uppercase'>left</span>( F2 , <span
+style='text-transform:uppercase'>find</span>( &quot;,&quot; , F2)-1 )</span></p>
+
+<p class=Instructions-GIS><img border=0 width=316 height=124 id="Picture 7"
+src="Geocoding_files/image006.png"></p>
+
+<p class=Instructions-GIS>Press the <b>Enter</b> key to accept the formula.</p>
+
+<p class=Instructions-GIS><img border=0 width=218 height=110 id="Picture 8"
+src="Geocoding_files/image007.png"></p>
+
+<p class=Instructions-GIS>Copy the formula to the remaining cells in the <i>Long</i>
+column.</p>
+
+<p class=Instructions-GIS><img border=0 width=188 height=175 id="Picture 9"
+src="Geocoding_files/image008.png"></p>
+
+<p class=Instructions-GIS>Next, select the first cell under the <i>Lat</i>
+column and type the following formula in the formula bar: <span
+style='font-family:"Courier New";background:#FDE9D9'>= MID(F2, FIND( &quot;,&quot;
+, F2) + 1, 14)</span></p>
+
+<p class=Instructions-GIS><img border=0 width=270 height=121 id="Picture 10"
+src="Geocoding_files/image009.png"></p>
+
+<p class=Instructions-GIS>Press the <b>Enter</b> key to accept the formula then
+copy the formula to the remaining cells in the <i>Lat</i> column.</p>
+
+<p class=MsoNormal>You now have separate lat/long attributes ready to be
+imported into ArcMap.</p>
+
+<p class=Instructions-GIS><img border=0 width=240 height=138 id="Picture 12"
+src="Geocoding_files/image010.png"></p>
+
+<p class=Instructions-GIS><b>Save</b> the file (keep it in its native CSV file).</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS><a name="_Toc516490537">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Importing geocoded table into ArcMap</a></p>
+
+</div>
+
+<p class=Instructions-GIS>Open a new instance of ArcMap.</p>
+
+<p class=Instructions-GIS>Add a base map (or any other layer that covers the
+state of Maine) via <b>File &gt;&gt; Add Data &gt;&gt; Add Basemap</b>. In this
+example, the <b>Streets</b> base map is loaded.</p>
+
+<p class=MsoNormal>Note that the base map is loaded as a projected coordinate system
+(Web Mercator). This will be important to note when loading the geocoded data
+table.</p>
+
+<p class=Instructions-GIS>Open <b>File &gt;&gt; Add Data &gt;&gt; Add XY Data.</b></p>
+
+<p class=Instructions-GIS>Load the CSV file and make sure that the X and Y
+fields are properly matched to the <i>Long</i> and <i>Lat</i> columns
+respectively.</p>
+
+<p class=Instructions-GIS><img border=0 width=340 height=292 id="Picture 15"
+src="Geocoding_files/image011.png"></p>
+
+<p class=MsoNormal>Note that the tool is assuming that the coordinates being
+imported are in the Web Mercator projection defined in the data frame. This is
+not the case. The data are in a geographic coordinate system (we’ll assume in a
+WGS 1984 datum).</p>
+
+<p class=Instructions-GIS>Click on the <b>Edit</b> button.</p>
+
+<p class=Instructions-GIS><img border=0 width=325 height=86 id="Picture 14"
+src="Geocoding_files/image012.png"></p>
+
+<p class=Instructions-GIS>From the coordinate system list select <b>Geographic
+Coordinate Systems &gt;&gt; World &gt;&gt; WGS 1984</b>.</p>
+
+<p class=Instructions-GIS>Click <b>OK</b>.</p>
+
+<p class=Instructions-GIS><img border=0 width=337 height=262 id="Picture 16"
+src="Geocoding_files/image013.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> again to import the data.</p>
+
+<p class=Instructions-GIS><img border=0 width=372 height=180 id="Picture 17"
+src="Geocoding_files/image014.png"></p>
+
+<p class=Instructions-GIS>Note that the imported points are loaded as an <b>event
+theme</b> which will only persist in the current ArcMap session and may not be
+accessible by some geoprocessing tools. To make it permanent, right-click on
+the layer and select <b>Data &gt;&gt; Export Data</b> then specify the output
+file type and location.</p>
+
+<div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
+style='font-size:10.0pt;color:black'>
+
+<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+
+</span></div>
+
+<p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
+margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
+style='font-size:10.0pt;color:gray'>© Manny Gimond, 6/11/2018 </span></p>
+
+<p class=MsoNormal>&nbsp;</p>
+
+</div>
+
+</body>
+
+</html>
