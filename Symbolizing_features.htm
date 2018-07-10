@@ -338,8 +338,6 @@ span.TitleChar
 	font-family:"Cambria",serif;
 	color:#17365D;
 	letter-spacing:.25pt;}
-.MsoChpDefault
-	{font-family:"Calibri",sans-serif;}
 .MsoPapDefault
 	{margin-bottom:10.0pt;
 	line-height:115%;}
@@ -374,17 +372,16 @@ style='font-size:20.0pt;line-height:115%;color:#365F91'>Symbolizing Features</sp
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='margin-left:.4pt;border-collapse:collapse;border:none'>
  <tr>
-  <td width=707 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  <td width=899 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
   style='font-size:11.0pt;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
   </span></span><span style='font-size:11.0pt;color:black'>Create a folder
-  called <b>Symbology</b>. On DIA 322 computers, you might want to create this
-  folder in your user Documents folder (e.g.
-  C:\Users\jdoe\Documents\Symbology). On the DIA 222 computers, you might want to
-  create this folder on the D: drive under D:\<i>course number</i>\<i>user name</i>\
-  (e.g. D:\ES212\jdoe\Symbology).</span></p>
+  called <b>Symbology </b></span><span style='color:black;background:#F2F2F2'>somewhere
+  under your personal directory</span></span><span style='font-size:11.0pt;
+  color:black'> (e.g. </span><span style='color:black;background:#F2F2F2'>C:\Users\jdoe\Documents\Tutorials\</span></span><span
+  style='font-size:11.0pt;color:black'>Symbology). </span></p>
   <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
   style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -467,7 +464,7 @@ style='color:windowtext;display:none;text-decoration:none'>31</span></a></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc430258282">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc430258282">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Open Map document</a></p>
 
 </div>
@@ -493,7 +490,7 @@ cropland distribution.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc430258283">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc430258283">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Symbolize counties by farm acreage</a></p>
 
 </div>
@@ -508,7 +505,7 @@ src="Symbolizing_features_files/image003.png"></p>
 surface area of croplands within each county (units are in square miles). You
 will symbolize the counties using this field.</p>
 
-<p class=Instructions-GIS>Close the attribute table.</p>
+<p class=Instructions-GIS><b>Close</b> the attribute table.</p>
 
 <p class=Instructions-GIS>Right-click on <b>Counties</b> layer and select <b>Properties</b>.</p>
 
@@ -530,11 +527,11 @@ src="Symbolizing_features_files/image006.png"></p>
 
 <p class=MsoNormal>Note the distribution of “high” values around Montana and
 the Dakotas. Remember that we are looking at <b>total</b> acreage within each
-county. Also note that each county has <b>different</b> total area and shape. Symbolizing
-heterogeneous polygons using  ‘count’ or ‘enumerated’ data can mislead the
-intended audience. It is therefore best to <i>normalize</i> such data by
-polygon surface area. The field that lists total county area in square miles is
-<b>SQMI</b>.</p>
+county. Also note that each county has a <b>different</b> total area and shape.
+Symbolizing heterogeneous polygons using  ‘count’ or ‘enumerated’ data can
+mislead the intended audience. It is therefore best to <i>normalize</i> such
+data by polygon surface area. The field that lists total county area in square
+miles is <b>SQMI</b>.</p>
 
 <p class=Instructions-GIS>Open the <b>Counties</b> <b>Properties</b> window
 again (right-click Counties and select Properties).</p>
@@ -564,12 +561,13 @@ src="Symbolizing_features_files/image008.png"></p>
 <p class=Instructions-GIS style='background:#FDE9D9'><b><u><span
 style='color:red'>NOTE</span></u></b><span style='color:red'>:  in the
 following step, you are asked to open the <b>Properties for All Symbols</b>
-menu. As of version 10.4, the dialog box will not open. This is a known <a
-href="https://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5NDI4Mg==">bug</a>.
-The workaround is to select <i>all</i> color symbols then select the <b>Properties
-for selected symbol(s)</b> option instead. The original workflow is still shown
-in this tutorial for backward compatibility but should be replaced with the aforementioned
-workaround if using version 10.4 or later.</span></p>
+menu. In version 10.4, the dialog box will not open. This is a known </span><a
+href="https://support.esri.com/en/bugs/nimbus/QlVHLTAwMDA5NDI4Mg==">bug</a><span
+style='color:red'>. The workaround is to select <i>all</i> color symbols then
+select the <b>Properties for selected symbol(s)</b> option instead. The
+original workflow is still shown in this tutorial for backward compatibility
+but should be replaced with the aforementioned workaround if using version 10.4
+or later. Note that this bug has not been fixed as of version 10.6.</span></p>
 
 <p class=Instructions-GIS>Click on the header <b>Symbol</b> (the column name
 just above the list of symbol swatches) and select <b>Properties</b> <b>for All
@@ -589,18 +587,20 @@ src="Symbolizing_features_files/image010.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to close the Properties window.</p>
 
-<p class=MsoNormal>Looking at the legend, we notice some oddities in the range
-of values. The range starts off with a negative value (-0.077) but it’s clear
-that we cannot have ‘negative’ area! </p>
+<p class=MsoNormal>Looking at the legend, you’ll notice some oddities in the
+range of values. The range starts off with a negative value (-0.077) but it’s
+clear that we cannot have ‘negative’ area! </p>
 
 <p class=MsoNormal><img border=0 width=173 height=170 id="Picture 7"
 src="Symbolizing_features_files/image011.png"></p>
 
-<p class=Instructions-GIS>Open the <b>Counties</b> attribute table.</p>
+<p class=Instructions-GIS>Let’s explore this discrepancy by opening the <b>Counties</b>
+attribute table.</p>
 
 <p class=MsoNormal>Looking a bit more closely at the data in the attribute table,
-we spot many ‘-99’ values under the <b>CROP_ACR07</b> field. Why does this
-matter? Well it turns out that <b>CROP_MI07</b> was calculated from the <b>CROP_ACR07</b>
+we spot many ‘-99’ values under the <b>CROP_ACR07</b> field (you might want to
+sort this field in ascending order to see these values). Why does this matter?
+Well it turns out that <b>CROP_MI07</b> was calculated from the <b>CROP_ACR07</b>
 field by multiplying the CROP_ACR07 by 0.0015625 (conversion coefficient from
 acres to square miles). This explains the -0.1547 values found in the CROP_MI07
 attribute field.  Of course, this is information you could not glean from the
@@ -631,12 +631,12 @@ window.</p>
 <p class=Instructions-GIS>Under the <b>ArcGIS Metadata</b> tag, scroll down
 (about ¾’s of the way down) to the  <b>Fields </b>section<b>.</b></p>
 
-<p class=Instructions-GIS><b><img border=0 width=293 height=125 id="Picture 37"
+<p class=Instructions-GIS><b><img border=0 width=294 height=125 id="Picture 37"
 src="Symbolizing_features_files/image014.png"></b></p>
 
 <p class=Instructions-GIS>Then look for the attribute field<b> CROP_ACR07</b>.</p>
 
-<p class=Instructions-GIS><img border=0 width=321 height=132 id="Picture 46"
+<p class=Instructions-GIS><img border=0 width=322 height=131 id="Picture 46"
 src="Symbolizing_features_files/image015.png"></p>
 
 <p class=MsoNormal>Looking at the list of values for the field CROP_ACR07, we
@@ -757,7 +757,7 @@ src="Symbolizing_features_files/image030.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc430258284">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc430258284">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Add river features and labels</a></p>
 
 </div>
@@ -804,6 +804,9 @@ src="Symbolizing_features_files/image034.png">.</p>
 <p class=Instructions-GIS><img border=0 width=452 height=195 id="Picture 36"
 src="Symbolizing_features_files/image035.png"></p>
 
+<p class=MsoNormal>The label field allows you to select the attribute (from the
+attribute table) to use to label each feature in the map. </p>
+
 <p class=Instructions-GIS>Click on the <b>Placement</b> <b>Properties </b>button.</p>
 
 <p class=Instructions-GIS><img border=0 width=168 height=27 id="Picture 79"
@@ -833,7 +836,7 @@ src="Symbolizing_features_files/image039.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc430258285">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc430258285">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Add state boundaries</a></p>
 
 </div>
@@ -879,7 +882,7 @@ src="Symbolizing_features_files/image043.jpg"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc430258286">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc430258286">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Symbolize cities by population</a></p>
 
 </div>
@@ -935,7 +938,7 @@ src="Symbolizing_features_files/image050.jpg"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc430258287">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc430258287">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>The map layout</a></p>
 
 </div>
@@ -950,7 +953,7 @@ src="Symbolizing_features_files/image051.png"></p>
 the vast amount of empty space between Hawaii, Alaska and the 48 contiguous
 states.</p>
 
-<p class=MsoNormal><img border=0 width=518 height=387 id="Picture 52"
+<p class=MsoNormal><img border=0 width=519 height=388 id="Picture 52"
 src="Symbolizing_features_files/image052.png"></p>
 
 <p class=MsoNormal>To resolve this issue, you will create three <i>separate</i>
@@ -1143,7 +1146,7 @@ src="Symbolizing_features_files/image069.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc430258288">Step 7:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc430258288">Step 7:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Adding additional elements to the map document</a></p>
 
 </div>
@@ -1398,7 +1401,7 @@ style='font-size:10.0pt;color:black'>
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
 border=0 width=76 height=27 id="Picture 53"
 src="Symbolizing_features_files/image096.png"></span><span style='font-size:
-10.0pt;color:gray'> Manuel Gimond, last modified on 8/24/2016 </span></p>
+10.0pt;color:gray'> Manuel Gimond, last modified on 7/10/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
