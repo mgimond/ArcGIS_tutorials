@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Defining and projecting data</title>
+<title>Projection exercise</title>
 <style>
 <!--
  /* Font Definitions */
@@ -369,15 +369,12 @@ style='font-size:20.0pt;line-height:115%;color:#365F91'>Projection</span></b></p
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='margin-left:.4pt;border-collapse:collapse;border:none'>
  <tr>
-  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  <td width=899 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
   .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-  </span>Create a folder called <b>Projection</b>. On DIA 322 computers, you
-  might want to create this folder in your user Documents folder (e.g.
-  C:\Users\jdoe\Documents\ Projection). On the DIA 222 computers, you might
-  want to create this folder on the D: drive under D:\course number\user name\
-  (e.g. D:\ES212\jdoe\ Projection).</p>
+  </span>Create a folder called <b>Projection</b> somewhere under your personal
+  directory (e.g. C:\Users\jdoe\Documents\Tutorials\Projection). </p>
   <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
   style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -393,8 +390,8 @@ style='font-size:20.0pt;line-height:115%;color:#365F91'>Projection</span></b></p
 12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
 
 <p class=MsoNormal>In this short exercise, you will learn how to read
-coordinate system information for GIS data, define a coordinate system when one
-is not present, and re-project your GIS data to a new projection.</p>
+coordinate system information from GIS data, define a coordinate system when
+one is not present, and re-project your GIS data to a new projection.</p>
 
 <div class=MsoNormal align=center style='text-align:center'>
 
@@ -451,17 +448,17 @@ style='color:windowtext;display:none;text-decoration:none'>11</span></a></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc312744817">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc312744817">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Open the map document</a></p>
 
 </div>
 
-<p class=Instructions-GIS>Navigate to Projection folder and open <b>projection.mxd</b>.</p>
+<p class=Instructions-GIS>Navigate to the <i>Projection</i> folder and open <b>projection.mxd</b>.</p>
 
-<p class=Instructions-GIS><img width=234 height=311 id="Picture 1"
+<p class=Instructions-GIS><img width=234 height=310 id="Picture 1"
 src="Projection_files/image001.jpg"></p>
 
-<p class=MsoNormal>The map is composed of two layers: a <i>deer wintering areas</i>
+<p class=MsoNormal>The map is composed of two layers: a <i>Deer Wintering Areas</i>
 layer and a <i>Maine counties</i> layer. Both layers seem to cover the same
 spatial extent inside of ArcMap yet, as you will shortly learn, they do not
 necessarily need to share the same projection.</p>
@@ -469,7 +466,7 @@ necessarily need to share the same projection.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc312744818">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc312744818">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Identify a layer’s coordinate system</a></p>
 
 </div>
@@ -477,34 +474,38 @@ background:#8DB3E2'>
 <p class=Instructions-GIS>Right click on <b>Counties</b> layer and select <b>Properties</b>.</p>
 
 <p class=Instructions-GIS>In the <b>Properties</b> window, select the source
-tab <img width=169 height=25 id="Picture 2" src="Projection_files/image002.png">.</p>
+tab <span style='position:relative;top:3.0pt'><img width=169 height=25
+id="Picture 2" src="Projection_files/image002.png"></span>.</p>
 
 <p class=MsoNormal>The information displayed under <i>Data Source</i> indicates
 that <i>Counties’</i> coordinate system is based on a <b>UTM</b> projection
 (Zone 19 North to be precise) which is dependent on the <b>North American Datum
-of 1983</b> (NAD83).</p>
+of 1983</b> (NAD83). Note that a cartesian (projected) coordinate system is
+based off of a defined geographic coordinate system (hence why you see both a projected
+coordinate system and a geographic coordinate system defined for this layer).</p>
 
-<p class=Instructions-GIS><img width=393 height=269 id="Picture 4"
+<p class=Instructions-GIS><img width=513 height=367 id="Picture 12"
 src="Projection_files/image003.png"></p>
 
 <p class=MsoNormal>Layers do not need to share the same projection in a single
-map document. ArcGIS converts projections on the fly to a common map
-projection. </p>
+map document. ArcGIS converts projections on the fly to a common map projection
+defined by the data frame.</p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to dismiss the properties window.</p>
+<p class=Instructions-GIS>Click <b>OK</b> to dismiss the Properties window.</p>
 
 <p class=Instructions-GIS>Right click on <b>Deer Wintering Areas</b> layer and
 select <b>Properties</b>.</p>
 
 <p class=Instructions-GIS>In the <b>Properties</b> window, select the source
-tab <img width=169 height=25 id="Picture 5" src="Projection_files/image002.png">.</p>
+tab  <span style='position:relative;top:3.0pt'><img width=169 height=25
+id="Picture 5" src="Projection_files/image002.png"></span>.</p>
 
 <p class=MsoNormal>The information displayed under <i>Data Source</i> indicates
 that the <i>Deer Wintering Area’s</i>  coordinate system has <b>no</b> <u>projected</u>
 <u>coordinate system</u> (PCS), it is solely based on a <u>Geographic
 Coordinate System</u> (GCS) based off of the <b>WGS 1984</b> datum.</p>
 
-<p class=Instructions-GIS><img width=381 height=145 id="Picture 6"
+<p class=Instructions-GIS><img width=511 height=229 id="Picture 15"
 src="Projection_files/image004.png"></p>
 
 <p class=MsoNormal>So we must assume that ArcGIS is converting one of the two
@@ -516,20 +517,20 @@ one?</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc312744819">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc312744819">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Identify the data frame’s coordinate system</a></p>
 
 </div>
 
-<p class=Instructions-GIS>Right click on the <b>data frame</b> <img width=88
-height=23 id="Picture 9" src="Projection_files/image005.png"> in the TOC and
-select <b>Properties</b>.</p>
+<p class=Instructions-GIS>Right click on the <b>data frame</b> <span
+style='position:relative;top:3.0pt'><img width=88 height=23 id="Picture 9"
+src="Projection_files/image005.png"></span> in the TOC and select <b>Properties</b>.</p>
 
 <p class=Instructions-GIS>In the <b>Properties</b> window, select the
-Coordinate System tab <img width=204 height=30 id="Picture 10"
-src="Projection_files/image006.png">.</p>
+Coordinate System tab  <span style='position:relative;top:3.0pt'><img
+width=204 height=30 id="Picture 10" src="Projection_files/image006.png"></span>.</p>
 
-<p class=Instructions-GIS><img width=488 height=347 id="Picture 3"
+<p class=Instructions-GIS><img width=437 height=296 id="Picture 3"
 src="Projection_files/image007.png"></p>
 
 <p class=MsoNormal>The information indicates that the data frame displays all
@@ -540,7 +541,7 @@ good practice to ensure that all layers in a map project share the same coordina
 system. In this exercise, we will make UTM zone 19 N (NAD83) this project’s
 default coordinate system.</p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to dismiss the properties window.</p>
+<p class=Instructions-GIS>Click <b>OK</b> to dismiss the Properties window.</p>
 
 <p class=MsoNormal>In the next step, you will convert the <i>Deer Wintering
 Area’s</i> coordinate system to match that of the data frame’s.</p>
@@ -548,7 +549,7 @@ Area’s</i> coordinate system to match that of the data frame’s.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc312744820">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc312744820">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Projecting a layer to a new coordinate system</a></p>
 
 </div>
@@ -557,8 +558,8 @@ background:#8DB3E2'>
 (right-hand side of the ArcMap window).</p>
 
 <p class=Instructions-GIS>In the Search field type <b>Project</b> and click the
-search icon <img width=29 height=23 id="Picture 14"
-src="Projection_files/image008.png">.</p>
+search icon <span style='position:relative;top:4.0pt'><img width=29 height=23
+id="Picture 14" src="Projection_files/image008.png"></span>.</p>
 
 <p class=MsoNormal><img width=345 height=120 id="Picture 13"
 src="Projection_files/image009.png"></p>
@@ -575,7 +576,7 @@ src="Projection_files/image010.png"></p>
 <p class=Instructions-GIS>Select <b>Deer Wintering Areas</b> as the input
 feature class and name the output <b>dwa_UTM.shp</b>.</p>
 
-<p class=MsoNormal><img width=593 height=307 id="Picture 17"
+<p class=MsoNormal><img width=387 height=217 id="Picture 19"
 src="Projection_files/image011.png"></p>
 
 <p class=Instructions-GIS>Click on the <img width=25 height=24 id="Picture 18"
@@ -586,7 +587,7 @@ field.</p>
 Coordinate Systems &gt;&gt; UTM &gt;&gt; NAD 1983 &gt;&gt; NAD 1983 UTM Zone
 19N.</b></p>
 
-<p class=Instructions-GIS><img width=285 height=137 id="Picture 7"
+<p class=Instructions-GIS><img width=234 height=86 id="Picture 7"
 src="Projection_files/image013.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to close the Spatial Reference
@@ -595,34 +596,45 @@ Properties window.</p>
 <p class=MsoNormal>The projection will require a datum transformation (we are
 going from a WGS 1984 datum to a NAD 1983 datum).</p>
 
-<p class=Instructions-GIS>In the Geographic Transformation field, select <b>NAD_1983_To_WGS_1984_1</b>.
-</p>
+<p class=Instructions-GIS>In the <i>Geographic Transformation</i> field, select
+<b>NAD_1983_To_WGS_1984_1</b>. </p>
+
+<p class=Instructions-GIS><img width=386 height=128 id="Picture 22"
+src="Projection_files/image014.png"></p>
 
 <p class=MsoNormal>Note that this transformation works well for the state of
 Maine, but may not work well for other parts of the country.</p>
 
-<p class=MsoNormal><img width=408 height=266 id="Picture 20"
-src="Projection_files/image014.png"></p>
+<p class=MsoNormal>It’s possible that ArcMap added a transformation by default.
+If so, you might see two transformations listed.</p>
+
+<p class=MsoNormal><img width=369 height=107 id="Picture 30"
+src="Projection_files/image015.png"></p>
+
+<p class=Instructions-GIS>If you have WGS_1984_(ITRF00)_To_NAD_1983 listed,
+select then remove it using the Remove icon <span style='position:relative;
+top:3.0pt'><img width=25 height=29 id="Picture 31"
+src="Projection_files/image016.png"></span>.</p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to start the conversion process.</p>
 
 <p class=MsoNormal>When done, you should see a new shapefile called dwa_UTM in
-the TOC.  If it does not display in th TOC, add it manually from your project
+the TOC.  If it does not display in the TOC, add it manually from your project
 folder.</p>
 
 <p class=MsoNormal><img width=188 height=174 id="Picture 21"
-src="Projection_files/image015.png"></p>
+src="Projection_files/image017.png"></p>
 
 <p class=Instructions-GIS><b>Remove</b> the original Deer Wintering Areas layer
 (<b>right-click</b>  then  <b>Remove</b>).</p>
 
 <p class=Instructions-GIS><img width=155 height=152 id="Picture 23"
-src="Projection_files/image016.png"></p>
+src="Projection_files/image018.png"></p>
 
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc312744821">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc312744821">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Defining a coordinate system</a></p>
 
 </div>
@@ -635,30 +647,31 @@ system information is missing. </p>
 (this layer resides in the Projection folder).</p>
 
 <p class=MsoNormal><img width=489 height=154 id="Picture 24"
-src="Projection_files/image017.png"></p>
+src="Projection_files/image019.png"></p>
 
-<p class=MsoNormal>Note the display of warning message indicating that the new
-layer lacks spatial reference information.</p>
+<p class=MsoNormal>Note the display of a warning message indicating that the
+new layer lacks spatial reference information.</p>
 
 <p class=MsoNormal><img width=384 height=234 id="Picture 25"
-src="Projection_files/image018.png"></p>
+src="Projection_files/image020.png"></p>
 
 <p class=Instructions-GIS>If this window pops up, click <b>OK</b> to dismiss
 the warning.</p>
 
 <p class=MsoNormal>So where is the conserved_lands layer?</p>
 
-<p class=Instructions-GIS>Click on the <img width=24 height=21 id="Picture 26"
-src="Projection_files/image019.png"> full extent icon</p>
+<p class=Instructions-GIS>Click on the full extent icon<span style='position:
+relative;top:3.0pt'><img width=24 height=21 id="Picture 26"
+src="Projection_files/image021.png"></span>.</p>
 
-<p class=MsoNormal><img width=192 height=328 id="Picture 27"
-src="Projection_files/image020.png"></p>
+<p class=MsoNormal><img width=152 height=286 id="Picture 27"
+src="Projection_files/image022.png"></p>
 
 <p class=MsoNormal>The new layer is clearly way off target. So what happened?</p>
 
 <p class=MsoNormal>Spatial reference information tells ArcMap what projection
 and datum is used to define the coordinate system. If that information is
-missing, all ArcMap has to work with are the shapes’  x,y coordinate pair values.
+missing, all ArcMap has to work with are the shapes’  (x,y) coordinate pair values.
 So the best ArcMap can do is <i>assume</i> that the new layer shares the data
 frame’s spatial reference system. This assumption clearly does not work in our
 case. So we need to define the new layer’s coordinate system. </p>
@@ -672,32 +685,27 @@ results should still be listed.</p>
 <p class=Instructions-GIS>Click on <b>Define Projection (Data Management).</b></p>
 
 <p class=MsoNormal><img width=334 height=312 id="Picture 28"
-src="Projection_files/image021.png"></p>
+src="Projection_files/image023.png"></p>
 
 <p class=Instructions-GIS>Select <b>conserved_lands</b> as the input feature
 class.</p>
 
 <p class=Instructions-GIS>Click on the <img width=25 height=24 id="Picture 29"
-src="Projection_files/image012.png"> icon next to the Output Coordinate System
-field.</p>
+src="Projection_files/image012.png"> icon next to the <i>Output Coordinate
+System</i> field.</p>
 
 <p class=Instructions-GIS>In the Spatial Reference Properties window select <b>Projected
 Coordinate Systems &gt;&gt; Continental &gt;&gt; North America &gt;&gt; USA
-Contiguous Albers Equal Area Conic.prj.</b></p>
+Contiguous Albers Equal Area Conic.prj. </b><span style='color:#C00000'>Be
+careful <b>not</b> to select the USGS projection version!</span></p>
 
-<p class=Instructions-GIS><img width=369 height=150 id="Picture 8"
-src="Projection_files/image022.png"></p>
+<p class=Instructions-GIS><img width=318 height=99 id="Picture 8"
+src="Projection_files/image024.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b>.</p>
 
-<p class=Instructions-GIS><span style='color:#C00000'>Be careful <b>not</b> to
-select the USGS version!</span></p>
-
 <p class=Instructions-GIS>Click <b>OK</b> to close the Spatial Reference
 Properties window.</p>
-
-<p class=Instructions-GIS><img width=404 height=200 id="Picture 32"
-src="Projection_files/image023.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to launch the geoprocess.</p>
 
@@ -705,23 +713,29 @@ src="Projection_files/image023.png"></p>
 should be properly positioned on top of the other existing layers.</p>
 
 <p class=Instructions-GIS><img width=280 height=377 id="Picture 34"
-src="Projection_files/image024.jpg"></p>
+src="Projection_files/image025.jpg"></p>
 
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc312744822">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc312744822">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Re-project the conserved lands layer</a> </p>
 
 </div>
 
+<p class=MsoNormal>We have two layers in the UTM coordinate system. We now want
+to re-project the Conserved_lands layer to the UTM coordinate system. </p>
+
 <p class=Instructions-GIS>On your own, re-project conserved_lands to <b>UTM NAD
 83 Zone 19 N</b> following the steps outlined in <b>Step 4</b>. Name the newly
 projected layer <b>conserved_lands_UTM.shp</b> and save it under the <i>Projection</i>
-workspace. </p>
+workspace. Add it to the map when done.</p>
 
 <p class=MsoNormal>Note that a datum transformation is not necessary here since
 both the Albers and UTM projections work off of the same NAD 1983 datum.</p>
+
+<p class=Instructions-GIS>Finally, remove the original <i>conserved_lands</i>
+layer from the TOC. You should be left with three layers, all sharing the same PCS.</p>
 
 <p class=Instructions-GIS>When finished, <b>save</b> and <b>close</b> the map
 document.</p>
@@ -736,8 +750,8 @@ style='font-size:10.0pt;color:black'>
 
 <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
-width=76 height=27 id="Picture 11" src="Projection_files/image025.png"></span><span
-style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 8/25/2016 </span></p>
+width=76 height=27 id="Picture 11" src="Projection_files/image026.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 7/11/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
