@@ -370,7 +370,7 @@ income by distance</span></b></p>
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='margin-left:.4pt;border-collapse:collapse;border:none'>
  <tr>
-  <td width=899 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  <td width=707 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
   .0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:11.0pt'>1.<span
@@ -600,19 +600,17 @@ src="Income_distance_files/image013.png"></p>
 <p class=Instructions-GIS>Select <b>Area</b> as the <i>Property</i> type and <b>Square
 Miles US</b> as the output units.</p>
 
-<p class=MsoNormal><span style='position:relative;z-index:251659264'><span
-style='position:absolute;left:92px;top:-899px;width:139px;height:44px'><img
-width=139 height=44 src="Income_distance_files/image014.png"></span></span><img
-width=431 height=299 id="Picture 38" src="Income_distance_files/image015.png"></p>
+<p class=Instructions-GIS><img width=439 height=308 id="Picture 3"
+src="Income_distance_files/image014.png"></p>
 
-<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess (and <b>Yes</b>
-if the same warning window pops up).</p>
+<p class=MsoNormal>Click <b>OK</b> to run the geoprocess (and <b>Yes</b> if the
+same warning window pops up).</p>
 
 <p class=MsoNormal>You now have the area (in square miles) for each distance
 band.</p>
 
 <p class=MsoNormal><img width=301 height=86 id="Picture 12"
-src="Income_distance_files/image016.png"></p>
+src="Income_distance_files/image015.png"></p>
 
 <p class=Instructions-GIS>&nbsp;</p>
 
@@ -630,14 +628,14 @@ Income layer using the <i>Intersect</i> tool.</p>
 <p class=Instructions-GIS>Select <b>Geoprocessing &gt;&gt; Intersect</b>.</p>
 
 <p class=MsoNormal><img width=487 height=119 id="Picture 43"
-src="Income_distance_files/image017.png"></p>
+src="Income_distance_files/image016.png"></p>
 
 <p class=Instructions-GIS>You will add two layers to the <i>Features</i> table:
 <b>Income</b> and <b>Distances_clip</b>. Each layer will be added one at a time
 by selecting it from the <i>Input Features</i> field. Name the output <b>Income_bands</b>.</p>
 
 <p class=MsoNormal><img width=531 height=303 id="Picture 31"
-src="Income_distance_files/image018.png"></p>
+src="Income_distance_files/image017.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
 
@@ -645,7 +643,7 @@ src="Income_distance_files/image018.png"></p>
 outline in the new layer.</p>
 
 <p class=MsoNormal><img width=134 height=193 id="Picture 15"
-src="Income_distance_files/image019.png"></p>
+src="Income_distance_files/image018.png"></p>
 
 <p class=MsoNormal>You will note that the intersection of the two layers
 created more polygons than the combined input polygons—29 output polygons vs 20
@@ -654,18 +652,17 @@ allow us to recombine the polygons into the original bands later in this
 exercise. </p>
 
 <p class=Instructions-GIS>To confirm that what <i>appears</i> to be split
-polygons are indeed <i>split polygons</i> select a record in the attributes
-table by clicking on that row’s grey box  and note the selected polygon in the
-map. </p>
+polygons are indeed <i>split polygons</i> select a record in the attributes table
+by clicking on that row’s grey box  and note the selected polygon in the map. </p>
 
 <p class=MsoNormal><img width=252 height=34 id="Picture 20"
-src="Income_distance_files/image020.png"></p>
+src="Income_distance_files/image019.png"></p>
 
 <p class=MsoNormal>In the following example, a piece of Penobscot county is
 selected.</p>
 
 <p class=MsoNormal><img width=624 height=199 id="Picture 16"
-src="Income_distance_files/image021.png"></p>
+src="Income_distance_files/image020.png"></p>
 
 <p class=Instructions-GIS>Before moving onto Step 5, make sure to clear any
 selected features by clicking on the <b>Clear Selected Features</b> icon. If
@@ -673,7 +670,7 @@ this icon is ghosted out (i.e. inactive), then there are no selected features
 in your map and you are free to proceed to the next step.</p>
 
 <p class=MsoNormal><img width=214 height=92 id="Picture 27"
-src="Income_distance_files/image022.png"></p>
+src="Income_distance_files/image021.png"></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -690,18 +687,18 @@ into the original distance bands and computing the mean income values within
 each band. But before we do this, we will need to weigh each income polygon
 based on its aerial contribution to each distance band.</p>
 
-<p class=Instructions-GIS>Open the Income_bands attribute table and create a
-new field called <b>IncArea</b> (following procedures outlined earlier in this
+<p class=Instructions-GIS>Open the Income_bands attribute table and create a new
+field called <b>IncArea</b> (following procedures outlined earlier in this
 exercise). You will set the data type to <b>Float</b>.</p>
 
 <p class=MsoNormal><img width=290 height=165 id="Picture 17"
-src="Income_distance_files/image023.png"></p>
+src="Income_distance_files/image022.png"></p>
 
 <p class=Instructions-GIS>Next, in the <b>IncArea</b> field, calculate the <b>area</b>
 (in <b>square miles</b>) for each polygon (see Step 3).</p>
 
 <p class=MsoNormal><img width=479 height=175 id="Picture 18"
-src="Income_distance_files/image024.png"></p>
+src="Income_distance_files/image023.png"></p>
 
 <p class=MsoNormal>You will use the newly calculate area along with the
 distance band area (<i>Area</i> field) to compute the weighted income following
@@ -714,13 +711,13 @@ new field called <b>IncWeight</b> and set its type to <b>Float</b>. </p>
 Calculator</b>. Click <b>Yes</b> if a warning box pops up.</p>
 
 <p class=Instructions-GIS><img width=419 height=206 id="Picture 19"
-src="Income_distance_files/image025.png"></p>
+src="Income_distance_files/image024.png"></p>
 
 <p class=Instructions-GIS>Type the following expression in the expression box: <span
 style='font-family:"Courier New"'>[Income] * ( [IncArea] / [Area])</span>.</p>
 
 <p class=MsoNormal><img width=254 height=49 id="Picture 21"
-src="Income_distance_files/image026.png"></p>
+src="Income_distance_files/image025.png"></p>
 
 <p class=MsoNormal>Now each polygon has its weighted income value. In the final
 step, you will combine all polygons that fall in a common distance bands and
@@ -737,13 +734,13 @@ background:#8DB3E2'>
 <p class=Instructions-GIS>Select <b>Geoprocessing &gt;&gt; Dissolve</b>.</p>
 
 <p class=MsoNormal><img width=423 height=190 id="Picture 57"
-src="Income_distance_files/image027.png"></p>
+src="Income_distance_files/image026.png"></p>
 
 <p class=Instructions-GIS>Select <b>Income_bands</b> as the input feature and
 name the output <b>Avg_Inc</b>.</p>
 
 <p class=MsoNormal><img width=542 height=135 id="Picture 32"
-src="Income_distance_files/image028.png"></p>
+src="Income_distance_files/image027.png"></p>
 
 <p class=MsoNormal>Next, you need to indicate which attribute field will be
 used to merge contiguous polygons. Since we want to reconstruct the distance
@@ -753,7 +750,7 @@ bands, we will select the distance field as the dissolve field.</p>
 window.</p>
 
 <p class=Instructions-GIS><img width=352 height=102 id="Picture 33"
-src="Income_distance_files/image029.png"></p>
+src="Income_distance_files/image028.png"></p>
 
 <p class=MsoNormal>Finally, we will want to instruct ArcMap to sum the weighted
 income values within each distance band.</p>
@@ -762,14 +759,14 @@ income values within each distance band.</p>
 the pulldown menu.</p>
 
 <p class=MsoNormal><img width=557 height=237 id="Picture 23"
-src="Income_distance_files/image030.png"></p>
+src="Income_distance_files/image029.png"></p>
 
 <p class=MsoNormal>An error symbol will appear next to the <i>Statistics</i>
 field. This is simply warning us that a <i>Statistics Type</i> has not yet been
 selected.</p>
 
 <p class=MsoNormal><img width=548 height=112 id="Picture 24"
-src="Income_distance_files/image031.png"></p>
+src="Income_distance_files/image030.png"></p>
 
 <p class=MsoNormal>The <i>Statistic Type</i> field allows us to choose which
 aggregate statistic to use on the dissolved polygons. We will choose to <i>sum</i>
@@ -779,7 +776,7 @@ the weighted values.</p>
 <b>SUM</b>.</p>
 
 <p class=MsoNormal><img width=538 height=135 id="Picture 25"
-src="Income_distance_files/image032.png"></p>
+src="Income_distance_files/image031.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run this last geoprocess.</p>
 
@@ -792,8 +789,8 @@ values per distance band.</p>
 SUM_IncWei column.</p>
 
 <p class=MsoNormal><img width=326 height=251 id="Picture 26"
-src="Income_distance_files/image033.png"><img width=275 height=380
-id="Picture 60" src="Income_distance_files/image034.png"></p>
+src="Income_distance_files/image032.png"><img width=275 height=380
+id="Picture 60" src="Income_distance_files/image033.png"></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -809,7 +806,7 @@ style='font-size:10.0pt;color:black'>
 
 <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
-width=76 height=27 id="Picture 2" src="Income_distance_files/image035.png"></span><span
+width=76 height=27 id="Picture 2" src="Income_distance_files/image034.png"></span><span
 style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 7/11/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
