@@ -370,25 +370,27 @@ income by distance</span></b></p>
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='margin-left:.4pt;border-collapse:collapse;border:none'>
  <tr>
-  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  <td width=899 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
   .0001pt;text-indent:-.25in;line-height:normal'><span style='font-size:11.0pt'>1.<span
   style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp; </span></span><span
-  style='font-size:11.0pt'>Create a folder called <b>Income_dist</b>. On DIA
-  322 computers, you might want to create this folder in your user Documents
-  folder (e.g. C:\Users\jdoe\Documents\Income_dist). On the DIA 222 computers,
-  you might want to create this folder on the D: drive under D:\course
-  number\user name\ (e.g. D:\ES212\jdoe\Income_dist).</span></p>
+  style='font-size:11.0pt'>Create a folder called <b>Income_dist</b></span><b><span
+  style='font-size:11.0pt;color:black;background:#F2F2F2'>&nbsp;</span></b><span
+  style='color:black;background:#F2F2F2'>somewhere under your personal
+  directory</span><span style='font-size:11.0pt;color:black;background:#F2F2F2'>&nbsp;(e.g.&nbsp;</span><span
+  style='color:black;background:#F2F2F2'>C:\Users\jdoe\Documents\Tutorials\</span><span
+  style='font-size:11.0pt'>Income_dist). </span></p>
   <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
   .0001pt;text-indent:-.25in;line-height:normal'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
   </span><a href="Income_distance_files/Income_dist.zip"><span
   style='font-size:11.0pt'>&nbsp;Download the data</span></a><span
   style='font-size:11.0pt'> for this exercise and </span><a
-  href="Opening_zip_files.htm"><span style='font-size:11.0pt'>extract the files</span></a><span
-  style='font-size:11.0pt;color:black'> from the </span><span style='font-size:
-  11.0pt'>Income_dist.zip file to your newly created</span><span
-  class=apple-converted-space><span style='font-size:11.0pt;color:black'>&nbsp;</span></span><b><span
+  href="file://filer.colby.edu/Personal/mgimond/GIS_tutorials_10.3/Opening_zip_files.htm"><span
+  style='font-size:11.0pt'>extract the files</span></a><span style='font-size:
+  11.0pt;color:black'> from the </span><span style='font-size:11.0pt'>Income_dist.zip
+  file to your newly created</span><span class=apple-converted-space><span
+  style='font-size:11.0pt;color:black'>&nbsp;</span></span><b><span
   style='font-size:11.0pt'>Income_dist </span></b><span style='font-size:11.0pt'>directory.</span></p>
   </td>
  </tr>
@@ -473,7 +475,7 @@ style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc459897883">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc459897883">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Open the map document</a></p>
 
 </div>
@@ -481,13 +483,13 @@ background:#8DB3E2'>
 <p class=Instructions-GIS>Start ArcMap and open <b>Income_dist.mxd</b> from
 your <b>Income_dist</b> folder.</p>
 
-<p class=Instructions-GIS><img width=327 height=419 id="Picture 8"
+<p class=Instructions-GIS><img width=275 height=369 id="Picture 8"
 src="Income_distance_files/image001.png"></p>
 
 <p class=MsoNormal>The document consists of three layers: A point layer showing
 the location of Augusta (the state capital), median per-capita income for 2010
 (aggregated at the county level), and the interstate system (used in this
-exercise as a geographic reference).</p>
+exercise as a geographic reference only).</p>
 
 <p class=MsoNormal>In the following steps, you will create distance bands
 centered on Augusta, clip the distance bands to the State of Maine then
@@ -499,7 +501,7 @@ mean income values within each distance band.</p>
 background:#8DB3E2'>
 
 <p class=Stepheader-GIS style='background:#8DB3E2;border:none;padding:0in'><a
-name="_Toc459897884">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+name="_Toc459897884">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Creating distance bands</a></p>
 
 </div>
@@ -516,7 +518,7 @@ src="Income_distance_files/image002.png"></p>
 <p class=Instructions-GIS>You will select <b>Augusta</b> as the input feature
 and <b>Distances</b> as the output shapefile.</p>
 
-<p class=Instructions-GIS><img width=536 height=145 id="Picture 3"
+<p class=Instructions-GIS><img width=520 height=150 id="Picture 29"
 src="Income_distance_files/image003.png"></p>
 
 <p class=Instructions-GIS>Next, you will specify the distance bands. The first
@@ -525,8 +527,8 @@ distance band is 100 km. The tool adopts the map coordinate system’s XY units
 Type <b>100000</b> in the <b>Distances</b> field then click the <img width=18
 height=18 id="Picture 4" src="Income_distance_files/image004.png">icon.</p>
 
-<p class=MsoNormal><img width=540 height=119 id="Picture 5"
-src="Income_distance_files/image005.png"></p>
+<p class=MsoNormal><img width=540 height=109 id="Picture 5"
+src="Income_distance_files/image005.jpg"></p>
 
 <p class=Instructions-GIS>Add three more distance bands: <b>200</b> km, <b>300</b>
 km and <b>400</b> km.</p>
@@ -544,7 +546,8 @@ src="Income_distance_files/image007.png"></p>
 <p class=MsoNormal>Next, you will clip the distance bands to the State of
 Maine.</p>
 
-<p class=Instructions-GIS>Select <b>Geoprocessing &gt;&gt; Clip</b>.</p>
+<p class=Instructions-GIS>From the pull-down menu select <b>Geoprocessing
+&gt;&gt; Clip</b>.</p>
 
 <p class=MsoNormal><img width=457 height=110 id="Picture 52"
 src="Income_distance_files/image008.png"></p>
@@ -552,12 +555,13 @@ src="Income_distance_files/image008.png"></p>
 <p class=Instructions-GIS>The input layer (layer to be clipped) is <b>Distances</b>
 and the <i>Clip Features </i>layer is <b>Income</b>. Name the output <b>Distances_clip</b>.</p>
 
-<p class=MsoNormal><img width=580 height=263 id="Picture 9"
+<p class=MsoNormal><img width=531 height=269 id="Picture 30"
 src="Income_distance_files/image009.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
 
-<p class=MsoNormal>Your Distances_clip layer should look like this:</p>
+<p class=MsoNormal>Your Distances_clip layer should look like this (you might
+want to turn off the Distances layer in the TOC):</p>
 
 <p class=Instructions-GIS><img width=134 height=187 id="Picture 10"
 src="Income_distance_files/image010.png"></p>
@@ -567,13 +571,13 @@ src="Income_distance_files/image010.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc459897885">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc459897885">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Computing the distance bands area</a></p>
 
 </div>
 
-<p class=Instructions-GIS>Open the <b>Distances_clip</b> <b>attributes</b>
-table. Click the top-left icon and select <b>Add Field</b>.</p>
+<p class=Instructions-GIS>Open the Distances_clip <b>attribute</b> <b>table</b>.
+Click the top-left icon and select <b>Add Field</b>.</p>
 
 <p class=MsoNormal><img width=239 height=190 id="Picture 1"
 src="Income_distance_files/image011.png"></p>
@@ -593,12 +597,12 @@ calculation made in this session cannot be undone, press <b>Yes</b> to proceed.<
 <p class=MsoNormal><img width=431 height=247 id="Picture 36"
 src="Income_distance_files/image013.png"></p>
 
-<p class=MsoNormal>Select <b>Area</b> as the <i>Property</i> type and <b>Square
+<p class=Instructions-GIS>Select <b>Area</b> as the <i>Property</i> type and <b>Square
 Miles US</b> as the output units.</p>
 
 <p class=MsoNormal><span style='position:relative;z-index:251659264'><span
-style='position:absolute;left:92px;top:-903px;width:140px;height:44px'><img
-width=140 height=44 src="Income_distance_files/image014.png"></span></span><img
+style='position:absolute;left:92px;top:-899px;width:139px;height:44px'><img
+width=139 height=44 src="Income_distance_files/image014.png"></span></span><img
 width=431 height=299 id="Picture 38" src="Income_distance_files/image015.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess (and <b>Yes</b>
@@ -612,20 +616,16 @@ src="Income_distance_files/image016.png"></p>
 
 <p class=Instructions-GIS>&nbsp;</p>
 
-<p class=Instructions-GIS>&nbsp;</p>
-
-<p class=Instructions-GIS>&nbsp;</p>
-
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc459897886">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc459897886">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Intersect distance bands with income</a></p>
 
 </div>
 
 <p class=MsoNormal>Next, you will combine the Distances_clip layer with the
-Income layer using the Intersect tool.</p>
+Income layer using the <i>Intersect</i> tool.</p>
 
 <p class=Instructions-GIS>Select <b>Geoprocessing &gt;&gt; Intersect</b>.</p>
 
@@ -636,20 +636,20 @@ src="Income_distance_files/image017.png"></p>
 <b>Income</b> and <b>Distances_clip</b>. Each layer will be added one at a time
 by selecting it from the <i>Input Features</i> field. Name the output <b>Income_bands</b>.</p>
 
-<p class=MsoNormal><img width=563 height=293 id="Picture 14"
+<p class=MsoNormal><img width=531 height=303 id="Picture 31"
 src="Income_distance_files/image018.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
 
-<p class=MsoNormal>The new layer should have both the counties outline and the
-bands outline.</p>
+<p class=MsoNormal>You should see both the counties outline and the bands
+outline in the new layer.</p>
 
 <p class=MsoNormal><img width=134 height=193 id="Picture 15"
 src="Income_distance_files/image019.png"></p>
 
 <p class=MsoNormal>You will note that the intersection of the two layers
 created more polygons than the combined input polygons—29 output polygons vs 20
-combined input polygons (16 counties +4 distance bands polygons). This will
+combined input polygons (16 counties + 4 distance bands polygons). This will
 allow us to recombine the polygons into the original bands later in this
 exercise. </p>
 
@@ -667,10 +667,10 @@ selected.</p>
 <p class=MsoNormal><img width=624 height=199 id="Picture 16"
 src="Income_distance_files/image021.png"></p>
 
-<p class=Instructions-GIS>Before moving onto Step 5, make sure to clear any selected
-features by clicking on the <b>Clear Selected Features</b> icon. If this icon
-is ghosted out (i.e. inactive), then there are no selected features in your map
-and you are free to proceed to the next step.</p>
+<p class=Instructions-GIS>Before moving onto Step 5, make sure to clear any
+selected features by clicking on the <b>Clear Selected Features</b> icon. If
+this icon is ghosted out (i.e. inactive), then there are no selected features
+in your map and you are free to proceed to the next step.</p>
 
 <p class=MsoNormal><img width=214 height=92 id="Picture 27"
 src="Income_distance_files/image022.png"></p>
@@ -680,7 +680,7 @@ src="Income_distance_files/image022.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc459897887">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc459897887">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Computing weighted income values</a></p>
 
 </div>
@@ -690,7 +690,7 @@ into the original distance bands and computing the mean income values within
 each band. But before we do this, we will need to weigh each income polygon
 based on its aerial contribution to each distance band.</p>
 
-<p class=Instructions-GIS>Open the Income_bands attributes table and create a
+<p class=Instructions-GIS>Open the Income_bands attribute table and create a
 new field called <b>IncArea</b> (following procedures outlined earlier in this
 exercise). You will set the data type to <b>Float</b>.</p>
 
@@ -704,8 +704,8 @@ src="Income_distance_files/image023.png"></p>
 src="Income_distance_files/image024.png"></p>
 
 <p class=MsoNormal>You will use the newly calculate area along with the
-distance band area (Area field) to compute the weighted income following the
-formula <span style='font-family:"Courier New"'>Income * (IncArea / Area).</span></p>
+distance band area (<i>Area</i> field) to compute the weighted income following
+the formula <span style='font-family:"Courier New"'>Income * (IncArea / Area).</span></p>
 
 <p class=Instructions-GIS>In the <i>Income_bands</i> attributes table, create a
 new field called <b>IncWeight</b> and set its type to <b>Float</b>. </p>
@@ -729,7 +729,7 @@ sum the weighted income values.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc459897888">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc459897888">Step 6:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Dissolving polygons by distance band</a></p>
 
 </div>
@@ -742,31 +742,34 @@ src="Income_distance_files/image027.png"></p>
 <p class=Instructions-GIS>Select <b>Income_bands</b> as the input feature and
 name the output <b>Avg_Inc</b>.</p>
 
-<p class=MsoNormal><img width=532 height=111 id="Picture 22"
+<p class=MsoNormal><img width=542 height=135 id="Picture 32"
 src="Income_distance_files/image028.png"></p>
 
-<p class=MsoNormal>Next, you need to indicate which attributes field will be
+<p class=MsoNormal>Next, you need to indicate which attribute field will be
 used to merge contiguous polygons. Since we want to reconstruct the distance
 bands, we will select the distance field as the dissolve field.</p>
 
 <p class=Instructions-GIS>Check the <b>distance</b> layer in the <i>Dissolve_Fields</i>
 window.</p>
 
+<p class=Instructions-GIS><img width=352 height=102 id="Picture 33"
+src="Income_distance_files/image029.png"></p>
+
 <p class=MsoNormal>Finally, we will want to instruct ArcMap to sum the weighted
 income values within each distance band.</p>
 
-<p class=MsoNormal>In the <i>Statistics</i> field, select <b>IncWeight </b>from
+<p class=Instructions-GIS>In the <i>Statistics</i> field, select <b>IncWeight </b>from
 the pulldown menu.</p>
 
 <p class=MsoNormal><img width=557 height=237 id="Picture 23"
-src="Income_distance_files/image029.png"></p>
+src="Income_distance_files/image030.png"></p>
 
 <p class=MsoNormal>An error symbol will appear next to the <i>Statistics</i>
-field. This is simply warning us that a <i>Statistic Type</i> has not yet been
+field. This is simply warning us that a <i>Statistics Type</i> has not yet been
 selected.</p>
 
 <p class=MsoNormal><img width=548 height=112 id="Picture 24"
-src="Income_distance_files/image030.png"></p>
+src="Income_distance_files/image031.png"></p>
 
 <p class=MsoNormal>The <i>Statistic Type</i> field allows us to choose which
 aggregate statistic to use on the dissolved polygons. We will choose to <i>sum</i>
@@ -776,22 +779,25 @@ the weighted values.</p>
 <b>SUM</b>.</p>
 
 <p class=MsoNormal><img width=538 height=135 id="Picture 25"
-src="Income_distance_files/image031.png"></p>
+src="Income_distance_files/image032.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run this last geoprocess.</p>
 
 <p class=MsoNormal>Your final output may not look different from the Distances
-layer created earlier in this exercise, but if you bring up its attributes
-table, you see the new column, <b>SUM_IncWei</b>, with the weighted mean income
+layer created earlier in this exercise, but if you bring up its attribute table,
+you’ll see the new column, <b>SUM_IncWei</b>, with the weighted mean income
 values per distance band.</p>
 
+<p class=Instructions-GIS><b>Symbolize</b> the AVG_Inc layer using the
+SUM_IncWei column.</p>
+
 <p class=MsoNormal><img width=326 height=251 id="Picture 26"
-src="Income_distance_files/image032.png"><img width=275 height=380
-id="Picture 60" src="Income_distance_files/image033.png"></p>
+src="Income_distance_files/image033.png"><img width=275 height=380
+id="Picture 60" src="Income_distance_files/image034.png"></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
-<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal>This ends this exercise.</p>
 
 <div class=MsoNormal align=center style='margin-top:7.5pt;margin-right:0in;
 margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
@@ -803,8 +809,8 @@ style='font-size:10.0pt;color:black'>
 
 <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
-width=76 height=27 id="Picture 2" src="Income_distance_files/image034.png"></span><span
-style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 2/2/2017 </span></p>
+width=76 height=27 id="Picture 2" src="Income_distance_files/image035.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 7/11/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
