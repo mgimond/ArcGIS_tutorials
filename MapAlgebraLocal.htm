@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Local Operations</title>
+<title>Local operations</title>
 <style>
 <!--
  /* Font Definitions */
@@ -374,20 +374,18 @@ Operations</span></b></p>
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
-  style='font-size:10.0pt;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><span style='font-size:10.0pt;color:black'>Create a folder
-  called <b>MapAlgebraLocal</b>. On DIA 322 computers, you might want to create
-  this folder in your user Documents folder (e.g. C:\Users\jdoe\Documents\
-  MapAlgebraLocal). On the DIA 222 computers, you might want to create this
-  folder on the D: drive under D:\course number\user name\ (e.g. D:\ES212\jdoe\
-  MapAlgebraLocal).</span></p>
+  style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span></span><span style='color:black'>Create a folder called <b>MapAlgebraLocal</b></span><span
+  style='color:black;background:#F2F2F2'>&nbsp;somewhere under your personal
+  directory (e.g. C:\Users\jdoe\Documents\Tutorials\</span></span><span
+  style='color:black'>MapAlgebraLocal).</span></p>
   <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
   style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><span style='font-size:10.0pt;color:black'>Download the <a
-  href="MapAlgebraLocal_files/MapAlgebraLocal.zip">MapAlgebraLocal.zip</a> data
-  for this exercise and extract the files to your newly created MapAlgebraLocal
-  directory.</span></p>
+  </span></span><span style='color:black'>Download the </span><a
+  href="MapAlgebraLocal_files/MapAlgebraLocal.zip">MapAlgebraLocal.zip</a><span
+  style='color:black'> data for this exercise and extract the files to your
+  newly created MapAlgebraLocal directory.</span></p>
   </td>
  </tr>
 </table>
@@ -398,7 +396,7 @@ Operations</span></b></p>
 <p class=MsoNormal>Note that this tutorial will make use of the <b>Spatial
 Analyst </b>extension, so make sure to enable this extension from the pull-down
 menu under <b>Customize &gt;&gt; Extensions</b>. Also, all output files should
-be saved in the current project folder (i.e. ./MapAlgebraLocal).</p>
+be saved in the ./MapAlgebraLocal project folder.</p>
 
 <div class=MsoNormal align=center style='text-align:center'>
 
@@ -449,7 +447,7 @@ style='color:windowtext;display:none;text-decoration:none'>5</span></a></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490212404">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc490212404">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Open the map document</a></p>
 
 </div>
@@ -472,7 +470,7 @@ shows land based elevation and the other shows ocean based depth).</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490212405">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc490212405">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Create a composite raster of elevation and depth</a></p>
 
 </div>
@@ -518,7 +516,7 @@ location.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490212406">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc490212406">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Creating a land/water (binary) raster</a></p>
 
 </div>
@@ -541,8 +539,8 @@ function.</p>
 <p class=Instructions-GIS>Open the <b>Raster Calculator</b> geoprocess tool (under
 <b>Spatial Analyst Tools &gt;&gt; Map Algebra</b>) then type the expression <span
 style='font-family:"Courier New"'>Con( &quot;Elev.img&quot; &gt;= 0, 1, 0)</span>.
-Note the uppercase “C” in <span style='font-family:"Courier New"'>Con</span>
-(the function is case sensitive).</p>
+Note the uppercase “C” in <span style='font-family:"Courier New"'>Con</span> (the
+function is case sensitive).</p>
 
 <p class=Instructions-GIS><img width=215 height=62 id="Picture 7"
 src="MapAlgebraLocal_files/image006.png"></p>
@@ -571,8 +569,8 @@ src="MapAlgebraLocal_files/image007.png"></p>
 
 <p class=MsoListParagraphCxSpFirst style='margin-left:0in'>The above condition
 is evaluated for each pixel, if it’s true (i.e. if the pixel value is greater
-than or equal to 0), the output pixel of the new raster will be assigned a
-value of 1 (for TRUE), if not, it will be assigned a value of 0 (for FALSE).</p>
+than or equal to 0), the output pixel of the new raster will be assigned a value
+of 1 (for TRUE), if not, it will be assigned a value of 0 (for FALSE).</p>
 
 <p class=MsoListParagraphCxSpMiddle style='margin-left:0in'>&nbsp;</p>
 
@@ -587,7 +585,7 @@ height=220 src="MapAlgebraLocal_files/image008.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490212407">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc490212407">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Extracting the attribute table from an integer raster</a></p>
 
 </div>
@@ -634,7 +632,7 @@ north-south direction.</span></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc490212408">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc490212408">Step 5:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Projecting the raster layer</a></p>
 
 </div>
@@ -704,8 +702,10 @@ id="Picture 15" src="MapAlgebraLocal_files/image015.png"></p>
 src="MapAlgebraLocal_files/image016.png"></p>
 
 <p class=MsoNormal>Recall that 0’s represent water, hence the fraction of water
-covering the earth’s surface can be estimated from this raster as 264,984 / (264,984
-+ 106,082) = 0.71 (or 71%). <br>
+covering the earth’s surface can be estimated from this raster as 264,984 /
+(264,984 + 106,082) = 0.71 (or 71%). </p>
+
+<p class=MsoNormal>This ends this exercise.<br>
 <br>
 </p>
 
@@ -717,11 +717,10 @@ style='font-size:10.0pt;color:black'>
 
 </span></div>
 
-<p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
-margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
-style='font-size:10.0pt;color:gray'>© Manny Gimond, 8/11/2017 </span></p>
-
-<p class=MsoNormal>&nbsp;</p>
+<p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:gray'><img
+border=0 width=76 height=27 id="Picture 17"
+src="MapAlgebraLocal_files/image017.png"></span><span style='font-size:10.0pt;
+line-height:115%;color:gray'> Manuel Gimond, last modified on 7/12/2018</span></p>
 
 </div>
 
