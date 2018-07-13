@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv=Content-Type content="text/html; charset=utf-8">
 <meta name=Generator content="Microsoft Word 15 (filtered)">
-<title>Driving distance exercise</title>
+<title>Network analysis exercise</title>
 <style>
 <!--
  /* Font Definitions */
@@ -370,15 +370,13 @@ driving distance to the nearest fire station</span></b></p>
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='margin-left:.4pt;border-collapse:collapse;border:none'>
  <tr>
-  <td width=1079 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  <td width=899 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-bottom:0in;margin-bottom:
   .0001pt;text-indent:-.25in;line-height:normal'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
-  </span>Create a folder called <b>Firestations</b>. On DIA 322 computers, you
-  might want to create this folder in your user Documents folder (e.g.
-  C:\Users\jdoe\Documents\ Firestations). On the DIA 222 computers, you might
-  want to create this folder on the D: drive under D:\course number\user name\
-  (e.g. D:\ES212\jdoe\ Firestations).</p>
+  </span>Create a folder called <b>Firestations</b><span style='color:black;
+  background:#F2F2F2'>&nbsp;somewhere under your personal directory (e.g.
+  C:\Users\jdoe\Documents\Tutorials\</span></span>Firestations).</p>
   <p class=MsoListParagraphCxSpLast style='margin-bottom:0in;margin-bottom:
   .0001pt;text-indent:-.25in;line-height:normal'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
   </span><a href="Firestations_files/Firestations.zip">Download the data</a>
@@ -391,10 +389,20 @@ driving distance to the nearest fire station</span></b></p>
 <p class=MsoNormal style='margin-bottom:0in;margin-bottom:.0001pt;line-height:
 12.75pt'><span style='font-size:10.0pt;color:black'>&nbsp;</span></p>
 
-<p class=MsoNormal>In this exercise, you will use Network Analyst to identify
-all road segments that are within a 5 mile driving distance of the nearest fire
-station. You will then create two outputs: the road segments that are within 5
-miles and the road segments that are outside the 5 miles driving distance.</p>
+<p class=MsoNormal>In this exercise, you will use <b>Network Analyst</b> to
+identify all road segments that are within a 5 mile driving distance of the
+nearest fire station. You will then create two outputs: the road segments that
+are within 5 miles and the road segments that are outside the 5 miles driving
+distance.</p>
+
+<p class=MsoNormal><span style='color:black'>You will need to enable the&nbsp;</span><b
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;word-spacing:0px'>Network Analyst</b><span
+style='font-variant-ligatures: normal;font-variant-caps: normal;orphans: 2;
+text-align:start;widows: 2;-webkit-text-stroke-width: 0px;text-decoration-style: initial;
+text-decoration-color: initial;float:none;word-spacing:0px'>&nbsp;extension to
+complete most of the steps in this exercise.</span></span></p>
 
 <div class=MsoNormal align=center style='text-align:center'>
 
@@ -404,23 +412,23 @@ miles and the road segments that are outside the 5 miles driving distance.</p>
 
 <p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
 
-<p class=MsoToc1><a href="#_Toc297125671">Step 1:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc519256259">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Set up your Map Document<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
-<p class=MsoToc1><a href="#_Toc297125672">Step 2:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc519256260">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Set up the Network Analysis Environment<span
 style='color:windowtext;display:none;text-decoration:none'> </span><span
-style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
-<p class=MsoToc1><a href="#_Toc297125673">Step 3:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc519256261">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Run and analyze the network analysis.<span
 style='color:windowtext;display:none;text-decoration:none'> </span><span
-style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -433,7 +441,7 @@ style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc297125671">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc519256259">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Set up your Map Document</a></p>
 
 </div>
@@ -441,10 +449,10 @@ background:#8DB3E2'>
 <p class=Instructions-GIS>Open the map document <b>Firestations.mxd</b> that is
 located in your Firestations folder.</p>
 
-<p class=Instructions-GIS><img width=367 height=419 id="Picture 1"
+<p class=Instructions-GIS><img width=316 height=368 id="Picture 1"
 src="Firestations_files/image001.png"></p>
 
-<p class=MsoNormal>The map shows the outline of Kennebec county along with its
+<p class=MsoNormal>The map shows the outline of Kennebec County along with its
 roads and fire station locations.</p>
 
 <p class=MsoNormal>To use Network Analyst, you need to load a Network dataset
@@ -458,7 +466,7 @@ window).</p>
 <p class=Instructions-GIS>In the Catalog window, expand the <b>Data.gdb</b>
 geodatabase then expand the <b>roads</b> feature dataset</p>
 
-<p class=MsoNormal><img width=273 height=207 id="Picture 6"
+<p class=MsoNormal><img width=238 height=173 id="Picture 4"
 src="Firestations_files/image002.png"></p>
 
 <p class=MsoNormal>Three feature classes are present in the roads feature
@@ -475,13 +483,13 @@ if you want to learn more about creating a network dataset from a roads layer.</
 <p class=Instructions-GIS>Click the <b>Add</b> <b>Data</b> button and load the <b>roads_ND</b>
 network dataset.</p>
 
-<p class=MsoNormal><img border=0 width=325 height=169 id="Picture 3"
+<p class=MsoNormal><img border=0 width=274 height=118 id="Picture 3"
 src="Firestations_files/image003.png"></p>
 
 <p class=MsoNormal>When you load the dataset, you may be prompted to add other
 features to your map document.</p>
 
-<p class=MsoNormal><img border=0 width=437 height=186 id="Picture 5"
+<p class=MsoNormal><img border=0 width=366 height=149 id="Picture 7"
 src="Firestations_files/image004.png"></p>
 
 <p class=Instructions-GIS>Click <b>No </b>since the road feature is already
@@ -500,7 +508,7 @@ activated within your map session.</p>
 
 <p class=Instructions-GIS>Check the box next to Network Analyst.</p>
 
-<p class=MsoNormal><img border=0 width=196 height=145 id="Picture 26"
+<p class=MsoNormal><img border=0 width=145 height=94 id="Picture 26"
 src="Firestations_files/image005.png"></p>
 
 <p class=Instructions-GIS>Click <b>Close</b> to exit the Extensions window.</p>
@@ -508,7 +516,7 @@ src="Firestations_files/image005.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc297125672">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc519256260">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Set up the Network Analysis Environment</a></p>
 
 </div>
@@ -516,8 +524,8 @@ background:#8DB3E2'>
 <p class=Instructions-GIS>From the <b>Customize</b> pull-down menu, select <b>Toolbars
 &gt;&gt; Network Analyst</b>.</p>
 
-<p class=MsoNormal><img border=0 width=402 height=265 id="Picture 8"
-src="Firestations_files/image006.png"></p>
+<p class=MsoNormal><img border=0 width=349 height=214 id="Picture 8"
+src="Firestations_files/image006.jpg"></p>
 
 <p class=MsoNormal>This adds the Network Analyst toolbar to your map document.</p>
 
@@ -527,7 +535,7 @@ src="Firestations_files/image007.png"></p>
 <p class=Instructions-GIS>From the Network Analyst toolbar, select <b>Network Analyst
 &gt;&gt; New Service Area</b>.</p>
 
-<p class=MsoNormal><img border=0 width=213 height=151 id="Picture 10"
+<p class=MsoNormal><img border=0 width=162 height=100 id="Picture 10"
 src="Firestations_files/image008.png"></p>
 
 <p class=MsoNormal>A new layer group gets added to your map document’s TOC. The
@@ -543,24 +551,24 @@ the map document.</p>
 <p class=Instructions-GIS>On the Network Analyst toolbar click on the <b>Show/Hide
 Network Analyst Window</b> button.</p>
 
-<p class=MsoNormal><img border=0 width=326 height=138 id="Picture 11"
-src="Firestations_files/image009.png"></p>
+<p class=MsoNormal><img border=0 width=273 height=87 id="Picture 11"
+src="Firestations_files/image009.jpg"></p>
 
 <p class=Instructions-GIS>In the Network Analyst window you just opened, <b>right-click</b>
 on <b>Facilities</b> and select <b>Load Locations</b>.</p>
 
-<p class=Instructions-GIS><img border=0 width=322 height=436 id="Picture 27"
+<p class=Instructions-GIS><img border=0 width=269 height=383 id="Picture 27"
 src="Firestations_files/image010.png"></p>
 
 <p class=Instructions-GIS>In the Load Locations window, select <b>Firestations</b>.
 Keep all other defaults.</p>
 
-<p class=Instructions-GIS><img border=0 width=289 height=157 id="Picture 13"
+<p class=Instructions-GIS><img border=0 width=238 height=106 id="Picture 13"
 src="Firestations_files/image011.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to close the Load Locations window.</p>
 
-<p class=MsoNormal>The Facilites layer now includes <i>all</i> fire station
+<p class=MsoNormal>The Facilities layer now includes <i>all</i> fire station
 points (there should be 47 points total). Network Analyst will run the analysis
 for all point locations in the Facilities layer.</p>
 
@@ -576,7 +584,7 @@ src="Firestations_files/image012.png"></p>
 <p class=Instructions-GIS>In the Layer Properties window you just opened, click
 on the <b>Analysis Settings</b> tab. </p>
 
-<p class=MsoNormal><img border=0 width=308 height=119 id="Picture 15"
+<p class=MsoNormal><img border=0 width=255 height=68 id="Picture 15"
 src="Firestations_files/image013.png"></p>
 
 <p class=MsoNormal>Here, you will define the 5 mile driving distance limit.
@@ -585,7 +593,7 @@ distance in units of meters (5 miles = 8046 meters)</p>
 
 <p class=Instructions-GIS>In the <b>Default Breaks</b> field, type <b>8046</b>.</p>
 
-<p class=MsoNormal><img border=0 width=357 height=123 id="Picture 16"
+<p class=MsoNormal><img border=0 width=306 height=72 id="Picture 16"
 src="Firestations_files/image014.png"></p>
 
 <p class=Instructions-GIS>Next, click on the <b>Line Generation</b> tab.</p>
@@ -594,7 +602,7 @@ src="Firestations_files/image014.png"></p>
 
 <p class=Instructions-GIS>Select the <b>Not Overlapping</b> option.</p>
 
-<p class=Instructions-GIS><img border=0 width=249 height=354 id="Picture 17"
+<p class=Instructions-GIS><img border=0 width=198 height=301 id="Picture 17"
 src="Firestations_files/image015.png"></p>
 
 <p class=MsoNormal>Since many road segments may be within 5 miles of more than
@@ -608,7 +616,7 @@ within 5 miles.</p>
 <p class=Instructions-GIS>Make sure that the box next to <b>Generate Polygons</b>
 is checked.</p>
 
-<p class=Instructions-GIS><img border=0 width=197 height=118 id="Picture 28"
+<p class=Instructions-GIS><img border=0 width=146 height=67 id="Picture 28"
 src="Firestations_files/image016.png"></p>
 
 <p class=Instructions-GIS>Select the <b>Detailed</b> option.</p>
@@ -617,7 +625,7 @@ src="Firestations_files/image016.png"></p>
 
 <p class=Instructions-GIS>Select <b>Not Overlapping</b>.</p>
 
-<p class=Instructions-GIS><img border=0 width=379 height=406 id="Picture 18"
+<p class=Instructions-GIS><img border=0 width=328 height=353 id="Picture 18"
 src="Firestations_files/image017.png"></p>
 
 <p class=MsoNormal>The polygons generated from this analysis will outline all
@@ -633,7 +641,7 @@ we can run the analysis.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc297125673">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc519256261">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Run and analyze the network analysis.</a></p>
 
 </div>
@@ -651,15 +659,18 @@ can change the color/symbology to help distinguish the different routes.</p>
 
 <p class=Instructions-GIS>Assign a unique color to each <b>Lines</b> record.</p>
 
-<p class=MsoNormal><img border=0 width=374 height=418 id="Picture 20"
+<p class=Instructions-GIS><img border=0 width=188 height=298 id="Picture 12"
 src="Firestations_files/image019.png"></p>
+
+<p class=MsoNormal><img border=0 width=321 height=365 id="Picture 20"
+src="Firestations_files/image020.png"></p>
 
 <p class=MsoNormal>If you zoom in on an area, you’ll notice that polygons
 delineate the road segments that meet the 5 mile driving distance as defined in
 the previous step. </p>
 
 <p class=MsoNormal><img border=0 width=354 height=398 id="Picture 21"
-src="Firestations_files/image020.png"></p>
+src="Firestations_files/image021.png"></p>
 
 <p class=MsoNormal><span style='color:#C00000'>NOTE: In some cases, you may
 find erroneous results (i.e. road segments that are improperly identified as
@@ -678,18 +689,15 @@ Lines layer to a feature class.</p>
 <p class=Instructions-GIS>Right-click on the <b>Lines</b> layer and select <b>Data
 &gt;&gt; Export Data</b>.</p>
 
-<p class=Instructions-GIS><img border=0 width=594 height=370 id="Picture 29"
-src="Firestations_files/image021.png"></p>
+<p class=Instructions-GIS><img border=0 width=543 height=317 id="Picture 29"
+src="Firestations_files/image022.png"></p>
 
 <p class=Instructions-GIS>Set the output to <b>…\Firestations\Data.gdb\Within_5_miles</b>.</p>
 
-<p class=MsoNormal><img border=0 width=411 height=334 id="Picture 22"
-src="Firestations_files/image022.png"></p>
+<p class=MsoNormal><img border=0 width=390 height=230 id="Picture 30"
+src="Firestations_files/image023.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b>.</p>
-
-<p class=Instructions-GIS><img border=0 width=434 height=171 id="Picture 23"
-src="Firestations_files/image023.png"></p>
 
 <p class=Instructions-GIS>If prompted to add the layer to your map, select <b>Yes</b>.</p>
 
@@ -710,8 +718,8 @@ Overlay &gt;&gt; Erase</b>.</p>
 Area\Polygons</b> as the Erase Features and <b>…\Firestations\Data.gdb\outside_5_miles</b>
 as the output.</p>
 
-<p class=MsoNormal><img border=0 width=371 height=225 id="Picture 24"
-src="Firestations_files/image024.jpg"></p>
+<p class=MsoNormal><img border=0 width=483 height=214 id="Picture 31"
+src="Firestations_files/image024.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b>.</p>
 
@@ -719,7 +727,7 @@ src="Firestations_files/image024.jpg"></p>
 following graphic) that identifies all road segments not meeting the 5 mile
 driving distance criteria.</p>
 
-<p class=MsoNormal><img border=0 width=457 height=521 id="Picture 25"
+<p class=MsoNormal><img border=0 width=406 height=470 id="Picture 25"
 src="Firestations_files/image025.png"></p>
 
 <p class=MsoNormal>This ends this exercise.</p>
@@ -735,7 +743,7 @@ style='font-size:10.0pt;color:black'>
 <p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
 margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
 border=0 width=76 height=27 id="Picture 2" src="Firestations_files/image026.png"></span><span
-style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 8/22/2013 </span></p>
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 7/13/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
