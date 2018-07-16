@@ -373,21 +373,20 @@ style='font-size:20.0pt;line-height:115%;color:#365F91'>Earth Work</span></b></p
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
-  style='font-size:10.0pt;color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><span style='font-size:10.0pt;color:black'>Create a folder
-  called <b>Earth_work</b>. On DIA 322 computers, you might want to create this
-  folder in your user Documents folder (e.g. C:\Users\jdoe\Documents\Earth_work).
-  On the DIA 222 computers, you might want to create this folder on the D:
-  drive under D:\course number\user name\ (e.g. D:\ES212\jdoe\ Earth_work).</span></p>
+  style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
+  </span></span><span style='color:black'>Create a folder called <b>Earth_work</b></span><span
+  style='color:black;background:#F2F2F2'>&nbsp;somewhere under your personal
+  directory (e.g. C:\Users\jdoe\Documents\Tutorials\</span></span><span
+  style='color:black'>Earth_work).</span></p>
   <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
   style='font-size:10.0pt;color:black'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
-  </span></span><a href="EarthWork_files/Earth_work.zip"><span
-  style='font-size:10.0pt'>Download</span></a><span style='font-size:10.0pt;
-  color:black'> the Earth_work.zip data for this exercise and </span><a
-  href="https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm"><span
-  style='font-size:10.0pt'>extract the files</span></a><span style='font-size:
-  10.0pt;color:black'> to your newly created Earth_work directory.</span></p>
+  </span></span><a
+  href="file://filer.colby.edu/personal/mgimond/GIS%20Tutorials/ArcGIS_tutorials/EarthWork_files/Earth_work.zip">Download</a><span
+  style='color:black'> the Earth_work.zip data for this exercise and </span><a
+  href="https://mgimond.github.io/ArcGIS_tutorials/Opening_zip_files.htm">extract
+  the files</a><span style='color:black'> to your newly created Earth_work
+  directory.</span></p>
   </td>
  </tr>
 </table>
@@ -398,8 +397,8 @@ style='font-size:20.0pt;line-height:115%;color:#365F91'>Earth Work</span></b></p
 <p class=MsoNormal>In this fictitious scenario, a partially bermed building is
 proposed for the campus’ south-east sloping hill. The goal is to estimate
 whether or not external fill will be needed for the project (<i>i.e. will there
-be enough earth removed from the hill to fill in the exposed slope for the
-building footprint or will fill need to be trucked in</i>).</p>
+be enough earth removed from the hill to fill in the exposed slope for the building
+footprint or will fill need to be trucked in</i>).</p>
 
 <p class=MsoNormal>Note that this tutorial will make use of the <b>Spatial
 Analyst</b>, so make sure to enable this extension from the pull-down menu
@@ -413,29 +412,29 @@ under <b>Customize &gt;&gt; Extensions</b>.</p>
 
 <p class=MsoTocHeading><a name="_Toc286147277">Contents</a></p>
 
-<p class=MsoToc1><a href="#_Toc489948845">Step 1:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc519517780">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Loading the data<span style='color:windowtext;display:
 none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
-<p class=MsoToc1><a href="#_Toc489948846">Step 2:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc519517781">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Convert polygon layer to raster layer<span
 style='color:windowtext;display:none;text-decoration:none'> </span><span
-style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
-<p class=MsoToc1><a href="#_Toc489948847">Step 3:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc519517782">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Calculate the difference in elevation<span
 style='color:windowtext;display:none;text-decoration:none'>.. </span><span
-style='color:windowtext;display:none;text-decoration:none'>3</span></a></p>
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
-<p class=MsoToc1><a href="#_Toc489948848">Step 4:<span style='font-size:11.0pt;
+<p class=MsoToc1><a href="#_Toc519517783">Step 4:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
 none'>        </span>Net removal or net fill?<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
-style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
+style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -448,7 +447,7 @@ style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc489948845">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc519517780">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Loading the data</a></p>
 
 </div>
@@ -475,24 +474,23 @@ src="EarthWork_files/image003.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc489948846">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc519517781">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Convert polygon layer to raster layer</a></p>
 
 </div>
 
 <p class=Instructions-GIS>In Arctoobox, go to <b>Conversion Tools &gt;&gt; To
 Raster &gt;&gt; Polygon to Raster</b> and enter the values as shown below (make
-sure that the output raster is saved in your working project folder, e.g.
-D:\ES212\jdoe\Earth_work\Building.img).</p>
+sure that the output raster is saved in your working project).</p>
 
-<p class=Instructions-GIS><img width=247 height=274 id="Picture 4"
+<p class=Instructions-GIS><img width=385 height=281 id="Picture 1"
 src="EarthWork_files/image004.png"></p>
 
 <p class=MsoNormal>Since we are creating a new raster, it may be best to ensure
 that the pixel size and layout match those of the existing DEM raster:</p>
 
 <p class=Instructions-GIS>Modify the tool’s <b>Environments</b> setting by
-setting the <b>Snap Raste</b>r and the <b>Raster Cell Siz</b>e to that of the
+setting the <b>Snap Raste</b>r and the <b>Raster Cell Size</b> to that of the
 DEM.</p>
 
 <p class=MsoNormal><img width=412 height=204 id="Picture 5"
@@ -513,7 +511,7 @@ src="EarthWork_files/image007.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc489948847">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc519517782">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Calculate the difference in elevation</a></p>
 
 </div>
@@ -523,15 +521,16 @@ difference in elevation values between the building’s base level and the
 background elevation.</p>
 
 <p class=Instructions-GIS>Open <b>Spatial</b> <b>Analyst Tools &gt;&gt; Map
-Algebra &gt;&gt; Raster Calculator</b> and populate the fields as shown below.</p>
+Algebra &gt;&gt; Raster Calculator</b> and type out the expression as shown
+below.</p>
 
-<p class=MsoNormal><img width=324 height=330 id="Picture 8"
+<p class=MsoNormal><img width=481 height=289 id="Picture 9"
 src="EarthWork_files/image008.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
 
-<p class=MsoNormal>The output raster ranges from a value of -5.24 to +2.68. A
-positive value indicates that earth has to be removed from the hill to
+<p class=MsoNormal>The output raster should have values ranging from -5.24 to
++2.68. A positive value indicates that earth has to be removed from the hill to
 accommodate the building footprint and a negative value indicates that earth
 needs to be added. Note that the values are in meters and represent depth of
 excavation or of fill for each pixel. If your values differ slightly from those
@@ -539,8 +538,8 @@ shown in this tutorial than you might not have properly set the Environment
 settings outlined in Step 2.</p>
 
 <p class=Instructions-GIS>Use a <b>divergent</b> color scheme to highlight the areas
-to be filled or removed. You might want to use the <b>Classify</b> option to fine
-tune the bin cutoffs.</p>
+to be filled or removed. You might want to use the <b>Classify</b> option to
+fine tune the bin cutoffs.</p>
 
 <p class=MsoNormal><img width=396 height=283 id="Picture 16"
 src="EarthWork_files/image009.png"> </p>
@@ -557,8 +556,8 @@ src="EarthWork_files/image011.png"></p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc489948848">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-</span>Net removal or net fill?</a></p>
+<p class=Stepheader-GIS><a name="_Toc519517783">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Net removal or net fill?</a> (Option 1)</p>
 
 </div>
 
@@ -569,7 +568,7 @@ to extract the sum of pixel values is to run the zonal statistics tool.</p>
 <p class=Instructions-GIS>Open <b>Spatial Analyst Tools &gt;&gt; Zonal &gt;&gt;
 Zonal Statistics as Table</b> and fill the fields as follows:</p>
 
-<p class=MsoNormal><img width=290 height=274 id="Picture 13"
+<p class=MsoNormal><img width=486 height=282 id="Picture 12"
 src="EarthWork_files/image012.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
@@ -581,8 +580,51 @@ src="EarthWork_files/image013.png"></p>
 
 <p class=MsoNormal>The sum of values is <b>-1419.6 meters</b>. To get total
 volume, multiply this amount by the area of each pixel (4m): -1419.6m x 4m² =
--5678.4 m<sup>3</sup>. Since the value is negative, this means that this amount
-of fill will need to be trucked in for the construction of the new building.</p>
+-5678.4 m<sup>3</sup>. Since the value is negative, fill will need to be
+trucked in for the construction of the new building.</p>
+
+<div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
+background:#8DB3E2'>
+
+<p class=Stepheader-GIS style='background:#8DB3E2'>Step 5:<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>Net removal or net fill? (Option 2)</p>
+
+</div>
+
+<p class=MsoNormal>Another way to estimate the amount of fill to add or to remove
+is to use the <b>Cut Fill</b> tool.</p>
+
+<p class=Instructions-GIS>Open <b>Spatial Analyst Tools &gt;&gt; Surface
+&gt;&gt; Cut Fill</b> and fill the fields as follows:</p>
+
+<p class=Instructions-GIS><img width=479 height=214 id="Picture 17"
+src="EarthWork_files/image014.png"></p>
+
+<p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
+
+<p class=MsoNormal>The output is a raster symbolized to show gains and losses
+in elevation.</p>
+
+<p class=Instructions-GIS><img width=385 height=175 id="Picture 18"
+src="EarthWork_files/image015.png"></p>
+
+<p class=MsoNormal>The output is an integer raster which implies that an attribute
+table is present.</p>
+
+<p class=Instructions-GIS><b>Right-click</b> on the Difference2.tif raster and open
+its <b>attribute</b> <b>table</b>.</p>
+
+<p class=Instructions-GIS><img width=293 height=105 id="Picture 19"
+src="EarthWork_files/image016.png"></p>
+
+<p class=MsoNormal>The pixel values are broken down into three values: 1 (net
+gain), 2 (no change), and 3 (net loss). The <b>Count</b> column lists the
+number of pixels assigned to each value. The raster also provides us with a
+Volume column saving us from having to compute these values manually. Summing
+this column results in a net volume of -5851 m<sup>3</sup>. This value is about
+3% greater than the one computed in the last step. This difference could be due
+to rounding errors.</p>
 
 <p class=MsoNormal>&nbsp;</p>
 
@@ -594,9 +636,10 @@ style='font-size:10.0pt;color:black'>
 
 </span></div>
 
-<p class=MsoNormal align=right style='margin-top:7.5pt;margin-right:0in;
-margin-bottom:7.5pt;margin-left:0in;text-align:right;line-height:13.0pt'><span
-style='font-size:10.0pt;color:gray'>© Manny Gimond, 8/8/2017 </span></p>
+<p class=MsoNormal style='margin-top:7.5pt;margin-right:0in;margin-bottom:7.5pt;
+margin-left:0in;line-height:13.0pt'><span style='font-size:10.0pt;color:gray'><img
+width=76 height=27 id="Picture 20" src="EarthWork_files/image017.png"></span><span
+style='font-size:10.0pt;color:gray'> Manuel Gimond, last modified on 7/16/2018 </span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
