@@ -363,21 +363,21 @@ Global Operations</span></b></p>
 
 <div class=MsoNormal align=center style='text-align:center'>
 
-<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+<hr size=2 width="100%" noshade style='color:#CCCCCC' align=center>
 
 </div>
 
 <table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
  style='margin-left:.4pt;border-collapse:collapse;border:none'>
  <tr>
-  <td width=899 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
+  <td width=471 valign=top style='width:809.6pt;border:none;background:#F2F2F2;
   padding:0in 5.4pt 0in 5.4pt'>
   <p class=MsoListParagraphCxSpFirst style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
   style='color:black'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;
   </span></span><span style='color:black'>Create a folder called <b>MapAlgebraZonal</b></span><span
   style='color:black;background:#F2F2F2'> somewhere under your personal
-  directory (e.g. C:\Users\jdoe\Documents\Tutorials\</span></span><span
+  directory (e.g. C:\Users\jdoe\Documents\Tutorials\</span><span
   style='color:black'>MapAlgebraZonal).</span></p>
   <p class=MsoListParagraphCxSpLast style='margin-top:7.5pt;margin-right:0in;
   margin-bottom:7.5pt;margin-left:.5in;text-indent:-.25in;line-height:13.0pt'><span
@@ -400,7 +400,7 @@ be saved in the current project folder (i.e. ./MapAlgebraZonal).</p>
 
 <div class=MsoNormal align=center style='text-align:center'>
 
-<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+<hr size=2 width="100%" noshade style='color:#CCCCCC' align=center>
 
 </div>
 
@@ -408,40 +408,40 @@ be saved in the current project folder (i.e. ./MapAlgebraZonal).</p>
 
 <p class=MsoToc1><a href="#_Toc503868363">Step 1:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Open the map document<span style='color:windowtext;
+none'>       </span>Open the map document<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>1</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc503868364">Step 2:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Distance to the closest Walmart<span style='color:windowtext;
+none'>       </span>Distance to the closest Walmart<span style='color:windowtext;
 display:none;text-decoration:none'> </span><span
 style='color:windowtext;display:none;text-decoration:none'>2</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc503868365">Step 3:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Reclassifying raster cells<span style='color:windowtext;
+none'>       </span>Reclassifying raster cells<span style='color:windowtext;
 display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>4</span></a></p>
 
 <p class=MsoToc1><a href="#_Toc503868366">Step 4:<span style='font-size:11.0pt;
 line-height:115%;font-family:"Calibri",sans-serif;color:windowtext;text-decoration:
-none'>        </span>Computing zonal statistics by state<span style='color:
-windowtext;display:none;text-decoration:none'>. </span><span
+none'>       </span>Computing zonal statistics by state<span style='color:windowtext;
+display:none;text-decoration:none'>. </span><span
 style='color:windowtext;display:none;text-decoration:none'>6</span></a></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
 <div class=MsoNormal align=center style='text-align:center'>
 
-<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+<hr size=2 width="100%" noshade style='color:#CCCCCC' align=center>
 
 </div>
 
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc503868363">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc503868363">Step 1:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Open the map document</a></p>
 
 </div>
@@ -463,7 +463,7 @@ operation</b>.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc503868364">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc503868364">Step 2:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Distance to the closest Walmart</a></p>
 
 </div>
@@ -509,8 +509,13 @@ src="MapAlgebraZonalGlobal_files/image005.png"><br>
 Each pixel of the output raster displays the distance from that pixel to the <i>closest</i>
 Walmart. Note that the distance units are those of the map or layer coordinate
 system. Also note that the Euclidian distance is sensitive to the coordinate
-system used (i.e. you should choose a one that preserves distance before
-computing the distances).</p>
+system used (i.e. you should choose one that preserves distance before
+computing the distances). If you are using version 10.7 or greater of the
+software, you also have the option of adopting the <b>geodesic</b> method of
+distance measurement over the default planar method.</p>
+
+<p class=MsoNormal><img width=250 height=97 id="Picture 3"
+src="MapAlgebraZonalGlobal_files/image006.jpg"></p>
 
 <p class=MsoNormal><br>
 Next, you will identify all pixels that are within 20 km of a Walmart.</p>
@@ -518,7 +523,7 @@ Next, you will identify all pixels that are within 20 km of a Walmart.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc503868365">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc503868365">Step 3:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Reclassifying raster cells</a></p>
 
 </div>
@@ -542,7 +547,7 @@ style='font-family:"Courier New"'>Con( &quot;Distance2Walmart&quot; &lt;=
 
 <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:10.0pt;
 margin-left:.5in'><img width=262 height=49 id="Picture 13"
-src="MapAlgebraZonalGlobal_files/image006.png"></p>
+src="MapAlgebraZonalGlobal_files/image007.png"></p>
 
 <p class=Instructions-GIS style='margin-left:.5in'>Click <b>OK</b> to run the
 geoprocess.</p>
@@ -556,12 +561,12 @@ Tools &gt;&gt; </b><b>Reclass &gt;&gt; Reclassify</b>.</p>
 <p class=Instructions-GIS style='margin-left:.5in'>Populate the fields as shown
 below (you may need to delete rows in the reclassification table or you can
 define the classification limits via the <img width=75 height=22 id="Picture 14"
-src="MapAlgebraZonalGlobal_files/image007.png">button).</p>
+src="MapAlgebraZonalGlobal_files/image008.png">button).</p>
 
 <p class=MsoNormal style='margin-top:0in;margin-right:0in;margin-bottom:10.0pt;
 margin-left:.5in'> <br>
 <img width=416 height=286 id="Picture 15"
-src="MapAlgebraZonalGlobal_files/image008.png"></p>
+src="MapAlgebraZonalGlobal_files/image009.png"></p>
 
 <p class=Instructions-GIS style='margin-left:.5in'>Click <b>OK</b> to run the
 reclassification<br>
@@ -572,13 +577,13 @@ reclassification<br>
 raster.</p>
 
 <p class=MsoNormal style='margin-top:0in'> <img width=265 height=193
-id="Picture 1" src="MapAlgebraZonalGlobal_files/image009.jpg"></p>
+id="Picture 1" src="MapAlgebraZonalGlobal_files/image010.jpg"></p>
 
 <p class=MsoNormal style='margin-top:0in'>As such it will have a valid
 attribute table listing the number of 0 and 1 pixels in the raster.</p>
 
 <p class=MsoNormal style='margin-top:0in'><img width=171 height=79
-id="Picture 16" src="MapAlgebraZonalGlobal_files/image010.png"><br>
+id="Picture 16" src="MapAlgebraZonalGlobal_files/image011.png"><br>
 <br>
 </p>
 
@@ -592,7 +597,7 @@ to summarize pixel values <i>by state</i> using a <b>zonal operation</b>.</p>
 <div style='border:solid #548DD4 1.0pt;padding:1.0pt 4.0pt 1.0pt 4.0pt;
 background:#8DB3E2'>
 
-<p class=Stepheader-GIS><a name="_Toc503868366">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<p class=Stepheader-GIS><a name="_Toc503868366">Step 4:<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 </span>Computing zonal statistics by state</a></p>
 
 </div>
@@ -604,7 +609,7 @@ the States vector layer as the zonal boundaries.</p>
 
 <p class=Instructions-GIS><br>
 <img width=270 height=282 id="Picture 17"
-src="MapAlgebraZonalGlobal_files/image011.png"></p>
+src="MapAlgebraZonalGlobal_files/image012.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to run the geoprocess.</p>
 
@@ -613,7 +618,7 @@ format) and not a spatial data layer. You can view its contents by
 right-clicking it in the TOC then selecting <b>Open</b>.</p>
 
 <p class=MsoNormal><img width=624 height=197 id="Picture 18"
-src="MapAlgebraZonalGlobal_files/image012.png"></p>
+src="MapAlgebraZonalGlobal_files/image013.png"></p>
 
 <p class=MsoNormal>For each polygon in the States layer, a set of distance-to-Walmart
 summary statistics is tabulated. The output table copies the NAME column from
@@ -626,7 +631,7 @@ TOC then select <b>Joins and Relates &gt;&gt; Join</b>. </p>
 <p class=Instructions-GIS>Populate the fields as follows:</p>
 
 <p class=Instructions-GIS><img width=333 height=397 id="Picture 19"
-src="MapAlgebraZonalGlobal_files/image013.png"></p>
+src="MapAlgebraZonalGlobal_files/image014.png"></p>
 
 <p class=Instructions-GIS>Click <b>OK</b> to perform the join. (If you are
 prompted to create an index, click <b>Yes</b>).</p>
@@ -636,7 +641,7 @@ summary statistics table. In the following example, the layer is symbolized by
 the mean distance to the nearest Walmart.</p>
 
 <p class=Instructions-GIS><img width=371 height=158 id="Picture 20"
-src="MapAlgebraZonalGlobal_files/image014.png"></p>
+src="MapAlgebraZonalGlobal_files/image015.png"></p>
 
 <p class=Instructions-GIS><span style='color:red'>Note: This exercise uses
 polygons as input <i>feature zones</i> in the <i>Zonal Statistics as Table</i>
@@ -647,14 +652,14 @@ zones</i>. </span></p>
 margin-bottom:7.5pt;margin-left:0in;text-align:center;line-height:13.0pt'><span
 style='font-size:10.0pt;color:black'>
 
-<hr size=1 width="100%" noshade style='color:#CCCCCC' align=center>
+<hr size=2 width="100%" noshade style='color:#CCCCCC' align=center>
 
 </span></div>
 
 <p class=MsoNormal><span style='font-size:10.0pt;line-height:115%;color:gray'><img
-width=76 height=27 id="Picture 2" src="MapAlgebraZonalGlobal_files/image015.png"></span><span
+width=76 height=27 id="Picture 2" src="MapAlgebraZonalGlobal_files/image016.png"></span><span
 style='font-size:10.0pt;line-height:115%;color:gray'> Manuel Gimond, last
-modified on 7/12/2018</span></p>
+modified on 10/16/2019</span></p>
 
 <p class=MsoNormal>&nbsp;</p>
 
